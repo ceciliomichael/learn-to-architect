@@ -105,9 +105,19 @@ The key distinction between `type` and `interface` is discussed in the next sect
 
 ### Extending (Inheriting Properties)
 
-Both can be extended, but the syntax differs.
+When designing complex applications, many object shapes share common attributes. For example, a video game might have a `Warrior`, a `Mage`, and an `Archer`. Every character needs an `id`, a `name`, and `health`, but each specific class also needs unique fields like `ragePoints` or `manaPool`.
 
-With `interface`, you use the `extends` keyword
+If you wrote out `id`, `name`, and `health` inside every single interface, your codebase would suffer from massive code duplication. If you later decided to change `id` from a `number` to a `string`, you would have to manually edit dozens of interfaces.
+
+To solve this, TypeScript allows interfaces to **inherit** properties from parent blueprints using the `extends` keyword. 
+
+When you declare `interface Child extends Parent`, two things happen automatically:
+1. **Property Copying:** All properties defined on the `Parent` interface are automatically included on the `Child` interface.
+2. **Type Compatibility:** Any object that satisfies the `Child` interface is structurally guaranteed to also satisfy the `Parent` interface.
+
+Both interfaces and type aliases can achieve property inheritance, but their syntax differs.
+
+With `interface`, you use the explicit `extends` keyword
 ```typescript
 interface Animal {
   name: string;
@@ -115,7 +125,7 @@ interface Animal {
 }
 
 interface Dog extends Animal {
-  breed: string; // Dog has name, age (from Animal), AND breed.
+  breed: string; // Dog automatically inherits 'name' and 'age' from Animal, AND adds 'breed'.
 }
 
 const myDog: Dog = { name: "Rex", age: 3, breed: "Husky" };
