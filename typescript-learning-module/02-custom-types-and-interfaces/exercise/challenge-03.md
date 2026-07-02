@@ -10,7 +10,7 @@ You are building a word translation tool where the set of words is not known in 
 
 3. Access and log one of the translations using dot notation (e.g. `spanishDict.hello`).
 
-4. Write a commented-out line that tries to add a property with a number value (e.g. `spanishDict.wordCount = 5`). Write the TypeScript error message in the comment.
+4. Write a commented-out line that tries to add a property with a number value (e.g. `spanishDict.wordCount = 5`). In a comment, explain why assigning a numeric property violates the index signature.
 
 5. Add a new word pair after the initial declaration (TypeScript should allow this since the key is a string and the value is a string).
 
@@ -19,3 +19,4 @@ You are building a word translation tool where the set of words is not known in 
 ```typescript
 // Write your WordMap interface and spanishDict here
 ```
+

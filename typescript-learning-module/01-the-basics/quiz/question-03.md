@@ -12,7 +12,7 @@ city = 42;
 
 **Two questions:**
 
-1. What is the exact error message TypeScript produces on `city = 42`?
+1. Why does the TypeScript compiler reject the assignment `city = 42`?
 
 2. Why did TypeScript already know the type of `city` even though you never wrote `: string`?
 
@@ -20,6 +20,7 @@ city = 42;
 
 ## ANSWER HERE
 
-> **Exact error message:**
+> **Why the compiler rejects this:**
 
 > **Why TypeScript knew the type:**
+

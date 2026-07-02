@@ -10,7 +10,7 @@ Write a generic function that requires its type argument to have a specific prop
 
 3. Test `printName` with
    - An object `{ name: "Alice", age: 30 }`  -  should work.
-   - An object `{ age: 30 }` (no name)  -  write the TypeScript error in a comment.
+   - An object `{ age: 30 }` (no name)  -  write a comment explaining which generic constraint is violated.
 
 4. Test `mergeObjects` with two different objects and log the result. Note what TypeScript infers as the return type in a comment.
 
@@ -19,3 +19,4 @@ Write a generic function that requires its type argument to have a specific prop
 ```typescript
 // Write printName and mergeObjects here
 ```
+

@@ -23,6 +23,7 @@ Walk through exactly what TypeScript sees and what error it produces. Why does t
 
 > **What TypeScript sees when triangle is added but not handled:**
 
-> **The exact error produced:**
+> **Why the compiler rejects this:**
 
 > **Why this protects the codebase:**
+
