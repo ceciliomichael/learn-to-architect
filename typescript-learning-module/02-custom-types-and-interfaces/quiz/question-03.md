@@ -1,36 +1,29 @@
 # Question 03: Structural Typing
 
-TypeScript uses structural typing (shape-based compatibility). Consider this
+TypeScript uses structural typing (shape-based compatibility). Consider this code:
 ```typescript
-interface Swimmer {
-  swim(): void;
-  speed: number;
+interface Point2D {
+  x: number;
+  y: number;
 }
 
-class Dolphin {
-  swim(): void {
-    console.log("Splashing around.");
-  }
-  speed: number = 40;
-  canEcholocate: boolean = true;
-}
+const point3D = {
+  x: 10,
+  y: 20,
+  z: 30
+};
 
-function trainAnimal(animal: Swimmer): void {
-  animal.swim();
-}
-
-const dolphin = new Dolphin();
-trainAnimal(dolphin);
+const point: Point2D = point3D;
 ```
 
-1. Does `trainAnimal(dolphin)` produce a TypeScript error? Why or why not?
-2. `Dolphin` was never declared as `implements Swimmer`. Why does it still work?
-3. What would happen if `Dolphin` was missing the `speed` property?
+1. Does `const point: Point2D = point3D;` produce a TypeScript compiler error? Why or why not?
+2. The object `point3D` has an extra property (`z`) that is not defined in `Point2D`. Why does TypeScript allow assigning it to a `Point2D` variable?
+3. What would happen if `point3D` was missing the `y` property?
 
 ## ANSWER HERE
 
-> **Does it error?**
+> **Does assigning point3D to point produce an error?**
 
-> **Why it works without `implements Swimmer`:**
+> **Why TypeScript allows extra properties:**
 
-> **What happens if speed is missing:**
+> **What happens if property y is missing:**

@@ -19,4 +19,5 @@ A function in your application needs to accept either a string ID or a numeric I
 
 ```typescript
 // Write your UserId type, variables, and printId function here
+
 ```

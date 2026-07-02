@@ -1,18 +1,10 @@
-# Question 03 Answer
+# Question 03: Answer
 
-**Does `trainAnimal(dolphin)` error?**
-No. It works perfectly.
+1. **Does assigning point3D to point produce an error?**
+No, it does not produce an error.
 
-**Why it works without `implements Swimmer`:**
-TypeScript uses **structural typing**. It does not check whether `Dolphin` was formally declared as implementing `Swimmer`. It only checks whether the value being passed has all the properties that `Swimmer` requires. The `Swimmer` interface requires two things: a `swim()` method and a `speed: number`. The `Dolphin` class has both. Therefore TypeScript accepts it.
+2. **Why TypeScript allows extra properties:**
+TypeScript uses **structural typing** (duck typing). When checking if `point3D` satisfies the `Point2D` interface, the compiler only verifies that `point3D` has at least the required properties (`x: number` and `y: number`). Even though `point3D` has an extra property (`z: number`), it still possesses all the structure required by `Point2D`, so TypeScript accepts the assignment.
 
-The class name `Dolphin` is irrelevant. All that matters is the shape of the object.
-
-The extra `canEcholocate` property on `Dolphin` does not cause any problem. TypeScript only checks that the required properties are present. Extra properties are allowed.
-
-**What would happen if `speed` was missing:**
-TypeScript would produce an error like
-```
-Argument of type 'Dolphin' is not assignable to parameter of type 'Swimmer'.
-Property 'speed' is missing in type 'Dolphin' but required in type 'Swimmer'.
-```
+3. **What happens if property y is missing:**
+TypeScript will throw a compile-time error: `Property 'y' is missing in type '{ x: number; z: number; }' but required in type 'Point2D'`. Structural typing requires that all mandatory properties defined in the blueprint must be present.

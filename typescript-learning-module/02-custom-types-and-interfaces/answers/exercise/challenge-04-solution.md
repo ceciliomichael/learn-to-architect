@@ -6,14 +6,17 @@ type UserId = string | number;
 const stringId: UserId = "user-abc-123";
 const numericId: UserId = 9001;
 
-function printId(id: UserId): void {
-  if (typeof id === "string") {
-    console.log(id.toUpperCase()); // "USER-ABC-123"
-  } else {
-    console.log("ID: " + id); // "ID: 9001"
-  }
+// Checking the string variable directly
+if (typeof stringId === "string") {
+  console.log(stringId.toUpperCase()); // Outputs: "USER-ABC-123"
+} else {
+  console.log("Numeric ID: " + stringId);
 }
 
-printId(stringId);  // Outputs: USER-ABC-123
-printId(numericId); // Outputs: ID: 9001
+// Checking the numeric variable directly
+if (typeof numericId === "string") {
+  console.log(numericId.toUpperCase());
+} else {
+  console.log("Numeric ID: " + numericId); // Outputs: "Numeric ID: 9001"
+}
 ```
