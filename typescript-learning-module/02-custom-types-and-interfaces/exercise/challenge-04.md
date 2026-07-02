@@ -1,16 +1,18 @@
-# Challenge 04: Dynamic Identifier Handling
+# Challenge 04: Union Types in Action
 
-You are building a user profile system where identifiers can arrive as either text strings or numbers.
+Sometimes a single variable needs to hold different types of data at different times, like a user ID that can be either text or a number.
 
 ## Your Tasks
 
-1. Create a `type` alias called `UserId` that supports both string and numeric identifiers.
+1. Create a `type` alias called `UserId` that allows either a `string` or a `number`.
 
-2. Simulate a user session that starts with a string identifier (e.g. `"oauth_99"`) and later transitions to a numeric identifier (e.g. `404`). Model this flow using a single variable.
+2. Declare a variable named `currentId` using `let` and type it as `UserId`. Assign it a starting string value (for example, `"user-123"`).
 
-3. At each step of the session, use runtime type inspection to safely format and log the identifier:
-   - String IDs must be printed in uppercase.
-   - Numeric IDs must be printed with the prefix `"Legacy ID: "`.
+3. Write an `if` statement using `typeof` to check if `currentId` is a `"string"`. Inside the `if` block, log the ID in uppercase using `.toUpperCase()`.
+
+4. Next, change the value of `currentId` to a number (for example, `404`). Notice that TypeScript allows this without any errors because `currentId` allows both strings and numbers.
+
+5. Write another `if` statement using `typeof` to check if `currentId` is now a `"number"`. Inside the block, log `"Numeric ID: " + currentId`.
 
 ## ANSWER HERE
 
