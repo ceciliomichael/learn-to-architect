@@ -3,17 +3,17 @@
 ```typescript
 type UserId = string | number;
 
-// 1. Declare variable with string value
-let currentId: UserId = "user-abc-123";
+// Start session with OAuth string identifier
+let sessionId: UserId = "oauth_99";
 
-if (typeof currentId === "string") {
-  console.log(currentId.toUpperCase()); // Outputs: "USER-ABC-123"
+if (typeof sessionId === "string") {
+  console.log(sessionId.toUpperCase()); // Outputs: "OAUTH_99"
 }
 
-// 2. Reassign the exact same variable to a number
-currentId = 9001;
+// Transition to legacy numeric identifier
+sessionId = 404;
 
-if (typeof currentId === "number") {
-  console.log("Numeric ID: " + currentId); // Outputs: "Numeric ID: 9001"
+if (typeof sessionId === "number") {
+  console.log("Legacy ID: " + sessionId); // Outputs: "Legacy ID: 404"
 }
 ```
