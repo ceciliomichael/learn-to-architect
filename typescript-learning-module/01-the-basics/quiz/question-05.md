@@ -12,7 +12,5 @@ You have the string `"10,20,30"`.
 ## ANSWER HERE
 
 ```typescript
-// Write your .split(), index access, and method calls here:
-
-
+// Write your .split(), index access, and method calls here
 ```

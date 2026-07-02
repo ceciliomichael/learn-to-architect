@@ -10,7 +10,7 @@ TypeScript produces an error: `Object is of type 'unknown'`. The compiler blocks
 Always prefer `unknown`. It forces you to be deliberate about what you do with uncertain data, which catches bugs at compile time instead of at runtime.
 
 **What you must do before using `unknown`:**
-Narrow the type using a `typeof` check inside an `if` statement:
+Narrow the type using a `typeof` check inside an `if` statement
 ```typescript
 let valueB: unknown = "hello";
 if (typeof valueB === "string") {

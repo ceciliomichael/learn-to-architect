@@ -2,8 +2,7 @@
 
 **Correct answer: C**  -  TypeScript automatically merges them into one combined interface.
 
-This is called **declaration merging**. When two `interface` declarations share the same name in the same scope, TypeScript silently combines all their properties into a single unified contract:
-
+This is called **declaration merging**. When two `interface` declarations share the same name in the same scope, TypeScript silently combines all their properties into a single unified contract
 ```typescript
 interface UserSettings { theme: string; }
 interface UserSettings { fontSize: number; }
@@ -12,7 +11,7 @@ interface UserSettings { fontSize: number; }
 const settings: UserSettings = { theme: "dark", fontSize: 16 };
 ```
 
-With `type` aliases, this is impossible. Declaring the same `type` name twice is a hard compiler error:
+With `type` aliases, this is impossible. Declaring the same `type` name twice is a hard compiler error
 ```
 Duplicate identifier 'UserSettings'.
 ```

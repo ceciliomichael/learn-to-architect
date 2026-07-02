@@ -21,7 +21,5 @@ Call each function twice: once passing both arguments, once passing only the nam
 ## ANSWER HERE
 
 ```typescript
-// Write both greet functions and their calls here:
-
-
+// Write both greet functions and their calls here
 ```

@@ -2,8 +2,7 @@
 
 ## Question
 
-TypeScript has two ways to combine types:
-
+TypeScript has two ways to combine types
 ```typescript
 type UnionExample        = TypeA | TypeB;   // A OR B
 type IntersectionExample = TypeA & TypeB;   // A AND B

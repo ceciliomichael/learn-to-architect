@@ -1,50 +1,23 @@
-# Module 03 Exercise: Functions & Typing Signatures
+# Welcome to Practice Lab: Functions and Signatures
+Welcome to the interactive exercise lab for **Functions and Signatures**! Here is where theoretical knowledge transforms into practical coding ability.
 
-Complete your code directly inside the **ANSWER HERE** blocks below.
+Remember: The TypeScript compiler is your mentor. Don't be afraid to experiment, make syntax errors, and fix them. Every problem you solve builds professional muscle memory.
 
----
+## What You Will Tackle in This Lab
 
-### Challenge 1: Strongly Typed Calculator
-Write a function called `calculate` that accepts three parameters:
-1. `operation`: Must be typed strictly as the literal union `"ADD" | "SUBTRACT" | "MULTIPLY" | "DIVIDE"`.
-2. `a`: A number.
-3. `b`: A number.
+1. **[Challenge 01: Typed Calculator Function](./challenge-01.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+2. **[Challenge 02: Optional and Default Parameters](./challenge-02.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+3. **[Challenge 03: Array Transformation Pipeline](./challenge-03.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+4. **[Challenge 04: Rest Parameters](./challenge-04.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
 
-The function must return a `number`. If `operation` is `"DIVIDE"` and `b === 0`, throw an `Error("Cannot divide by zero")`.
+## How to Work on These Challenges
 
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your calculate function here:
+1. Open each challenge file in order.
+2. Read the scenario and requirements carefully.
+3. Write your TypeScript code directly inside the **ANSWER HERE** section.
+4. If you get stuck, review the theory in **[../README.md](../README.md)**.
 
+## Ready to Check Your Work?
 
-```
+Once you have completed your solutions, compare your approach against our verified production implementations inside **[../answers/exercise/](../answers/exercise/)**. Happy coding!
 
----
-
-### Challenge 2: Optional Parameters vs Default Parameters
-Write two functions that format a user greeting:
-1. `formatGreetingOptional(name: string, title?: string): string`: If `title` is provided, return `"Hello [title] [name]"`. Otherwise, return `"Hello [name]"`.
-2. `formatGreetingDefault(name: string, title: string = "Explorer"): string`: Return `"Hello [title] [name]"`. Notice what happens when you pass `undefined` as the second argument when calling this function!
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your formatting functions here:
-
-
-```
-
----
-
-### Challenge 3: Function Overloads for Flexible Parsers
-Write function overload signatures for a function called `parseCoordinate`:
-1. If passed two numbers (`x: number, y: number`), it returns `{ x: number, y: number }`.
-2. If passed a single coordinate string formatted as `"x,y"` (e.g., `"10,20"`), it returns `{ x: number, y: number }`.
-
-Write the overload signatures above the implementation, and then write the single implementation function that handles both cases using `typeof`.
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your overload signatures and implementation here:
-
-
-```

@@ -16,7 +16,7 @@ You are not being graded by anyone. But you should grade yourself honestly using
 
 ## How to Pick Your Project
 
-Open the `projects/` folder and read through all five project briefs. Each one tells you:
+Open the `projects/` folder and read through all five project briefs. Each one tells you
 - What you are building
 - The core requirements
 - The stretch goals
@@ -46,8 +46,7 @@ Pick the one that scares you just the right amount  -  challenging enough that y
 
 ## What Each Project Tests
 
-Every project covers all 11 modules to some degree, but each one emphasizes different areas. Here is the rough map:
-
+Every project covers all 11 modules to some degree, but each one emphasizes different areas. Here is the rough map
 | Project | Primary Focus | Modern Application |
 |---|---|---|
 | Option 01  -  Task API | Classes, generics, async, error handling | Core backend business logic |
@@ -67,15 +66,14 @@ Every project covers all 11 modules to some degree, but each one emphasizes diff
 
 When you finish building your project, you must write a `PROJECT.md` file at the root of your project folder. This is not optional. A working codebase with no documentation is an incomplete submission.
 
-Your `PROJECT.md` must include all of the following sections:
-
+Your `PROJECT.md` must include all of the following sections
 ### 1. Project Overview
 A paragraph explaining what the project does and what problem it solves. Write this as if the reader has never seen the project before.
 
 ### 2. Architecture
 Describe how you split the code into files and folders. Explain the responsibility of each folder and each major file. If you drew this structure as a tree, include it.
 
-Example:
+Example
 ```
 src/
 ├── types/index.ts        -  All shared interfaces
@@ -87,22 +85,21 @@ src/
 ### 3. TypeScript Concepts Used
 List the TypeScript features you used and, for each one, give one real example from your own code showing how you used it. Do not describe the concept in general  -  describe your specific usage.
 
-Example format:
+Example format
 - **Discriminated unions**: Used in `types/index.ts` to model `TaskState` as three possible states  -  `pending`, `in-progress`, and `done`  -  each with different data.
 - **Generic function with constraint**: `getById<T extends { id: string }>(...)` in `services/base.ts` allows reuse across Task, User, and Project lookups.
 
 ### 4. Decisions and Trade-offs
 Describe at least two architectural decisions you made and why. What alternatives did you consider? Why did you choose what you chose?
 
-Example:
+Example
 - "I chose the Result pattern over `try/catch` in the service layer because the callers of these functions need to handle both the success and failure cases at compile time. Using `try/catch` would have made failure handling optional and easy to forget."
 
 ### 5. What You Would Improve
 List at least two things you would do differently or add if you had more time. Be specific. This is not a self-criticism section  -  it is a demonstration that you understand the limits of your current implementation.
 
 ### 6. Self-Assessment Checklist
-Copy this checklist into your `PROJECT.md` and mark each item as complete:
-
+Copy this checklist into your `PROJECT.md` and mark each item as complete
 ```
 [ ] Every file has one clear responsibility (SRP)
 [ ] No file exceeds 300 lines
@@ -120,8 +117,7 @@ Copy this checklist into your `PROJECT.md` and mark each item as complete:
 
 ## Setup Instructions
 
-All five projects are standalone TypeScript Node.js applications. To set one up:
-
+All five projects are standalone TypeScript Node.js applications. To set one up
 ```bash
 mkdir my-project
 cd my-project
@@ -130,8 +126,7 @@ npm install typescript @types/node --save-dev
 npx tsc --init
 ```
 
-Then configure your `tsconfig.json`. A production-ready config for Node.js looks like this:
-
+Then configure your `tsconfig.json`. A production-ready config for Node.js looks like this
 ```json
 {
   "compilerOptions": {
@@ -148,12 +143,12 @@ Then configure your `tsconfig.json`. A production-ready config for Node.js looks
 }
 ```
 
-To compile:
+To compile
 ```bash
 npx tsc
 ```
 
-To run:
+To run
 ```bash
 node dist/index.js
 ```

@@ -9,19 +9,19 @@ interface User {
   createdAt: Date;
 }
 
-// 1. All fields optional, id and createdAt removed:
+// 1. All fields optional, id and createdAt removed
 type UserUpdatePayload = Partial<Omit<User, "id" | "createdAt">>;
 
-// 2. Only id, username, email:
+// 2. Only id, username, email
 type PublicUser = Pick<User, "id" | "username" | "email">;
 
-// 3. All fields readonly:
+// 3. All fields readonly
 type ImmutableUser = Readonly<User>;
 
-// 4. Remove id and createdAt, keep everything else required:
+// 4. Remove id and createdAt, keep everything else required
 type NewUserInput = Omit<User, "id" | "createdAt">;
 
-// Example objects:
+// Example objects
 const update: UserUpdatePayload = { email: "newemail@example.com" };
 console.log(update.email); // "newemail@example.com"
 

@@ -2,7 +2,7 @@
 
 **What TypeScript sees when `triangle` is added but not handled:**
 
-When `triangle` is added to the union, `Shape` becomes:
+When `triangle` is added to the union, `Shape` becomes
 ```typescript
 type Shape =
   | { kind: "circle"; radius: number }

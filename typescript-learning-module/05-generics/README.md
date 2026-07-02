@@ -6,21 +6,19 @@ So far, every function or interface we wrote was tied to a specific type. A func
 
 ## 1. The Problem Generics Solve
 
-Imagine you need a function that returns the first item in an array. Without generics, you might be tempted to use `any`:
-
+Imagine you need a function that returns the first item in an array. Without generics, you might be tempted to use `any`
 ```typescript
 function getFirst(arr: any[]): any {
   return arr[0];
 }
 
 let first = getFirst(["apple", "banana"]); // TypeScript thinks 'first' is 'any'.
-first.toFixed(2); // No error from TypeScript, but this CRASHES at runtime!
+first.toFixed(2); // No error from TypeScript, but this CRASHES at runtime
 ```
 
 Using `any` loses all type information. TypeScript can no longer help you.
 
-With a generic, you can write the function once and have it work with any type while preserving that type throughout:
-
+With a generic, you can write the function once and have it work with any type while preserving that type throughout
 ```typescript
 function getFirst<T>(arr: T[]): T | undefined {
   if (arr.length === 0) return undefined;
@@ -43,7 +41,7 @@ When you write `function getFirst<T>`, you are saying: "This function has a type
 
 When you call `getFirst(["apple", "banana"])`, TypeScript sees that the array contains strings, so it infers `T = string`. The return type becomes `string | undefined` automatically. You rarely need to specify `T` manually.
 
-If you want to specify it explicitly, you can:
+If you want to specify it explicitly, you can
 ```typescript
 let result = getFirst<string>(["apple", "banana"]); // Explicitly setting T = string.
 ```
@@ -52,8 +50,7 @@ let result = getFirst<string>(["apple", "banana"]); // Explicitly setting T = st
 
 ## 3. Generic Functions in Practice
 
-Here is how you would write a function that swaps two values:
-
+Here is how you would write a function that swaps two values
 ```typescript
 function swap<A, B>(first: A, second: B): [B, A] {
   return [second, first];
@@ -69,8 +66,7 @@ You can use multiple type variables (`A`, `B`, `C`, etc.) when a function deals 
 
 ## 4. Tuples
 
-Before continuing with generics, it is useful to understand **tuples**. A tuple is an array where the number of items and the type of each item at each position is fixed:
-
+Before continuing with generics, it is useful to understand **tuples**. A tuple is an array where the number of items and the type of each item at each position is fixed
 ```typescript
 let pair: [string, number] = ["Alice", 30];
 // pair[0] is always a string.
@@ -78,8 +74,7 @@ let pair: [string, number] = ["Alice", 30];
 // pair[2] would be an error.
 ```
 
-Tuples are useful when you want to return two related values from a function without creating a full interface:
-
+Tuples are useful when you want to return two related values from a function without creating a full interface
 ```typescript
 function getNameAndAge(): [string, number] {
   return ["Alice", 30];
@@ -92,13 +87,11 @@ let [name, age] = getNameAndAge();
 
 ## 5. Generic Constraints (`extends`)
 
-By default, `<T>` accepts absolutely any type. But sometimes your function needs the type to have at least certain properties. You constrain the generic using the `extends` keyword:
-
+By default, `<T>` accepts absolutely any type. But sometimes your function needs the type to have at least certain properties. You constrain the generic using the `extends` keyword
 ```typescript
 // Without a constraint, TypeScript does not know if T has a .length property.
-// function printLength<T>(item: T): void { console.log(item.length); } // ERROR!
-
-// With a constraint, we guarantee T must have a 'length' property:
+// function printLength<T>(item: T): void { console.log(item.length); } // ERROR
+// With a constraint, we guarantee T must have a 'length' property
 function printLength<T extends { length: number }>(item: T): void {
   console.log(item.length);
 }
@@ -114,8 +107,7 @@ The constraint `<T extends { length: number }>` means "T can be any type, as lon
 
 ## 6. Multiple Generic Type Variables
 
-You can define more than one type variable when different parts of a function deal with independently varying types:
-
+You can define more than one type variable when different parts of a function deal with independently varying types
 ```typescript
 type Pair<K, V> = {
   key: K;
@@ -132,8 +124,7 @@ const record2: Pair<number, boolean> = { key: 1, value: true };
 
 ## 7. Generic Interfaces and Default Types
 
-Interfaces can also use generic type variables. This allows you to create reusable shapes that work with different data types:
-
+Interfaces can also use generic type variables. This allows you to create reusable shapes that work with different data types
 ```typescript
 interface ApiResponse<T> {
   success: boolean;
@@ -141,13 +132,12 @@ interface ApiResponse<T> {
   timestamp: Date;
 }
 
-// When you use this interface, you specify what T is:
+// When you use this interface, you specify what T is
 type UserResponse  = ApiResponse<{ id: string; name: string }>;
 type NumberResponse = ApiResponse<number>;
 ```
 
-You can also set a **default type** for a generic. If the caller does not specify one, the default is used:
-
+You can also set a **default type** for a generic. If the caller does not specify one, the default is used
 ```typescript
 interface PaginatedResponse<T = string> {
   items: T[];
@@ -155,10 +145,10 @@ interface PaginatedResponse<T = string> {
   totalPages: number;
 }
 
-// Uses the default (T = string):
+// Uses the default (T = string)
 const strPage: PaginatedResponse = { items: ["a", "b"], currentPage: 1, totalPages: 3 };
 
-// Overrides the default with a custom type:
+// Overrides the default with a custom type
 const userPage: PaginatedResponse<{ id: number; name: string }> = {
   items: [{ id: 1, name: "Alice" }],
   currentPage: 1,
@@ -170,20 +160,19 @@ const userPage: PaginatedResponse<{ id: number; name: string }> = {
 
 ## 8. Generic Type Inference
 
-In most cases you do not need to manually write the type argument when calling a generic function. TypeScript inspects the actual argument you pass and figures out the type variable automatically:
-
+In most cases you do not need to manually write the type argument when calling a generic function. TypeScript inspects the actual argument you pass and figures out the type variable automatically
 ```typescript
 function identity<T>(value: T): T {
   return value;
 }
 
-// TypeScript automatically figures out T = string here:
+// TypeScript automatically figures out T = string here
 let a = identity("hello");
 
-// TypeScript automatically figures out T = number here:
+// TypeScript automatically figures out T = number here
 let b = identity(42);
 
-// You can still write it explicitly if you need to:
+// You can still write it explicitly if you need to
 let c = identity<boolean>(true);
 ```
 

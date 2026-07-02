@@ -2,8 +2,7 @@
 
 What is the practical difference between using `any` and `unknown` for a variable whose type you do not know yet?
 
-Consider this code:
-
+Consider this code
 ```typescript
 let valueA: any = "hello";
 valueA.explode(); // What does TypeScript say?

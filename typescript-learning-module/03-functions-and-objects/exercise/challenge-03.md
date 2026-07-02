@@ -32,7 +32,5 @@ const products = [
   { name: "Helmet",  price: 175, inStock: false }
 ];
 
-// Write your filter, map, and forEach chains here:
-
-
+// Write your filter, map, and forEach chains here
 ```

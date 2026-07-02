@@ -1,14 +1,13 @@
 # Question 02: Missing await
 
-You write this code (note: NO `await`):
-
+You write this code (note: NO `await`)
 ```typescript
 async function fetchUserData(): Promise<{ name: string }> {
   return new Promise((resolve) => setTimeout(() => resolve({ name: "Alice" }), 500));
 }
 
 async function main() {
-  const data = fetchUserData(); // No await!
+  const data = fetchUserData(); // No await
   console.log(data.name);      // What happens here?
 }
 ```

@@ -1,62 +1,23 @@
-# Module 06 Quiz: Type Manipulation & Utility Types
+# Welcome to Conceptual Quiz: Type Manipulation and Utility Types
+Welcome to the conceptual quiz for **Type Manipulation and Utility Types**! True engineering mastery requires understanding *why* code works under the hood, not just typing syntax.
 
-Write your answers inside the **ANSWER HERE** blocks below.
+These questions are designed to test your mental models and prepare you for real-world architectural reviews and technical interviews.
 
----
+## Topics We Are Testing Today
 
-### Question 1: `keyof` Operator
-Given:
-```typescript
-interface Settings {
-  volume: number;
-  muted: boolean;
-}
-type SettingsKeys = keyof Settings;
-```
-What is the exact resolved type of `SettingsKeys`?
+1. **[Question 01: keyof](./question-01.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+2. **[Question 02: Pick vs Omit](./question-02.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+3. **[Question 03: typeof in the Type System](./question-03.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+4. **[Question 04: `Record` Resolved Type](./question-04.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+5. **[Question 05: Combining Utility Types](./question-05.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
 
-A) `string`  
-B) `"volume" | "muted"`  
-C) `number | boolean`  
-D) `["volume", "muted"]`
+## How to Take This Quiz
 
-#### ✍️ ANSWER HERE:
-> Choice: 
-> Explanation: 
+1. Open each question file sequentially.
+2. Think through the compiler mechanics before peeking at any notes.
+3. Write your reasoning clearly inside the **ANSWER HERE** block.
 
----
+## Check Your Answers
 
-### Question 2: `typeof` in Type Context vs Runtime Context
-In JavaScript, writing `typeof 42` returns the runtime string `"number"`. When you write `type T = typeof myVariable;` in TypeScript, does `typeof` execute at runtime? Explain what happens during compilation.
+When you are done, verify your answers against our thorough architectural explanations inside **[../answers/quiz/](../answers/quiz/)**. Let's see how many you ace!
 
-#### ✍️ ANSWER HERE:
-> Does it execute at runtime? 
-> Explanation: 
-
----
-
-### Question 3: `Record<K, T>` Utility Type
-Which of the following is equivalent to `Record<"admin" | "guest", number>`?
-
-A) `[number, number]`  
-B) `{ admin?: number; guest?: number }`  
-C) `{ admin: number; guest: number }`  
-D) `{ key: "admin" | "guest"; value: number }`
-
-#### ✍️ ANSWER HERE:
-> Choice: 
-> Explanation: 
-
----
-
-### Question 4: Indexed Access Types
-If you have `interface Person { address: { street: string; zip: number } }`, what syntax do you use to extract the type of `address` into a new type alias?
-
-A) `type Address = Person.address;`  
-B) `type Address = Person["address"];`  
-C) `type Address = Pick<Person, address>;`  
-D) `type Address = typeof Person.address;`
-
-#### ✍️ ANSWER HERE:
-> Choice: 
-> Explanation: 

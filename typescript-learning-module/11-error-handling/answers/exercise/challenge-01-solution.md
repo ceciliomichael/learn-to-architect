@@ -26,12 +26,12 @@ async function safeParseJSON(input: string): Promise<object | null> {
   }
 }
 
-// Test with valid JSON:
+// Test with valid JSON
 safeParseJSON('{"name": "Alice", "age": 30}').then((result) => {
   console.log("Valid result:", result);
 });
 
-// Test with invalid JSON:
+// Test with invalid JSON
 safeParseJSON("this is not json").then((result) => {
   console.log("Invalid result:", result); // null
 });

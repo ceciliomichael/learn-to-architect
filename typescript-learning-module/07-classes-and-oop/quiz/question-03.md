@@ -1,7 +1,6 @@
 # Question 03: Parameter Property Shorthand
 
-Rewrite the following class using TypeScript's parameter property shorthand so that the class has zero lines inside the constructor body and zero separate property declarations above it:
-
+Rewrite the following class using TypeScript's parameter property shorthand so that the class has zero lines inside the constructor body and zero separate property declarations above it
 ```typescript
 class Point {
   public x: number;
@@ -23,7 +22,7 @@ Note: `createdAt` is assigned to `new Date()` inside the constructor (not direct
 ## ANSWER HERE
 
 ```typescript
-// Rewrite Point using parameter property shorthand:
+// Rewrite Point using parameter property shorthand
 class Point {
 
 }

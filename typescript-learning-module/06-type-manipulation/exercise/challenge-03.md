@@ -8,8 +8,7 @@ Practice two of the most practical utility tools in TypeScript.
 Create a type alias `HttpStatusMap` using `Record<string, number>`. Create a variable `statusCodes: HttpStatusMap` containing at least 5 real HTTP status codes (e.g. `ok: 200`, `notFound: 404`, `internalServerError: 500`). Log the value of two status codes.
 
 **Part 2  -  `typeof` in the type system:**
-You have this runtime constant (do not change it):
-
+You have this runtime constant (do not change it)
 ```typescript
 const defaultTheme = {
   primaryColor: "#6366f1",
@@ -27,10 +26,8 @@ const defaultTheme = {
 ## ANSWER HERE
 
 ```typescript
-// Part 1:
-
-
-// Part 2:
+// Part 1
+// Part 2
 const defaultTheme = {
   primaryColor: "#6366f1",
   backgroundColor: "#ffffff",

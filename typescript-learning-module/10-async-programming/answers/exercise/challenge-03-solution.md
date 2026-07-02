@@ -12,7 +12,7 @@ async function fetchUserPosts(userId: number): Promise<string[]> {
 }
 
 async function loadUserDashboard(userId: number): Promise<void> {
-  // Both tasks start at the same time:
+  // Both tasks start at the same time
   // Sequential would take: 400ms + 300ms = 700ms total
   // Parallel takes:        max(400ms, 300ms) = 400ms total
 

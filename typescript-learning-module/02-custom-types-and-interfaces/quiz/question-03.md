@@ -1,7 +1,6 @@
 # Question 03: Structural Typing
 
-TypeScript uses structural typing (shape-based compatibility). Consider this:
-
+TypeScript uses structural typing (shape-based compatibility). Consider this
 ```typescript
 interface Swimmer {
   swim(): void;

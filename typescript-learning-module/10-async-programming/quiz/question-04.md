@@ -6,8 +6,7 @@
 
 ---
 
-Given these two Promises:
-
+Given these two Promises
 ```typescript
 const p1 = fetchUser(1);    // succeeds
 const p2 = fetchUser(999);  // rejects with Error('User not found')

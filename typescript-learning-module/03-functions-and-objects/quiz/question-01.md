@@ -1,7 +1,6 @@
 # Question 01: Callbacks and Contextual Typing
 
-Look at this line:
-
+Look at this line
 ```typescript
 const doubled = [1, 2, 3].map((num) => num * 2);
 ```

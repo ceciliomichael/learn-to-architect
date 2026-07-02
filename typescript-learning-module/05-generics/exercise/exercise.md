@@ -1,48 +1,22 @@
-# Module 05 Exercise: Generics & Constraints
+# Welcome to Practice Lab: Generics
+Welcome to the interactive exercise lab for **Generics**! Here is where theoretical knowledge transforms into practical coding ability.
 
-Complete your solutions inside the **ANSWER HERE** code blocks below.
+Remember: The TypeScript compiler is your mentor. Don't be afraid to experiment, make syntax errors, and fix them. Every problem you solve builds professional muscle memory.
 
----
+## What You Will Tackle in This Lab
 
-### Challenge 1: Generic Array First Element
-Write a generic function called `getFirstElement<T>` that accepts an array of type `T[]`.
-1. If the array is empty (`arr.length === 0`), return `undefined`.
-2. Otherwise, return the first element (`arr[0]`).
-3. Ensure the return type is strictly typed as `T | undefined`. Test calling it with both a `string[]` and a `number[]`.
+1. **[Challenge 01: Generic Safe Getter](./challenge-01.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+2. **[Challenge 02: Generic Constraint with extends](./challenge-02.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+3. **[Challenge 03: Generic Interface with Default Type](./challenge-03.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
 
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your getFirstElement function and tests here:
+## How to Work on These Challenges
 
+1. Open each challenge file in order.
+2. Read the scenario and requirements carefully.
+3. Write your TypeScript code directly inside the **ANSWER HERE** section.
+4. If you get stuck, review the theory in **[../README.md](../README.md)**.
 
-```
+## Ready to Check Your Work?
 
----
+Once you have completed your solutions, compare your approach against our verified production implementations inside **[../answers/exercise/](../answers/exercise/)**. Happy coding!
 
-### Challenge 2: Generic Constraints (`extends`)
-Write a generic function called `mergeNamedObjects<T extends { name: string }, U extends { name: string }>(obj1: T, obj2: U)` that returns a combined object containing properties from both objects.
-If you try to pass `{ age: 25 }` (an object without `name`) as `obj1`, TypeScript should throw a compiler error!
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your mergeNamedObjects function here:
-
-
-```
-
----
-
-### Challenge 3: Generic Interfaces with Default Types
-Create a generic interface `PaginatedResponse<T = string>`:
-1. `data`: An array of `T` (`T[]`).
-2. `currentPage`: number.
-3. `totalPages`: number.
-
-Create two objects using this interface: one where you let `<T>` default to `string`, and another where you explicitly pass `<{ id: number; username: string }>` as `T`.
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your PaginatedResponse interface and objects here:
-
-
-```

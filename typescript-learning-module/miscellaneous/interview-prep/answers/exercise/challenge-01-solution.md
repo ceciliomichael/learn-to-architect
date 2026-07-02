@@ -42,7 +42,7 @@ export function processCustomerOrder(customerId: CustomerId, orderId: OrderId): 
 const custId = createCustomerId("CUST-8821");
 const ordId = createOrderId("ORD-5519");
 
-// Valid invocation:
+// Valid invocation
 processCustomerOrder(custId, ordId);
 
 // COMPILE ERROR: Argument of type 'Brand<string, "OrderId">' is not assignable to parameter of type 'Brand<string, "CustomerId">'.

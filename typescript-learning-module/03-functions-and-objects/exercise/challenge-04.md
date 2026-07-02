@@ -19,7 +19,5 @@ Test `calculateTotal` with at least 5 different numbers. Test `joinWords` with a
 ## ANSWER HERE
 
 ```typescript
-// Write calculateTotal and joinWords here:
-
-
+// Write calculateTotal and joinWords here
 ```

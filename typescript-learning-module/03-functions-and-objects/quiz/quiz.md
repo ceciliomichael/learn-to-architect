@@ -1,55 +1,23 @@
-# Module 03 Quiz: Functions & Signatures
+# Welcome to Conceptual Quiz: Functions and Signatures
+Welcome to the conceptual quiz for **Functions and Signatures**! True engineering mastery requires understanding *why* code works under the hood, not just typing syntax.
 
-Write your choices and reasoning inside the **ANSWER HERE** blocks below each question.
+These questions are designed to test your mental models and prepare you for real-world architectural reviews and technical interviews.
 
----
+## Topics We Are Testing Today
 
-### Question 1: `void` Return Type
-Look at the following function parameter type:
-```typescript
-function runCallback(cb: () => void) {
-  cb();
-}
-```
-If you pass an arrow function that returns a boolean (`() => true`) into `runCallback`, will TypeScript throw a compiler error? Why or why not?
+1. **[Question 01: Callbacks and Contextual Typing](./question-01.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+2. **[Question 02: void Callbacks](./question-02.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+3. **[Question 03: Rest Parameter Type](./question-03.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+4. **[Question 04: for vs for...of](./question-04.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+5. **[Quiz Question 05](./question-05.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
 
-#### ✍️ ANSWER HERE:
-> Answer & Explanation: 
+## How to Take This Quiz
 
----
+1. Open each question file sequentially.
+2. Think through the compiler mechanics before peeking at any notes.
+3. Write your reasoning clearly inside the **ANSWER HERE** block.
 
-### Question 2: Function Overload Signatures
-When defining function overloads in TypeScript:
-```typescript
-function process(x: number): string;
-function process(x: string): number;
-function process(x: any): any {
-  return typeof x === "number" ? x.toString() : parseInt(x);
-}
-```
-Can external code directly call `process(true)` because the implementation signature has `x: any`? Explain why.
+## Check Your Answers
 
-#### ✍️ ANSWER HERE:
-> Answer & Explanation: 
+When you are done, verify your answers against our thorough architectural explanations inside **[../answers/quiz/](../answers/quiz/)**. Let's see how many you ace!
 
----
-
-### Question 3: Rest Parameters (`...args`)
-How do you type a rest parameter that allows a function to accept any number of numerical arguments?
-
-A) `function sum(...numbers: number)`  
-B) `function sum(...numbers: number[])`  
-C) `function sum(numbers: ...number)`  
-D) `function sum(...numbers: Array)`
-
-#### ✍️ ANSWER HERE:
-> Choice: 
-> Explanation: 
-
----
-
-### Question 4: Arrow Function Callbacks
-Why is it important to explicitly define parameter types when declaring standalone arrow functions, whereas callback functions inside `.map()` or `.filter()` often don't need parameter types?
-
-#### ✍️ ANSWER HERE:
-> Explanation: 

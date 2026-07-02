@@ -15,15 +15,14 @@ Your engine will track accounts, budgets, and transactions across multiple curre
 
 ## Domain
 
-An **Account** has:
+An **Account** has
 - `id`: string
 - `name`: string
 - `type`: `"checking" | "savings" | "credit"`
 - `currency`: `"USD" | "EUR" | "GBP"`
 - `balance`: number (can be negative for credit accounts)
 
-A **Transaction** is a discriminated union of three types:
-
+A **Transaction** is a discriminated union of three types
 ```typescript
 type IncomeTransaction = {
   type: "income";
@@ -57,7 +56,7 @@ type TransferTransaction = {
 type Transaction = IncomeTransaction | ExpenseTransaction | TransferTransaction;
 ```
 
-A **Budget** tracks spending limits per category for a given month:
+A **Budget** tracks spending limits per category for a given month
 - `month`: string (format: `"YYYY-MM"`)
 - `limits`: `Record<ExpenseTransaction["category"], number>`
 
@@ -65,8 +64,7 @@ A **Budget** tracks spending limits per category for a given month:
 
 ## The Result Pattern Requirement
 
-You may NOT throw exceptions for business logic failures in this project. Every public method on your service must return a `Result<T>` union:
-
+You may NOT throw exceptions for business logic failures in this project. Every public method on your service must return a `Result<T>` union
 ```typescript
 type Result<T> =
   | { success: true; data: T }
@@ -84,8 +82,7 @@ type ErrorCode =
 
 ## Core Requirements
 
-Build a `FinanceEngine` class with these methods:
-
+Build a `FinanceEngine` class with these methods
 ```typescript
 createAccount(name: string, type: Account["type"], currency: Account["currency"]): Result<Account>
 
@@ -93,7 +90,7 @@ recordTransaction(input: CreateTransactionInput): Result<Transaction>
 // CreateTransactionInput should use utility types to derive from Transaction
 // (omitting 'id' and 'date' which the service generates).
 //
-// Rules:
+// Rules
 // - amount <= 0 returns INVALID_AMOUNT
 // - expense on checking/savings where balance < amount returns INSUFFICIENT_FUNDS
 // - transfer between different currencies without exchangeRate returns CURRENCY_MISMATCH
@@ -102,7 +99,7 @@ recordTransaction(input: CreateTransactionInput): Result<Transaction>
 getAccountBalance(accountId: string): Result<number>
 
 getMonthlyReport(month: string): Result<MonthlyReport>
-// MonthlyReport must include:
+// MonthlyReport must include
 // - totalIncome: number
 // - totalExpenses: number
 // - netSavings: number

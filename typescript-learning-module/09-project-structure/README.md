@@ -8,7 +8,7 @@ Knowing TypeScript syntax is one skill. Knowing how to organize a real project s
 
 When a project is small, one file works fine. As soon as you have multiple developers, hundreds of features, and thousands of lines of code, a monolithic single file becomes impossible to navigate, test, or modify without breaking something else.
 
-Good project structure means:
+Good project structure means
 - Any developer can find the code for any feature within seconds.
 - Changing one part of the system does not unexpectedly break another part.
 - Individual pieces can be tested in isolation.
@@ -18,8 +18,7 @@ Good project structure means:
 
 ## 2. Standard TypeScript Project Structure
 
-This is the folder layout used in most professional TypeScript projects:
-
+This is the folder layout used in most professional TypeScript projects
 ```text
 my-app/
 ├── src/
@@ -43,8 +42,7 @@ my-app/
 
 ## 3. Separation of Concerns
 
-Every file should have exactly one reason to exist. This is called the **Single Responsibility Principle (SRP)**. The most important separations are:
-
+Every file should have exactly one reason to exist. This is called the **Single Responsibility Principle (SRP)**. The most important separations are
 ### Types: The Shared Contract
 
 All interfaces and type aliases that are used across multiple files belong in a dedicated `types/` file. This prevents circular imports and makes every interface easy to find.
@@ -142,17 +140,15 @@ This rule does not apply to purely declarative files like type definitions or JS
 
 ## 5. Circular Dependencies and How to Avoid Them
 
-A circular dependency occurs when File A imports from File B, and File B also imports from File A. This creates a loop:
-
+A circular dependency occurs when File A imports from File B, and File B also imports from File A. This creates a loop
 ```
 userService.ts  imports from  userRepository.ts
-userRepository.ts  imports from  userService.ts  <-- loop!
+userRepository.ts  imports from  userService.ts  <-- loop
 ```
 
 Circular dependencies can cause modules to resolve to `undefined` at runtime, causing hard-to-debug crashes. They also indicate that the separation between files is not clean.
 
-The solution is almost always to extract the shared dependency into a third file (usually `types/index.ts`). Neither the service nor the repository needs to import from each other if they both just import the shared type from `types/`:
-
+The solution is almost always to extract the shared dependency into a third file (usually `types/index.ts`). Neither the service nor the repository needs to import from each other if they both just import the shared type from `types/`
 ```text
 userService.ts    --> imports from --> types/index.ts
 userRepository.ts --> imports from --> types/index.ts
@@ -164,8 +160,7 @@ No loop.
 
 ## 6. When to Split a File
 
-These are the signals that tell you a file needs to be split:
-
+These are the signals that tell you a file needs to be split
 | Signal | Action |
 |---|---|
 | File is over 200 lines and growing | Start splitting immediately. |
@@ -178,8 +173,7 @@ These are the signals that tell you a file needs to be split:
 
 ## 7. Naming Conventions
 
-Consistent naming makes a codebase readable to any developer:
-
+Consistent naming makes a codebase readable to any developer
 | Item | Convention | Example |
 |---|---|---|
 | Files | `camelCase.ts` or `kebab-case.ts` | `userService.ts` or `user-service.ts` |
@@ -194,8 +188,7 @@ Consistent naming makes a codebase readable to any developer:
 
 ## 8. Barrel Files (`index.ts` in Folders)
 
-When a folder contains many related files, you can create an `index.ts` inside that folder that re-exports everything. This lets other files import from the folder name instead of individual files:
-
+When a folder contains many related files, you can create an `index.ts` inside that folder that re-exports everything. This lets other files import from the folder name instead of individual files
 ```typescript
 // src/utils/index.ts
 export { formatDate } from "./formatDate";
@@ -203,13 +196,13 @@ export { formatCurrency } from "./formatCurrency";
 export { slugify } from "./slugify";
 ```
 
-Now instead of:
+Now instead of
 ```typescript
 import { formatDate } from "../utils/formatDate";
 import { formatCurrency } from "../utils/formatCurrency";
 ```
 
-You write:
+You write
 ```typescript
 import { formatDate, formatCurrency } from "../utils";
 ```
@@ -220,8 +213,7 @@ Use barrel files in folders with more than 3-4 related files.
 
 ## 9. A Complete Refactoring Example
 
-Here is a monolithic file that violates every rule, followed by the clean, split version:
-
+Here is a monolithic file that violates every rule, followed by the clean, split version
 **Before (everything in one file):**
 ```typescript
 // badApp.ts - 80+ lines of mixed concerns

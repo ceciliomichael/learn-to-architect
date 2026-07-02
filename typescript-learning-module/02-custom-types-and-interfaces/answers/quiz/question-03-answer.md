@@ -11,7 +11,7 @@ The class name `Dolphin` is irrelevant. All that matters is the shape of the obj
 The extra `canEcholocate` property on `Dolphin` does not cause any problem. TypeScript only checks that the required properties are present. Extra properties are allowed.
 
 **What would happen if `speed` was missing:**
-TypeScript would produce an error like:
+TypeScript would produce an error like
 ```
 Argument of type 'Dolphin' is not assignable to parameter of type 'Swimmer'.
 Property 'speed' is missing in type 'Dolphin' but required in type 'Swimmer'.

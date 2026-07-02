@@ -42,7 +42,7 @@ const frenchDict: Dictionary = {
 };
 
 // Error: Type 'number' is not assignable to type 'string'.
-// Because our index signature requires all values to be strings!
+// Because our index signature requires all values to be strings
 // frenchDict.wordCount = 100;
 ```
 

@@ -4,7 +4,7 @@ You are building the type system for a role-playing game.
 
 ## Your Tasks
 
-1. Create an `interface` called `GameCharacter` with these exact properties:
+1. Create an `interface` called `GameCharacter` with these exact properties
    - `id`: a `readonly` string (cannot be changed after creation).
    - `name`: a string.
    - `health`: a number.
@@ -21,7 +21,5 @@ You are building the type system for a role-playing game.
 ## ANSWER HERE
 
 ```typescript
-// Write your interface and objects here:
-
-
+// Write your interface and objects here
 ```

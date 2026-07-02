@@ -16,9 +16,7 @@ export default class MathHelper { ... }   // Default export
 ## ANSWER HERE
 
 ```typescript
-// Write the import statements here:
-
-
+// Write the import statements here
 ```
 
 > **Can you rename a named import? Syntax:**

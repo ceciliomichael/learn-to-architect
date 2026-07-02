@@ -4,7 +4,7 @@
 A `type` alias can represent primitives, union types, intersection types, tuples, and any other type expression  -  not just object shapes. An `interface` can only describe object shapes.
 
 ```typescript
-// These are impossible with 'interface':
+// These are impossible with 'interface'
 type StringOrNumber = string | number;
 type Coordinates = [number, number];
 type ID = string;

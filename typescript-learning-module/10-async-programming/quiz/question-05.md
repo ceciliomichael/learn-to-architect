@@ -6,8 +6,7 @@
 
 ---
 
-Given this interface:
-
+Given this interface
 ```typescript
 interface User {
   id: number;

@@ -15,8 +15,7 @@ Unlike web apps where data lives on a server, CLI tools interact directly with t
 
 ## Domain
 
-A **Note** consists of metadata and markdown content:
-
+A **Note** consists of metadata and markdown content
 ```typescript
 interface NoteMetadata {
   id: string;             // Short hash or timestamp string
@@ -36,8 +35,7 @@ interface Note extends NoteMetadata {
 
 ## Core Requirements
 
-Build a `NoteRepository` and `NoteService` supporting these operations:
-
+Build a `NoteRepository` and `NoteService` supporting these operations
 ```typescript
 // All operations must interact with local files asynchronously using fs/promises.
 // Store metadata in a central `index.json` file inside a local `.notes/` folder.
@@ -69,8 +67,7 @@ async exportToHtml(id: string, outputPath: string): Promise<void>
 
 ## Robust Error Handling Requirements
 
-CLI file operations fail in specific ways. You must handle and wrap standard Node.js `ENOENT` (file not found) and `EACCES` (permission denied) errors into custom, human-readable domain errors:
-
+CLI file operations fail in specific ways. You must handle and wrap standard Node.js `ENOENT` (file not found) and `EACCES` (permission denied) errors into custom, human-readable domain errors
 - `NoteNotFoundError`
 - `StoragePermissionError`
 - `CorruptedIndexError` (thrown if `index.json` contains invalid JSON upon reading)
@@ -100,7 +97,7 @@ src/
 
 ## What Your Final index.ts Should Demonstrate
 
-Simulate a user session:
+Simulate a user session
 1. Initialize storage.
 2. Create 3 distinct notes (e.g., a TypeScript snippet, a SQL query snippet, and a general meeting note).
 3. List all notes filtered by the tag `"code"`.

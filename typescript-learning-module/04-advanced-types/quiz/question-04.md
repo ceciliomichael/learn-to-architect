@@ -1,7 +1,6 @@
 # Question 04: The never Exhaustiveness Check
 
-A developer starts with this discriminated union and switch:
-
+A developer starts with this discriminated union and switch
 ```typescript
 type Shape = { kind: "circle"; radius: number } | { kind: "square"; side: number };
 
@@ -9,7 +8,7 @@ function area(shape: Shape): number {
   switch (shape.kind) {
     case "circle": return 3.14 * shape.radius ** 2;
     case "square": return shape.side * shape.side;
-    default:
+    default
       const check: never = shape;
       return check;
   }

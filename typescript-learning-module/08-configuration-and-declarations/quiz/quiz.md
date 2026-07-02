@@ -1,36 +1,23 @@
-# Module 08 Quiz: Configuration & Declarations
+# Welcome to Conceptual Quiz: Configuration, Modules, and Declaration Files
+Welcome to the conceptual quiz for **Configuration, Modules, and Declaration Files**! True engineering mastery requires understanding *why* code works under the hood, not just typing syntax.
 
-Write your answers inside the **ANSWER HERE** blocks below.
+These questions are designed to test your mental models and prepare you for real-world architectural reviews and technical interviews.
 
----
+## Topics We Are Testing Today
 
-### Question 1: `strictNullChecks`
-When `"strict": true` (or `"strictNullChecks": true`) is enabled in `tsconfig.json`, what happens if you try to assign `null` or `undefined` to a variable typed as `let name: string;`? Why is this beneficial?
+1. **[Question 01: strictNullChecks](./question-01.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+2. **[Question 02: Named vs Default Exports](./question-02.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+3. **[Question 03: Script vs Module Mode](./question-03.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+4. **[Question 04](./question-04.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+5. **[Question 05](./question-05.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
 
-#### ✍️ ANSWER HERE:
-> What happens & Why it is beneficial: 
+## How to Take This Quiz
 
----
+1. Open each question file sequentially.
+2. Think through the compiler mechanics before peeking at any notes.
+3. Write your reasoning clearly inside the **ANSWER HERE** block.
 
-### Question 2: DefinitelyTyped (`@types`)
-If you run `npm install lodash` in a project and import it inside a TypeScript file (`import _ from 'lodash'`), why might TypeScript display a compiler error? How does running `npm install -D @types/lodash` fix it?
+## Check Your Answers
 
-#### ✍️ ANSWER HERE:
-> Why it errors & How installing @types fixes it: 
+When you are done, verify your answers against our thorough architectural explanations inside **[../answers/quiz/](../answers/quiz/)**. Let's see how many you ace!
 
----
-
-### Question 3: What is in a `.d.ts` file?
-Can a `.d.ts` file contain executable JavaScript functions, class implementations, or loops? What happens if you try to write executable code inside it?
-
-#### ✍️ ANSWER HERE:
-> Can it contain executable logic? 
-> Explanation: 
-
----
-
-### Question 4: Script vs Module
-What distinguishes a TypeScript file treated as a global Script from one treated as an isolated Module?
-
-#### ✍️ ANSWER HERE:
-> Explanation: 

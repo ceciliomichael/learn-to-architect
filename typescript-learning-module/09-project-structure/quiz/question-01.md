@@ -2,7 +2,7 @@
 
 What is the Single Responsibility Principle (SRP)?
 
-A developer writes a React component that:
+A developer writes a React component that
 - Displays a user's profile card on screen.
 - Makes a `fetch()` call to load user data.
 - Validates whether the user is allowed to view the page.

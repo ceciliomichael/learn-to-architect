@@ -12,11 +12,11 @@ function greetDefault(name: string, title: string = "Traveler"): string {
   return `Hello, ${title} ${name}`;
 }
 
-// greetOptional calls:
+// greetOptional calls
 console.log(greetOptional("Alice", "Dr."));  // "Hello, Dr. Alice"
 console.log(greetOptional("Alice"));          // "Hello, Alice"
 
-// greetDefault calls:
+// greetDefault calls
 console.log(greetDefault("Bob", "Captain")); // "Hello, Captain Bob"
 console.log(greetDefault("Bob"));            // "Hello, Traveler Bob"
 ```

@@ -2,8 +2,7 @@
 
 ## Question
 
-Given the following `Record` type:
-
+Given the following `Record` type
 ```typescript
 type AdminMap = Record<"admin" | "editor", boolean>;
 ```

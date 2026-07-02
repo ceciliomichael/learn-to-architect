@@ -60,15 +60,15 @@ type NetworkState =
 
 function renderNetworkState(state: NetworkState): string {
   switch (state.status) {
-    case "idle":
+    case "idle"
       return "Ready to request.";
-    case "loading":
+    case "loading"
       return "Loading data...";
-    case "success":
+    case "success"
       return `Received ${state.payload.length} items.`;
-    case "error":
+    case "error"
       return `Error ${state.code}: ${state.message}`;
-    default:
+    default
       const _exhaustiveCheck: never = state;
       return _exhaustiveCheck;
   }

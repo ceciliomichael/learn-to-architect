@@ -4,7 +4,7 @@ Design the folder and file structure for a small application before writing a si
 
 ## The Scenario
 
-You are building a task management application. Users can:
+You are building a task management application. Users can
 - Create a task (title is required, cannot be empty).
 - Mark a task as completed (cannot complete an already completed task).
 - View all tasks.

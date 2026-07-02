@@ -15,7 +15,7 @@ const player = {
   isOnline: true
 };
 
-// You access a property using dot notation:
+// You access a property using dot notation
 console.log(player.username); // Outputs: "shadow_blade"
 console.log(player.level);   // Outputs: 42
 ```
@@ -32,8 +32,7 @@ If you just write an object like the one above and pass it around your program, 
 
 ## 3. Interfaces
 
-An interface is a blueprint that describes the exact shape an object must have. Once you define an interface, you can apply it to any variable to enforce that shape:
-
+An interface is a blueprint that describes the exact shape an object must have. Once you define an interface, you can apply it to any variable to enforce that shape
 ```typescript
 interface Player {
   username: string;
@@ -41,21 +40,20 @@ interface Player {
   isOnline: boolean;
 }
 
-// Applying the blueprint:
+// Applying the blueprint
 const playerOne: Player = {
   username: "shadow_blade",
   level: 42,
   isOnline: true
 };
 
-// TypeScript will give an error if you miss a property or use the wrong type:
+// TypeScript will give an error if you miss a property or use the wrong type
 // const playerTwo: Player = { username: "nova" }; // ERROR! 'level' and 'isOnline' are missing.
 ```
 
 ### Optional Properties (`?`)
 
-Sometimes a property is not always present. For example, a user may or may not have set an avatar. You mark optional properties with a `?` after the property name:
-
+Sometimes a property is not always present. For example, a user may or may not have set an avatar. You mark optional properties with a `?` after the property name
 ```typescript
 interface UserProfile {
   username: string;
@@ -68,8 +66,7 @@ const userB: UserProfile = { username: "blaze", avatarUrl: "https://cdn.site.com
 
 ### Readonly Properties
 
-If a property should never be changed after the object is created (like a unique ID that the database assigns), use the `readonly` keyword. Any attempt to overwrite it will cause a TypeScript error:
-
+If a property should never be changed after the object is created (like a unique ID that the database assigns), use the `readonly` keyword. Any attempt to overwrite it will cause a TypeScript error
 ```typescript
 interface DatabaseRecord {
   readonly id: string;
@@ -85,8 +82,7 @@ record.content = "World"; // Allowed.
 
 ## 4. Type Aliases
 
-A `type` alias is another way to define a named shape. For describing object structures, `type` and `interface` look almost identical:
-
+A `type` alias is another way to define a named shape. For describing object structures, `type` and `interface` look almost identical
 ```typescript
 type Enemy = {
   name: string;
@@ -111,8 +107,7 @@ The key distinction between `type` and `interface` is discussed in the next sect
 
 Both can be extended, but the syntax differs.
 
-With `interface`, you use the `extends` keyword:
-
+With `interface`, you use the `extends` keyword
 ```typescript
 interface Animal {
   name: string;
@@ -126,8 +121,7 @@ interface Dog extends Animal {
 const myDog: Dog = { name: "Rex", age: 3, breed: "Husky" };
 ```
 
-With `type`, you combine shapes using the `&` (intersection) operator:
-
+With `type`, you combine shapes using the `&` (intersection) operator
 ```typescript
 type Animal = {
   name: string;
@@ -143,8 +137,7 @@ Both approaches produce the same result. Most teams prefer `interface` when desc
 
 ### Declaration Merging (Only `interface` Does This)
 
-If you declare two interfaces with the same name in the same file, TypeScript automatically combines them into one. This is called declaration merging:
-
+If you declare two interfaces with the same name in the same file, TypeScript automatically combines them into one. This is called declaration merging
 ```typescript
 interface UserSettings {
   theme: string;
@@ -164,8 +157,7 @@ If you try the same thing with `type`, TypeScript throws a "Duplicate identifier
 
 ## 6. Union Types (`|`): A Value Can Be One of Several Types
 
-Sometimes a variable can hold more than one type of data. For example, a function might accept either a `string` or a `number`. You express this with the `|` (pipe) operator, which means "or":
-
+Sometimes a variable can hold more than one type of data. For example, a function might accept either a `string` or a `number`. You express this with the `|` (pipe) operator, which means "or"
 ```typescript
 let id: string | number;
 
@@ -174,8 +166,7 @@ id = 12345;      // Also valid.
 // id = true;    // ERROR! boolean is not part of the union.
 ```
 
-Unions work with custom types too:
-
+Unions work with custom types too
 ```typescript
 type SuccessResponse = { status: "success"; data: string };
 type ErrorResponse = { status: "error"; message: string };
@@ -189,8 +180,7 @@ type ApiResponse = SuccessResponse | ErrorResponse;
 
 Sometimes you need an object where you do not know the property names in advance, but you know what type the keys and values will be. This is common for dictionaries, lookup tables, or configuration maps.
 
-You define this using an **index signature**:
-
+You define this using an **index signature**
 ```typescript
 interface TranslationDictionary {
   [word: string]: string; // Any string key must hold a string value.
@@ -202,7 +192,7 @@ const french: TranslationDictionary = {
   dog: "chien"
 };
 
-// Adding a number value would be an error:
+// Adding a number value would be an error
 // french.count = 3; // ERROR! Type 'number' is not assignable to type 'string'.
 ```
 
@@ -212,17 +202,16 @@ const french: TranslationDictionary = {
 
 TypeScript does not care what you named a variable. It only checks whether the variable has the required properties with the correct types. This is called structural typing.
 
-If an object has all the properties that an interface requires, TypeScript accepts it, even if the object has extra properties or was never explicitly typed as that interface:
-
+If an object has all the properties that an interface requires, TypeScript accepts it, even if the object has extra properties or was never explicitly typed as that interface
 ```typescript
 interface Point2D {
   x: number;
   y: number;
 }
 
-// point3D has extra property 'z', but it still satisfies Point2D because it has x and y:
+// point3D has extra property 'z', but it still satisfies Point2D because it has x and y
 const point3D = { x: 10, y: 20, z: 30 };
-const point: Point2D = point3D; // Valid!
+const point: Point2D = point3D; // Valid
 ```
 
 This is why the exercises may show you assigning one object to a differently-typed variable without any errors. TypeScript checks the structure, not the label.
@@ -231,17 +220,14 @@ This is why the exercises may show you assigning one object to a differently-typ
 
 ## 9. `null` and `undefined`
 
-Two special values exist for "no value" or "not yet set":
-
+Two special values exist for "no value" or "not yet set"
 - `undefined`: The variable was declared but never assigned a value.
 - `null`: The variable was intentionally set to "empty" or "nothing".
 
-With TypeScript's strict mode (which you should always use), you must explicitly say a variable can hold one of these:
-
+With TypeScript's strict mode (which you should always use), you must explicitly say a variable can hold one of these
 ```typescript
 let username: string = "Alice";
-// username = null; // ERROR in strict mode!
-
+// username = null; // ERROR in strict mode
 let optionalName: string | null = null; // Explicitly allows null.
 optionalName = "Bob"; // Can later be assigned a real value.
 ```

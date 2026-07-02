@@ -1,51 +1,22 @@
-# Module 04 Exercise: Unions, Narrowing & Discriminated Unions
+# Welcome to Practice Lab: Advanced Types and Narrowing
+Welcome to the interactive exercise lab for **Advanced Types and Narrowing**! Here is where theoretical knowledge transforms into practical coding ability.
 
-Write your solutions inside the **ANSWER HERE** blocks below.
+Remember: The TypeScript compiler is your mentor. Don't be afraid to experiment, make syntax errors, and fix them. Every problem you solve builds professional muscle memory.
 
----
+## What You Will Tackle in This Lab
 
-### Challenge 1: Type Narrowing with `typeof` and `in`
-Write a function called `formatInput` that takes a parameter `input: string | number | { title: string }`.
-1. If `input` is a string, return it trimmed and in uppercase.
-2. If `input` is a number, return `$${input.toFixed(2)}`.
-3. If `input` is an object containing `title`, return `input.title.toUpperCase()`.
+1. **[Challenge 01: Narrowing Multiple Types](./challenge-01.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+2. **[Challenge 02: Discriminated Union State Machine](./challenge-02.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+3. **[Challenge 03: Custom Type Guard](./challenge-03.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
 
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your formatInput function here:
+## How to Work on These Challenges
 
+1. Open each challenge file in order.
+2. Read the scenario and requirements carefully.
+3. Write your TypeScript code directly inside the **ANSWER HERE** section.
+4. If you get stuck, review the theory in **[../README.md](../README.md)**.
 
-```
+## Ready to Check Your Work?
 
----
+Once you have completed your solutions, compare your approach against our verified production implementations inside **[../answers/exercise/](../answers/exercise/)**. Happy coding!
 
-### Challenge 2: Custom Type Guard (`is...`)
-Create two interfaces: `Car { drive(): void; wheels: number; }` and `Boat { sail(): void; anchor: boolean; }`.
-1. Write a custom type guard function called `isCar(vehicle: Car | Boat): vehicle is Car`.
-2. Write a function called `operateVehicle(vehicle: Car | Boat)` that uses `isCar(vehicle)` inside an `if` block to call either `.drive()` or `.sail()`.
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your interfaces, type guard, and operateVehicle function here:
-
-
-```
-
----
-
-### Challenge 3: Discriminated Union State Machine
-Build a discriminated union representing an async network request state:
-1. `NetworkState` union with 4 shapes:
-   - `{ status: "idle" }`
-   - `{ status: "loading" }`
-   - `{ status: "success", payload: string[] }`
-   - `{ status: "error", code: number, message: string }`
-2. Write a exhaustive `renderNetworkState(state: NetworkState): string` function using a `switch` statement that handles all 4 states.
-3. *Bonus:* Add a default case using the `never` type to ensure exhaustiveness checking at compile time!
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your NetworkState union and render function here:
-
-
-```

@@ -4,15 +4,15 @@ Model success and failure as data instead of exceptions.
 
 ## Your Tasks
 
-1. Create a generic `type Result<T>` that is either:
+1. Create a generic `type Result<T>` that is either
    - `{ success: true; data: T }` (success branch)
    - `{ success: false; error: string }` (failure branch)
 
-2. Write a function `divideNumbers(a: number, b: number): Result<number>` that:
+2. Write a function `divideNumbers(a: number, b: number): Result<number>` that
    - Returns `{ success: false, error: "Cannot divide by zero." }` if `b === 0`.
    - Returns `{ success: true, data: a / b }` otherwise.
 
-3. Write a function `parseAge(input: string): Result<number>` that:
+3. Write a function `parseAge(input: string): Result<number>` that
    - Converts `input` to a number using `parseInt(input)`.
    - Returns failure if the result is `NaN` (not a valid number) with message `"Not a valid number."`.
    - Returns failure if the number is less than 1 or greater than 120 with message `"Age must be between 1 and 120."`.
@@ -23,7 +23,5 @@ Model success and failure as data instead of exceptions.
 ## ANSWER HERE
 
 ```typescript
-// Write Result<T>, divideNumbers, and parseAge here:
-
-
+// Write Result<T>, divideNumbers, and parseAge here
 ```

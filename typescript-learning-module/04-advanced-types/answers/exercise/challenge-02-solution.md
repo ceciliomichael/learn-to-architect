@@ -8,13 +8,13 @@ type FileOperationResult =
 
 function reportStatus(state: FileOperationResult): string {
   switch (state.status) {
-    case "idle":
+    case "idle"
       return "No operation running.";
-    case "processing":
+    case "processing"
       return `Processing ${state.filename}: ${state.progress}% done.`;
-    case "complete":
+    case "complete"
       return `${state.filename} completed. Size: ${state.sizeBytes} bytes.`;
-    default:
+    default
       const exhaustiveCheck: never = state;
       return exhaustiveCheck;
   }

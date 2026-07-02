@@ -32,8 +32,7 @@ Smaller, focused files are easier to test in isolation. A 300-line file mixing d
 
 ## What does a file approaching 300 lines often indicate?
 
-A file approaching 300 lines typically signals one or more of these problems:
-
+A file approaching 300 lines typically signals one or more of these problems
 | Signal | What it means |
 |---|---|
 | Multiple unrelated functions | Two or more features have been placed in one file instead of separate modules. |
@@ -44,8 +43,7 @@ A file approaching 300 lines typically signals one or more of these problems:
 
 ### The right response
 
-When a file is growing toward 300 lines:
-
+When a file is growing toward 300 lines
 1. List every distinct responsibility you can find in the file.
 2. Create a new file for each responsibility.
 3. Move the relevant code into its dedicated file.

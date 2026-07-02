@@ -9,8 +9,7 @@
 
 Modern backend frameworks like tRPC, Hono, and Fastify let developers chain middleware together while passing typed context (e.g., attaching `user` in auth middleware so route handlers see `req.user` as strictly typed).
 
-In standard Node.js/Express, middleware context is untyped (`req: any`). You will build a **type-safe router engine** where each middleware step enriches the request context type for subsequent handlers!
-
+In standard Node.js/Express, middleware context is untyped (`req: any`). You will build a **type-safe router engine** where each middleware step enriches the request context type for subsequent handlers
 ---
 
 ## The Type Safety Requirement
@@ -29,9 +28,9 @@ const app = new Router<{}>()
     }
     return next({ ...req, user: { id: "user-123" } });
   })
-  // Step 3: Route handler receives enriched context!
+  // Step 3: Route handler receives enriched context
   .get("/profile", async (req) => {
-    // TypeScript MUST know req.user.id exists and is a string!
+    // TypeScript MUST know req.user.id exists and is a string
     return { status: 200, body: `Hello ${req.user.id}` };
   });
 ```
@@ -40,14 +39,12 @@ const app = new Router<{}>()
 
 ## Core Requirements
 
-Build a `Router<TContext>` class supporting:
-
+Build a `Router<TContext>` class supporting
 ```typescript
 use<TNewContext>(
   middleware: (req: Request<TContext>, next: (enrichedReq: Request<TContext & TNewContext>) => Promise<Response>) => Promise<Response>
 ): Router<TContext & TNewContext>
-// Notice how calling .use() returns a new Router typed with the combined context!
-
+// Notice how calling .use() returns a new Router typed with the combined context
 get(path: string, handler: (req: Request<TContext>) => Promise<Response> | Response): Router<TContext>
 post(path: string, handler: (req: Request<TContext>) => Promise<Response> | Response): Router<TContext>
 

@@ -1,79 +1,26 @@
-# Module 02 Quiz: Custom Types & Interfaces
+# Welcome to Module 02 Conceptual Quiz: Interfaces & Type Aliases
+Now that you've practiced defining data blueprints, let's test how well you understand TypeScript's architectural philosophy. 
 
-Write your answers inside the **ANSWER HERE** blocks below each question.
-
+Why does TypeScript allow two interfaces with the same name to merge? Why does structural typing allow shapes to match even if they don't share the exact same class name? Master these answers, and you'll be well ahead of the curve
 ---
 
-### Question 1: Declaration Merging
-What happens if you declare two interfaces with the exact same name in the same file?
+## Topics We Are Testing Today
 
-```typescript
-interface UserSettings {
-  theme: string;
-}
-
-interface UserSettings {
-  fontSize: number;
-}
-```
-
-A) TypeScript throws a duplicate identifier compiler error.  
-B) The second declaration completely overwrites the first declaration.  
-C) TypeScript automatically merges them into one interface requiring both `theme` and `fontSize`.  
-D) Only `fontSize` is kept at runtime.
-
-#### ✍️ ANSWER HERE:
-> Choice: 
-> Explanation: 
-
+1. **[Question 01: Interface Declaration Merging](./question-01.md)**  -  What happens when you declare two interfaces with identical names? Why is this vital for modifying third-party library types?
+2. **[Question 02: Optional vs Undefined Properties](./question-02.md)**  -  What is the architectural difference between `age?: number` and `age: number | undefined`?
+3. **[Question 03: Structural Typing vs Nominal Typing](./question-03.md)**  -  If a `Dolphin` class has the same properties as a `Swimmer` interface, can you pass a `Dolphin` where a `Swimmer` is required?
+4. **[Question 04: Type Aliases vs Interfaces](./question-04.md)**  -  Name one superpower that `type` aliases possess which `interface` declarations cannot do
 ---
 
-### Question 2: `type` vs `interface`
-Which of the following is true regarding `type` aliases and `interface` declarations? (Select all that apply)
+## How to Take This Quiz
 
-A) Only `interface` can describe the shape of a JavaScript object.  
-B) `interface` supports declaration merging, whereas `type` does not.  
-C) `type` can represent primitive union types (like `type Status = "open" | "closed"`), whereas `interface` cannot.  
-D) At runtime, objects typed with `interface` execute faster than objects typed with `type`.
-
-#### ✍️ ANSWER HERE:
-> Choices: 
-> Explanation: 
-
+1. Open each question file and read the scenario.
+2. Formulate your explanation before looking at any notes.
+3. Write your response inside the **`ANSWER HERE`** section.
+4. Focus on articulating your thoughts clearly - clarity in explanation is a hallmark of a senior engineer
 ---
 
-### Question 3: Optional vs. `undefined`
-Look at these two object shapes:
+## Ready to Check Your Reasoning?
 
-```typescript
-interface ShapeA {
-  description?: string;
-}
+When you finish, check your answers against our comprehensive explanations inside **[`../answers/quiz/`](../answers/quiz/)**. Let's see how many you got right!
 
-interface ShapeB {
-  description: string | undefined;
-}
-```
-
-If you create an object `const obj: ShapeA = {}` (omitting `description` entirely), it succeeds. What happens if you try `const objB: ShapeB = {}`? Why?
-
-#### ✍️ ANSWER HERE:
-> What happens & Why: 
-
----
-
-### Question 4: Structural Duck Typing
-Look at the following code:
-```typescript
-interface Point2D {
-  x: number;
-  y: number;
-}
-
-const point3D = { x: 10, y: 20, z: 30 };
-const myPoint: Point2D = point3D;
-```
-Will `const myPoint: Point2D = point3D;` throw a compiler error? Why or why not?
-
-#### ✍️ ANSWER HERE:
-> Answer & Explanation: 

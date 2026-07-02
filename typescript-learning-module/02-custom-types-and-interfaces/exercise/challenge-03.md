@@ -17,7 +17,5 @@ You are building a word translation tool where the set of words is not known in 
 ## ANSWER HERE
 
 ```typescript
-// Write your WordMap interface and spanishDict here:
-
-
+// Write your WordMap interface and spanishDict here
 ```

@@ -6,7 +6,7 @@ Prove you understand what each `tsconfig.json` option does.
 
 Write a complete `tsconfig.json` for a Node.js TypeScript project. Then, beneath the JSON block, write a comment for each option explaining what it does in plain English.
 
-The config must include:
+The config must include
 - `target`: ES2020
 - `module`: CommonJS (used by Node.js)
 - `outDir`: `./dist` (compiled JS files go here)

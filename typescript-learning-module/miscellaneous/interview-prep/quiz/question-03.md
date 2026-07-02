@@ -1,7 +1,6 @@
 # Question 03: Exhaustiveness Checking & The `never` Bottom Type
 
-In a team code review, a developer writes the following payment reducer:
-
+In a team code review, a developer writes the following payment reducer
 ```typescript
 type PaymentAction =
   | { type: "CHARGE"; amount: number }
@@ -9,15 +8,15 @@ type PaymentAction =
 
 function reducePayment(action: PaymentAction): string {
   switch (action.type) {
-    case "CHARGE":
+    case "CHARGE"
       return `Charging $${action.amount}`;
-    case "REFUND":
+    case "REFUND"
       return `Refunding $${action.amount}`;
   }
 }
 ```
 
-Six months later, another developer adds a third action to the union:
+Six months later, another developer adds a third action to the union
 ```typescript
 type PaymentAction =
   | { type: "CHARGE"; amount: number }
@@ -36,6 +35,5 @@ type PaymentAction =
 > **2. The `never` bottom type explained:**
 
 ```typescript
-// 3. The exhaustive switch implementation:
-
+// 3. The exhaustive switch implementation
 ```

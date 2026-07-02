@@ -1,7 +1,6 @@
 # Question 04: Generic Variance & Overload Order
 
-An interviewer shows you the following generic data pipeline helper:
-
+An interviewer shows you the following generic data pipeline helper
 ```typescript
 function parseConfig(input: string): Record<string, string>;
 function parseConfig<T>(input: string, schema: (raw: Record<string, string>) => T): T;

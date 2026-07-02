@@ -1,36 +1,23 @@
-# Module 07 Quiz: OOP & Access Modifiers
+# Welcome to Conceptual Quiz: Classes and Object-Oriented Programming
+Welcome to the conceptual quiz for **Classes and Object-Oriented Programming**! True engineering mastery requires understanding *why* code works under the hood, not just typing syntax.
 
-Write your answers inside the **ANSWER HERE** blocks below.
+These questions are designed to test your mental models and prepare you for real-world architectural reviews and technical interviews.
 
----
+## Topics We Are Testing Today
 
-### Question 1: Access Modifiers at Runtime
-If you mark a class property as `private secretKey: string;`, can malicious JavaScript code running in the browser still access `instance.secretKey` at runtime? Explain why.
+1. **[Question 01: Access Modifiers at Runtime](./question-01.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+2. **[Question 02: private vs protected](./question-02.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+3. **[Question 03: Parameter Property Shorthand](./question-03.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+4. **[Question 04: `extends` vs `implements`](./question-04.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+5. **[Question 05: Abstract Classes](./question-05.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
 
-#### ✍️ ANSWER HERE:
-> Answer & Explanation: 
+## How to Take This Quiz
 
----
+1. Open each question file sequentially.
+2. Think through the compiler mechanics before peeking at any notes.
+3. Write your reasoning clearly inside the **ANSWER HERE** block.
 
-### Question 2: `private` vs `protected`
-What is the difference between declaring a property `private` versus declaring it `protected`?
+## Check Your Answers
 
-#### ✍️ ANSWER HERE:
-> Difference: 
+When you are done, verify your answers against our thorough architectural explanations inside **[../answers/quiz/](../answers/quiz/)**. Let's see how many you ace!
 
----
-
-### Question 3: Abstract Classes
-Can you instantiate an abstract class directly with `new MyAbstractClass()`? Why do we use abstract classes instead of regular classes?
-
-#### ✍️ ANSWER HERE:
-> Can you instantiate it? 
-> Why use abstract classes? 
-
----
-
-### Question 4: `implements` Keyword
-When a class uses `implements MyInterface`, does the interface automatically generate the methods or default properties inside the class?
-
-#### ✍️ ANSWER HERE:
-> Answer & Explanation: 

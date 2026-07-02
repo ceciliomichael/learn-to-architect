@@ -86,8 +86,7 @@ console.log(account.accountOwner); // "Alice" (public, accessible)
 
 ### Runtime Reality of Access Modifiers
 
-TypeScript access modifiers only exist at compile time. When the code is compiled to JavaScript, there is no real enforcement at runtime. If someone runs the compiled JavaScript directly, they could access `balance`. If you need true runtime privacy in modern JavaScript, use the `#` prefix instead:
-
+TypeScript access modifiers only exist at compile time. When the code is compiled to JavaScript, there is no real enforcement at runtime. If someone runs the compiled JavaScript directly, they could access `balance`. If you need true runtime privacy in modern JavaScript, use the `#` prefix instead
 ```typescript
 class SafeAccount {
   #balance: number; // True private field, protected at runtime too.
@@ -102,8 +101,7 @@ class SafeAccount {
 
 ## 3. The `readonly` Keyword on Class Properties
 
-Just like in interfaces, you can mark a class property as `readonly` to prevent it from being changed after the object is created:
-
+Just like in interfaces, you can mark a class property as `readonly` to prevent it from being changed after the object is created
 ```typescript
 class Receipt {
   readonly receiptId: string;
@@ -127,7 +125,7 @@ r.amount = 150; // Allowed.
 Writing out all the property declarations and then assigning them in the constructor is repetitive. TypeScript offers a shorthand: put the access modifier directly inside the constructor parameters, and TypeScript will automatically declare the property and assign the value for you.
 
 ```typescript
-// Verbose version:
+// Verbose version
 class Product {
   public name: string;
   private price: number;
@@ -140,7 +138,7 @@ class Product {
   }
 }
 
-// Shorthand version (identical result):
+// Shorthand version (identical result)
 class Product {
   constructor(
     public name: string,
@@ -183,7 +181,7 @@ dog.bark();     // "Rex says: Woof!"
 
 ### `super`
 
-The `super` keyword is used in two ways inside a subclass:
+The `super` keyword is used in two ways inside a subclass
 1. `super(...)` calls the parent class constructor. You must call it before using `this` in a subclass constructor.
 2. `super.methodName()` calls a parent class method from inside the subclass.
 
@@ -193,8 +191,7 @@ The `super` keyword is used in two ways inside a subclass:
 
 An abstract class is a class that is designed only to be a parent. It cannot be instantiated directly. You mark it and its methods with the `abstract` keyword.
 
-Abstract methods have no body (no implementation). They are just declarations that say "any child class MUST provide an implementation for this method." This forces consistency across all subclasses:
-
+Abstract methods have no body (no implementation). They are just declarations that say "any child class MUST provide an implementation for this method." This forces consistency across all subclasses
 ```typescript
 abstract class Shape {
   abstract getArea(): number; // No implementation here. Child classes must provide one.
@@ -253,13 +250,12 @@ class ConsoleLogger implements Logger {
   }
 }
 
-// If you forget to implement 'warn', TypeScript gives an error:
+// If you forget to implement 'warn', TypeScript gives an error
 // Class 'ConsoleLogger' incorrectly implements interface 'Logger'.
 // Property 'warn' is missing.
 ```
 
-A class can implement multiple interfaces at once:
-
+A class can implement multiple interfaces at once
 ```typescript
 interface Printable { print(): void; }
 interface Saveable  { save(): void; }
@@ -274,8 +270,7 @@ class Document implements Printable, Saveable {
 
 ## 8. Method Overriding
 
-When a child class inherits a method from a parent class but needs different behavior, it can **override** that method by re-declaring it with the same name. The `override` keyword makes this explicit and safe:
-
+When a child class inherits a method from a parent class but needs different behavior, it can **override** that method by re-declaring it with the same name. The `override` keyword makes this explicit and safe
 ```typescript
 class Animal {
   makeSound(): string {
@@ -299,8 +294,7 @@ Using `override` tells TypeScript: "I intend to override a parent method." If yo
 
 ## 9. Static Members (`static`)
 
-Normally, class properties and methods belong to instances of the class created with `new`. Sometimes you want properties or methods that belong to the class itself, not to any individual instance. You define these using the `static` keyword:
-
+Normally, class properties and methods belong to instances of the class created with `new`. Sometimes you want properties or methods that belong to the class itself, not to any individual instance. You define these using the `static` keyword
 ```typescript
 class MathUtils {
   static PI = 3.14159;
@@ -310,7 +304,7 @@ class MathUtils {
   }
 }
 
-// Access directly on the class without creating an instance:
+// Access directly on the class without creating an instance
 console.log(MathUtils.PI); // 3.14159
 console.log(MathUtils.calculateCircumference(10)); // 62.8318
 
@@ -318,8 +312,7 @@ console.log(MathUtils.calculateCircumference(10)); // 62.8318
 // m.calculateCircumference(10); // ERROR! Static methods cannot be called on instances.
 ```
 
-Static properties can also have access modifiers like `private static` or `readonly static`:
-
+Static properties can also have access modifiers like `private static` or `readonly static`
 ```typescript
 class DatabaseConnection {
   private static instance: DatabaseConnection | null = null;
@@ -338,4 +331,3 @@ class DatabaseConnection {
 ```
 
 This pattern (the Singleton pattern) uses `private static` to ensure only one connection ever exists.
-

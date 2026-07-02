@@ -25,7 +25,7 @@ const defaultTheme = {
   darkMode: false
 };
 
-// Extract the type of defaultTheme without writing it manually:
+// Extract the type of defaultTheme without writing it manually
 type ThemeConfig = typeof defaultTheme;
 // Resolves to: { primaryColor: string; backgroundColor: string; fontSize: number; borderRadius: number; darkMode: boolean; }
 

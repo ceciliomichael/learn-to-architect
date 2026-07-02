@@ -21,7 +21,7 @@ const productLabels = availableProducts.map(
 productLabels.forEach((label) => {
   console.log(label);
 });
-// Outputs:
+// Outputs
 // Sword - $150
 // Shield - $200
 // Arrow - $5

@@ -7,7 +7,7 @@ try {
   JSON.parse("not valid json");
 } catch (error) {
   // error is 'unknown'
-  console.log(error.message); // TypeScript error!
+  console.log(error.message); // TypeScript error
 }
 ```
 
@@ -22,7 +22,7 @@ try {
 > **What you must do before accessing `.message`:**
 
 ```typescript
-// Corrected catch block:
+// Corrected catch block
 catch (error) {
 
 }

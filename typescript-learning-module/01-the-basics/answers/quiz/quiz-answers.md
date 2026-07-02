@@ -14,7 +14,7 @@ Review your answers against the detailed explanations below.
 
 ---
 
-### Answer 3:
+### Answer 3
 **Error message:** `Type 'boolean' is not assignable to type 'string'.`  
 **Why no explicit type was needed:** When you assign an initial value upon declaration (`let currentStatus = "Loading"`), TypeScript uses **Type Inference** to deduce that `currentStatus` should permanently be a `string`. Explicitly typing `: string` is optional when declaring and initializing on the same line.
 

@@ -15,7 +15,7 @@ Think of this as the business logic layer of a real application. No `express`, n
 
 ## Domain
 
-A **Task** has:
+A **Task** has
 - `id`  -  A unique string identifier (you generate this, not the user).
 - `title`  -  A non-empty string.
 - `description`  -  An optional string.
@@ -34,8 +34,7 @@ An **UpdateTaskInput** is a partial update payload  -  all fields are optional e
 
 ## Core Requirements
 
-Build a `TaskService` class with the following public API:
-
+Build a `TaskService` class with the following public API
 ```typescript
 // These are the method signatures you must implement.
 // Do not change the return types.
@@ -68,8 +67,7 @@ getStats(): TaskStats
 
 ## Status Transition Rules
 
-Not every status change is valid. You must enforce these rules in `changeStatus`:
-
+Not every status change is valid. You must enforce these rules in `changeStatus`
 ```
 todo        --> in-progress   (allowed)
 todo        --> cancelled     (allowed)
@@ -106,8 +104,7 @@ src/
 
 ## Stretch Goals
 
-Complete these if you want a harder challenge:
-
+Complete these if you want a harder challenge
 1. **Sorting**: Add an optional `sort` field to `TaskFilter` that accepts `"createdAt-asc"`, `"createdAt-desc"`, `"priority-asc"`, or `"priority-desc"`. For priority sorting, `critical > high > medium > low`.
 
 2. **Pagination**: Add `page` and `pageSize` fields to `TaskFilter`. `getAllTasks` should return a `PaginatedResult<Task>` with `data`, `total`, `page`, and `totalPages` fields.
@@ -120,8 +117,7 @@ Complete these if you want a harder challenge:
 
 ## Validation Rules
 
-You must enforce these in `createTask` and `updateTask`. Throw a `ValidationError` with the field name and a clear message for each:
-
+You must enforce these in `createTask` and `updateTask`. Throw a `ValidationError` with the field name and a clear message for each
 - `title` must not be empty and must be between 3 and 100 characters.
 - `priority` must be one of the valid priority values.
 - `dueDate` if provided must not be in the past.
@@ -131,8 +127,7 @@ You must enforce these in `createTask` and `updateTask`. Throw a `ValidationErro
 
 ## What Your Final index.ts Should Demonstrate
 
-Your entry point should exercise every method at least once, including error cases. Structure it as a series of named steps with `console.log` separators, like this:
-
+Your entry point should exercise every method at least once, including error cases. Structure it as a series of named steps with `console.log` separators, like this
 ```typescript
 console.log("--- Creating tasks ---");
 // ... create 4-5 varied tasks

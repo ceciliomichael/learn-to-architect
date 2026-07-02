@@ -1,7 +1,6 @@
 # Question 01: Type Erasure & Boundary Vulnerability
 
-A junior developer presents the following code in a code review:
-
+A junior developer presents the following code in a code review
 ```typescript
 interface UserData {
   id: string;
@@ -31,6 +30,5 @@ async function handleLogin(reqBody: unknown): Promise<void> {
 > **3. Why `as` fails here:**
 
 ```typescript
-// 4. Corrected implementation:
-
+// 4. Corrected implementation
 ```

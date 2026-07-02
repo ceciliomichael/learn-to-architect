@@ -38,7 +38,7 @@ export async function getDashboardData(userId: string): Promise<{
   balance: Result<number>;
   notifications: Result<string[]>;
 }> {
-  // Fire all 3 concurrently in parallel. safeExec prevents Promise.all from short-circuiting!
+  // Fire all 3 concurrently in parallel. safeExec prevents Promise.all from short-circuiting
   const [profile, balance, notifications] = await Promise.all([
     safeExec(fetchUserProfile(userId)),
     safeExec(fetchUserBalance(userId)),
@@ -52,7 +52,7 @@ export async function getDashboardData(userId: string): Promise<{
 async function runDemo() {
   const dashboard = await getDashboardData("user-99");
   console.log(JSON.stringify(dashboard, null, 2));
-  /* Output:
+  /* Output
   {
     "profile": { "success": true, "data": { "id": "user-99", "name": "Alice" } },
     "balance": { "success": true, "data": 4250.75 },

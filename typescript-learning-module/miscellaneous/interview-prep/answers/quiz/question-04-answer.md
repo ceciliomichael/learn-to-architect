@@ -4,7 +4,7 @@
 TypeScript evaluates overloaded function definitions sequentially from top to bottom, stopping at the very first signature whose parameter types match the call site arguments. If a broad signature (such as one accepting `any` or optional parameters) is placed first, TypeScript matches it immediately and ignores all subsequent, more precise generic signatures below it. Overloads must always be ordered from **most specific to least specific**.
 
 ## 2. Generic Type Inference Flow
-When calling `parseConfig('{"port":"8080"}', (raw) => ({ port: Number(raw.port) }))`:
+When calling `parseConfig('{"port":"8080"}', (raw) => ({ port: Number(raw.port) }))`
 1. TypeScript inspects the second argument: arrow function `(raw) => ({ port: Number(raw.port) })`.
 2. It evaluates the return expression `{ port: Number(raw.port) }` and infers the return type as `{ port: number }`.
 3. It binds generic variable `T` to `{ port: number }`.

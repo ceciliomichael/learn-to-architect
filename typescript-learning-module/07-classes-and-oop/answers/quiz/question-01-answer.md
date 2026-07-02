@@ -7,7 +7,7 @@
 TypeScript's `private` completely disappears after compilation. The generated JavaScript has no access control at all. The property is a normal JavaScript property on the object. At runtime, any JavaScript code can access `account.balance` directly without restriction.
 
 **The syntax for true runtime privacy:**
-The JavaScript `#` prefix creates a real private field that is enforced by the JavaScript engine at runtime, not just by the TypeScript compiler:
+The JavaScript `#` prefix creates a real private field that is enforced by the JavaScript engine at runtime, not just by the TypeScript compiler
 ```typescript
 class BankAccount {
   #balance: number;

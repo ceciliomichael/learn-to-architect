@@ -6,10 +6,10 @@ interface ImageFile { width: number; height: number; }
 
 function describeMedia(file: VideoFile | ImageFile): string {
   if ("duration" in file) {
-    // TypeScript narrows 'file' to VideoFile here:
+    // TypeScript narrows 'file' to VideoFile here
     return `Video: ${file.duration}s, codec: ${file.codec}`;
   } else {
-    // TypeScript narrows 'file' to ImageFile here:
+    // TypeScript narrows 'file' to ImageFile here
     return `Image: ${file.width}x${file.height}`;
   }
 }

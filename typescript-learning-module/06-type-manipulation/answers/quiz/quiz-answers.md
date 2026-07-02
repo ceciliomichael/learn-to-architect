@@ -9,7 +9,7 @@ Detailed answers for Module 06 quiz.
 
 ---
 
-### Answer 2:
+### Answer 2
 No, `typeof` in a type context (`type T = typeof myVariable;`) does **not** execute at runtime. It is purely evaluated by the TypeScript compiler during compilation to inspect the static type of `myVariable` and assign it to `T`. It is completely erased from the compiled JavaScript output.
 
 ---

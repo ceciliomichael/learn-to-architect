@@ -1,7 +1,6 @@
 # Question 02: const and Arrays
 
-Look at this code:
-
+Look at this code
 ```typescript
 const scores: number[] = [90, 85];
 scores.push(100);

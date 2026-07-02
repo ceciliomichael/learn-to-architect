@@ -20,7 +20,7 @@ class ElectricVehicle extends Vehicle {
     year: number,
     public batteryRangeKm: number
   ) {
-    // super() calls the Vehicle constructor and initializes make, model, year:
+    // super() calls the Vehicle constructor and initializes make, model, year
     super(make, model, year);
   }
 

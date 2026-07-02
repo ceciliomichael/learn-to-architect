@@ -20,11 +20,11 @@ interface Employee {
 ## ANSWER HERE
 
 ```typescript
-// Only id and name:
+// Only id and name
 type WithPick = // ...
 type WithOmit = // ...
 
-// Everything except salary:
+// Everything except salary
 type WithPick2 = // ...
 type WithOmit2 = // ...
 ```

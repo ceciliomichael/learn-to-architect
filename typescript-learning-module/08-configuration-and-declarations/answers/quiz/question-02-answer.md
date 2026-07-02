@@ -1,24 +1,24 @@
 # Question 02 Answer
 
 ```typescript
-// Importing PI and square (named imports):
+// Importing PI and square (named imports)
 import { PI, square } from "./utils";
 
-// Importing MathHelper (default import  -  no curly braces):
+// Importing MathHelper (default import  -  no curly braces)
 import MathHelper from "./utils";
 
-// Both together:
+// Both together
 import MathHelper, { PI, square } from "./utils";
 ```
 
 **Can you rename a named import? Syntax:**
-Yes, using `as`:
+Yes, using `as`
 ```typescript
 import { square as computeSquare } from "./utils";
 ```
 
 **Can you rename a default import? Syntax:**
-Yes  -  with default imports, the name you choose in the import statement IS the name. There is no `as` needed because the caller decides the name:
+Yes  -  with default imports, the name you choose in the import statement IS the name. There is no `as` needed because the caller decides the name
 ```typescript
 import Calculator from "./utils";  // "Calculator" is your chosen name for the default.
 ```

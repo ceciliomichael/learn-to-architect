@@ -15,10 +15,9 @@ In real pipelines, raw data is dirty. If processing 10,000 records, throwing an 
 
 ## Core Pipeline Architecture
 
-Your engine must allow developers to chain typed steps together:
-
+Your engine must allow developers to chain typed steps together
 ```typescript
-// Example pipeline usage:
+// Example pipeline usage
 const pipeline = new Pipeline<RawUserRecord, CleanUserProfile>()
   .extract(userFileReader)
   .transform(validateUser)
@@ -39,13 +38,13 @@ interface StepResult<T> {
   error?: string;
 }
 
-// Extract step produces an array of initial input records:
+// Extract step produces an array of initial input records
 type Extractor<TIn> = () => Promise<TIn[]>;
 
-// Transform step receives TIn and returns TOut (or throws/returns error):
+// Transform step receives TIn and returns TOut (or throws/returns error)
 type Transformer<TIn, TOut> = (item: TIn) => Promise<TOut> | TOut;
 
-// Load step receives the final transformed records:
+// Load step receives the final transformed records
 type Loader<TOut> = (batch: TOut[]) => Promise<void>;
 
 interface PipelineReport<TOut> {
@@ -65,8 +64,7 @@ interface PipelineReport<TOut> {
 
 ## Core Requirements
 
-Build the `Pipeline<TIn, TCurrent>` class supporting:
-
+Build the `Pipeline<TIn, TCurrent>` class supporting
 ```typescript
 extract(extractor: Extractor<TIn>): Pipeline<TIn, TIn>
 
@@ -74,12 +72,11 @@ transform<TNext>(
   stepName: string,
   transformer: Transformer<TCurrent, TNext>
 ): Pipeline<TIn, TNext>
-// Note how each transform call shifts the pipeline's current type from TCurrent to TNext!
-
+// Note how each transform call shifts the pipeline's current type from TCurrent to TNext
 load(loader: Loader<TCurrent>): RunnablePipeline<TIn, TCurrent>
 
 run(options?: { batchSize?: number }): Promise<PipelineReport<TCurrent>>
-// Executes the pipeline:
+// Executes the pipeline
 // 1. Calls extractor.
 // 2. Runs records through transformers sequentially per record.
 // 3. Collects successful records into batches of size `batchSize` (default 50)
@@ -105,7 +102,7 @@ src/
 
 ## What Your Final index.ts Should Demonstrate
 
-Simulate a dirty dataset ingestion:
+Simulate a dirty dataset ingestion
 1. Extract 10 mock records where 2 have invalid email strings and 1 has a negative age.
 2. Step 1 (`"sanitize"`): Strip whitespace and lowercase emails.
 3. Step 2 (`"validate"`): Throw validation errors for invalid emails or negative ages.

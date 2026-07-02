@@ -13,8 +13,7 @@ Databases like Redis and SQLite handle millions of operations per second while g
 
 ## Domain & Core Requirements
 
-Build a `MemoryDB` class supporting generic stored values:
-
+Build a `MemoryDB` class supporting generic stored values
 ```typescript
 set<T>(key: string, value: T, ttlMs?: number): void
 // Stores a deep-cloned copy of value. If ttlMs is provided, automatically deletes the key after duration.
@@ -35,13 +34,12 @@ clear(): void
 
 ## Transaction Engine (ACID Simulation)
 
-Implement multi-step atomic transactions:
-
+Implement multi-step atomic transactions
 ```typescript
 async transaction<T>(callback: (tx: TransactionScope) => Promise<T>): Promise<Result<T>>
 ```
 
-Inside `callback`:
+Inside `callback`
 1. `tx` exposes `.get()`, `.set()`, and `.delete()`.
 2. All modifications made inside `tx` are buffered in an isolated snapshot.
 3. If `callback` finishes successfully, the buffered mutations are **committed** to the main DB atomically.

@@ -4,8 +4,7 @@ Practice running multiple async tasks at the same time.
 
 ## Starting Functions
 
-Write these two simulator functions first (they are given to you):
-
+Write these two simulator functions first (they are given to you)
 ```typescript
 async function fetchUser(id: number): Promise<{ id: number; name: string }> {
   return new Promise((resolve) => setTimeout(() => resolve({ id, name: "Alice" }), 400));
@@ -37,7 +36,5 @@ async function fetchUserPosts(userId: number): Promise<string[]> {
   );
 }
 
-// Write loadUserDashboard here:
-
-
+// Write loadUserDashboard here
 ```

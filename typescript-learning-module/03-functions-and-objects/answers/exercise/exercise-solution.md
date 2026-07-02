@@ -11,13 +11,13 @@ type Operation = "ADD" | "SUBTRACT" | "MULTIPLY" | "DIVIDE";
 
 function calculate(operation: Operation, a: number, b: number): number {
   switch (operation) {
-    case "ADD":
+    case "ADD"
       return a + b;
-    case "SUBTRACT":
+    case "SUBTRACT"
       return a - b;
-    case "MULTIPLY":
+    case "MULTIPLY"
       return a * b;
-    case "DIVIDE":
+    case "DIVIDE"
       if (b === 0) {
         throw new Error("Cannot divide by zero");
       }

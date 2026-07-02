@@ -7,7 +7,7 @@
 Node.js detects the circular dependency and resolves it by providing a partially-initialized version of one of the modules  -  whatever has been defined so far at the point the cycle was detected. This often results in `undefined` being imported instead of the actual function. The code compiles without error but silently fails at runtime: `getOrderCount is not a function`.
 
 **How to break the cycle:**
-Move the shared dependency into a third file that neither service imports from the other to get:
+Move the shared dependency into a third file that neither service imports from the other to get
 ```
 services/
 ├── orderService.ts    -  imports from repositories/orderRepository.ts only

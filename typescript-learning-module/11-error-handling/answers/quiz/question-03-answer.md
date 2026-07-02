@@ -4,7 +4,7 @@
 With `new Error("User not found: ...")`, the only way to distinguish it from a `ValidationError` is to parse the error message string  -  checking if it contains certain words. This is fragile. The message could change, be translated, or have a typo. String-matching error messages is a bad practice that leads to brittle, error-prone code.
 
 **How `instanceof` solves it:**
-With custom error classes, each error type has a unique class identity. `instanceof` checks the class of the object, not its message. This is precise and language-level:
+With custom error classes, each error type has a unique class identity. `instanceof` checks the class of the object, not its message. This is precise and language-level
 ```typescript
 if (error instanceof NotFoundError) {
   console.log("Missing:", error.resourceId); // Access typed properties.

@@ -23,7 +23,7 @@ function parseAge(input: string): Result<number> {
   return { success: true, data: age };
 }
 
-// Test divideNumbers:
+// Test divideNumbers
 const divResult1 = divideNumbers(10, 2);
 if (divResult1.success) {
   console.log("10 / 2 =", divResult1.data); // 5
@@ -38,7 +38,7 @@ if (divResult2.success) {
   console.log("Error:", divResult2.error); // "Cannot divide by zero."
 }
 
-// Test parseAge:
+// Test parseAge
 const ageResult1 = parseAge("25");
 if (ageResult1.success) {
   console.log("Age:", ageResult1.data); // 25

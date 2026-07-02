@@ -8,7 +8,7 @@ A function in your application needs to accept either a string ID or a numeric I
 
 2. Declare two variables using `UserId`: one assigned a string value and one assigned a number value.
 
-3. Write a function called `printId(id: UserId): void` that:
+3. Write a function called `printId(id: UserId): void` that
    - Uses `typeof` inside an `if/else` to check which type `id` is.
    - If it is a `string`: logs the id converted to uppercase.
    - If it is a `number`: logs `"ID: " + id`.
@@ -18,7 +18,5 @@ A function in your application needs to accept either a string ID or a numeric I
 ## ANSWER HERE
 
 ```typescript
-// Write your UserId type, variables, and printId function here:
-
-
+// Write your UserId type, variables, and printId function here
 ```

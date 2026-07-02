@@ -1,11 +1,11 @@
 # Question 02 Answer
 
 ```typescript
-// Only id and name:
+// Only id and name
 type WithPick  = Pick<Employee, "id" | "name">;                               // Concise
 type WithOmit  = Omit<Employee, "email" | "salary" | "department" | "startDate">; // Verbose
 
-// Everything except salary:
+// Everything except salary
 type WithPick2 = Pick<Employee, "id" | "name" | "email" | "department" | "startDate">; // Verbose
 type WithOmit2 = Omit<Employee, "salary">;                                              // Concise
 ```

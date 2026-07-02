@@ -15,8 +15,7 @@ You will build a **strictly typed event bus**. When a developer subscribes to an
 
 ## The Type Safety Requirement
 
-Given an event map like this:
-
+Given an event map like this
 ```typescript
 interface AppEvents {
   "user:created": { id: string; username: string; email: string };
@@ -26,23 +25,22 @@ interface AppEvents {
 }
 ```
 
-Your `EventBus` must enforce these checks at **compile time**:
-
+Your `EventBus` must enforce these checks at **compile time**
 ```typescript
 const bus = new EventBus<AppEvents>();
 
-// 1. Valid subscription  -  TypeScript infers 'payload' has orderId, total, itemsCount:
+// 1. Valid subscription  -  TypeScript infers 'payload' has orderId, total, itemsCount
 bus.on("order:placed", (payload) => {
   console.log(payload.total.toFixed(2));
 });
 
-// 2. Invalid event name  -  COMPILE ERROR:
+// 2. Invalid event name  -  COMPILE ERROR
 // bus.on("user:deleted", () => {});
 
-// 3. Invalid payload emitted  -  COMPILE ERROR (missing 'total'):
+// 3. Invalid payload emitted  -  COMPILE ERROR (missing 'total')
 // bus.emit("order:placed", { orderId: "123", itemsCount: 5 });
 
-// 4. Valid void event:
+// 4. Valid void event
 bus.emit("system:ping");
 ```
 
@@ -50,8 +48,7 @@ bus.emit("system:ping");
 
 ## Core Requirements
 
-Build an `EventBus<TEventMap extends Record<string, any>>` class supporting:
-
+Build an `EventBus<TEventMap extends Record<string, any>>` class supporting
 ```typescript
 on<K extends keyof TEventMap>(
   event: K,
@@ -69,8 +66,7 @@ emit<K extends keyof TEventMap>(
   ...args: TEventMap[K] extends void ? [event: K] : [event: K, payload: TEventMap[K]]
 ): void
 // Emits synchronously. Notice the conditional rest parameter: if payload is void,
-// the second argument must be omitted entirely!
-
+// the second argument must be omitted entirely
 async emitAsync<K extends keyof TEventMap>(
   ...args: TEventMap[K] extends void ? [event: K] : [event: K, payload: TEventMap[K]]
 ): Promise<EventResult[]>
@@ -86,8 +82,7 @@ listenerCount(event: keyof TEventMap): number
 
 ## Advanced Feature: Wildcard & Middleware Support
 
-Add an `intercept` method that registers middleware running before any event is dispatched:
-
+Add an `intercept` method that registers middleware running before any event is dispatched
 ```typescript
 type Middleware<TEventMap> = (
   event: keyof TEventMap,

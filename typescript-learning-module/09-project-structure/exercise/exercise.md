@@ -1,63 +1,21 @@
-# Module 10 Exercise: Refactoring Monoliths & Architecture
+# Welcome to Practice Lab: Project Structure and Clean Architecture
+Welcome to the interactive exercise lab for **Project Structure and Clean Architecture**! Here is where theoretical knowledge transforms into practical coding ability.
 
-Complete your refactoring solutions inside the **ANSWER HERE** blocks below.
+Remember: The TypeScript compiler is your mentor. Don't be afraid to experiment, make syntax errors, and fix them. Every problem you solve builds professional muscle memory.
 
----
+## What You Will Tackle in This Lab
 
-### Challenge 1: Splitting a Monolithic File
-You inherited a single file `badApp.ts` containing mixed domain logic, database operations, and presentation logs:
+1. **[Challenge 01: Identify the Architecture Violations](./challenge-01.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+2. **[Challenge 02: Plan a Project from Scratch](./challenge-02.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
 
-```typescript
-// badApp.ts
-interface User { id: string; name: string; age: number; }
+## How to Work on These Challenges
 
-function validateUser(user: User): boolean {
-  if (user.age < 18) {
-    console.error("Validation failed: User too young");
-    return false;
-  }
-  return true;
-}
+1. Open each challenge file in order.
+2. Read the scenario and requirements carefully.
+3. Write your TypeScript code directly inside the **ANSWER HERE** section.
+4. If you get stuck, review the theory in **[../README.md](../README.md)**.
 
-function saveUserToDatabase(user: User): void {
-  console.log(`[DB]: Saving user ${user.id} to storage...`);
-}
+## Ready to Check Your Work?
 
-function handleUserRegistration(id: string, name: string, age: number): void {
-  const newUser: User = { id, name, age };
-  if (validateUser(newUser)) {
-    saveUserToDatabase(newUser);
-    console.log("Registration successful!");
-  }
-}
-```
+Once you have completed your solutions, compare your approach against our verified production implementations inside **[../answers/exercise/](../answers/exercise/)**. Happy coding!
 
-Refactor this codebase into 4 distinct, clean modular files following Separation of Concerns:
-1. `types.ts`
-2. `validator.ts`
-3. `userRepository.ts`
-4. `index.ts` (Orchestration entrypoint)
-
-#### ✍️ ANSWER HERE:
-```typescript
-// --- types.ts ---
-
-
-// --- validator.ts ---
-
-
-// --- userRepository.ts ---
-
-
-// --- index.ts ---
-
-
-```
-
----
-
-### Challenge 2: The 300-Line Limit Strategy
-Write a brief markdown explanation describing how you would structure a massive 800-line `orderProcessing.ts` service file into smaller, modular components without breaking existing imports.
-
-#### ✍️ ANSWER HERE:
-> Strategy & Explanation: 

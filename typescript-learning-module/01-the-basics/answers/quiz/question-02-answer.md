@@ -8,7 +8,7 @@ When you write `const scores = [90, 85]`, the variable `scores` is locked to tha
 
 `.push()` modifies the existing array. It does not replace it. So `const` has no objection.
 
-If you want to prevent all mutation, use `as const` which makes the array and its contents fully readonly:
+If you want to prevent all mutation, use `as const` which makes the array and its contents fully readonly
 ```typescript
 const scores = [90, 85] as const;
 scores.push(100); // ERROR! Cannot mutate a readonly array.

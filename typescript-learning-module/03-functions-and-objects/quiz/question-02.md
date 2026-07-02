@@ -1,15 +1,13 @@
 # Question 02: void Callbacks
 
-You define a function that accepts a callback:
-
+You define a function that accepts a callback
 ```typescript
 function runOnce(cb: () => void): void {
   cb();
 }
 ```
 
-You then call it like this:
-
+You then call it like this
 ```typescript
 runOnce(() => true);
 ```

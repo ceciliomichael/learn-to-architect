@@ -6,7 +6,7 @@ Writing TypeScript in isolation is one thing. Wiring it up as a real project wit
 
 ## 1. How TypeScript Projects Are Structured
 
-A standard TypeScript project has:
+A standard TypeScript project has
 - A `tsconfig.json` file: tells the compiler how to behave.
 - A `src/` folder: where all your `.ts` source files live.
 - A `dist/` folder: where the compiled `.js` output files go.
@@ -26,8 +26,7 @@ my-project/
 
 ## 2. `tsconfig.json`: Configuring the Compiler
 
-`tsconfig.json` is a JSON file at the root of your project that controls how `tsc` (the TypeScript compiler) behaves. Here is a standard configuration with every option explained:
-
+`tsconfig.json` is a JSON file at the root of your project that controls how `tsc` (the TypeScript compiler) behaves. Here is a standard configuration with every option explained
 ```json
 {
   "compilerOptions": {
@@ -44,8 +43,7 @@ my-project/
 }
 ```
 
-### What each option means:
-
+### What each option means
 - **`target`**: The version of JavaScript to output. `ES2020` is modern and supported in all recent environments.
 - **`module`**: How the compiled files export and import each other. `CommonJS` is the standard for Node.js.
 - **`outDir`**: The folder where compiled `.js` files are placed.
@@ -66,12 +64,12 @@ When you set `"strict": true`, it activates a collection of individual stricter 
 
 Without this check, `null` and `undefined` can be silently assigned to any variable typed as `string`, `number`, etc. This is the single biggest source of runtime crashes in JavaScript programs ("Cannot read properties of null").
 
-With `strictNullChecks` enabled:
+With `strictNullChecks` enabled
 ```typescript
 let name: string = null; // ERROR! Type 'null' is not assignable to type 'string'.
 ```
 
-To allow a value to be null, you must explicitly say so:
+To allow a value to be null, you must explicitly say so
 ```typescript
 let name: string | null = null; // Valid. You explicitly acknowledge null is possible.
 ```
@@ -86,8 +84,7 @@ A module is any TypeScript file that uses the `import` or `export` keyword. Spli
 
 ### Exporting
 
-You mark a function, variable, interface, or class as public to other files using `export`:
-
+You mark a function, variable, interface, or class as public to other files using `export`
 ```typescript
 // utils.ts
 export function formatDate(date: Date): string {
@@ -102,8 +99,7 @@ export interface Config {
 }
 ```
 
-You can also collect all exports at the bottom of a file:
-
+You can also collect all exports at the bottom of a file
 ```typescript
 // math.ts
 function add(a: number, b: number): number { return a + b; }
@@ -114,8 +110,7 @@ export { add, subtract };
 
 ### Importing
 
-You bring exported items into another file using `import`:
-
+You bring exported items into another file using `import`
 ```typescript
 // index.ts
 import { formatDate, MAX_RETRIES } from "./utils";
@@ -129,8 +124,7 @@ The path `"./utils"` means "the file named `utils.ts` in the same directory as t
 
 ### Default Exports
 
-A file can have one default export, which does not need a name when imported:
-
+A file can have one default export, which does not need a name when imported
 ```typescript
 // logger.ts
 export default function log(msg: string): void {
@@ -151,8 +145,7 @@ TypeScript treats files differently depending on whether they contain any `impor
 - **Script mode**: No `import` or `export`. Every variable declared in the file is global and shared across all files. If two files both declare `const myVar = 10`, TypeScript throws a "Duplicate identifier" error.
 - **Module mode**: Has at least one `import` or `export`. Each file has its own private scope. Variables in one file do not conflict with variables in another.
 
-The fix for unwanted script mode: add `export {};` at the top of any file that does not naturally export anything. This one line converts the file into a module:
-
+The fix for unwanted script mode: add `export {};` at the top of any file that does not naturally export anything. This one line converts the file into a module
 ```typescript
 export {}; // Converts this file to module scope.
 
@@ -167,13 +160,12 @@ When you use a JavaScript library that was not written in TypeScript, that libra
 
 A **declaration file** (`.d.ts`) is a file that contains only type information, no executable code. It describes the types of a JavaScript library so TypeScript can understand it.
 
-Declaration files:
+Declaration files
 - Only contain type signatures, interfaces, and declarations.
 - Never contain function bodies or any executable logic.
 - Are never compiled to `.js`. They exist purely for the TypeScript compiler.
 
-Example: Typing a global object that a legacy JavaScript file adds to `window`:
-
+Example: Typing a global object that a legacy JavaScript file adds to `window`
 ```typescript
 // analytics.d.ts
 interface Analytics {
@@ -194,15 +186,13 @@ export {}; // Makes this a module-scoped declaration file.
 
 ## 7. DefinitelyTyped and `@types` Packages
 
-Most popular JavaScript libraries have community-maintained declaration files available through a project called **DefinitelyTyped**. You install them as development dependencies using the `@types/` prefix:
-
+Most popular JavaScript libraries have community-maintained declaration files available through a project called **DefinitelyTyped**. You install them as development dependencies using the `@types/` prefix
 ```bash
 npm install lodash
 npm install -D @types/lodash
 ```
 
-After installing, TypeScript can understand `lodash`'s functions and give you full autocompletion and type checking:
-
+After installing, TypeScript can understand `lodash`'s functions and give you full autocompletion and type checking
 ```typescript
 import _ from "lodash";
 
@@ -215,8 +205,7 @@ Some modern libraries (like `axios`, `zod`, `prisma`) include their own TypeScri
 
 ## 8. Path Aliases (Cleaner Imports)
 
-As projects grow, relative import paths like `"../../../utils/formatter"` become hard to read. You can configure path aliases in `tsconfig.json` to create shortcuts:
-
+As projects grow, relative import paths like `"../../../utils/formatter"` become hard to read. You can configure path aliases in `tsconfig.json` to create shortcuts
 ```json
 {
   "compilerOptions": {
@@ -229,8 +218,7 @@ As projects grow, relative import paths like `"../../../utils/formatter"` become
 }
 ```
 
-After this configuration, you can write:
-
+After this configuration, you can write
 ```typescript
 import { formatDate } from "@utils/formatter"; // Instead of "../../utils/formatter"
 ```
@@ -241,7 +229,7 @@ import { formatDate } from "@utils/formatter"; // Instead of "../../utils/format
 
 `npm` (Node Package Manager) is the tool you use to install external libraries into your TypeScript project.
 
-Common commands:
+Common commands
 ```bash
 npm init -y               # Creates a package.json file for your project.
 npm install typescript    # Installs TypeScript as a dependency.

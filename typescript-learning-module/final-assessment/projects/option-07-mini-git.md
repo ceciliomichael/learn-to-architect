@@ -13,17 +13,16 @@ Git is the backbone of modern software engineering. Underneath the CLI commands 
 
 ## Domain Architecture
 
-You must model Git's core internal objects:
-
+You must model Git's core internal objects
 ```typescript
-// A Blob stores raw file content:
+// A Blob stores raw file content
 interface BlobObject {
   type: "blob";
   hash: string;         // SHA-256 or simple simulated hash of content
   content: string;
 }
 
-// A Tree maps filenames to Blobs or sub-Trees:
+// A Tree maps filenames to Blobs or sub-Trees
 interface TreeEntry {
   mode: "file" | "dir";
   name: string;
@@ -36,7 +35,7 @@ interface TreeObject {
   entries: TreeEntry[];
 }
 
-// A Commit points to a root Tree and parent Commits:
+// A Commit points to a root Tree and parent Commits
 interface CommitObject {
   type: "commit";
   hash: string;
@@ -54,8 +53,7 @@ type GitObject = BlobObject | TreeObject | CommitObject;
 
 ## Core Requirements
 
-Build a `MiniGit` class supporting:
-
+Build a `MiniGit` class supporting
 ```typescript
 init(): void
 // Initializes repository with a 'master' branch pointing to null, and HEAD pointing to 'master'.
@@ -85,7 +83,7 @@ diff(commitHashA: string, commitHashB: string): string[]
 
 ## Error Handling Rules
 
-Create custom errors for all illegal operations:
+Create custom errors for all illegal operations
 - `DetachedHeadError` (trying to commit while checked out directly to a commit hash instead of a branch).
 - `BranchExistsError` / `BranchNotFoundError`.
 - `NothingToCommitError` (running commit when staging area is empty).

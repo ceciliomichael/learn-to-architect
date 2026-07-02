@@ -17,10 +17,6 @@ TypeScript lets you build on existing interfaces in two different ways.
 ## ANSWER HERE
 
 ```typescript
-// Part 1 - interface extends:
-
-
-// Part 2 - type intersection:
-
-
+// Part 1 - interface extends
+// Part 2 - type intersection
 ```

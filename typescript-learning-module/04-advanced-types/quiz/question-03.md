@@ -3,10 +3,10 @@
 What is the difference between these two function signatures?
 
 ```typescript
-// Version A:
+// Version A
 function isCat(pet: Cat | Dog): boolean { ... }
 
-// Version B:
+// Version B
 function isCat(pet: Cat | Dog): pet is Cat { ... }
 ```
 

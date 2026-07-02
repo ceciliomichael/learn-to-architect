@@ -8,7 +8,7 @@ Build a typed error hierarchy and handle each type individually.
 
 2. Create a class `NotFoundError extends Error` with a `resourceId: string` property. Set `this.name = "NotFoundError"`.
 
-3. Write a function `getUserProfile(id: string, name: string): { id: string; name: string }` that:
+3. Write a function `getUserProfile(id: string, name: string): { id: string; name: string }` that
    - Throws `new ValidationError("id", "User ID cannot be empty.")` if `id` is an empty string.
    - Throws `new ValidationError("name", "Name must be at least 2 characters.")` if `name.length < 2`.
    - Throws `new NotFoundError(id)` if `id !== "user-001"`.
@@ -19,7 +19,5 @@ Build a typed error hierarchy and handle each type individually.
 ## ANSWER HERE
 
 ```typescript
-// Write your error classes and getUserProfile here:
-
-
+// Write your error classes and getUserProfile here
 ```

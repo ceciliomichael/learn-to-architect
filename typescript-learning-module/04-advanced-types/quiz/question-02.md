@@ -2,8 +2,7 @@
 
 What is the `in` operator and how is it used for type narrowing?
 
-Write a concrete example using two interfaces that each have a unique property:
-
+Write a concrete example using two interfaces that each have a unique property
 ```typescript
 interface VideoFile { duration: number; codec: string; }
 interface ImageFile { width: number; height: number; }
@@ -19,8 +18,7 @@ Complete the function body using the `in` operator to narrow the type, then expl
 
 ```typescript
 function describeMedia(file: VideoFile | ImageFile): string {
-  // Write your in-based narrowing here:
-
+  // Write your in-based narrowing here
 }
 ```
 

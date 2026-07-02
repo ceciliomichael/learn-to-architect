@@ -5,12 +5,12 @@ Explain the difference between a `for` loop and a `for...of` loop.
 ```typescript
 const scores = [90, 75, 88];
 
-// Loop A:
+// Loop A
 for (let i = 0; i < scores.length; i++) {
   console.log(scores[i]);
 }
 
-// Loop B:
+// Loop B
 for (let score of scores) {
   console.log(score);
 }

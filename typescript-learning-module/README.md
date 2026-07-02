@@ -30,8 +30,7 @@ Starting your coding journey with TypeScript means you build good habits from Da
 
 ## What You Will Learn Across This Course
 
-By following this curriculum sequentially from Module 01 to the Final Assessment, you will learn how to:
-
+By following this curriculum sequentially from Module 01 to the Final Assessment, you will learn how to
 1. **Speak the Language of Computers:** Understand basic coding concepts like variables (storing data), data types (text, numbers, true/false), conditionals (decision making), and loops (repeating actions).
 2. **Write Safe, Bug-Free Code:** Master TypeScript's type system so the compiler catches 95% of common mistakes automatically.
 3. **Design Blueprints for Real-World Data:** Learn how to model complex information - like shopping carts, user accounts, and bank transactions - using structured Interfaces and Custom Types.
@@ -46,8 +45,7 @@ By following this curriculum sequentially from Module 01 to the Final Assessment
 
 ## Pedagogical Philosophy & Engineering Habits
 
-As you advance from basic syntax into architectural design, this course instills four core habits that distinguish senior engineers:
-
+As you advance from basic syntax into architectural design, this course instills four core habits that distinguish senior engineers
 1. **Zero `any` Tolerance:** The `any` type turns off TypeScript's protections entirely. Throughout this course, `any` is banned. When handling dynamic data, you will learn to use `unknown` combined with safe type checks.
 2. **Single Responsibility Principle (SRP):** Each file should do exactly one thing well. We separate business logic from data access and UI presentation.
 3. **The 300-Line Ceiling:** If a logic file grows beyond 300 lines, it is split into focused, single-purpose modules proactively.
@@ -121,7 +119,7 @@ Building systems that never crash silently. Covers `try`/`catch`/`finally`, typi
 Synthesizes the entire curriculum into high-level systems design mental models. Re-examines structural typing vs nominal typing (Branded Types), compiler type erasure, boundary validation vulnerabilities, and top senior technical interview questions with exhaustive model answers.
 
 ### [Final Assessment: Capstone Projects](./final-assessment/README.md)
-A self-directed testing ground featuring 10 production-grade architecture briefs. You must architect, code, and document complete solutions following strict engineering constraints (zero `any`, SRP, <300 lines/file, Result error modeling). Choose from:
+A self-directed testing ground featuring 10 production-grade architecture briefs. You must architect, code, and document complete solutions following strict engineering constraints (zero `any`, SRP, <300 lines/file, Result error modeling). Choose from
 - **Option 01:** Core Task Management API
 - **Option 02:** Fintech Budget & Expense Engine
 - **Option 03:** Type-Safe Pub/Sub Event Bus

@@ -28,7 +28,7 @@
     8. Are module boundaries explicit with no circular dependencies?
 
     ## Anti-Monolith Circuit Breaker
-    If you are about to put everything in one file:
+    If you are about to put everything in one file
     - STOP.
     - Identify the distinct responsibilities.
     - Create a file for each.

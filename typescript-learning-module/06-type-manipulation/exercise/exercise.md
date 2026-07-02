@@ -1,71 +1,22 @@
-# Module 06 Exercise: Utility Types & Type Manipulation
+# Welcome to Practice Lab: Type Manipulation and Utility Types
+Welcome to the interactive exercise lab for **Type Manipulation and Utility Types**! Here is where theoretical knowledge transforms into practical coding ability.
 
-Write your solutions inside the **ANSWER HERE** code blocks below.
+Remember: The TypeScript compiler is your mentor. Don't be afraid to experiment, make syntax errors, and fix them. Every problem you solve builds professional muscle memory.
 
----
+## What You Will Tackle in This Lab
 
-### Challenge 1: Practical Utility Types (`Partial`, `Pick`, `Omit`, `Readonly`)
-Given the base interface:
-```typescript
-interface UserProfile {
-  id: string;
-  username: string;
-  email: string;
-  passwordHash: string;
-  avatarUrl?: string;
-  createdAt: Date;
-}
-```
-Create the following type aliases using TypeScript's built-in utility types:
-1. `ProfileUpdatePayload`: All properties are optional, except `id` which is omitted entirely (`Omit` + `Partial`).
-2. `PublicProfile`: Only includes `id`, `username`, and `avatarUrl` (`Pick`).
-3. `ImmutableProfile`: The entire profile where no property can ever be reassigned (`Readonly`).
+1. **[Challenge 01: Reshaping a User Type with Utility Types](./challenge-01.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+2. **[Challenge 02: Safe Property Lookup with keyof](./challenge-02.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+3. **[Challenge 03: Record and typeof](./challenge-03.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
 
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your utility type aliases here:
+## How to Work on These Challenges
 
+1. Open each challenge file in order.
+2. Read the scenario and requirements carefully.
+3. Write your TypeScript code directly inside the **ANSWER HERE** section.
+4. If you get stuck, review the theory in **[../README.md](../README.md)**.
 
-```
+## Ready to Check Your Work?
 
----
+Once you have completed your solutions, compare your approach against our verified production implementations inside **[../answers/exercise/](../answers/exercise/)**. Happy coding!
 
-### Challenge 2: `keyof` and Lookup Types
-Given the interface:
-```typescript
-interface AppConfig {
-  theme: "light" | "dark";
-  maxRetries: number;
-  enableDebug: boolean;
-}
-```
-1. Write a generic function called `getConfigValue<K extends keyof AppConfig>(config: AppConfig, key: K): AppConfig[K]` that safely retrieves a configuration value.
-2. Call your function to get `maxRetries` and verify that TypeScript infers the return type strictly as `number`. Try passing `"nonExistentKey"` and note the compiler error!
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your getConfigValue function here:
-
-
-```
-
----
-
-### Challenge 3: `typeof` Type Context
-You have an existing configuration object exported by a 3rd party library without a corresponding TypeScript interface:
-```typescript
-const defaultDatabaseSettings = {
-  host: "localhost",
-  port: 5432,
-  ssl: true,
-  poolSize: 10
-};
-```
-Using the `typeof` operator in a type context, create a type alias called `DatabaseSettings` based directly on `defaultDatabaseSettings`. Then create a variable `customSettings: Partial<DatabaseSettings>` overriding only `port` and `poolSize`.
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your DatabaseSettings type and customSettings variable here:
-
-
-```

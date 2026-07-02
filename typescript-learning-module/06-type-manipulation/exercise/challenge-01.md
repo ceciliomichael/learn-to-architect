@@ -16,8 +16,7 @@ interface User {
 
 ## Your Tasks
 
-Using only utility types (no manual re-typing of properties), create these four type aliases:
-
+Using only utility types (no manual re-typing of properties), create these four type aliases
 1. `UserUpdatePayload`: All fields optional, but `id` and `createdAt` are removed entirely.
 2. `PublicUser`: Only `id`, `username`, and `email` (removes sensitive fields).
 3. `ImmutableUser`: All fields readonly (cannot be changed after creation).
@@ -36,7 +35,5 @@ interface User {
   createdAt: Date;
 }
 
-// Write your four derived types and example objects here:
-
-
+// Write your four derived types and example objects here
 ```

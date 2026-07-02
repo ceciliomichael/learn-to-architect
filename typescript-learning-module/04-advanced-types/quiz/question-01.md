@@ -1,6 +1,6 @@
 # Question 01: Union vs Intersection
 
-Given:
+Given
 ```typescript
 type A = { name: string };
 type B = { age: number };

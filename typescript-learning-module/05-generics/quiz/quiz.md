@@ -1,51 +1,22 @@
-# Module 05 Quiz: Generics & Type Variables
+# Welcome to Conceptual Quiz: Generics
+Welcome to the conceptual quiz for **Generics**! True engineering mastery requires understanding *why* code works under the hood, not just typing syntax.
 
-Write your answers inside the **ANSWER HERE** blocks below.
+These questions are designed to test your mental models and prepare you for real-world architectural reviews and technical interviews.
 
----
+## Topics We Are Testing Today
 
-### Question 1: Why Generics over `any`?
-Explain the architectural difference between these two function signatures:
-```typescript
-function processA(arg: any): any;
-function processB<T>(arg: T): T;
-```
-If you pass `"hello"` into both, what does TypeScript know about the return value of each function?
+1. **[Question 01: any vs Generic](./question-01.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+2. **[Question 02: Generic Constraints](./question-02.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+3. **[Question 03: Tuples](./question-03.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+4. **[Question 04](./question-04.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
 
-#### ✍️ ANSWER HERE:
-> Explanation: 
+## How to Take This Quiz
 
----
+1. Open each question file sequentially.
+2. Think through the compiler mechanics before peeking at any notes.
+3. Write your reasoning clearly inside the **ANSWER HERE** block.
 
-### Question 2: Generic Constraints
-Look at this snippet:
-```typescript
-function getLength<T>(item: T): number {
-  return item.length;
-}
-```
-Why does TypeScript throw an error (`Property 'length' does not exist on type 'T'`), and how do you fix it using `extends`?
+## Check Your Answers
 
-#### ✍️ ANSWER HERE:
-> Why it errors & How to fix: 
+When you are done, verify your answers against our thorough architectural explanations inside **[../answers/quiz/](../answers/quiz/)**. Let's see how many you ace!
 
----
-
-### Question 3: Multiple Type Variables
-Given the generic type:
-```typescript
-type Pair<K, V> = { key: K; value: V };
-```
-If you write `const p: Pair<string, number> = { key: "age", value: 30 };`, what are the explicit types of `K` and `V` for this instance? Can another instance use `Pair<boolean, string[]>`?
-
-#### ✍️ ANSWER HERE:
-> Explicit types of K & V: 
-> Can another instance use different types? 
-
----
-
-### Question 4: Generic Inference
-When calling a generic function like `function identity<T>(arg: T): T`, why is it usually unnecessary to explicitly write `identity<number>(42)`?
-
-#### ✍️ ANSWER HERE:
-> Explanation: 

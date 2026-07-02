@@ -2,14 +2,13 @@
 
 ## Question
 
-Consider this function overload:
-
+Consider this function overload
 ```typescript
-// Overload signatures:
+// Overload signatures
 function parseInput(value: string): string[];
 function parseInput(value: number): string;
 
-// Implementation signature:
+// Implementation signature
 function parseInput(value: string | number): string[] | string {
   if (typeof value === 'string') {
     return value.split(',');

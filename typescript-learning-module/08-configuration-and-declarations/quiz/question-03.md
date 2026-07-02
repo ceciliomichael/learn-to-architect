@@ -3,10 +3,10 @@
 What turns a TypeScript file from script mode into module mode?
 
 ```typescript
-// File A  -  no imports or exports at all:
+// File A  -  no imports or exports at all
 const greeting = "Hello";
 
-// File B  -  has an import:
+// File B  -  has an import
 import { something } from "./other";
 const greeting = "Hello";
 ```

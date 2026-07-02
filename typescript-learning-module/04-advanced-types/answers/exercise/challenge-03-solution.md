@@ -18,10 +18,10 @@ function isPremiumUser(user: PremiumUser | FreeUser): user is PremiumUser {
 
 function printUserInfo(user: PremiumUser | FreeUser): void {
   if (isPremiumUser(user)) {
-    // TypeScript narrows 'user' to PremiumUser here:
+    // TypeScript narrows 'user' to PremiumUser here
     console.log(`Premium user. Fee: $${user.monthlyFee}/mo. Max downloads: ${user.maxDownloads}`);
   } else {
-    // TypeScript narrows 'user' to FreeUser here:
+    // TypeScript narrows 'user' to FreeUser here
     console.log(`Free user. Daily limit: ${user.dailyLimit} requests`);
   }
 }

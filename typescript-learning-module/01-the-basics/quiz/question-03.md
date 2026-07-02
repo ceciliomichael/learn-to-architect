@@ -1,13 +1,11 @@
 # Question 03: Type Inference
 
-You write this code:
-
+You write this code
 ```typescript
 let city = "Tokyo";
 ```
 
-A few lines later you write:
-
+A few lines later you write
 ```typescript
 city = 42;
 ```

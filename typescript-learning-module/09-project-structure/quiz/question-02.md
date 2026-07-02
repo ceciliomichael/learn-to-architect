@@ -2,8 +2,7 @@
 
 What is a circular dependency? Why is it dangerous?
 
-Imagine two files:
-
+Imagine two files
 ```typescript
 // services/orderService.ts
 import { logAction } from "./logService";

@@ -6,7 +6,7 @@ Throwing exceptions across architectural layers is an anti-pattern because TypeS
 The **Result Pattern** models failures as explicit return values (`Promise<Result<Order, "NOT_FOUND" | "TIMEOUT">>`). This forces the compiler to verify that the caller explicitly handles error states before accessing `.data`.
 
 ## 2. Why UI/Transport Layers Must Never Perform Direct I/O
-According to the Single Responsibility Principle (SRP), a layer should have only one reason to change. If an Express controller or React UI component executes raw SQL queries or direct `fetch` calls:
+According to the Single Responsibility Principle (SRP), a layer should have only one reason to change. If an Express controller or React UI component executes raw SQL queries or direct `fetch` calls
 - Testing UI rendering or route parameter parsing requires spinning up a live database connection or mocking global network sockets.
 - If the database schema changes, you must hunt through UI files and route controllers to update query strings.
 By isolating data access inside dedicated Repository classes, controllers and UI components become pure consumers of clean domain objects.

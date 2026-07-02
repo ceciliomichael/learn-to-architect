@@ -1,7 +1,6 @@
 # Question 02: Optional vs Explicit Undefined
 
-Look at these two interface definitions:
-
+Look at these two interface definitions
 ```typescript
 interface ShapeA {
   description?: string;

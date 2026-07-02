@@ -21,12 +21,11 @@ interface AdminMap {
 }
 ```
 
-These two declarations are **structurally identical** in TypeScript:
-
+These two declarations are **structurally identical** in TypeScript
 ```typescript
 type AdminMap = Record<"admin" | "editor", boolean>;
 
-// Exactly equivalent to:
+// Exactly equivalent to
 interface AdminMap {
   admin: boolean;
   editor: boolean;
@@ -35,12 +34,11 @@ interface AdminMap {
 
 ### Why `Record` Exists
 
-Writing the interface manually is fine for two keys, but `Record` shines when the key union is large, computed, or reused elsewhere:
-
+Writing the interface manually is fine for two keys, but `Record` shines when the key union is large, computed, or reused elsewhere
 ```typescript
 type UserRole = 'admin' | 'editor' | 'viewer' | 'moderator' | 'guest';
 
-// Much more concise than writing a 5-property interface:
+// Much more concise than writing a 5-property interface
 type PermissionMap = Record<UserRole, boolean>;
 
 const permissions: PermissionMap = {

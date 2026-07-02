@@ -14,21 +14,19 @@ Async programming lets your program say: "Start this task, and when it is done, 
 
 ## 2. What is a Promise?
 
-A `Promise` is an object that represents the eventual result of an asynchronous operation. When you start an async task, it immediately returns a Promise as a placeholder. The Promise can be in one of three states:
-
+A `Promise` is an object that represents the eventual result of an asynchronous operation. When you start an async task, it immediately returns a Promise as a placeholder. The Promise can be in one of three states
 - **Pending**: The task is still running. No result yet.
 - **Fulfilled**: The task completed successfully. The Promise now holds the result.
 - **Rejected**: The task failed. The Promise now holds an error.
 
 ### Typing a Promise
 
-When you type a function that returns a Promise, you use `Promise<T>` where `T` is the type of the eventual result:
-
+When you type a function that returns a Promise, you use `Promise<T>` where `T` is the type of the eventual result
 ```typescript
-// This function returns a Promise that will eventually resolve to a string:
+// This function returns a Promise that will eventually resolve to a string
 function fetchUsername(): Promise<string> {
   return new Promise((resolve, reject) => {
-    // Simulating a network delay of 1 second:
+    // Simulating a network delay of 1 second
     setTimeout(() => {
       resolve("Alice"); // The task succeeded. "Alice" is the result.
     }, 1000);
@@ -40,8 +38,7 @@ The `resolve` function is called when the task succeeds. The `reject` function i
 
 ### `.then()` and `.catch()`
 
-You can attach callbacks to a Promise to handle its result when it eventually arrives:
-
+You can attach callbacks to a Promise to handle its result when it eventually arrives
 ```typescript
 fetchUsername()
   .then((name) => {
@@ -64,8 +61,7 @@ This works but becomes messy when you chain multiple async operations. This is w
 
 ### `async` Functions
 
-Adding `async` before a function declaration makes it an async function. An async function always returns a `Promise`, even if you return a plain value inside it:
-
+Adding `async` before a function declaration makes it an async function. An async function always returns a `Promise`, even if you return a plain value inside it
 ```typescript
 async function getGreeting(): Promise<string> {
   return "Hello, World!"; // TypeScript wraps this in Promise<string> automatically.
@@ -74,8 +70,7 @@ async function getGreeting(): Promise<string> {
 
 ### `await`
 
-The `await` keyword pauses execution inside an async function until the Promise resolves. It then hands you the resolved value directly, without needing `.then()`:
-
+The `await` keyword pauses execution inside an async function until the Promise resolves. It then hands you the resolved value directly, without needing `.then()`
 ```typescript
 async function showUser(): Promise<void> {
   const name = await fetchUsername(); // Pauses here until the Promise resolves.
@@ -89,10 +84,10 @@ This code looks like it runs from top to bottom, but it does not block the rest 
 ### You Can Only Use `await` Inside an `async` Function
 
 ```typescript
-// Top level (not inside async function):
+// Top level (not inside async function)
 // const result = await fetchUsername(); // ERROR! await is only valid inside async functions.
 
-// Correct: wrap it in an async function:
+// Correct: wrap it in an async function
 async function main(): Promise<void> {
   const result = await fetchUsername();
   console.log(result);
@@ -105,8 +100,7 @@ main(); // Call the async function to start execution.
 
 ## 4. Error Handling in Async Code
 
-When a Promise rejects, `await` throws an error. You catch it with a standard `try/catch` block (covered in full in Module 11, but introduced here because async/await relies on it):
-
+When a Promise rejects, `await` throws an error. You catch it with a standard `try/catch` block (covered in full in Module 11, but introduced here because async/await relies on it)
 ```typescript
 async function loadUserData(userId: string): Promise<void> {
   try {
@@ -125,20 +119,19 @@ async function loadUserData(userId: string): Promise<void> {
 
 ## 5. Typing Async Functions
 
-The return type of any async function is always `Promise<T>`. If your function has no return value, it is `Promise<void>`:
-
+The return type of any async function is always `Promise<T>`. If your function has no return value, it is `Promise<void>`
 ```typescript
-// Returns Promise<string>:
+// Returns Promise<string>
 async function getTitle(): Promise<string> {
   return "TypeScript Developer";
 }
 
-// Returns Promise<number>:
+// Returns Promise<number>
 async function getScore(): Promise<number> {
   return 95;
 }
 
-// Returns nothing meaningful:
+// Returns nothing meaningful
 async function logStatus(): Promise<void> {
   console.log("System running.");
 }
@@ -148,8 +141,7 @@ async function logStatus(): Promise<void> {
 
 ## 6. Fetching Data: A Real Example
 
-Here is a realistic simulation of fetching data from an API, which is the most common use of async/await:
-
+Here is a realistic simulation of fetching data from an API, which is the most common use of async/await
 ```typescript
 interface Post {
   id: number;
@@ -157,14 +149,14 @@ interface Post {
   body: string;
 }
 
-// Simulates a network request that takes time to complete:
+// Simulates a network request that takes time to complete
 async function fetchPost(id: number): Promise<Post> {
-  // In a real app, you would use:
+  // In a real app, you would use
   // const response = await fetch(`https://api.example.com/posts/${id}`);
   // const data = await response.json();
   // return data;
 
-  // Simulation:
+  // Simulation
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({ id, title: "TypeScript is Great", body: "Here is why..." });
@@ -186,15 +178,14 @@ displayPost();
 
 ## 7. Running Multiple Async Tasks at the Same Time: `Promise.all`
 
-If you have multiple async tasks that do not depend on each other, running them one at a time wastes time. `Promise.all` lets you start all of them simultaneously and wait for all of them to finish:
-
+If you have multiple async tasks that do not depend on each other, running them one at a time wastes time. `Promise.all` lets you start all of them simultaneously and wait for all of them to finish
 ```typescript
 async function loadDashboard(): Promise<void> {
-  // Without Promise.all - runs sequentially (wasteful):
+  // Without Promise.all - runs sequentially (wasteful)
   // const user   = await fetchUser(1);  // Wait 1 second
   // const orders = await fetchOrders(); // Then wait another 1 second (2 seconds total)
 
-  // With Promise.all - runs in parallel (efficient):
+  // With Promise.all - runs in parallel (efficient)
   const [user, orders] = await Promise.all([
     fetchUser(1),    // Both start at the same time.
     fetchOrders()    // Total wait time = the slowest one, not the sum.
@@ -213,8 +204,7 @@ If any one of the Promises rejects, `Promise.all` immediately rejects with that 
 
 ## 8. `Promise.allSettled`: When You Want All Results Regardless of Errors
 
-`Promise.allSettled` is like `Promise.all` but it never rejects. It waits for every Promise to either fulfill or reject and gives you the outcome for each one:
-
+`Promise.allSettled` is like `Promise.all` but it never rejects. It waits for every Promise to either fulfill or reject and gives you the outcome for each one
 ```typescript
 async function tryLoadAll(): Promise<void> {
   const results = await Promise.allSettled([
@@ -238,8 +228,7 @@ Use `Promise.allSettled` when you want to attempt multiple operations and handle
 
 ## 9. Async Functions in Classes
 
-Class methods can also be async:
-
+Class methods can also be async
 ```typescript
 interface User {
   id: string;
@@ -248,7 +237,7 @@ interface User {
 
 class UserService {
   async findById(id: string): Promise<User | null> {
-    // Simulate database lookup:
+    // Simulate database lookup
     if (id === "1") {
       return { id: "1", username: "alice" };
     }
@@ -279,8 +268,7 @@ main();
 
 ### Forgetting `await`
 
-If you forget `await`, you get a Promise object instead of the resolved value. TypeScript will warn you about this in most cases:
-
+If you forget `await`, you get a Promise object instead of the resolved value. TypeScript will warn you about this in most cases
 ```typescript
 async function badExample(): Promise<void> {
   const name = fetchUsername(); // Missing await! 'name' is Promise<string>, not string.
@@ -295,11 +283,11 @@ async function badExample(): Promise<void> {
 ### Sequential `await` When Parallel Would Be Better
 
 ```typescript
-// Slow (sequential):
+// Slow (sequential)
 const a = await taskA();
 const b = await taskB(); // taskB only starts after taskA finishes.
 
-// Fast (parallel):
+// Fast (parallel)
 const [a, b] = await Promise.all([taskA(), taskB()]); // Both start immediately.
 ```
 

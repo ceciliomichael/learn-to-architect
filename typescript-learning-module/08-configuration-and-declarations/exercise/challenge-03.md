@@ -4,8 +4,7 @@ A legacy JavaScript file exposes a global object on `window` that your TypeScrip
 
 ## The JavaScript Global
 
-This JavaScript code (which you cannot modify) exposes:
-
+This JavaScript code (which you cannot modify) exposes
 ```javascript
 window.PaymentGateway = {
   init(merchantId) { /* ... */ },
@@ -16,7 +15,7 @@ window.PaymentGateway = {
 
 ## Your Task
 
-Write the content of `payment-gateway.d.ts` that types this global object:
+Write the content of `payment-gateway.d.ts` that types this global object
 - `init(merchantId: string): void`
 - `charge(amount: number, currency: string): Promise<boolean>`
 - `getStatus(): "ready" | "busy" | "error"`

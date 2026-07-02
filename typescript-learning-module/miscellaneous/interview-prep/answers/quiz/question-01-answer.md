@@ -19,7 +19,7 @@ interface UserData {
   isAdmin: boolean;
 }
 
-// Runtime Type Guard:
+// Runtime Type Guard
 function isUserData(raw: unknown): raw is UserData {
   return (
     typeof raw === "object" &&
@@ -37,7 +37,7 @@ async function handleLogin(reqBody: unknown): Promise<void> {
   if (!isUserData(reqBody)) {
     throw new Error("Invalid request body schema.");
   }
-  // Inside this block, TypeScript automatically narrows reqBody to UserData:
+  // Inside this block, TypeScript automatically narrows reqBody to UserData
   if (reqBody.isAdmin === true) {
     grantAdminAccess(reqBody.id);
   }

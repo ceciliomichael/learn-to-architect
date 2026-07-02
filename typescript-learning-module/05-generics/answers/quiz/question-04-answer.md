@@ -4,7 +4,7 @@
 
 ### What is a tuple type?
 
-A **tuple** is an array type where:
+A **tuple** is an array type where
 - The **number of elements is fixed**
 - The **type of each element at each position is known**
 
@@ -29,7 +29,7 @@ let pair: [string, number] = ["Alice", 30];
 let a: [string, number] = ["Alice", 30];
 let b: (string | number)[] = ["Alice", 30];
 
-// What TypeScript knows about index 0:
+// What TypeScript knows about index 0
 const nameA = a[0]; // type: string ✓
 const nameB = b[0]; // type: string | number  -  you must narrow before using as string
 

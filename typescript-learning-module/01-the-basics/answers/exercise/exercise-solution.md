@@ -9,8 +9,7 @@ Here are the complete solutions and explanations for the Module 01 exercises.
 ```typescript
 // Fix 1: Change 'const' to 'let' if username needs to be reassigned later.
 let username: string = "code_ninja_99";
-username = "senior_dev_2026"; // Now valid!
-
+username = "senior_dev_2026"; // Now valid
 // Fix 2: Age expects a number, not a string ("25"). Remove quotes.
 let age: number = 25;
 
@@ -19,7 +18,7 @@ let isEmployed: boolean = true;
 
 // Fix 4: Type inference made skills a string[] array. You cannot push a number (404).
 let skills: string[] = ["HTML", "CSS", "JS"];
-skills.push("TS"); // Push a string instead!
+skills.push("TS"); // Push a string instead
 ```
 
 ---
@@ -48,7 +47,7 @@ let mysteryData: unknown = "Hello World";
 mysteryData = [10, 20, 30];
 mysteryData = 999;
 
-// Type narrowing check:
+// Type narrowing check
 if (typeof mysteryData === "string") {
   mysteryData.split(","); // Safe! TypeScript knows it is a string inside this if-block.
 }

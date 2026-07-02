@@ -3,11 +3,11 @@
 What does `strictNullChecks` do and what problem does it solve?
 
 ```typescript
-// With strictNullChecks: false (the dangerous default in old TypeScript):
+// With strictNullChecks: false (the dangerous default in old TypeScript)
 let user: { name: string } = null; // No error! Very risky.
 console.log(user.name);            // Runtime crash: Cannot read properties of null.
 
-// With strictNullChecks: true:
+// With strictNullChecks: true
 let user2: { name: string } = null; // ERROR at compile time.
 ```
 

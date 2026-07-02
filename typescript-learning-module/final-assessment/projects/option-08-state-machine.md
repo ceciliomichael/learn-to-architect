@@ -15,7 +15,7 @@ Building a type-safe FSM engine (inspired by XState) tests your ability to make 
 
 ## The Type Safety Requirement
 
-You must build a `StateMachine` engine where:
+You must build a `StateMachine` engine where
 1. You can only send events that are valid for the machine.
 2. The state machine tracks context (data payload that evolves over time).
 
@@ -40,11 +40,10 @@ interface MachineConfig<TContext, TState extends string, TEvent extends { type: 
 
 ## Core Requirements
 
-Build the `StateMachineInstance<TContext, TState, TEvent>` class:
-
+Build the `StateMachineInstance<TContext, TState, TEvent>` class
 ```typescript
 send(event: TEvent): Result<{ state: TState; context: TContext }>
-// Attempts to transition state:
+// Attempts to transition state
 // 1. Checks if current state has a transition for event.type.
 // 2. If transition has a guard function, executes guard. If false, returns error: "GUARD_REJECTED".
 // 3. If transition has an action, executes action to update immutable context.
@@ -61,16 +60,16 @@ getContext(): TContext
 
 ## What Your Final index.ts Should Demonstrate
 
-Build a **Payment Processing Workflow Machine**:
+Build a **Payment Processing Workflow Machine**
 - States: `"idle" | "validating" | "charging" | "success" | "failed"`
-- Events:
+- Events
   - `{ type: "SUBMIT"; amount: number; cardNumber: string }`
   - `{ type: "VALIDATION_SUCCESS" }`
   - `{ type: "CHARGE_SUCCESS"; transactionId: string }`
   - `{ type: "FAIL"; reason: string }`
   - `{ type: "RETRY" }`
 
-Demonstrate:
+Demonstrate
 1. Attempting to transition from `"idle"` to `"success"` directly  -  verify your machine rejects it.
 2. Passing through `"idle"` -> `"validating"` -> `"charging"` -> `"success"` cleanly.
 3. Using a guard on `"SUBMIT"` that rejects amounts <= 0.

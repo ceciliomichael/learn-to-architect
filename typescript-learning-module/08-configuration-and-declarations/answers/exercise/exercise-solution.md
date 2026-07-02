@@ -44,7 +44,7 @@ export {};
 ### Solution 3: Isolating Module Scope
 
 ```typescript
-// Adding an empty export converts the file from a global script into an isolated ES Module!
+// Adding an empty export converts the file from a global script into an isolated ES Module
 export {};
 
 const myGlobalVar = "hello";

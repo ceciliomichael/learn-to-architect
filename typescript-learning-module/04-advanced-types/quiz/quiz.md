@@ -1,57 +1,23 @@
-# Module 04 Quiz: Advanced Types & Narrowing
+# Welcome to Conceptual Quiz: Advanced Types and Narrowing
+Welcome to the conceptual quiz for **Advanced Types and Narrowing**! True engineering mastery requires understanding *why* code works under the hood, not just typing syntax.
 
-Write your reasoning inside the **ANSWER HERE** blocks below.
+These questions are designed to test your mental models and prepare you for real-world architectural reviews and technical interviews.
 
----
+## Topics We Are Testing Today
 
-### Question 1: Intersection vs Union
-If you have:
-```typescript
-type A = { name: string };
-type B = { age: number };
-type UnionAB = A | B;
-type IntersectionAB = A & B;
-```
-If you receive a variable `val: UnionAB`, can you safely access `val.name` without checking its type first? What about `val2: IntersectionAB` accessing `val2.name`?
+1. **[Question 01: Union vs Intersection](./question-01.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+2. **[Question 02: The `in` Operator](./question-02.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+3. **[Question 03: Type Predicates](./question-03.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+4. **[Question 04: The never Exhaustiveness Check](./question-04.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
+5. **[Question 05: Union vs. Intersection  -  Real-World Analogy](./question-05.md)**  -  Test your conceptual reasoning and explain your answer inside the ANSWER HERE block.
 
-#### ✍️ ANSWER HERE:
-> UnionAB behavior: 
-> IntersectionAB behavior: 
+## How to Take This Quiz
 
----
+1. Open each question file sequentially.
+2. Think through the compiler mechanics before peeking at any notes.
+3. Write your reasoning clearly inside the **ANSWER HERE** block.
 
-### Question 2: Discriminated Unions
-Why is a shared literal property (like `status: "loading" | "success"`) critical when defining discriminated unions, compared to having completely disjoint properties?
+## Check Your Answers
 
-#### ✍️ ANSWER HERE:
-> Explanation: 
+When you are done, verify your answers against our thorough architectural explanations inside **[../answers/quiz/](../answers/quiz/)**. Let's see how many you ace!
 
----
-
-### Question 3: Exhaustiveness Checking with `never`
-Look at this code:
-```typescript
-type Direction = "North" | "South" | "East";
-
-function getAngle(dir: Direction): number {
-  switch (dir) {
-    case "North": return 0;
-    case "South": return 180;
-    default:
-      const _exhaustiveCheck: never = dir;
-      return _exhaustiveCheck;
-  }
-}
-```
-If another developer later adds `"West"` to `Direction`, what happens when they compile this code? Why?
-
-#### ✍️ ANSWER HERE:
-> What happens during compilation & Why: 
-
----
-
-### Question 4: Custom Type Guard Return Types
-What is the difference between writing `function isFish(pet: any): boolean` and `function isFish(pet: any): pet is Fish`?
-
-#### ✍️ ANSWER HERE:
-> Difference: 

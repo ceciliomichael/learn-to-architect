@@ -31,7 +31,5 @@ interface AppConfig {
   maxRetries: number;
 }
 
-// Write your getConfigValue function and test calls here:
-
-
+// Write your getConfigValue function and test calls here
 ```

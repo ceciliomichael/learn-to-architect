@@ -1,7 +1,6 @@
 # Question 02: Generic Constraints
 
-This function has a bug:
-
+This function has a bug
 ```typescript
 function getLength<T>(item: T): number {
   return item.length; // TypeScript gives an error here.
@@ -19,7 +18,7 @@ function getLength<T>(item: T): number {
 > **The fix using extends:**
 
 ```typescript
-// Write the corrected function here:
+// Write the corrected function here
 function getLength
 
 

@@ -4,11 +4,11 @@ Practice creating Promises and using async/await.
 
 ## Your Tasks
 
-1. Write an async function `simulateDelay(ms: number): Promise<string>` that:
+1. Write an async function `simulateDelay(ms: number): Promise<string>` that
    - Wraps a `setTimeout` inside `new Promise`.
    - After `ms` milliseconds, resolves with the string `"Done after " + ms + "ms"`.
 
-2. Write an `async function main(): Promise<void>` that:
+2. Write an `async function main(): Promise<void>` that
    - Awaits `simulateDelay(500)` and logs the result.
    - Then awaits `simulateDelay(200)` and logs that result too.
 
@@ -19,7 +19,5 @@ Practice creating Promises and using async/await.
 ## ANSWER HERE
 
 ```typescript
-// Write simulateDelay and main here:
-
-
+// Write simulateDelay and main here
 ```

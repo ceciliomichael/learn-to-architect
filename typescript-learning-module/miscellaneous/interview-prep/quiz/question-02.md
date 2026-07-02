@@ -2,13 +2,13 @@
 
 During a senior system design interview, you are asked about type compatibility across module boundaries.
 
-Suppose you have two modules in a financial system:
+Suppose you have two modules in a financial system
 ```typescript
-// Module A:
+// Module A
 type USD = number;
 function processPayment(amount: USD): void { /* ... */ }
 
-// Module B:
+// Module B
 type EUR = number;
 const invoiceTotal: EUR = 100;
 ```
@@ -24,6 +24,5 @@ const invoiceTotal: EUR = 100;
 > **2. How Branded Types simulate nominal typing:**
 
 ```typescript
-// 3. Branded type definitions:
-
+// 3. Branded type definitions
 ```

@@ -5,11 +5,11 @@ What is the difference between running async operations sequentially versus in p
 Two operations: `fetchA()` takes 1 second. `fetchB()` takes 1 second.
 
 ```typescript
-// Sequential:
+// Sequential
 const a = await fetchA();
 const b = await fetchB();
 
-// Parallel:
+// Parallel
 const [a, b] = await Promise.all([fetchA(), fetchB()]);
 ```
 

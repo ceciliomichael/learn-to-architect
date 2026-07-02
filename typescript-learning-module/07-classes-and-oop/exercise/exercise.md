@@ -1,63 +1,22 @@
-# Module 07 Exercise: Classes, Access Modifiers & Interfaces
+# Welcome to Practice Lab: Classes and Object-Oriented Programming
+Welcome to the interactive exercise lab for **Classes and Object-Oriented Programming**! Here is where theoretical knowledge transforms into practical coding ability.
 
-Write your code inside the **ANSWER HERE** blocks below.
+Remember: The TypeScript compiler is your mentor. Don't be afraid to experiment, make syntax errors, and fix them. Every problem you solve builds professional muscle memory.
 
----
+## What You Will Tackle in This Lab
 
-### Challenge 1: Secure Bank Account Class
-Build a `BankAccount` class:
-1. `private balance: number` (initialized via constructor).
-2. `readonly accountId: string`.
-3. `public deposit(amount: number): void` that adds positive amounts.
-4. `public withdraw(amount: number): boolean` that deducts money only if `balance >= amount`, returning `true` on success and `false` on failure.
-5. `public getBalance(): number` to read the private balance safely.
+1. **[Challenge 01: Build a Secure Bank Account](./challenge-01.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+2. **[Challenge 02: Inheritance and super](./challenge-02.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+3. **[Challenge 03: Abstract Class and Interface Implementation](./challenge-03.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
 
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your BankAccount class here:
+## How to Work on These Challenges
 
+1. Open each challenge file in order.
+2. Read the scenario and requirements carefully.
+3. Write your TypeScript code directly inside the **ANSWER HERE** section.
+4. If you get stuck, review the theory in **[../README.md](../README.md)**.
 
-```
+## Ready to Check Your Work?
 
----
+Once you have completed your solutions, compare your approach against our verified production implementations inside **[../answers/exercise/](../answers/exercise/)**. Happy coding!
 
-### Challenge 2: Parameter Property Shorthand
-Rewrite the following class using TypeScript's parameter property shorthand in the constructor so you don't declare properties or assignments explicitly:
-
-```typescript
-class Product {
-  public name: string;
-  private price: number;
-  protected sku: string;
-
-  constructor(name: string, price: number, sku: string) {
-    this.name = name;
-    this.price = price;
-    this.sku = sku;
-  }
-}
-```
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Rewrite the Product class using shorthand here:
-
-
-```
-
----
-
-### Challenge 3: Interfaces & Abstract Classes
-1. Create an interface `Logger { log(msg: string): void; }`.
-2. Create an abstract class `BaseService implements Logger` with:
-   - `abstract log(msg: string): void;`
-   - `protected serviceName: string;`
-   - A concrete method `execute(): void` that calls `this.log(`Executing ${this.serviceName} service...`)`.
-3. Create a child class `AuthService` extending `BaseService` that implements `log(msg)` using `console.log`. Instantiate `AuthService` and call `.execute()`.
-
-#### ✍️ ANSWER HERE:
-```typescript
-// Write your Logger interface, BaseService, and AuthService here:
-
-
-```

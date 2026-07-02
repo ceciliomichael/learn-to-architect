@@ -19,8 +19,7 @@ The name "barrel" comes from the idea of collecting many individual items into o
 
 ## What problem does it solve?
 
-Without a barrel file, every consumer must import each utility individually using its exact file path:
-
+Without a barrel file, every consumer must import each utility individually using its exact file path
 ```typescript
 // Without a barrel  -  verbose and path-coupled
 import { formatDate } from "../utils/formatDate";
@@ -28,8 +27,7 @@ import { formatCurrency } from "../utils/formatCurrency";
 import { slugify } from "../utils/slugify";
 ```
 
-With a barrel file, the same imports collapse into a single, clean line that references the **folder**, not individual files:
-
+With a barrel file, the same imports collapse into a single, clean line that references the **folder**, not individual files
 ```typescript
 // With a barrel  -  clean, decoupled from internal file names
 import { formatDate, formatCurrency, slugify } from "../utils";

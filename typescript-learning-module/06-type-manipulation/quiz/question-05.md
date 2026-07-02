@@ -2,8 +2,7 @@
 
 ## Question
 
-You have the following `User` interface:
-
+You have the following `User` interface
 ```typescript
 interface User {
   id: string;
@@ -14,8 +13,7 @@ interface User {
 }
 ```
 
-You need a new type that:
-
+You need a new type that
 1. **Removes** the `id` and `createdAt` fields.
 2. Makes **everything else** optional.
 

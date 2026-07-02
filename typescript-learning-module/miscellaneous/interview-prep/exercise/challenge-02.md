@@ -28,7 +28,5 @@ interface AsyncData<T> {
 ## ANSWER HERE
 
 ```typescript
-// Write your explanation, RemoteData<T> union, renderData function, and exhaustiveness check here:
-
-
+// Write your explanation, RemoteData<T> union, renderData function, and exhaustiveness check here
 ```
