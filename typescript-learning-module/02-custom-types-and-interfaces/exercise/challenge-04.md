@@ -1,23 +1,23 @@
 # Challenge 04: Union Types in Action
 
-A function in your application needs to accept either a string ID or a numeric ID.
+Your application stores user identifiers that can be either a text string or a numeric ID.
 
 ## Your Tasks
 
 1. Create a `type` alias called `UserId` that is `string | number`.
 
-2. Declare two variables using `UserId`: one assigned a string value and one assigned a number value.
+2. Declare two variables using `UserId`: one assigned a string value (e.g., `"user-abc"`) and one assigned a number value (e.g., `101`).
 
-3. Write a function called `printId(id: UserId): void` that
-   - Uses `typeof` inside an `if/else` to check which type `id` is.
-   - If it is a `string`: logs the id converted to uppercase.
-   - If it is a `number`: logs `"ID: " + id`.
+3. Write an `if/else` statement using `typeof` directly on your string variable:
+   - If `typeof` equals `"string"`, log the ID converted to uppercase using `.toUpperCase()`.
+   - If `typeof` equals `"number"`, log `"Numeric ID: " + value`.
 
-4. Call `printId` with both your string and number variables and verify the output.
+4. Repeat the same `if/else` check on your number variable to verify that TypeScript safely narrows union types without using functions.
 
 ## ANSWER HERE
 
 ```typescript
-// Write your UserId type, variables, and printId function here
+// Write your UserId type, variables, and if/else checks here
+
 
 ```
