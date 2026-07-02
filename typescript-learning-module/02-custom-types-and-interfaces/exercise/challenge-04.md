@@ -6,18 +6,17 @@ Your application stores user identifiers that can be either a text string or a n
 
 1. Create a `type` alias called `UserId` that is `string | number`.
 
-2. Declare two variables using `UserId`: one assigned a string value (e.g., `"user-abc"`) and one assigned a number value (e.g., `101`).
+2. Declare a variable using `let` called `currentId: UserId` and assign it a string value (e.g., `"user-abc"`).
 
-3. Write an `if/else` statement using `typeof` directly on your string variable:
-   - If `typeof` equals `"string"`, log the ID converted to uppercase using `.toUpperCase()`.
-   - If `typeof` equals `"number"`, log `"Numeric ID: " + value`.
+3. Write an `if` check verifying that `typeof currentId === "string"`, and inside the block log `currentId.toUpperCase()`.
 
-4. Repeat the same `if/else` check on your number variable to verify that TypeScript safely narrows union types without using functions.
+4. Next, reassign `currentId = 101;` (a number). Notice TypeScript allows this because `currentId` has the union type `string | number`.
+
+5. Write an `if` check verifying that `typeof currentId === "number"`, and inside the block log `"Numeric ID: " + currentId`.
 
 ## ANSWER HERE
 
 ```typescript
 // Write your UserId type, variables, and if/else checks here
-
 
 ```

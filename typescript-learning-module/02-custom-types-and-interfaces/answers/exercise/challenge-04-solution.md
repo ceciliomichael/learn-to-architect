@@ -3,20 +3,17 @@
 ```typescript
 type UserId = string | number;
 
-const stringId: UserId = "user-abc-123";
-const numericId: UserId = 9001;
+// 1. Declare variable with string value
+let currentId: UserId = "user-abc-123";
 
-// Checking the string variable directly
-if (typeof stringId === "string") {
-  console.log(stringId.toUpperCase()); // Outputs: "USER-ABC-123"
-} else {
-  console.log("Numeric ID: " + stringId);
+if (typeof currentId === "string") {
+  console.log(currentId.toUpperCase()); // Outputs: "USER-ABC-123"
 }
 
-// Checking the numeric variable directly
-if (typeof numericId === "string") {
-  console.log(numericId.toUpperCase());
-} else {
-  console.log("Numeric ID: " + numericId); // Outputs: "Numeric ID: 9001"
+// 2. Reassign the exact same variable to a number
+currentId = 9001;
+
+if (typeof currentId === "number") {
+  console.log("Numeric ID: " + currentId); // Outputs: "Numeric ID: 9001"
 }
 ```
