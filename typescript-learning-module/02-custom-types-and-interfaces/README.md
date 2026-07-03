@@ -62,17 +62,6 @@ interface UserProfile {
 
 const userA: UserProfile = { username: "nova" };          // Valid. avatarUrl is absent.
 const userB: UserProfile = { username: "blaze", avatarUrl: "https://cdn.site.com/blaze.png" }; // Also valid.
-```
-
-#### Optional (`?`) vs Explicit `undefined`
-
-It is important to understand the practical difference between marking a property as optional (`property?: string`) versus typing it as a union with undefined (`property: string | undefined`):
-
-- **Optional (`property?: string`):** You are allowed to **omit the key entirely** when creating the object (`{}`). If the property is present, its value can be either a string or `undefined`.
-- **Explicit Undefined (`property: string | undefined`):** You **must include the property key** when creating the object, even if you set its value to `undefined` (`{ property: undefined }`). If you leave the key out entirely (`{}`), TypeScript will give a compiler error stating that the required property is missing.
-
-Use `?` when a property is genuinely optional and can be omitted. Use `| undefined` only when the key must always exist on the object shape for strict data contracts.
-
 ### Readonly Properties
 
 If a property should never be changed after the object is created (like a unique ID that the database assigns), use the `readonly` keyword. Any attempt to overwrite it will cause a TypeScript error
@@ -250,3 +239,12 @@ let username: string = "Alice";
 let optionalName: string | null = null; // Explicitly allows null.
 optionalName = "Bob"; // Can later be assigned a real value.
 ```
+
+### Optional Properties (`?`) vs Explicit `undefined`
+
+When designing interfaces, it is important to understand the difference between marking a property as optional (`property?: string`) versus typing it explicitly as a union with `undefined` (`property: string | undefined`):
+
+- **Optional (`property?: string`):** You are allowed to **omit the key entirely** when creating the object (`{}`). If the property is present, its value can be either a string or `undefined`.
+- **Explicit Undefined (`property: string | undefined`):** You **must include the property key** when creating the object, even if you set its value to `undefined` (`{ property: undefined }`). If you leave the key out entirely (`{}`), TypeScript will give a compiler error stating that the required property is missing.
+
+Use `?` when a property can be safely left off the object. Use `| undefined` when your application requires every key to be present on the object shape.
