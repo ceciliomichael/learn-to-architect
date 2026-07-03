@@ -18,11 +18,21 @@ sayHello("Bob");   // Outputs: Hello, Bob
 ```
 
 Breaking down the syntax
+Breaking down the syntax
 - `function`: the keyword that declares a function.
 - `sayHello`: the name you give it.
 - `(name: string)`: the input the function accepts, called a **parameter**. We type it as `string`.
 - `: void`: the **return type**. `void` means this function does not return any value.
 - `{ ... }`: the body of the function where the logic lives.
+
+#### Real-World Example: Formatting Display Dates
+Instead of repeating complex date formatting logic inside every component, engineers wrap it in a reusable function:
+```typescript
+function formatTimestamp(timestamp: number): void {
+  const dateObj = new Date(timestamp);
+  console.log("Logged event at: " + dateObj.toLocaleTimeString());
+}
+```
 
 ---
 
@@ -45,6 +55,14 @@ function logMessage(message: string): void {
 }
 ```
 
+#### Real-World Example: Calculating Checkout Tax
+E-commerce payment processors use typed return values so pricing totals never accidentally return `undefined`:
+```typescript
+function calculateTotalWithTax(subtotal: number, taxRate: number): number {
+  return subtotal + (subtotal * taxRate);
+}
+```
+
 ---
 
 ## 3. Arrow Functions
@@ -63,6 +81,16 @@ const multiply = (a: number, b: number): number => {
 
 // Even shorter for single-expression functions
 const multiply = (a: number, b: number): number => a * b;
+```
+
+#### Real-World Example: Filtering and Mapping Array Data
+Arrow functions shine when filtering or transforming lists inside array methods like `.filter()` and `.map()`:
+```typescript
+const prices: number[] = [15, 120, 45, 200];
+
+// Real-World Use Case: Concise filtering of expensive items
+const affordablePrices = prices.filter((price) => price < 100); // [15, 45]
+const priceTags = affordablePrices.map((price) => "$" + price);  // ["$15", "$45"]
 ```
 
 Arrow functions are especially common when passing functions as arguments (callbacks), which is covered below.
@@ -98,6 +126,14 @@ greet("Alice");           // "Hello, Explorer Alice" (uses default)
 greet("Alice", "Dr.");    // "Hello, Dr. Alice" (uses provided value)
 ```
 
+#### Real-World Example: Pagination and API Filtering
+When fetching paginated database records, search filters are optional while page limit defaults to 20:
+```typescript
+function fetchUserList(searchQuery?: string, limit: number = 20): void {
+  // If searchQuery is provided, filter by name; otherwise return first 20 users
+}
+```
+
 ---
 
 ## 5. Rest Parameters
@@ -117,6 +153,14 @@ console.log(sumAll(1, 2, 3, 4, 5));   // Outputs: 15
 ```
 
 The `for...of` loop used above is a simple way to go through every item in an array one by one.
+
+#### Real-World Example: Logging Utility with Multiple Tags
+Logging frameworks allow passing a main message followed by an arbitrary list of debug tags:
+```typescript
+function logError(message: string, ...tags: string[]): void {
+  console.log("[ERROR] " + message + " | Tags: " + tags.join(", "));
+}
+```
 
 ---
 
@@ -144,6 +188,14 @@ function applyToNumber(n: number, transform: (x: number) => number): number {
 
 let result = applyToNumber(5, (x) => x * x); // Passes 5 through the squaring function.
 console.log(result); // Outputs: 25
+```
+
+#### Real-World Example: Asynchronous API Retry Handlers
+When building network clients, you pass callback handlers that execute when a download finishes or fails:
+```typescript
+function fetchWithRetry(url: string, onSuccess: (data: string) => void): void {
+  // Downloads url, then calls onSuccess(result)
+}
 ```
 
 ---
@@ -195,6 +247,19 @@ let names: string[] = ["Alice", "Bob"];
 let upper = names.map((name) => name.toUpperCase());
 ```
 
+#### Real-World Example: Processing User Analytics
+In production dashboards, array methods transform raw database records into UI-ready summaries:
+```typescript
+interface UserRecord { id: string; isActive: boolean; spend: number }
+
+const users: UserRecord[] = [
+  { id: "u-1", isActive: true, spend: 150 },
+  { id: "u-2", isActive: false, spend: 0 }
+];
+
+const activeUserIds = users.filter((u) => u.isActive).map((u) => u.id); // ["u-1"]
+```
+
 ---
 
 ## 8. The `void` Return Type and Callbacks
@@ -209,6 +274,9 @@ function runCallback(cb: () => void): void {
 // TypeScript simply ignores the return value because the callback type is void
 runCallback(() => true);
 ```
+
+#### Real-World Example: DOM Event Listeners
+When attaching click handlers to buttons (`button.addEventListener("click", () => window.location.href = "/")`), the assignment returns a string URL, but the button handler expects `void`. TypeScript safely allows it without throwing errors!
 
 ---
 
@@ -234,6 +302,16 @@ const result2 = parseInput(9.1);            // TypeScript knows this returns str
 ```
 
 External callers can only use the overload signatures. They cannot call the function with argument types not listed in the overloads.
+
+#### Real-World Example: Flexible Database Query Helpers
+ORM libraries use overloads so querying by ID (`getUser("abc")`) returns `User | null`, while querying by array (`getUser(["abc", "def"])`) returns `User[]`:
+```typescript
+function getUser(id: string): User | null;
+function getUser(ids: string[]): User[];
+function getUser(idOrIds: string | string[]): User | null | User[] {
+  // Implementation
+}
+```
 
 ---
 
@@ -264,6 +342,15 @@ for (let item of items) {
 ```
 
 Use `for...of` when you want every item. Use the classic `for` loop when you need to track the index number.
+
+#### Real-World Example: Processing Batch Email Queues
+When sending background notifications, `for...of` iterates cleanly over queued jobs:
+```typescript
+const emailQueue: string[] = ["welcome@site.com", "billing@site.com"];
+for (const email of emailQueue) {
+  sendEmailNotification(email);
+}
+```
 
 ---
 

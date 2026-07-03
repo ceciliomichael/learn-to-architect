@@ -26,6 +26,14 @@ function printId(id: string | number): void {
 
 To use type-specific methods, you must first narrow down the type using a check.
 
+#### Real-World Example: Accepting UUIDs or Numeric IDs in Route Handlers
+API endpoints frequently accept account identifiers that could be either numeric IDs (`104`) or string UUIDs (`"a8f3-..."`):
+```typescript
+function getAccountDetails(accountId: string | number): void {
+  console.log("Querying database for ID: " + accountId);
+}
+```
+
 ---
 
 ## 2. Intersection Types: "This and That"
@@ -43,6 +51,15 @@ const alice: Person = { name: "Alice", age: 30 };
 
 Union (`|`) means either one. Intersection (`&`) means both at once.
 
+#### Real-World Example: Adding Timestamps to Database Entities
+Backend services combine raw request models with metadata timestamps before storing in PostgreSQL or MongoDB:
+```typescript
+type CreateUserPayload = { email: string; role: string };
+type AuditTimestamps = { createdAt: Date; updatedAt: Date };
+
+type DatabaseUserRecord = CreateUserPayload & AuditTimestamps;
+```
+
 ---
 
 ## 3. Literal Types: Restricting to Exact Values
@@ -56,6 +73,17 @@ let heading: Direction = "North"; // Valid.
 ```
 
 Literal types are extremely useful because they let TypeScript catch typos and invalid values at compile time. You will see this pattern everywhere in professional code.
+
+#### Real-World Example: Restricting HTTP Methods or Theme Modes
+UI design systems and API clients use literal types to block invalid configuration values:
+```typescript
+type ThemeMode = "light" | "dark" | "system";
+type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
+
+function setTheme(mode: ThemeMode): void {
+  // Can only pass "light", "dark", or "system"
+}
+```
 
 ---
 
@@ -99,6 +127,17 @@ function operateVehicle(vehicle: Car | Boat): void {
 }
 ```
 
+#### Real-World Example: Handling Different API Responses
+When third-party webhooks send different payload structures (`{ event: "payment" }` vs `{ refundReason: "defect" }`), the `in` operator safely routes logic without crashing:
+```typescript
+type WebhookPayload = { event: string } | { refundReason: string };
+function processWebhook(payload: WebhookPayload): void {
+  if ("refundReason" in payload) {
+    console.log("Processing refund: " + payload.refundReason);
+  }
+}
+```
+
 ---
 
 ## 5. Custom Type Guards
@@ -126,6 +165,17 @@ function handlePet(pet: Cat | Bird): void {
 
 Without the `is Cat` predicate, TypeScript would just see a `boolean` return and would not narrow the type inside the `if` block.
 
+#### Real-World Example: Validating API User Roles
+When filtering active premium subscribers from a database list, custom type guards ensure downstream functions receive strictly verified accounts:
+```typescript
+interface FreeAccount { plan: "free" }
+interface ProAccount { plan: "pro"; features: string[] }
+
+function isProAccount(acc: FreeAccount | ProAccount): acc is ProAccount {
+  return acc.plan === "pro";
+}
+```
+
 ---
 
 ## 6. The `switch` Statement
@@ -136,19 +186,32 @@ type Status = "active" | "inactive" | "banned";
 
 function describeStatus(status: Status): string {
   switch (status) {
-    case "active"
+    case "active":
       return "User is currently active.";
-    case "inactive"
+    case "inactive":
       return "User has not logged in recently.";
-    case "banned"
+    case "banned":
       return "User has been banned.";
-    default
+    default:
       return "Unknown status.";
   }
 }
 ```
 
 Each `case` is checked against the value of `status`. When a match is found, that block runs and TypeScript stops checking the rest.
+
+#### Real-World Example: Redux or React useReducer Actions
+In frontend state managers, `switch` blocks route state updates based on dispatched action types:
+```typescript
+type Action = "INCREMENT" | "DECREMENT" | "RESET";
+function counterReducer(state: number, action: Action): number {
+  switch (action) {
+    case "INCREMENT": return state + 1;
+    case "DECREMENT": return state - 1;
+    case "RESET": return 0;
+  }
+}
+```
 
 ---
 
@@ -167,17 +230,20 @@ Every member of the union has a `status` property, but each `status` is a differ
 ```typescript
 function renderUI(state: RequestState): string {
   switch (state.status) {
-    case "loading"
+    case "loading":
       return "Loading...";
-    case "success"
+    case "success":
       return "Loaded " + state.data.length + " items."; // 'data' is available here.
-    case "error"
+    case "error":
       return "Error " + state.code + ": " + state.message; // 'message' and 'code' are available here.
   }
 }
 ```
 
 Notice that inside each `case`, TypeScript automatically knows which specific type `state` is. Inside `case "success"`, it knows `state.data` exists. Inside `case "error"`, it knows `state.message` exists. This is the main benefit of discriminated unions.
+
+#### Real-World Example: Asynchronous UI State
+Every professional web dashboard uses discriminated unions so rendering logic never tries to show `data` while in an `error` state.
 
 ---
 
@@ -189,13 +255,13 @@ More practically, `never` is used as a safety net inside discriminated union swi
 ```typescript
 function renderUI(state: RequestState): string {
   switch (state.status) {
-    case "loading"
+    case "loading":
       return "Loading...";
-    case "success"
+    case "success":
       return "Loaded data.";
-    case "error"
+    case "error":
       return "Error occurred.";
-    default
+    default:
       // If 'state' reaches here, TypeScript knows something is wrong.
       // If all cases are handled, 'state' is of type 'never' at this point.
       // If a new status is added to RequestState but not handled above, TypeScript
@@ -324,9 +390,12 @@ enum Color { Red = "RED", Green = "GREEN", Blue = "BLUE" }
 const allColors = Object.values(Color); // ["RED", "GREEN", "BLUE"]
 ```
 
+#### Real-World Example: Database Status Codes or Analytics Event Types
+Analytics SDKs use string enums so developers can select event categories (`AnalyticsEvent.CheckoutCompleted`) with auto-completion and zero typos.
+
 ---
 
-## 13. Real-World Use Cases and Common Pitfalls
+## 12. Real-World Use Cases and Common Pitfalls
 
 ### Real-World Use Case 1: Bulletproof UI State Machines with Discriminated Unions
 When managing complex web page states (like loading a list of products), representing your state as a Discriminated Union prevents impossible UI combinations (like showing a "Loading Spinner" and an "Error Message" simultaneously).

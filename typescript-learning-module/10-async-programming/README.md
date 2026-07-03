@@ -10,6 +10,9 @@ Imagine your program asks a server for some user data. That request takes 2 seco
 
 Async programming lets your program say: "Start this task, and when it is done, come back and handle the result. In the meantime, keep doing other things."
 
+#### Real-World Example: Non-Blocking Web Servers
+In Node.js backends, handling database queries asynchronously ensures that a slow query from User A never freezes web traffic or login requests from User B.
+
 ---
 
 ## 2. What is a Promise?
@@ -52,6 +55,14 @@ fetchUsername()
 ```
 
 This works but becomes messy when you chain multiple async operations. This is why `async/await` was created.
+
+#### Real-World Example: Wrapping Legacy Node Callback APIs
+Engineers wrap legacy callback APIs (like `fs.readFile`) into typed Promises so modern async code can use them cleanly:
+```typescript
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+```
 
 ---
 
@@ -96,6 +107,15 @@ async function main(): Promise<void> {
 main(); // Call the async function to start execution.
 ```
 
+#### Real-World Example: REST API Controller Handlers
+Express or NestJS route controllers await authentication checks and database lookups sequentially:
+```typescript
+async function handleLogin(req: { username: string }): Promise<string> {
+  const user = await fetchUsername();
+  return "Welcome back, " + user;
+}
+```
+
 ---
 
 ## 4. Error Handling in Async Code
@@ -114,6 +134,15 @@ async function loadUserData(userId: string): Promise<void> {
 ```
 
 `try` contains the code you want to run. `catch` contains the code that runs if anything inside `try` throws an error. The error thrown by the rejected Promise is passed as the `catch` parameter.
+
+#### Real-World Example: Graceful API Fallbacks
+When loading user preferences over network, `try/catch` catches timeouts or offline status and falls back to local storage or defaults:
+```typescript
+async function getTheme(): Promise<string> {
+  try { return await fetchThemeFromServer(); }
+  catch { return "dark"; }
+}
+```
 
 ---
 
@@ -136,6 +165,9 @@ async function logStatus(): Promise<void> {
   console.log("System running.");
 }
 ```
+
+#### Real-World Example: Background Cron Job Handlers
+Background workers return `Promise<void>` to signal execution completion without returning payloads to callers.
 
 ---
 
@@ -174,6 +206,9 @@ async function displayPost(): Promise<void> {
 displayPost();
 ```
 
+#### Real-World Example: Next.js Server Component Data Fetching
+Next.js 13+ App Router components are typed directly as `async function ProfilePage({ params }): Promise<JSX.Element>` allowing top-level await for user data.
+
 ---
 
 ## 7. Running Multiple Async Tasks at the Same Time: `Promise.all`
@@ -197,6 +232,9 @@ async function loadDashboard(): Promise<void> {
 ```
 
 `Promise.all` takes an array of Promises and returns a single Promise that resolves when ALL of them have resolved. The result is an array of their resolved values in the same order.
+
+#### Real-World Example: Dashboard Page Initializers
+Aggregating user profile, notifications count, and recent transactions in parallel via `Promise.all` reduces overall page load latency by up to 70%.
 
 If any one of the Promises rejects, `Promise.all` immediately rejects with that error.
 
@@ -223,6 +261,9 @@ async function tryLoadAll(): Promise<void> {
 ```
 
 Use `Promise.allSettled` when you want to attempt multiple operations and handle successes and failures individually.
+
+#### Real-World Example: Batch Email Sending or Notification Delivery
+When broadcasting alerts to 50 users, `Promise.allSettled` ensures that if one recipient's email address rejects, the remaining 49 users still receive their notifications without crashing the queue.
 
 ---
 

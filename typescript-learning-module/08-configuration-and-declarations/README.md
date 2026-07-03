@@ -22,6 +22,9 @@ my-project/
 └── package.json
 ```
 
+#### Real-World Example: Monorepo Microservices
+Standard production repositories separate backend (`services/api/src`) and frontend (`apps/web/src`) packages, each containing an isolated `tsconfig.json` extending root configurations.
+
 ---
 
 ## 2. `tsconfig.json`: Configuring the Compiler
@@ -54,6 +57,9 @@ my-project/
 - **`include`**: A pattern telling the compiler which files to compile. `src/**/*` means everything inside `src/`.
 - **`exclude`**: Files or folders to ignore.
 
+#### Real-World Example: ESM for Vite and Next.js
+Modern frontend bundlers configure `"module": "ESNext"` and `"moduleResolution": "bundler"` inside `tsconfig.json` to enable native browser tree-shaking.
+
 ---
 
 ## 3. What `"strict": true` Actually Enables
@@ -75,6 +81,9 @@ let name: string | null = null; // Valid. You explicitly acknowledge null is pos
 ```
 
 This forces you to handle the "no value" case deliberately everywhere in your code.
+
+#### Real-World Example: Database Query Results
+ORM queries like `findUserById(id)` return `Promise<User | null>` under strict mode, forcing callers to verify existence before accessing fields (`user.email`).
 
 ---
 
@@ -136,6 +145,9 @@ import log from "./logger"; // No curly braces needed for default imports.
 log("Hello");
 ```
 
+#### Real-World Example: Feature Barrel Exports (`index.ts`)
+Large modules use barrel files (`export * from "./user.service"`) inside folder roots (`src/services/index.ts`) so callers import from a unified entry point.
+
 ---
 
 ## 5. Script Mode vs Module Mode
@@ -151,6 +163,9 @@ export {}; // Converts this file to module scope.
 
 const myVar = 10; // Now private to this file only.
 ```
+
+#### Real-World Example: Standalone Test or Utility Scripts
+When writing quick scratch scripts (`scripts/migrate.ts`), adding `export {};` prevents variable names like `db` from colliding with variables in other scripts.
 
 ---
 
@@ -182,6 +197,14 @@ declare global {
 export {}; // Makes this a module-scoped declaration file.
 ```
 
+#### Real-World Example: Custom Environment Variables in Node/Next.js
+To get autocomplete for `process.env.API_KEY`, developers create an `env.d.ts` extending `ProcessEnv`:
+```typescript
+declare namespace NodeJS {
+  interface ProcessEnv { API_KEY: string; PORT?: string; }
+}
+```
+
 ---
 
 ## 7. DefinitelyTyped and `@types` Packages
@@ -200,6 +223,9 @@ let shuffled = _.shuffle([1, 2, 3, 4, 5]); // TypeScript knows this returns numb
 ```
 
 Some modern libraries (like `axios`, `zod`, `prisma`) include their own TypeScript types built in, so you do not need a separate `@types/` package.
+
+#### Real-World Example: Express Middleware Typing
+When building REST APIs with Express (`npm i express`), installing `npm i -D @types/express` grants typed access to `req.params` and `res.status()`.
 
 ---
 
@@ -223,6 +249,9 @@ After this configuration, you can write
 import { formatDate } from "@utils/formatter"; // Instead of "../../utils/formatter"
 ```
 
+#### Real-World Example: Clean Component Imports
+Standard React structure configures `"@/*": ["./src/*"]` so pages can cleanly import `import { Navbar } from "@/components/Navbar"`.
+
 ---
 
 ## 9. The `npm` Ecosystem: Installing and Managing Libraries
@@ -241,6 +270,9 @@ npx tsc --watch           # Re-compiles automatically every time you save a file
 
 The `-D` flag means "development dependency." Libraries installed with `-D` are only needed while building. They are not shipped in the final production code.
 
+#### Real-World Example: Fast Development with `tsx`
+Instead of running `npx tsc` and then running Node on output files, development workflows use `npx tsx src/index.ts` to execute TypeScript code directly with zero build step.
+
 ---
 
 ## 10. Real-World Use Cases and Common Pitfalls
@@ -249,7 +281,7 @@ The `-D` flag means "development dependency." Libraries installed with `-D` are 
 Every professional enterprise engineering team turns on `"strict": true` in `tsconfig.json`. Without strict mode, variables default to `any` and `null`/`undefined` errors go undetected until they crash in production. Turning strict mode on catches potential runtime bugs immediately.
 
 ### Real-World Use Case 2: Using Path Aliases (`@components/*` or `@lib/*`) in Next.js
-In modern React and Next.js repositories, importing components using path aliases (`import Button from "@/components/Button"`) avoids messy messy relative paths like `../../../../components/Button` when moving files around in deep folder trees.
+In modern React and Next.js repositories, importing components using path aliases (`import Button from "@/components/Button"`) avoids messy relative paths like `../../../../components/Button` when moving files around in deep folder trees.
 
 ### Common Pitfall to Avoid: Forgetting `@types/` for Node Libraries
 Beginners often run `npm install express` or `npm install lodash` and get frustrated when TypeScript reports "Cannot find module". Remember: many legacy JavaScript packages do not ship with types built in. Always run `npm install -D @types/package-name` so TypeScript knows the exact shapes and methods of external libraries!

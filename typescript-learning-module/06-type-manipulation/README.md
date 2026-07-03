@@ -35,6 +35,14 @@ type UserUpdatePayload = Partial<User>;
 const update: UserUpdatePayload = { email: "newemail@site.com" }; // Valid.
 ```
 
+#### Real-World Example: PATCH Request Body
+When handling HTTP PATCH requests (`PATCH /api/users/1`), clients send a `Partial<User>` containing only the changed fields:
+```typescript
+function patchUserData(userId: string, changes: Partial<User>): void {
+  // Updates only provided fields in the database
+}
+```
+
 ---
 
 ## 3. `Required<T>`: Make All Properties Mandatory
@@ -48,6 +56,14 @@ interface Config {
 
 type StrictConfig = Required<Config>;
 // Result: { host: string; port: number; }
+```
+
+#### Real-World Example: Default Configuration Resolution
+After merging optional user settings with system defaults, backend services pass a `Required<Config>` to ensure all ports and hosts are populated:
+```typescript
+function startServer(config: Required<Config>): void {
+  console.log("Listening on port: " + config.port);
+}
 ```
 
 ---
@@ -64,6 +80,9 @@ const frozenUser: ImmutableUser = {
 
 // frozenUser.email = "other@b.com"; // ERROR! Cannot assign to 'email' because it is read-only.
 ```
+
+#### Real-World Example: Redux State Protection
+Redux store reducers receive `Readonly<State>` so accidental direct mutations (`state.count++`) trigger immediate compile errors.
 
 ---
 
@@ -82,6 +101,9 @@ const profile: PublicUser = {
 };
 ```
 
+#### Real-World Example: UI Card Props from Full Database Models
+When rendering a user badge, components pick only display attributes (`Pick<User, "username" | "email">`) instead of requiring entire database records.
+
 ---
 
 ## 6. `Omit<T, Keys>`: Remove Specific Properties
@@ -92,6 +114,9 @@ const profile: PublicUser = {
 type NewUserPayload = Omit<User, "id" | "passwordHash" | "createdAt">;
 // Result: { username: string; email: string; }
 ```
+
+#### Real-World Example: Registration POST Request Body
+When creating a new account, signup forms transmit an `Omit<User, "id" | "createdAt">` since those fields are generated server-side.
 
 ---
 
@@ -108,6 +133,17 @@ const permissions: PermissionMap = {
   admin: true,
   editor: true,
   viewer: false
+};
+```
+
+#### Real-World Example: Theme Color Token Dictionaries
+Design tokens map literal state names to HEX color codes:
+```typescript
+type ButtonStatus = "primary" | "secondary" | "danger";
+const colorPalette: Record<ButtonStatus, string> = {
+  primary: "#3b82f6",
+  secondary: "#64748b",
+  danger: "#ef4444"
 };
 ```
 
@@ -142,6 +178,9 @@ let retries = getProperty(config, "maxRetries"); // TypeScript knows this return
 
 The return type `T[K]` is called an **indexed access type**. It looks up what type the property `K` holds inside `T`.
 
+#### Real-World Example: Type-Safe Object Property Getters
+Utility functions like Lodash's `get(user, "email")` use `keyof` so accessing properties never returns typos.
+
 ---
 
 ## 9. Indexed Access Types (`T["key"]`)
@@ -161,6 +200,9 @@ interface Order {
 type Customer = Order["customer"];
 // Result: { name: string; address: string; }
 ```
+
+#### Real-World Example: Extracting Deep GraphQL or REST Sub-Entities
+When querying complex nested API responses, indexed access types (`Response["data"]["user"]`) extract nested child component props cleanly.
 
 ---
 
@@ -185,6 +227,9 @@ type DatabaseConfig = typeof defaultConfig;
 const customConfig: Partial<DatabaseConfig> = { port: 3306 };
 ```
 
+#### Real-World Example: Extracting Constants without Duplicate Interfaces
+Configuration objects or translation dictionaries (`const en = { hello: "Hi" }`) can instantly define their type using `type Translations = typeof en`.
+
 ---
 
 ## 11. Combining Utility Types
@@ -195,6 +240,9 @@ You can chain multiple utility types together. This is where they become extreme
 type UserDraft = Partial<Omit<User, "id" | "createdAt">>;
 // Result: { username?: string; email?: string; passwordHash?: string; }
 ```
+
+#### Real-World Example: Draft Form State
+When users save draft articles before publishing, frontend forms use `Partial<Omit<Article, "id" | "publishedAt">>` so partial entries can be safely serialized.
 
 This is a common real-world pattern for form validation and API request bodies.
 
@@ -232,6 +280,9 @@ const args: EmailArgs = ["bob@example.com", "Hello", 1];
 sendEmail(...args); // Safe and fully typed.
 ```
 
+#### Real-World Example: Higher-Order Function Wrappers
+When wrapping a function in debounce or throttle logic, `Parameters<T>` ensures the wrapper accepts exact parameter tuples without manual typing.
+
 ---
 
 ## 13. Writing Custom Mapped Types
@@ -262,6 +313,12 @@ interface User {
 
 type AsyncUser = AsyncObject<User>;
 // Result: { name: Promise<string>; age: Promise<number>; }
+```
+
+#### Real-World Example: Form Error State Maps
+Frontend libraries map form models (`FormState<T>`) into error object maps where every key maps to `string | null` error messages:
+```typescript
+type FormErrors<T> = { [K in keyof T]?: string };
 ```
 
 ---

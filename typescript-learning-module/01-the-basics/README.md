@@ -42,6 +42,14 @@ const playerName = "Alice";
 
 Which one should you use? Use `const` by default. Only use `let` when you know the value needs to change (like a running total or a loop counter).
 
+#### Real-World Example: Configuration vs Mutable State
+In production applications, `const` protects fixed settings while `let` tracks changing application state:
+```typescript
+const maxLoginRetries = 3;         // Fixed configuration rule
+let failedAttempts = 0;            // Starts at 0, changes each time login fails
+failedAttempts = failedAttempts + 1; // Safe mutation
+```
+
 ---
 
 ## 3. Primitive Types: `string`, `number`, `boolean`
@@ -57,6 +65,14 @@ let username: string = "cool_gamer_99";
 let age: number = 25;
 let isOnline: boolean = true;
 let price: number = 9.99;
+```
+
+#### Real-World Example: Typing E-Commerce Product Metadata
+When building an online store, primitive types guarantee that calculations never mix numbers and text:
+```typescript
+const productName: string = "Mechanical Keyboard";
+const unitPrice: number = 89.99;
+const isAvailable: boolean = true;
 ```
 
 ### Type Inference
@@ -116,6 +132,20 @@ if (score >= 90) {
   console.log("Grade: B"); // This one runs.
 } else {
   console.log("Grade: F");
+}
+```
+
+#### Real-World Example: Role-Based Access Control
+In backend web servers, `if/else` checks verify whether the logged-in user has permission to access protected administration features:
+```typescript
+let userRole: string = "editor";
+
+if (userRole === "admin") {
+  console.log("Showing system settings panel.");
+} else if (userRole === "editor") {
+  console.log("Showing content editor panel.");
+} else {
+  console.log("Showing read-only public view.");
 }
 ```
 
@@ -198,6 +228,17 @@ let strDecimal = "3.14";
 let pi = parseFloat(strDecimal); // Result: 3.14 (as a number)
 ```
 
+#### Real-World Example: Sanitizing User Search Input and Formatting Currency
+In web forms, methods clean up user typos before querying the database or displaying checkout totals:
+```typescript
+let rawSearchInput: string = "   iPhone 16 Pro   ";
+let cleanQuery: string = rawSearchInput.trim().toLowerCase(); // "iphone 16 pro"
+
+let rawTaxAmount: string = "14.5099";
+let parsedTax: number = parseFloat(rawTaxAmount);
+let displayTax: string = "$" + parsedTax.toFixed(2); // "$14.51"
+```
+
 ---
 
 ## 7. Arrays: Storing Lists of Data
@@ -247,6 +288,14 @@ inventory.push("Potion"); // Allowed! Modifying the contents.
 // inventory = ["Bow"]; // ERROR! Cannot reassign the variable itself.
 ```
 
+#### Real-World Example: Managing Shopping Cart Items
+Frontend web stores use typed arrays to collect items added by the user:
+```typescript
+const cartProductIds: string[] = ["prod-101", "prod-204"];
+cartProductIds.push("prod-809"); // User clicked 'Add to Cart'
+console.log("Items in cart: " + cartProductIds.length);
+```
+
 ---
 
 ## 8. The `any` Type and the `unknown` Type
@@ -293,6 +342,13 @@ let message1 = "Player " + name + " scored " + score + " points.";
 let message2 = `Player ${name} scored ${score} points.`;
 
 console.log(message2); // Outputs: "Player Alice scored 95 points."
+```
+
+#### Real-World Example: Constructing Dynamic API URLs
+When fetching data for a specific user profile, frontend applications build API URLs using template literals:
+```typescript
+const userId = "usr-8821";
+const endpointUrl = `https://api.myplatform.com/v1/users/${userId}/orders`;
 ```
 
 ---

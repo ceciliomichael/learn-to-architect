@@ -38,6 +38,16 @@ The `constructor` is a special method that runs automatically when you create an
 
 Inside a class, `this` refers to the current instance. When you write `this.name`, you are saying "the `name` property belonging to this specific instance."
 
+#### Real-World Example: HTTP Client Service Class
+In frontend frameworks like Angular or React, engineers organize external communications into stateful service classes:
+```typescript
+class ApiClient {
+  baseUrl: string;
+  constructor(url: string) { this.baseUrl = url; }
+  get(endpoint: string): string { return this.baseUrl + endpoint; }
+}
+```
+
 ---
 
 ## 2. Access Modifiers: `public`, `private`, `protected`
@@ -118,6 +128,9 @@ r.amount = 150; // Allowed.
 // r.receiptId = "REC-002"; // ERROR! 'receiptId' is read-only.
 ```
 
+#### Real-World Example: Audit Log Entries
+Audit trail entries seal immutable transaction IDs or creation timestamps so logging frameworks never corrupt historic records.
+
 ---
 
 ## 4. Parameter Property Shorthand
@@ -146,6 +159,14 @@ class Product {
     readonly id: string
   ) {}
   // TypeScript generates all the declarations and assignments above automatically.
+}
+```
+
+#### Real-World Example: NestJS Controller Dependency Injection
+Backend MVC frameworks like NestJS use parameter shorthand to inject backend services cleanly:
+```typescript
+class UserController {
+  constructor(private readonly userService: any) {}
 }
 ```
 
@@ -184,6 +205,9 @@ dog.bark();     // "Rex says: Woof!"
 The `super` keyword is used in two ways inside a subclass
 1. `super(...)` calls the parent class constructor. You must call it before using `this` in a subclass constructor.
 2. `super.methodName()` calls a parent class method from inside the subclass.
+
+#### Real-World Example: Custom Database Repositories
+Subclasses extend base `Repository<T>` controllers to add specific business queries while inheriting core `save()` and `delete()` methods.
 
 ---
 
@@ -226,6 +250,9 @@ const circle = new Circle(5);
 circle.describe(); // "This shape has an area of 78.53975"
 ```
 
+#### Real-World Example: Base API Controllers
+Microservice architectures use abstract base controllers (`abstract class BaseController`) that force every endpoint handler subclass to implement authorization checks.
+
 ---
 
 ## 7. Implementing Interfaces (`implements`)
@@ -266,6 +293,9 @@ class Document implements Printable, Saveable {
 }
 ```
 
+#### Real-World Example: Interchangeable Payment Providers
+E-commerce backends require `StripeAdapter` and `PayPalAdapter` to implement a unified `PaymentGateway` interface so payment processing logic remains decoupled.
+
 ---
 
 ## 8. Method Overriding
@@ -289,6 +319,9 @@ console.log(cat.makeSound()); // "Meow" (overridden version)
 ```
 
 Using `override` tells TypeScript: "I intend to override a parent method." If you mistype the method name, TypeScript will catch it.
+
+#### Real-World Example: Custom Error Serializers
+Exception classes override `Error.prototype.toString()` to output formatted JSON traces instead of default plain text.
 
 ---
 

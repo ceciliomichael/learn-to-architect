@@ -10,6 +10,9 @@ An **error** (also called an **exception**) is an event that disrupts the normal
 
 In JavaScript and TypeScript, errors are thrown using the `throw` keyword and caught using `try/catch` blocks.
 
+#### Real-World Example: Parsing Third-Party Webhook Payloads
+When a payment gateway sends a webhook payload, parsing arbitrary JSON can fail; wrapping it ensures invalid signatures or corrupted JSON don't crash backend processes.
+
 ---
 
 ## 2. `try`, `catch`, `finally`
@@ -50,6 +53,9 @@ Done attempting the division.
 
 It is commonly used to release resources: closing a database connection, stopping a loading spinner, or clearing a timer.
 
+#### Real-World Example: Always Releasing Database Locks
+In backend workers, placing `db.releaseConnection()` inside `finally` guarantees that SQL connections return to the pool regardless of query success or error.
+
 ---
 
 ## 3. The `Error` Object
@@ -64,6 +70,9 @@ const err = new Error("Something failed.");
 console.log(err.message); // "Something failed."
 console.log(err.name);    // "Error"
 ```
+
+#### Real-World Example: Logging Stack Traces to Monitoring Platforms
+Production crash loggers (like Sentry or Datadog) extract `error.stack` and `error.message` to alert engineering teams of exact failing line numbers.
 
 ---
 
@@ -86,6 +95,9 @@ try {
 ```
 
 The `instanceof` operator checks whether an object was created from a specific class. `error instanceof Error` asks: "Was this error created using the `Error` class or one of its subclasses?"
+
+#### Real-World Example: Type-Safe API Error Handling
+When catching HTTP requests, checking `if (error instanceof Error)` allows safely displaying `error.message` in toast notifications.
 
 ---
 
@@ -137,6 +149,15 @@ try {
 
 This pattern is far superior to throwing plain strings or checking error messages with string comparisons.
 
+#### Real-World Example: HTTP Status Code Mapping
+In Express or NestJS exception filters, custom error hierarchies (`HttpException`) map `NotFoundError` to `404` and `ValidationError` to `400` automatically:
+```typescript
+class UnauthorizedError extends Error {
+  statusCode = 401;
+  constructor() { super("Authentication required."); }
+}
+```
+
 ---
 
 ## 6. Error Handling in Async Functions
@@ -176,6 +197,9 @@ loadPost(-1);  // Will trigger ValidationError.
 loadPost(5);   // Will succeed.
 ```
 
+#### Real-World Example: Retry Logic with Exponential Backoff
+When async network calls fail due to transient timeouts, `catch` blocks can trigger retry loops before finally re-throwing fatal errors.
+
 ---
 
 ## 7. The Result Pattern: Errors as Data
@@ -204,6 +228,9 @@ if (result.success) {
 
 This is a discriminated union (covered in Module 04) applied to error handling. The caller is forced by TypeScript to handle both the success and failure case.
 
+#### Real-World Example: Enterprise API Wrappers or Rust-style `neverthrow`
+Functional programming architectures use Result patterns (`Result<User, DatabaseError>`) so callers can never accidentally forget a `try/catch` block around critical operations.
+
 ---
 
 ## 8. Rethrowing Errors
@@ -226,6 +253,9 @@ async function processOrder(orderId: string): Promise<void> {
 ```
 
 This keeps error handling close to where errors make sense. Errors you understand get handled; everything else gets passed up.
+
+#### Real-World Example: Middleware Exception Bubbling
+In web servers, route handlers catch domain validation errors to return HTTP `400 Bad Request`, but rethrow unhandled database disconnects so top-level crash reporters can log them and restart workers.
 
 ---
 
@@ -250,6 +280,9 @@ try {
   console.error("Unexpected error in riskyOperation:", error);
 }
 ```
+
+#### Real-World Example: Telemetry Crash Reporting
+When background analytics tracking (`analytics.track()`) fails, catching and logging via `logger.error("Analytics failure", error)` prevents crashing the user interface while still warning devops teams.
 
 ---
 

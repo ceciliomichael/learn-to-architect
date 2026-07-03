@@ -222,7 +222,8 @@ const point3D = { x: 10, y: 20, z: 30 };
 const point: Point2D = point3D; // Valid
 ```
 
-This is why the exercises may show you assigning one object to a differently-typed variable without any errors. TypeScript checks the structure, not the label.
+#### Real-World Example: Passing Rich Database Objects to UI Cards
+When a UI card component only requires `{ name: string; price: number }`, structural typing lets you pass full database product records (even if they contain extra fields like `sku` or `warehouseLocation`) without type errors!
 
 ---
 
@@ -248,6 +249,9 @@ When designing interfaces, it is important to understand the difference between 
 - **Explicit Undefined (`property: string | undefined`):** You **must include the property key** when creating the object, even if you set its value to `undefined` (`{ property: undefined }`). If you leave the key out entirely (`{}`), TypeScript will give a compiler error stating that the required property is missing.
 
 Use `?` when a property can be safely left off the object. Use `| undefined` when your application requires every key to be present on the object shape.
+
+#### Real-World Example: Form Inputs vs Database Records
+In user profile forms, fields like `middleName?: string` are optional because users can skip them. But in database audit logs, fields like `deletedAt: Date | null` must explicitly exist on every record to show whether deletion occurred or not.
 
 ---
 
