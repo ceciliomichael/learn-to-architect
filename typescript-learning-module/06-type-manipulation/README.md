@@ -263,3 +263,22 @@ interface User {
 type AsyncUser = AsyncObject<User>;
 // Result: { name: Promise<string>; age: Promise<number>; }
 ```
+
+---
+
+## 14. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Partial Update Payloads (`Partial<T>`)
+When writing an HTTP endpoint or database function that updates a user profile, the client rarely sends the entire profile. They only send the fields being modified. Using `Partial<User>` automatically makes every property optional without creating a duplicate interface.
+
+```typescript
+function updateUserProfile(userId: string, updates: Partial<User>) {
+  // Can pass { name: "New Name" } or { age: 30 }
+}
+```
+
+### Real-World Use Case 2: Extracting Function Signatures (`Parameters<T>` and `ReturnType<T>`)
+When wrapping third-party library functions (like logging middleware around an API call), utility types let your wrapper automatically copy the exact arguments and return types of the wrapped function even if the library author updates them in a later version.
+
+### Common Pitfall to Avoid: Over-Complex Type Gymnastics
+While mapped and conditional types are powerful, writing overly intricate nested type manipulations can make compile errors completely unreadable for your teammates. Always ask: "Does this complex type utility make the caller's life easier or harder?" If it makes errors confusing, keep your types simpler and more direct!

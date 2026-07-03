@@ -293,3 +293,16 @@ console.log("Saved product:", saved.name);
 ```
 
 Each file has a single, clear responsibility. Each can be read, tested, and modified independently.
+
+---
+
+## 10. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Separation of Concerns in Next.js Full-Stack Apps
+In modern web applications, keeping domain types (`types/user.ts`), API database calls (`repositories/userRepo.ts`), and UI components (`components/UserProfile.tsx`) strictly separated means that if you switch your database from MongoDB to PostgreSQL, your UI components do not change a single line of code!
+
+### Real-World Use Case 2: Clean Public APIs with Barrel Files (`index.ts`)
+Large component libraries (like Material UI or Radix UI) use barrel files inside folder directories (`src/components/index.ts`) so external developers can import multiple items cleanly (`import { Button, Modal, Card } from "my-ui-lib"`) without typing out internal file paths.
+
+### Common Pitfall to Avoid: Circular Dependencies
+When File A imports from File B, and File B imports back from File A, Node and web bundlers can get confused and return `undefined` for imported variables at runtime. Always keep your dependency graph flowing in one direction (e.g., UI Components $\rightarrow$ Services $\rightarrow$ Repositories $\rightarrow$ Types). Types should never import from UI components!

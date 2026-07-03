@@ -264,3 +264,24 @@ for (let item of items) {
 ```
 
 Use `for...of` when you want every item. Use the classic `for` loop when you need to track the index number.
+
+---
+
+## 11. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Typed Event Listeners and Callbacks
+When building user interfaces (like clicking a button or receiving websocket messages), passing typed callback functions ensures that the data passed into your callback has the exact properties expected.
+
+```typescript
+type ButtonClickHandler = (event: { timestamp: number; buttonId: string }) => void;
+
+const handleClick: ButtonClickHandler = (event) => {
+  console.log("Clicked button " + event.buttonId + " at " + event.timestamp);
+};
+```
+
+### Real-World Use Case 2: Clean API Method Signatures with Overloads
+When designing utility libraries or SDKs, function overloads allow you to return precise return types based on input parameters (for example, returning a single user record when passed an ID string, or an array of user records when passed an array of IDs).
+
+### Common Pitfall to Avoid: Implicit `any` Return Types
+If you do not explicitly declare a return type on large functions (`function getPrice(): number`), TypeScript infers the return type from what you return inside. If someone later accidentally adds a branch returning `undefined`, TypeScript quietly changes the return type to `number | undefined`, which can crash callers downstream. Always explicitly annotate your return types!

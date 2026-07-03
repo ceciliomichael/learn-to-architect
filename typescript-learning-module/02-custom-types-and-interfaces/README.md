@@ -248,3 +248,38 @@ When designing interfaces, it is important to understand the difference between 
 - **Explicit Undefined (`property: string | undefined`):** You **must include the property key** when creating the object, even if you set its value to `undefined` (`{ property: undefined }`). If you leave the key out entirely (`{}`), TypeScript will give a compiler error stating that the required property is missing.
 
 Use `?` when a property can be safely left off the object. Use `| undefined` when your application requires every key to be present on the object shape.
+
+---
+
+## 10. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Protecting Database Identifiers with `readonly`
+When fetching user accounts or database records, properties like `id` or `createdAt` should never be altered by a frontend form. Using `readonly` prevents accidental modification.
+
+```typescript
+interface CustomerAccount {
+  readonly accountId: string;
+  fullName: string;
+}
+
+const customer: CustomerAccount = { accountId: "acc-101", fullName: "Jane Doe" };
+customer.fullName = "Jane Smith"; // Allowed! Updating display name.
+// customer.accountId = "acc-999"; // Blocked! Protects unique identifier.
+```
+
+### Real-World Use Case 2: Flexible Translation and Configuration Dictionaries
+When building multilingual interfaces, you do not know all translation keys in advance. Index signatures allow your application to accept dynamic string keys while guaranteeing that every translation value remains a valid string.
+
+```typescript
+interface TranslationBundle {
+  [key: string]: string;
+}
+
+const labels: TranslationBundle = {
+  submit: "Send Message",
+  cancel: "Close Window"
+};
+```
+
+### Common Pitfall to Avoid: Duplicating Blueprint Properties
+Beginners often copy and paste `id`, `name`, and `createdAt` across 10 different interfaces. If a business requirement changes later, updating all 10 interfaces is exhausting and prone to bugs. Use interface inheritance (`extends`) or intersection types (`&`) so your shared attributes live in exactly one single parent blueprint.

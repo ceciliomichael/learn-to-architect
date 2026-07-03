@@ -264,3 +264,16 @@ try {
 | Multiple async tasks that might fail | `Promise.allSettled` |
 | You receive an unknown error type | Check `instanceof Error` before accessing `.message` |
 | You want to re-use a resource after failure | Use `finally` for cleanup |
+
+---
+
+## 11. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Functional Result Pattern (`Result<T, E>`) in High-Reliability APIs
+When building payment processors or banking software, throwing exceptions inside nested helper functions makes it hard to track where errors originate. Using the `Result` pattern (`{ success: true; data: T } | { success: false; error: string }`) forces calling developers to explicitly check for errors before accessing data.
+
+### Real-World Use Case 2: Custom Domain Error Hierarchies (`AppError`)
+In Node/Express backend APIs, creating a base `class AppError extends Error` with an HTTP status code (`statusCode: number`) allows your centralized error handler middleware to automatically return a 404 Not Found or 400 Bad Request to clients without writing repeated error-formatting code in every route.
+
+### Common Pitfall to Avoid: Assuming `catch (e)` is an `Error` Instance
+Because JavaScript allows throwing literally anything (`throw "Database broke"` or `throw 404`), TypeScript in strict mode types the caught error parameter as `unknown`. Never write `catch (e) { console.log(e.message) }` without first checking `if (e instanceof Error)`. Otherwise, checking `.message` on a raw string or number will throw another runtime error!

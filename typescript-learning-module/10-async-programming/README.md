@@ -292,3 +292,16 @@ const [a, b] = await Promise.all([taskA(), taskB()]); // Both start immediately.
 ```
 
 If two tasks are independent, always prefer `Promise.all`.
+
+---
+
+## 11. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Fetching Dashboard Stats in Parallel (`Promise.all`)
+When loading a user dashboard that needs profile details, billing history, and recent notifications, fetching them one by one (`await profile`, then `await billing`, then `await notifications`) makes the user stare at a spinning loader for 3x longer. Using `Promise.all` loads all three simultaneously!
+
+### Real-World Use Case 2: Batch Processing with Graceful Fault Tolerance (`Promise.allSettled`)
+When sending promotional emails to 500 users at once, if one email fails due to a bad address, you do not want all other 499 emails to stop! Using `Promise.allSettled` guarantees that every email attempt finishes, allowing you to retry the failed addresses later.
+
+### Common Pitfall to Avoid: Forgetting `try/catch` on Network Requests
+If a remote server goes offline or returns a 500 Internal Server Error, unhandled `await` calls will crash your entire Node server or trigger unhandled rejection warnings in the browser. Always wrap external network requests in a clean `try/catch` block!

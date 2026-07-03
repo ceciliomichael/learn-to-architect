@@ -331,3 +331,29 @@ class DatabaseConnection {
 ```
 
 This pattern (the Singleton pattern) uses `private static` to ensure only one connection ever exists.
+
+---
+
+## 10. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Backend Services and Dependency Injection (`implements`)
+In backend framework layers (like NestJS or enterprise Express services), classes implement interfaces (like `DatabaseRepository`) so that during testing, engineers can swap out a real PostgreSQL database class for an in-memory mock database class without changing any business logic.
+
+```typescript
+interface EmailService {
+  send(to: string, content: string): Promise<boolean>;
+}
+
+class SendGridEmailService implements EmailService {
+  async send(to: string, content: string): Promise<boolean> {
+    // Real network call
+    return true;
+  }
+}
+```
+
+### Real-World Use Case 2: Encapsulating Sensitive State (`private`)
+When designing data wrappers (like an in-memory authentication token manager), marking the token string `private` guarantees that other parts of the codebase cannot read or tamper with raw security credentials directly.
+
+### Common Pitfall to Avoid: Overusing Classes in Frontend Code
+While classes are fantastic for backend services and data structures, modern frontend frameworks (like React) prefer plain functional components and hooks over class hierarchies. Do not build massive 5-level inheritance chains just for UI display code; choose classes when encapsulating stateful behavior or backend service contracts!

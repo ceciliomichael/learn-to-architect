@@ -177,3 +177,28 @@ let c = identity<boolean>(true);
 ```
 
 This automatic inference is called **generic argument inference**. It is why most generic function calls look just like regular function calls.
+
+---
+
+## 9. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Reusable HTTP API Wrappers (`ApiResponse<T>`)
+Every enterprise web application communicates with servers. Instead of writing separate interfaces for `UserResponse`, `ProductResponse`, and `OrderResponse`, engineers write a single generic `ApiResponse<T>` wrapper.
+
+```typescript
+interface ApiResponse<T> {
+  success: boolean;
+  errorCode?: number;
+  data: T;
+}
+
+// Reusing the wrapper for any data type
+type UserListResponse = ApiResponse<string[]>;
+type OrderResponse = ApiResponse<{ orderId: number; total: number }>;
+```
+
+### Real-World Use Case 2: Frontend State Management Hooks (`useState<T>`)
+In React or Next.js applications, state containers use generics so that when you store a list of tasks or a logged-in user profile, TypeScript knows exactly what properties exist on your state object.
+
+### Common Pitfall to Avoid: Adding Meaningless Generics
+A generic type variable `T` is only useful if it relates two or more places (like relating an input argument to a return type). If a type variable only appears once, it does nothing that `unknown` or `any` could not do. Keep your generics focused and purposeful!

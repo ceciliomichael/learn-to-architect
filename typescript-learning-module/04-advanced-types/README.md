@@ -325,3 +325,31 @@ const allColors = Object.values(Color); // ["RED", "GREEN", "BLUE"]
 ```
 
 ---
+
+## 13. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Bulletproof UI State Machines with Discriminated Unions
+When managing complex web page states (like loading a list of products), representing your state as a Discriminated Union prevents impossible UI combinations (like showing a "Loading Spinner" and an "Error Message" simultaneously).
+
+```typescript
+type PageState =
+  | { status: "loading" }
+  | { status: "success"; products: string[] }
+  | { status: "error"; errorMessage: string };
+
+function renderUI(state: PageState) {
+  if (state.status === "loading") {
+    return "Showing loading spinner...";
+  } else if (state.status === "error") {
+    return "Error: " + state.errorMessage;
+  } else {
+    return "Loaded " + state.products.length + " products!";
+  }
+}
+```
+
+### Real-World Use Case 2: Custom Type Guards for Filtering API Responses
+When you fetch a mixed array of items from a database (some active, some archived), custom type guards (`item is ActiveItem`) let you filter the array while telling TypeScript that the filtered result contains strictly `ActiveItem` records.
+
+### Common Pitfall to Avoid: Overusing Type Assertions (`as`) and Non-Null Assertions (`!`)
+Writing `const user = response as User` or `const el = document.getElementById("box")!` feels fast, but it effectively turns off TypeScript's safety checks. If `response` is missing fields or `el` is `null`, your app crashes at runtime. Always prefer writing safe `if` narrowing checks instead!

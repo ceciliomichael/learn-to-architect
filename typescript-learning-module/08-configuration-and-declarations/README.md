@@ -240,3 +240,16 @@ npx tsc --watch           # Re-compiles automatically every time you save a file
 ```
 
 The `-D` flag means "development dependency." Libraries installed with `-D` are only needed while building. They are not shipped in the final production code.
+
+---
+
+## 10. Real-World Use Cases and Common Pitfalls
+
+### Real-World Use Case 1: Enabling Strict Mode (`"strict": true`) for Production Safety
+Every professional enterprise engineering team turns on `"strict": true` in `tsconfig.json`. Without strict mode, variables default to `any` and `null`/`undefined` errors go undetected until they crash in production. Turning strict mode on catches potential runtime bugs immediately.
+
+### Real-World Use Case 2: Using Path Aliases (`@components/*` or `@lib/*`) in Next.js
+In modern React and Next.js repositories, importing components using path aliases (`import Button from "@/components/Button"`) avoids messy messy relative paths like `../../../../components/Button` when moving files around in deep folder trees.
+
+### Common Pitfall to Avoid: Forgetting `@types/` for Node Libraries
+Beginners often run `npm install express` or `npm install lodash` and get frustrated when TypeScript reports "Cannot find module". Remember: many legacy JavaScript packages do not ship with types built in. Always run `npm install -D @types/package-name` so TypeScript knows the exact shapes and methods of external libraries!
