@@ -4,7 +4,7 @@ In every software system, things eventually go wrong. Networks drop, databases c
 
 If your application lacks robust error handling, an unexpected exception can crash the entire Node.js server process or freeze the browser tab with a blank white screen.
 
-This module teaches you how to build **Type-Safe Error Handling Boundaries** in TypeScript. We will explore how JavaScript's error class hierarchy operates, why caught exceptions are strictly typed as `unknown`, how to build custom domain error classes, how to implement assertion functions, and how to master the **Result Pattern**—a functional programming technique that handles failures without ever throwing exceptions!
+This module teaches you how to build **Type-Safe Error Handling Boundaries** in TypeScript. We will explore how JavaScript's error class hierarchy operates, why caught exceptions are strictly typed as `unknown`, how to use `finally` blocks for reliable resource cleanup, how to build custom domain error classes, how to implement assertion functions, and how to master the **Result Pattern** - a functional programming technique that handles failures without ever throwing exceptions!
 
 ---
 
@@ -76,6 +76,42 @@ try {
     console.error("[UNKNOWN FAILURE]: An unrecognized exception occurred.", error);
   }
 }
+
+### The 'finally' Block for Reliable Resource Cleanup
+When executing code across network or database boundaries, certain cleanup tasks must occur regardless of whether an exception was thrown or caught. For example, closing a database connection, closing an open file descriptor, or stopping a loading spinner on the user interface.
+
+In TypeScript and JavaScript, the **`finally`** block attaches to a `try / catch` statement and provides a structural guarantee: **code inside `finally` will execute unconditionally after `try` and `catch` complete, no matter what happens.**
+
+```typescript
+// Demonstrating reliable cleanup with try / catch / finally
+function fetchUserRecord(userId: string): void {
+  let connectionOpen = false;
+  try {
+    connectionOpen = true;
+    console.log(`[DATABASE]: Connection opened for user ${userId}.`);
+    
+    if (userId === "invalid-id") {
+      throw new Error("Database query failed: Record corrupted.");
+    }
+    console.log(`[DATABASE]: Successfully retrieved user ${userId}.`);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(`[ERROR HANDLED]: ${error.message}`);
+    } else {
+      console.error(`[ERROR HANDLED]: Unknown failure occurred.`);
+    }
+    // Even if we re-throw or return here, the finally block will still execute!
+  } finally {
+    // This executes unconditionally!
+    connectionOpen = false;
+    console.log(`[DATABASE]: Connection closed safely.`);
+  }
+}
+```
+
+#### Why 'finally' is Critical in Enterprise Architecture
+1. **Guaranteed Execution During Returns:** If your `try` or `catch` block contains a `return` statement, the runtime pauses the return, jumps into the `finally` block, executes the cleanup code, and only then returns the value to the caller.
+2. **Guaranteed Execution During Unhandled Throws:** If an error occurs in `try` and there is no `catch` block (or if the `catch` block re-throws an error), the `finally` block still executes before the error bubbles up the call stack. This prevents memory leaks and orphaned resource locks!
 ```
 
 ---
@@ -167,7 +203,7 @@ When passengers disembark from an international flight, they must walk through a
 * If a passenger presents a valid passport, the security officer opens the gate and the passenger walks through into the terminal.
 * If a passenger presents an expired or fake passport, **the security officer halts everything immediately**, sounds an alarm, and detains the passenger! The passenger is physically prevented from ever taking another step into the terminal.
 
-In TypeScript, an **Assertion Function** (created using the **`asserts condition`** return type syntax) acts as that customs security checkpoint. It is a function that checks a boolean condition: if the condition is false, the function violently throws an error; if the condition is true, the function returns normally—and **TypeScript permanently narrows the checked variable in all subsequent lines of code!**
+In TypeScript, an **Assertion Function** (created using the **`asserts condition`** return type syntax) acts as that customs security checkpoint. It is a function that checks a boolean condition: if the condition is false, the function violently throws an error; if the condition is true, the function returns normally, and **TypeScript permanently narrows the checked variable in all subsequent lines of code!**
 
 ### Writing Custom Assertion Guards
 When validating complex database results or network payloads, standard `if` checks can clutter your main business logic. Assertion functions let you extract validation rules into reusable checkpoints:

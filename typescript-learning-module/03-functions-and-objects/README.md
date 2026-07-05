@@ -344,7 +344,57 @@ In classic standard functions, the magic keyword `this` changes dynamically depe
 
 ---
 
-## 7. Real-World Use Cases and Common Pitfalls
+## 7. Array Iteration: Loops vs. Callbacks (`for...of` vs. `.forEach()`)
+
+### Imagine a Mail Delivery Route vs. An Assembly Line Station
+When working with arrays of data (like a list of user profiles or shopping cart items), you frequently need to execute a function for every single item in the collection. There are two primary ways to accomplish this in modern TypeScript:
+* **The `for...of` Loop (The Mail Delivery Route):** Imagine a postal worker walking down a neighborhood street. They visit House 1, deliver mail, then walk to House 2, deliver mail, and so on. If they encounter a ferocious dog at House 3, they can immediately abort the route and run home (`break`), or skip House 3 and move straight to House 4 (`continue`). The postal worker is in complete manual control of their journey down the street.
+* **The `.forEach()` Callback (The Assembly Line Station):** Imagine placing items onto an automated conveyor belt moving past a robotic inspection arm. You feed the entire array onto the belt and hand the robot instructions (`a callback function`). The robot mechanically executes those instructions on every single item passing by. However, once the conveyor belt starts running, **you cannot hit a pause button or skip an item halfway through!** The robot will relentlessly process every item from start to finish.
+
+### Comparing Iteration Mechanics in Code
+Let's see how traditional index loops, modern `for...of` loops, and `.forEach()` callbacks compare when processing an array of prices:
+
+```typescript
+const itemPrices: number[] = [15.50, 22.00, 9.99, 50.00, 12.25];
+
+// 1. Traditional Index Loop (Old school, verbose, but gives you numeric index 'i')
+for (let i: number = 0; i < itemPrices.length; i++) {
+  console.log(`Index ${i}: $${itemPrices[i]}`);
+}
+
+// 2. Modern for...of Loop (Clean, readable, supports break and continue!)
+for (let price of itemPrices) {
+  if (price < 10.00) {
+    console.log(`Skipping bargain item: $${price}`);
+    continue; // Jump instantly to the next item in the array!
+  }
+  if (price > 40.00) {
+    console.log(`Expensive item detected ($${price})! Halting inspection.`);
+    break; // Abort and exit the loop completely!
+  }
+  console.log(`Processing standard price: $${price}`);
+}
+
+// 3. The .forEach() Callback Method (Concise functional style, but cannot break or continue!)
+itemPrices.forEach((price: number, index: number) => {
+  // Note: Writing 'break;' or 'continue;' inside a callback function will cause a syntax error!
+  console.log(`[Callback Item #${index}]: $${price.toFixed(2)}`);
+});
+```
+
+### When to Choose Which Approach
+| Feature | `for...of` Loop | `.forEach()` Callback | Traditional `for` Loop |
+| :--- | :--- | :--- | :--- |
+| **Syntax Cleanliness** | ⭐⭐⭐⭐ Extremely clean | ⭐⭐⭐⭐ Extremely clean | ⭐⭐ Verbose and error-prone |
+| **Supports `break` / `continue`** | **Yes** (Full control) | **No** (Must run to completion) | **Yes** (Full control) |
+| **Supports `async`/`await`** | **Yes** (Waits sequentially) | **No** (Fires all asynchronously!) | **Yes** (Waits sequentially) |
+| **Provides Numeric Index** | No (Must use `.entries()`) | **Yes** (Passed as 2nd argument) | **Yes** (`i` variable) |
+
+In enterprise engineering, use **`for...of`** as your default loop whenever you need sequential control, early exits (`break`), or asynchronous pauses (`await`). Use **`.forEach()`, `.map()`, or `.filter()`** when building clean, functional data-transformation pipelines where every item must be transformed without interruption!
+
+---
+
+## 8. Real-World Use Cases and Common Pitfalls
 
 ### Summary of Critical Beginner Pitfalls to Remember
 1. **The Optional Parameter Order Trap:** Never declare a required parameter after an optional parameter (`function bad(age?: number, name: string)`). Optional parameters must always sit at the very end of the parameter list!
@@ -359,3 +409,4 @@ In classic standard functions, the magic keyword `this` changes dynamically depe
    const addConcise = (a: number, b: number): number => a + b;
    const addExplicit = (a: number, b: number): number => { return a + b; };
    ```
+5. **The `.forEach()` Async Trap:** Beginners frequently try to use `await` inside a `.forEach()` loop: `items.forEach(async (item) => { await save(item); });`. Because `.forEach()` doesn't wait for promises to resolve before jumping to the next item, all your saves fire simultaneously in an uncoordinated waterfall! When executing asynchronous code in a loop, **always use a `for...of` loop** (`for (let item of items) { await save(item); }`).

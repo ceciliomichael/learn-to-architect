@@ -1,24 +1,58 @@
-# Question 01: strictNullChecks
+# Question 01: ES Modules vs. Script Mode and Scope Isolation
 
-What does `strictNullChecks` do and what problem does it solve?
+In TypeScript and modern JavaScript, understanding the boundary between global script execution and modular scope isolation is fundamental to preventing variable collision bugs in large systems.
+
+Consider the following two TypeScript files in an enterprise codebase:
 
 ```typescript
-// With strictNullChecks: false (the dangerous default in old TypeScript)
-let user: { name: string } = null; // No error! Very risky.
-console.log(user.name);            // Runtime crash: Cannot read properties of null.
+// ============================================================================
+// FILE: src/legacy/globalLogger.ts (No top-level imports or exports)
+// ============================================================================
+const appVersion: string = "1.0.0";
+const maxRetryCount: number = 3;
 
-// With strictNullChecks: true
-let user2: { name: string } = null; // ERROR at compile time.
+function initializeSystem(): void {
+  console.log(`System starting at version ${appVersion}`);
+}
 ```
 
-1. What does enabling `strictNullChecks` force TypeScript to do?
-2. How would you correctly type `user` if it should be allowed to be either a user object OR `null`?
-3. What is the connection between `strictNullChecks` and the `?` optional chaining operator?
+```typescript
+// ============================================================================
+// FILE: src/services/authService.ts (Contains an import statement)
+// ============================================================================
+import { DatabaseConnection } from "../database/connection";
+
+const appVersion: string = "2.5.0";
+const maxRetryCount: number = 5;
+
+export class AuthService {
+  public authenticate(): boolean {
+    return true;
+  }
+}
+```
+
+## Your Challenge
+
+Answer the following four architectural questions directly inside the **ANSWER HERE** block below. Do not use em dashes anywhere in your response!
+
+1. In `src/legacy/globalLogger.ts`, are `appVersion` and `maxRetryCount` scoped strictly to that file, or are they added to the global execution scope across the entire application? Explain the exact rule TypeScript uses to determine this behavior.
+2. In `src/services/authService.ts`, are `appVersion` and `maxRetryCount` scoped to that file or global? Why does the presence of an `import` statement alter how the TypeScript compiler treats the file's variables?
+3. What happens during compilation if both `src/legacy/globalLogger.ts` and another script file (such as `src/legacy/metrics.ts` lacking imports/exports) both declare `const appVersion: string = "1.0.0"`? What exact compiler error or runtime behavior occurs?
+4. What is the cleanest, standard TypeScript syntax you can add to `src/legacy/globalLogger.ts` to convert it into an isolated ES Module without actually exporting or importing any runtime symbols?
+
+---
 
 ## ANSWER HERE
 
-> **What strictNullChecks forces TypeScript to do:**
+### 1. Scope behavior of `src/legacy/globalLogger.ts`:
+> 
 
-> **Correct type for a nullable user:**
+### 2. Scope behavior of `src/services/authService.ts`:
+> 
 
-> **Connection to optional chaining:**
+### 3. Consequence of duplicate declarations across script files:
+> 
+
+### 4. Syntax to force module isolation without runtime imports/exports:
+> 

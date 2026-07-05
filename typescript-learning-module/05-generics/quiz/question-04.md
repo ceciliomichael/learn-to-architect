@@ -1,21 +1,41 @@
-# Question 04
+# Question 04: Generic Inference & Type Parameters in Constraints (`keyof`)
 
-## Question
+Examine how TypeScript automatically infers generic type arguments, and how combining Generics with the `keyof` operator enforces 100% type-safe object property lookups.
 
-- What is a **tuple type** in TypeScript?
-- How is `[string, number]` different from `(string | number)[]`?
-- Give a concrete scenario where you would use a tuple instead of a union array.
+## Code Scenario
 
-Consider these two variables
+Consider the following enterprise data-fetching helper designed to safely pluck a property value from a domain object:
+
 ```typescript
-let a: [string, number] = ["Alice", 30];
-let b: (string | number)[] = ["Alice", 30];
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+interface Laptop {
+  brand: string;
+  ramGigabytes: number;
+  isTouchscreen: boolean;
+}
+
+const workstation: Laptop = {
+  brand: "ThinkPad",
+  ramGigabytes: 32,
+  isTouchscreen: false
+};
+
+const brandName = getProperty(workstation, "brand");
 ```
 
-What can TypeScript tell you about `a[0]` that it cannot tell you about `b[0]`?
+## Conceptual Questions
 
----
+1. Notice that when calling `getProperty(workstation, "brand")`, we did not explicitly write angle brackets (`getProperty<Laptop, "brand">(...)`). Explain how **Generic Type Argument Inference** allows TypeScript to determine `T` and `K` automatically. What is the inferred type of `brandName`?
+2. What exact structural rule does the constraint `K extends keyof T` enforce at compile time? What compile-time error occurs if a developer attempts to call `getProperty(workstation, "graphicsCard")`?
+3. Why is the return type annotation written as indexed access `T[K]` rather than `any` or `unknown`? How does this protect enterprise state management engines from property lookup bugs?
 
 ## ANSWER HERE
 
-> Write your answer below. Cover positional typing, fixed length, and give a real-world use case (e.g., a function return value).
+> **1. Generic Type Argument Inference and inferred return type of `brandName`:**
+
+> **2. Structural rule enforced by `K extends keyof T` and compile-time error analysis:**
+
+> **3. Architectural meaning of indexed access return type `T[K]`:**

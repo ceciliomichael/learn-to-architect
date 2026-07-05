@@ -14,7 +14,7 @@ Instead of duplicating interface blueprints across your codebase, TypeScript pro
 To understand why object shape transformations exist without getting lost in jargon, imagine a physical paper document used by an HR department.
 * **The Master Employee Blueprint:** When an employee is hired, they must fill out a 10-page master form. Every single box (Name, Address, Social Security Number, Tax Withholding) is strictly **Required**.
 * **The Annual Address Update Form:** A year later, the employee moves to a new apartment. HR does not make them re-fill all 10 pages! They hand them a **Partial** amendment slip where every box is optional; the employee only fills in the specific address box they wish to change.
-* **The Archived Employee File:** When an employee retires, HR places their file into a locked glass cabinet. The file is completely **Readonly**—no one is ever allowed to erase or alter a single word on those pages again.
+* **The Archived Employee File:** When an employee retires, HR places their file into a locked glass cabinet. The file is completely **Readonly**: no one is ever allowed to erase or alter a single word on those pages again.
 
 In TypeScript, you don't write three separate interfaces for these three document states! You write one master interface, and use `Partial<T>`, `Required<T>`, and `Readonly<T>` to transform it dynamically.
 
@@ -238,7 +238,7 @@ type CurrencyOption = Parameters<typeof createPaymentTransaction>[2]; // Extract
 
 ### Imagine a Factory Assembly Line Customizing Every Car
 Imagine an automotive factory assembly line that receives a frame for a standard vehicle with four doors, a hood, and a trunk.
-* **The Armor-Plating Line:** The car moves down a specialized military assembly line. A robotic welding arm visits *every single compartment* on the car—the doors, the hood, the trunk—and welds bulletproof steel plating onto every single piece.
+* **The Armor-Plating Line:** The car moves down a specialized military assembly line. A robotic welding arm visits *every single compartment* on the car (the doors, the hood, the trunk) and welds bulletproof steel plating onto every single piece.
 * **The Electrification Line:** The car moves down an EV conversion line. A robot visits *every single engine component* and replaces gas valves with electric wiring.
 
 In TypeScript, a **Mapped Type** is that robotic assembly line. It allows you to write a loop inside a type definition (`[P in keyof T]`) that visits every single property inside an existing interface and applies a transformation rule to it!

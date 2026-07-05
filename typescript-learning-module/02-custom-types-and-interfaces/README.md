@@ -1,6 +1,6 @@
 # Module 02: Objects, Interfaces, and Type Aliases
 
-In the previous module, we worked with single primitive values like strings, numbers, and booleans. But real software doesn't deal in isolated primitives. An e-commerce application doesn't just pass around a price or a name; it passes around a complete **Product** or a **User** profile—complex data structures that group multiple pieces of information together.
+In the previous module, we worked with single primitive values like strings, numbers, and booleans. But real software doesn't deal in isolated primitives. An e-commerce application doesn't just pass around a price or a name; it passes around a complete **Product** or a **User** profile: complex data structures that group multiple pieces of information together.
 
 This module teaches you how to model real-world entities in TypeScript using Objects, Interfaces, and Type Aliases. We will explore how to design custom blueprints, how structural typing works under the hood, and how to choose between Interfaces and Type Aliases in production codebases.
 
@@ -227,9 +227,9 @@ interface GoodSyntax { name: string; }
 ## 4. Optional Properties (`?`) and Readonly Properties (`readonly`)
 
 ### Picture Hotel Room Amenities and Serial Numbers
-When you check into a hotel room, certain features are mandatory (a bed, a bathroom, a door lock), while other amenities are **optional**—some luxury suites come with a balcony or a mini-bar, but standard rooms do not. You wouldn't turn away a guest just because their room lacks a mini-bar.
+When you check into a hotel room, certain features are mandatory (a bed, a bathroom, a door lock), while other amenities are **optional**: some luxury suites come with a balcony or a mini-bar, but standard rooms do not. You wouldn't turn away a guest just because their room lacks a mini-bar.
 
-At the same time, consider the television set in that hotel room. On the back of the TV is a manufacturer serial number printed on a metal tag. You are allowed to read the serial number, but it is **read-only**—you cannot scrape it off and paint on a new serial number.
+At the same time, consider the television set in that hotel room. On the back of the TV is a manufacturer serial number printed on a metal tag. You are allowed to read the serial number, but it is **read-only**: you cannot scrape it off and paint on a new serial number.
 
 In TypeScript, you use the question mark `?` to make properties optional, and the `readonly` modifier to prevent properties from being modified after creation.
 
@@ -347,7 +347,7 @@ Let's look at `interface CustomerRecord extends BaseDatabaseRecord {`:
 ### Designing Scalable Enterprise Domain Models
 In enterprise software systems (like Salesforce or SAP), database tables share standardized metadata fields across every single entity: creation timestamps, modification tracking, and tenant IDs. 
 
-By defining a core `interface BaseEntity`, every domain model in your application—`Product extends BaseEntity`, `Invoice extends BaseEntity`, `Employee extends BaseEntity`—automatically inherits these critical auditing fields. If the security team later requires adding a `lastModifiedByUserId` field to every database table, you only add it once to `BaseEntity`, and your entire architecture updates instantly.
+By defining a core `interface BaseEntity`, every domain model in your application (such as `Product extends BaseEntity`, `Invoice extends BaseEntity`, and `Employee extends BaseEntity`) automatically inherits these critical auditing fields. If the security team later requires adding a `lastModifiedByUserId` field to every database table, you only add it once to `BaseEntity`, and your entire architecture updates instantly.
 
 ### Extending Interfaces vs. Intersecting Type Aliases
 While Interfaces use the `extends` keyword, Type Aliases accomplish the exact same inheritance goal using the **Intersection Operator (`&`)**:
@@ -414,7 +414,7 @@ Let's look at `[word: string]: string;`:
 * `;` -> Rule terminator.
 
 ### Caching API Responses and Building Lookup Tables
-In frontend web applications, querying a backend server over the network for user profiles is slow. To speed up performance, engineers build **In-Memory Caches**—dictionary objects that store previously downloaded user profiles in memory, keyed by their unique user IDs:
+In frontend web applications, querying a backend server over the network for user profiles is slow. To speed up performance, engineers build **In-Memory Caches**: dictionary objects that store previously downloaded user profiles in memory, keyed by their unique user IDs:
 
 ```typescript
 interface UserProfile { name: string; email: string; }

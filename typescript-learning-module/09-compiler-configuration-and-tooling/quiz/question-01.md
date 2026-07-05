@@ -1,23 +1,19 @@
-# Question 01: Single Responsibility Principle
+# Question 01: Transpilation vs. Compilation and the Proofreading Phase
 
-What is the Single Responsibility Principle (SRP)?
+In software engineering, languages like C, C++, and Rust use traditional compilers that convert human-readable source code directly into machine code (binary executable instructions for a specific CPU architecture). TypeScript, however, is categorized as a **Transpiler** (source-to-source compiler).
 
-A developer writes a React component that
-- Displays a user's profile card on screen.
-- Makes a `fetch()` call to load user data.
-- Validates whether the user is allowed to view the page.
-- Formats the user's join date.
+## Conceptual Questions
 
-1. How many responsibilities does this component have?
-2. Which responsibility belongs in the UI component? Which belongs elsewhere?
-3. Why does mixing these responsibilities make code harder to maintain and test?
+1. Explain the fundamental difference between traditional compilation and TypeScript transpilation. Why can't web browsers or Node.js servers execute `.ts` files directly?
+2. In the "International Book Translator" analogy from Module 09, the compiler performs two distinct operations: **The Proofreading Phase** and **The Translation Phase**. Explain what happens during each phase. What occurs if an error is found during proofreading?
+3. What is **Type Erasure**? When `tsc` generates a JavaScript output file, what happens to interfaces, type aliases, and parameter type annotations? Why is this behavior essential for runtime compatibility?
+
+---
 
 ## ANSWER HERE
 
-> **How many responsibilities:**
+> **1. Transpilation vs. Traditional Compilation:**
 
-> **What belongs in the UI component:**
+> **2. The Proofreading Phase vs. The Translation Phase:**
 
-> **Where the other responsibilities belong:**
-
-> **Why mixing is harmful:**
+> **3. Type Erasure and Runtime Compatibility:**

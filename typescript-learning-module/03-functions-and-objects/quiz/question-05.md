@@ -1,8 +1,8 @@
-# Quiz Question 05
+# Question 05: Function Overloading and Hidden Signatures
 
 ## Question
 
-Consider this function overload
+Consider this function overload:
 ```typescript
 // Overload signatures
 function parseInput(value: string): string[];
@@ -18,7 +18,7 @@ function parseInput(value: string | number): string[] | string {
 }
 ```
 
-TypeScript **only exposes the overload signatures** to callers  -  the implementation signature is hidden.
+TypeScript **only exposes the overload signatures** to callers; the implementation signature is hidden from the outside world.
 
 1. Why does TypeScript restrict callers to the overload signatures instead of the implementation signature?
 2. What **problem** does hiding the implementation signature solve?
@@ -26,9 +26,9 @@ TypeScript **only exposes the overload signatures** to callers  -  the implement
 
 ---
 
-## Why this matters
+## Why This Matters
 
-Function overloads are a powerful tool for expressing precise input/output relationships. Understanding *why* the implementation signature is hidden prevents common mistakes when defining and consuming overloaded functions. This is covered in **Section 9** of the README.
+Function overloads are a powerful tool for expressing precise input and output relationships without resorting to loose type assertions or `any`. Understanding *why* the implementation signature is hidden prevents common mistakes when defining and consuming overloaded functions. This concept is thoroughly covered in **Section 4** (Function Overloading) and **Section 8** (Real-World Use Cases and Common Pitfalls) of the README.
 
 ---
 

@@ -1,64 +1,22 @@
-# Module 06 Exercise Solutions
+# Module 06 Exercise Solutions: Type Manipulation and Utility Types
 
-Reference implementations for Module 06 exercises.
+This directory contains verified, production-grade reference implementations and exhaustive architectural walkthroughs for the Module 06 coding challenges.
 
----
+## Overview of Solutions
 
-### Solution 1: Practical Utility Types
+In enterprise TypeScript engineering, type safety is not achieved by manually writing dozens of repetitive interfaces. Instead, senior engineers define single sources of truth (master interfaces or functions) and use TypeScript's Type Manipulation engines to derive specialized shapes programmatically.
 
-```typescript
-interface UserProfile {
-  id: string;
-  username: string;
-  email: string;
-  passwordHash: string;
-  avatarUrl?: string;
-  createdAt: Date;
-}
+The solutions in this directory demonstrate how to apply these engines across three distinct architectural domains:
 
-type ProfileUpdatePayload = Partial<Omit<UserProfile, "id">>;
-type PublicProfile = Pick<UserProfile, "id" | "username" | "avatarUrl">;
-type ImmutableProfile = Readonly<UserProfile>;
-```
+1. **[Challenge 01 Solution: Object Shape Transformations and Property Pruning](./challenge-01-solution.md)**: Demonstrates how to use `Partial`, `Required`, `Readonly`, `Pick`, `Omit`, and `Record` to derive database update payloads, secure vendor integrations, immutable archives, and lookup dictionaries from a single master user model.
+2. **[Challenge 02 Solution: Union Transformations and Function Inspection](./challenge-02-solution.md)**: Demonstrates how to sanitize Object-Relational Mapper (ORM) query results using `Exclude`, `Extract`, and `NonNullable`, and how to reverse-engineer third-party SDK function signatures using `ReturnType` and `Parameters`.
+3. **[Challenge 03 Solution: Advanced Type Manipulation Engines](./challenge-03-solution.md)**: Demonstrates how to build custom generic transformers using Mapped Types (`[P in keyof T]`), route types dynamically with Conditional Types and the `infer` keyword, and enforce structural string constraints using Template Literal Types.
 
----
+## How to Study These Solutions
 
-### Solution 2: `keyof` and Lookup Types
+When reviewing these implementations, do not simply look at the final code snippets. Pay close attention to:
+- **Symbol-by-Symbol Clarity**: Every generic parameter bracket (`< >`), union pipe (`|`), and keyword is deconstructed to explain exactly what the compiler is doing under the hood.
+- **Architectural Trade-Offs**: Each solution discusses why specific utility types were chosen over alternative approaches (such as why `Pick` is preferred over `Omit` for small subsets, or why `Record` is superior to open-ended index signatures).
+- **Runtime vs Compile-Time Behavior**: We analyze how these type transformations behave during compilation versus what actually executes in memory at runtime after erasure.
 
-```typescript
-interface AppConfig {
-  theme: "light" | "dark";
-  maxRetries: number;
-  enableDebug: boolean;
-}
-
-function getConfigValue<K extends keyof AppConfig>(config: AppConfig, key: K): AppConfig[K] {
-  return config[key];
-}
-
-const config: AppConfig = { theme: "dark", maxRetries: 3, enableDebug: true };
-const retries = getConfigValue(config, "maxRetries"); // Inferred as number
-
-// Error: Argument of type '"nonExistentKey"' is not assignable to parameter of type 'keyof AppConfig'.
-// getConfigValue(config, "nonExistentKey");
-```
-
----
-
-### Solution 3: `typeof` Type Context
-
-```typescript
-const defaultDatabaseSettings = {
-  host: "localhost",
-  port: 5432,
-  ssl: true,
-  poolSize: 10
-};
-
-type DatabaseSettings = typeof defaultDatabaseSettings;
-
-const customSettings: Partial<DatabaseSettings> = {
-  port: 3306,
-  poolSize: 50
-};
-```
+Let us dive into the detailed walkthroughs!

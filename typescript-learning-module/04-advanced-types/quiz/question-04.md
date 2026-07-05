@@ -8,7 +8,7 @@ function area(shape: Shape): number {
   switch (shape.kind) {
     case "circle": return 3.14 * shape.radius ** 2;
     case "square": return shape.side * shape.side;
-    default
+    default:
       const check: never = shape;
       return check;
   }

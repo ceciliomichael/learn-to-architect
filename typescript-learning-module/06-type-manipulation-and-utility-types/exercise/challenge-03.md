@@ -1,40 +1,57 @@
-# Challenge 03: Record and typeof
+# Challenge 03: Advanced Type Manipulation Engines
 
-Practice two of the most practical utility tools in TypeScript.
+Practice building custom type transformers from scratch using Mapped Types (`[P in keyof T]`), routing types dynamically with Conditional Types (`T extends U ? X : Y`) and `infer`, and enforcing string patterns with Template Literal Types (`${string}`).
 
 ## Your Tasks
 
-**Part 1  -  `Record`:**
-Create a type alias `HttpStatusMap` using `Record<string, number>`. Create a variable `statusCodes: HttpStatusMap` containing at least 5 real HTTP status codes (e.g. `ok: 200`, `notFound: 404`, `internalServerError: 500`). Log the value of two status codes.
-
-**Part 2  -  `typeof` in the type system:**
-You have this runtime constant (do not change it)
+**Part 1: Mapped Type Transformers**
+1. Write a custom generic Mapped Type called `NullableProperties<T>`. Inside the type definition, loop over every property `P` in `keyof T` and transform its value type to `T[P] | null`.
+2. Given the interface below, apply your custom transformer to create a type alias `NullableServerConfig`:
 ```typescript
-const defaultTheme = {
-  primaryColor: "#6366f1",
-  backgroundColor: "#ffffff",
-  fontSize: 16,
-  borderRadius: 8,
-  darkMode: false
-};
+interface ServerConfig {
+  hostname: string;
+  port: number;
+  enableSsl: boolean;
+}
 ```
+3. Create a valid test object `testConfig: NullableServerConfig` where every property is explicitly assigned `null`.
 
-1. Use `typeof` to extract the type of `defaultTheme` as a type alias `ThemeConfig`.
-2. Create a variable `partialTheme: Partial<ThemeConfig>` that overrides only `primaryColor` and `darkMode`.
-3. Log both overridden properties.
+**Part 2: Conditional Types and the `infer` Keyword**
+4. Write a generic Conditional Type called `UnwrapPromise<T>`. If type `T` is assignable to `Promise<infer ResultType>`, extract and return `ResultType`. Otherwise, return `T` unchanged.
+5. Test your conditional type by creating:
+   - `type StringResult = UnwrapPromise<Promise<string>>;` (Should resolve to `string`)
+   - `type NumberResult = UnwrapPromise<number>;` (Should resolve to `number`)
+
+**Part 3: Template Literal Types**
+6. Create a type alias `WarehouseSku` that enforces a strict formatting pattern: strictly the prefix `"SKU-"`, followed by a `number`, followed by a hyphen and a `string` (e.g., `"SKU-100-MONITOR"`).
+7. Create an entity union `type Resource = "user" | "document" | "report";` and an action union `type Action = "create" | "read" | "update" | "delete";`. Use Template Literal interpolation (`${Resource}:${Action}`) to generate a combined type alias `ResourcePermission` containing all 12 possible permission strings.
+8. Declare a variable `myPermission: ResourcePermission = "document:update";` and verify that TypeScript compiles without errors.
 
 ## ANSWER HERE
 
 ```typescript
-// Part 1
-// Part 2
-const defaultTheme = {
-  primaryColor: "#6366f1",
-  backgroundColor: "#ffffff",
-  fontSize: 16,
-  borderRadius: 8,
-  darkMode: false
-};
+// Part 1: Mapped Type Transformers
+interface ServerConfig {
+  hostname: string;
+  port: number;
+  enableSsl: boolean;
+}
+
+// Write NullableProperties<T>, NullableServerConfig, and testConfig here:
+
+
+
+// Part 2: Conditional Types and infer
+// Write UnwrapPromise<T>, StringResult, and NumberResult here:
+
+
+
+// Part 3: Template Literal Types
+type Resource = "user" | "document" | "report";
+type Action = "create" | "read" | "update" | "delete";
+
+// Write WarehouseSku, ResourcePermission, and test variables here:
+
 
 
 ```

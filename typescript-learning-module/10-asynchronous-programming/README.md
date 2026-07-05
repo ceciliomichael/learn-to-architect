@@ -2,7 +2,7 @@
 
 In every module up until now, our code executed **Synchronously**: the computer ran line 1, finished line 1, moved to line 2, finished line 2, and proceeded sequentially down the page. 
 
-But real-world software must communicate with the outside world. When your application queries a database across the network, downloads an image from a cloud bucket, or fetches user data from a REST API, that network request takes time—hundreds of milliseconds or even seconds!
+But real-world software must communicate with the outside world. When your application queries a database across the network, downloads an image from a cloud bucket, or fetches user data from a REST API, that network request takes time (hundreds of milliseconds or even seconds)!
 
 If your program stopped and froze completely while waiting for a network request to finish, your user interface would lock up; users wouldn't be able to click buttons or scroll the page. 
 

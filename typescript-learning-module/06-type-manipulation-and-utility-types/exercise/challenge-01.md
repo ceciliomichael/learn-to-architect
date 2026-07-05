@@ -1,39 +1,61 @@
-# Challenge 01: Reshaping a User Type with Utility Types
+# Challenge 01: Object Shape Transformations and Property Pruning
 
-Practice deriving multiple types from one source interface without repeating yourself.
+Practice deriving multiple domain models from a single master interface without duplicating code. This challenge tests your mastery of built-in Utility Types: `Partial`, `Required`, `Readonly`, `Pick`, `Omit`, and `Record`.
 
-## Starting Interface
+## Master Blueprint Interface
 
 ```typescript
-interface User {
+interface MasterUserRecord {
   id: string;
-  username: string;
+  username?: string; // Originally optional
   email: string;
   passwordHash: string;
+  bankAccountNumber: string; // Sensitive financial data!
   createdAt: Date;
 }
 ```
 
 ## Your Tasks
 
-Using only utility types (no manual re-typing of properties), create these four type aliases
-1. `UserUpdatePayload`: All fields optional, but `id` and `createdAt` are removed entirely.
-2. `PublicUser`: Only `id`, `username`, and `email` (removes sensitive fields).
-3. `ImmutableUser`: All fields readonly (cannot be changed after creation).
-4. `NewUserInput`: Remove `id` and `createdAt`, keep everything else required.
+Using only TypeScript's built-in utility types (do not manually re-type property names or types), create the following six derived type aliases:
 
-For each type, create one example object that satisfies it and log one property.
+1. `UpdateUserPayload`: Convert every property into an optional property, but remove `id` and `createdAt` entirely so they can never be modified during a database PATCH request.
+2. `CompleteRegistrationUser`: Convert every property into a strictly required property (stripping away optional modifiers from fields like `username`), while removing sensitive financial fields like `bankAccountNumber`.
+3. `ArchivedUserRecord`: Lock every property in the master record against reassignment so that historical records cannot be modified after archiving.
+4. `PublicDirectoryEntry`: Pluck strictly the `id`, `username`, and `email` properties for display on a public profile card.
+5. `SafeVendorPayload`: Remove sensitive internal secrets (`passwordHash` and `bankAccountNumber`), keeping all other properties intact for external IT integrations.
+6. `UserDirectoryMap`: Use `Record` to construct a dictionary object mapping user ID strings (`string`) to `PublicDirectoryEntry` objects.
+
+For each type alias, create one example valid object that satisfies the type contract, and write a comment explaining why TypeScript accepts it.
 
 ## ANSWER HERE
 
 ```typescript
-interface User {
+interface MasterUserRecord {
   id: string;
-  username: string;
+  username?: string;
   email: string;
   passwordHash: string;
+  bankAccountNumber: string;
   createdAt: Date;
 }
 
-// Write your four derived types and example objects here
+// 1. UpdateUserPayload
+
+
+// 2. CompleteRegistrationUser
+
+
+// 3. ArchivedUserRecord
+
+
+// 4. PublicDirectoryEntry
+
+
+// 5. SafeVendorPayload
+
+
+// 6. UserDirectoryMap
+
+
 ```

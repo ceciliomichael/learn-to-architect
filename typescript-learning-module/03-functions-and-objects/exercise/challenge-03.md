@@ -17,7 +17,7 @@ const products = [
 ## Your Tasks
 
 1. Use `.filter()` to get only the products where `inStock` is `true`. Store the result in `availableProducts`.
-2. Use `.map()` on `availableProducts` to create a new array of strings. Each string should be formatted as `"NAME - $PRICE"` (e.g. `"Sword - $150"`). Store in `productLabels`.
+2. Use `.map()` on `availableProducts` to create a new array of strings. Each string should be formatted as `"NAME: $PRICE"` (e.g. `"Sword: $150"`). Store in `productLabels`.
 3. Use `.forEach()` on `productLabels` to log each label.
 4. Log the total count of available products using `.length`.
 

@@ -267,7 +267,7 @@ function renderUI(state: NetworkState): void {
 ```
 
 ### Why Why This Matters in Real-World Projects
-In frontend UI libraries like React or Redux, application state changes continuously. If you model state using optional properties (`{ isLoading?: boolean; data?: string[]; error?: string; }`), you create illegal, impossible states—what does it mean if `isLoading: true` AND `error: "Failed"` are both present at the exact same time?! 
+In frontend UI libraries like React or Redux, application state changes continuously. If you model state using optional properties (`{ isLoading?: boolean; data?: string[]; error?: string; }`), you create illegal, impossible states: what does it mean if `isLoading: true` AND `error: "Failed"` are both present at the exact same time?! 
 
 By using Discriminated Unions, senior architects make illegal states mathematically impossible to represent. The application can only ever exist in one clean, verified state at a time.
 
@@ -278,7 +278,7 @@ By using Discriminated Unions, senior architects make illegal states mathematica
 ### Think of an Impossible Black Hole
 In computer science, what happens when a function enters an infinite loop, or violently throws a fatal error that crashes the thread? The function **never returns a value**. 
 
-In TypeScript, the **`never` type** represents an impossible state—a container that can never hold any data whatsoever.
+In TypeScript, the **`never` type** represents an impossible state: a container that can never hold any data whatsoever.
 
 ### Building Bulletproof Exhaustiveness Checks
 Senior architects use the `never` type to build automated safety alarms called **Exhaustiveness Checks**. 

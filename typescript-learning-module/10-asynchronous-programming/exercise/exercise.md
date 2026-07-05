@@ -1,13 +1,13 @@
-# Welcome to Practice Lab: Async Programming - Promises and Async/Await
-Welcome to the interactive exercise lab for **Async Programming - Promises and Async/Await**! Here is where theoretical knowledge transforms into practical coding ability.
+# Welcome to Practice Lab: Async Programming (Promises and Async/Await)
+Welcome to the interactive exercise lab for **Async Programming (Promises and Async/Await)**! Here is where theoretical knowledge transforms into practical coding ability.
 
 Remember: The TypeScript compiler is your mentor. Don't be afraid to experiment, make syntax errors, and fix them. Every problem you solve builds professional muscle memory.
 
 ## What You Will Tackle in This Lab
 
-1. **[Challenge 01: Write Your First Async Function](./challenge-01.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
-2. **[Challenge 02: Fetch, Handle Errors, and Type the Response](./challenge-02.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
-3. **[Challenge 03: Parallel Requests with Promise.all](./challenge-03.md)**  -  Open this challenge and implement your solution directly inside the ANSWER HERE block.
+1. **[Challenge 01: Write Your First Async Function](./challenge-01.md)**: Open this challenge and implement your solution directly inside the ANSWER HERE block.
+2. **[Challenge 02: Fetch, Handle Errors, and Type the Response](./challenge-02.md)**: Open this challenge and implement your solution directly inside the ANSWER HERE block.
+3. **[Challenge 03: Parallel Requests with Promise.all](./challenge-03.md)**: Open this challenge and implement your solution directly inside the ANSWER HERE block.
 
 ## How to Work on These Challenges
 

@@ -19,8 +19,8 @@ const [a, b] = await Promise.all([fetchA(), fetchB()]);
 
 ## ANSWER HERE
 
-> **Sequential  -  total time and why:**
+> **Sequential (total time and why):**
 
-> **Parallel  -  total time and why:**
+> **Parallel (total time and why):**
 
 > **When NOT to use Promise.all:**

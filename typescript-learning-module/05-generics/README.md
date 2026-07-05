@@ -2,7 +2,7 @@
 
 In previous modules, we learned how to write strict, static blueprints for our data. If a function needed to accept a text string, we typed it as `string`. If an array needed to hold numbers, we typed it as `number[]`. 
 
-But what if you are building a general-purpose tool—like a data sorting algorithm, an HTTP network fetcher, or a database storage container—that needs to work across *many different types of data* without losing type safety? 
+But what if you are building a general-purpose tool (like a data sorting algorithm, an HTTP network fetcher, or a database storage container) that needs to work across *many different types of data* without losing type safety? 
 
 If you use `any`, you destroy type safety. If you write twenty separate functions for twenty different data types, your codebase becomes a bloated maintenance nightmare. 
 
@@ -173,7 +173,7 @@ textStorage.addItem("System Log 1");
 ## 3. Generic Constraints (`extends`)
 
 ### Imagine a VIP Club Entrance with Minimum Dress Code Rules
-Imagine hosting an exclusive gala at a downtown hotel. You tell the bouncers: *"I don't care what specific brand of clothing our guests wear—they can wear Gucci, Armani, or Prada—but whoever walks through this door **must at minimum be wearing a formal tuxedo**."*
+Imagine hosting an exclusive gala at a downtown hotel. You tell the bouncers: *"I don't care what specific brand of clothing our guests wear (they can wear Gucci, Armani, or Prada), but whoever walks through this door **must at minimum be wearing a formal tuxedo**."*
 
 If a guest arrives wearing an Armani tuxedo, they enter. If a guest arrives wearing a Prada tuxedo, they enter. But if a guest arrives wearing a bathing suit, the bouncer turns them away!
 

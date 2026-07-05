@@ -1,81 +1,38 @@
-# Module 07 Exercise Solutions
+# Module 07 Exercise Solutions: Architectural Overview
 
-Reference implementations for Module 07 exercises.
+This document serves as the master architectural guide and reference index for all practical coding challenges in Module 07 (Classes and Object-Oriented Programming). 
 
----
+In enterprise software development, Object-Oriented Programming is not merely a syntax choice; it is a foundational paradigm for organizing complex domain logic into self-contained, maintainable, and secure components. Below is the architectural summary of how each challenge reinforces production-grade engineering principles.
 
-### Solution 1: Secure Bank Account Class
+## Challenge Index & Solution Guides
 
-```typescript
-class BankAccount {
-  constructor(
-    readonly accountId: string,
-    private balance: number
-  ) {}
+1. **[Challenge 01 Solution: Secure Bank Account](./challenge-01-solution.md)**: Demonstrates encapsulation, data privacy using access modifiers (`private`, `readonly`, `public`), and boundary validation.
+2. **[Challenge 02 Solution: Inheritance and super](./challenge-02-solution.md)**: Demonstrates class hierarchies, constructor delegation via `super()`, method overriding, and parameter property shorthand.
+3. **[Challenge 03 Solution: Abstract Classes and Interfaces](./challenge-03-solution.md)**: Demonstrates contract enforcement, polymorphic design, and the distinction between structural interfaces and base implementation classes.
+4. **[Challenge 04 Solution: Getters, Setters, and Static Members](./challenge-04-solution.md)**: Demonstrates property access interception via accessors and class-level memory allocations for shared enterprise utilities.
 
-  public deposit(amount: number): void {
-    if (amount > 0) {
-      this.balance += amount;
-    }
-  }
+## Core OOP Design Principles in Practice
 
-  public withdraw(amount: number): boolean {
-    if (amount <= 0 || this.balance < amount) {
-      return false;
-    }
-    this.balance -= amount;
-    return true;
-  }
+### 1. Encapsulation as a Security Boundary
+In standard JavaScript, object properties are publicly mutable by default. A junior developer might allow external modules to directly modify object fields (for example, `account.balance = 999999`). In our solutions, we strictly enforce encapsulation:
+* **Internal state is hidden**: Sensitive fields are marked `private` or `protected`.
+* **State mutation is gated**: External code must interact through public methods or setters that perform rigorous validation, logging, and error handling before touching internal memory.
 
-  public getBalance(): number {
-    return this.balance;
-  }
-}
+### 2. Inheritance vs. Composition & Contracts
+Our solutions highlight when to use class inheritance (`extends`) versus structural implementation (`implements`):
+* **Use `extends`** when child classes share an "is-a" relationship and inherit core behavioral implementations (for example, an `ElectricVehicle` is a specialized `Vehicle`).
+* **Use `implements`** when enforcing a behavioral contract across disparate, unrelated class hierarchies (for example, forcing both `Circle` and `Rectangle` to satisfy a `Printable` interface).
+
+### 3. Memory Allocation: Instance vs. Static Members
+Understanding memory layout is essential for senior engineers:
+* **Instance Members**: Every time `new ClassName()` is executed, fresh memory is allocated on the heap for the object's instance properties (`this.property`).
+* **Static Members**: Members marked with `static` are allocated strictly once on the class constructor function object itself. They persist across the entire application lifecycle without requiring object instantiation, making them ideal for registries, singletons, and shared constants.
+
+## Verification & Compile-Time Safety
+Every solution file in this directory provides a complete, runnable TypeScript implementation without placeholders or abbreviated code. You can compile and verify these solutions using the TypeScript CLI:
+
+```bash
+npx tsc --noEmit
 ```
 
----
-
-### Solution 2: Parameter Property Shorthand
-
-```typescript
-class Product {
-  constructor(
-    public name: string,
-    private price: number,
-    protected sku: string
-  ) {}
-}
-```
-
----
-
-### Solution 3: Interfaces & Abstract Classes
-
-```typescript
-interface Logger {
-  log(msg: string): void;
-}
-
-abstract class BaseService implements Logger {
-  constructor(protected serviceName: string) {}
-
-  abstract log(msg: string): void;
-
-  public execute(): void {
-    this.log(`Executing ${this.serviceName} service...`);
-  }
-}
-
-class AuthService extends BaseService {
-  constructor() {
-    super("Auth");
-  }
-
-  public log(msg: string): void {
-    console.log(`[${this.serviceName}]: ${msg}`);
-  }
-}
-
-const auth = new AuthService();
-auth.execute(); // Logs: [Auth]: Executing Auth service...
-```
+Review each detailed solution file to explore symbol-by-symbol tables, common pitfalls, and runtime execution logs.

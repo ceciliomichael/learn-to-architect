@@ -1,32 +1,36 @@
-# Question 02: Pick vs Omit
+# Question 02: Property Plucking and Record Dictionaries
 
-Both `Pick` and `Omit` create a new type from an existing one. When is each one better?
+Both `Pick<T, Keys>` and `Omit<T, Keys>` construct new interfaces by slicing existing models. Meanwhile, `Record<K, V>` constructs dictionary objects. This question tests your architectural decision-making when designing domain models.
 
 ```typescript
-interface Employee {
+interface EnterpriseEmployee {
   id: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  salary: number;
   department: string;
-  startDate: Date;
+  salary: number;
+  socialSecurityNumber: string;
+  bankRoutingNumber: string;
+  hireDate: Date;
+  isExecutive: boolean;
 }
+
+type UserRole = "admin" | "editor" | "viewer" | "moderator";
 ```
 
-1. You need a type with only `id` and `name`. Write both the `Pick` and `Omit` versions. Which is more concise?
-2. You need a type with all fields except `salary`. Write both versions. Which is more concise now?
-3. As a general rule, when should you use `Pick` and when should you use `Omit`?
+## Questions
+
+1. **Pick vs Omit Decision Framework**:
+   - Imagine you need a public directory card type containing only `id`, `firstName`, and `lastName`. Should you use `Pick` or `Omit`? Why?
+   - Imagine you need to send employee data to an external Slack integration that requires every field *except* `salary`, `socialSecurityNumber`, and `bankRoutingNumber`. Should you use `Pick` or `Omit`? Why?
+   - State the golden architectural rule for choosing between `Pick` and `Omit` when refactoring large interfaces.
+2. **Record Exhaustiveness Checking**:
+   - Explain the structural difference between `type RolePermissions = Record<UserRole, boolean>` and an open-ended index signature `type OpenPermissions = { [key: string]: boolean }`.
+   - What happens at compile time if a junior developer adds a new role `"guest"` to the `UserRole` union? Why is `Record` superior for finite key sets in production codebases?
 
 ## ANSWER HERE
 
-```typescript
-// Only id and name
-type WithPick = // ...
-type WithOmit = // ...
+> **1. Pick vs Omit Decision Framework:**
 
-// Everything except salary
-type WithPick2 = // ...
-type WithOmit2 = // ...
-```
-
-> **General rule:**
+> **2. Record Exhaustiveness Checking:**

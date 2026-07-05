@@ -1,6 +1,6 @@
 # Module 07: Classes and Object-Oriented Programming
 
-In earlier modules, we used Interfaces and Type Aliases to model data shapes. But in standard JavaScript and TypeScript, interfaces are completely erased during compilation—they don't exist at runtime! What if you need a self-contained entity that bundles both **state** (data properties) and **behavior** (methods) together into a permanent physical object in computer memory?
+In earlier modules, we used Interfaces and Type Aliases to model data shapes. But in standard JavaScript and TypeScript, interfaces are completely erased during compilation; they don't exist at runtime! What if you need a self-contained entity that bundles both **state** (data properties) and **behavior** (methods) together into a permanent physical object in computer memory?
 
 This module teaches you **Object-Oriented Programming (OOP)** in TypeScript using **Classes**. We will explore how to construct blueprints that generate runtime objects, how to enforce encapsulation using access modifiers (`public`, `private`, `protected`), how to design inheritance hierarchies, and how to use abstract classes to build robust enterprise architectures.
 
@@ -10,7 +10,7 @@ This module teaches you **Object-Oriented Programming (OOP)** in TypeScript usin
 
 ### Let's Take an Architectural Blueprint vs. A Built House as an Example
 To understand why we need both Interfaces and Classes without getting confused by technical definitions, imagine constructing a residential neighborhood.
-* **The Interface (The Paper Blueprint):** An architect draws a paper blueprint titled `HouseBlueprint`. The blueprint specifies: *"The house must have 4 walls, a roof, and a front door."* You cannot live inside a paper blueprint! You cannot open the door of a drawing. Furthermore, when the city inspectors approve the neighborhood, they shred the paper blueprint—it disappears completely.
+* **The Interface (The Paper Blueprint):** An architect draws a paper blueprint titled `HouseBlueprint`. The blueprint specifies: *"The house must have 4 walls, a roof, and a front door."* You cannot live inside a paper blueprint! You cannot open the door of a drawing. Furthermore, when the city inspectors approve the neighborhood, they shred the paper blueprint, so it disappears completely.
 * **The Class (The Factory Mold and Builder):** A construction company creates a physical factory mold called `HouseClass`. This mold is not just a drawing; it is an active mechanical builder! When you press the green **Build** button (`new HouseClass()`), the factory pours concrete and erects a real, physical house standing on a plot of land. You can walk inside it, open its doors, and store furniture inside it. Even after construction is finished, the house remains standing in the physical world.
 
 In TypeScript:
@@ -93,7 +93,7 @@ In TypeScript, **Access Modifiers** (`public`, `private`, `protected`) are those
 ### Enforcing Encapsulation in Code
 By default, every property and method in a TypeScript class is `public`. To protect sensitive internal state from external tampering, you explicitly attach access modifiers:
 
-1. **`public` (Default):** Accessible from anywhere—inside the class, inside child subclasses, and from external calling code.
+1. **`public` (Default):** Accessible from anywhere: inside the class, inside child subclasses, and from external calling code.
 2. **`private`:** Accessible **strictly and exclusively inside the defining class itself!** Child subclasses and external code cannot read or modify it.
 3. **`protected`:** Accessible inside the defining class AND inside any child subclasses that inherit from it (`extends`), but completely hidden from external calling code.
 
@@ -239,7 +239,7 @@ console.log(homeTemp.temperature); // Still safely 24!
 ## 6. Inheritance (`extends` and `super`)
 
 ### Picture Employee Job Roles and Specialized Responsibilities
-Imagine a corporate organization chart. At the base of the chart is the general **Employee** role. Every single employee in the company—whether an accountant, an engineer, or a security guard—shares basic attributes: an Employee ID, a Name, and the ability to clock in for work.
+Imagine a corporate organization chart. At the base of the chart is the general **Employee** role. Every single employee in the company (whether an accountant, an engineer, or a security guard) shares basic attributes: an Employee ID, a Name, and the ability to clock in for work.
 * **The Specialized Manager Role:** A **Manager** is an Employee! They inherit every single attribute of a general Employee (they have an ID, a Name, and clock in), but they also add specialized capabilities that standard employees lack: *a dedicated team budget, and the ability to approve expense reports*.
 
 In TypeScript, class inheritance using the **`extends`** keyword allows a child subclass to inherit all properties and methods from a parent class, while using the **`super`** keyword to invoke the parent's constructor and methods!
@@ -306,7 +306,7 @@ manager.clockIn();
 Imagine the Department of Transportation establishing safety rules for commercial vehicles. They publish a regulation master document called **AbstractVehicle**. 
 The regulation states: *"We don't manufacture physical AbstractVehicles; you cannot drive a regulation document down the highway! However, any manufacturer who builds a commercial vehicle (like a **Truck** or a **Bus**) MUST strictly implement a physical emergency brake system and a horn."*
 
-In TypeScript, an **Abstract Class** (created using the `abstract` keyword) is that government regulation document. You **cannot instantiate an abstract class directly using `new`**! Instead, it serves as a master base class that defines shared implemented methods, while marking specific methods as `abstract`—forcing child subclasses to provide their own custom implementations!
+In TypeScript, an **Abstract Class** (created using the `abstract` keyword) is that government regulation document. You **cannot instantiate an abstract class directly using `new`**! Instead, it serves as a master base class that defines shared implemented methods, while marking specific methods as `abstract`, forcing child subclasses to provide their own custom implementations!
 
 ### Enforcing Subclass Implementation
 Let's see how abstract classes guide architectural consistency across different specialized subclasses:
@@ -355,7 +355,7 @@ stripe.chargeCard("4242-4242-4242-4242", 99.50);
 ## 8. Implementing Interfaces (`implements`)
 
 ### Picture Signing an Independent Quality Certification Contract
-Imagine running an independent electronics factory. Your factory manufactures mobile phones, laptop computers, and smart televisions—three completely different product lines that don't inherit from the same parent class. 
+Imagine running an independent electronics factory. Your factory manufactures mobile phones, laptop computers, and smart televisions (three completely different product lines that don't inherit from the same parent class). 
 
 However, to sell your products in Europe, every single product must pass the **CE Safety Certification**. You sign a binding legal contract: *"I promise that regardless of what product I build, it will physically possess a high-voltage fuse and an auto-shutdown switch."*
 
@@ -407,7 +407,7 @@ for (let report of reports) {
 
 ### Imagine a Company-Wide Bulletin Board vs. Personal Employee Desks
 Imagine walking into a corporate office building. Every employee has their own personal **Employee Desk** (`an instance property`). What is on Alice's desk belongs strictly to Alice; what is on Bob's desk belongs strictly to Bob. 
-However, in the main lobby hangs a single **Company-Wide Bulletin Board** (`a static property`). There aren't 100 different bulletin boards for 100 employees—there is strictly ONE central board shared across the entire organization!
+However, in the main lobby hangs a single **Company-Wide Bulletin Board** (`a static property`). There aren't 100 different bulletin boards for 100 employees; there is strictly ONE central board shared across the entire organization!
 
 In TypeScript, when you mark a property or method with the **`static`** keyword, you are attaching it strictly to the **Class Factory Blueprint itself**, rather than to individual instantiated object instances!
 

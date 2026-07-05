@@ -1,23 +1,35 @@
-# Question 03: Tuples
+# Question 03: Multiple Type Variables (`<T, K, V>`)
 
-What is a tuple type in TypeScript?
+Examine why enterprise architectures require declaring multiple independent generic type parameters, and how they preserve relationships across heterogeneous data structures.
+
+## Code Scenario
+
+Consider a universal key-value mapping utility designed to pair arbitrary keys with arbitrary values:
 
 ```typescript
-type Coordinate = [number, number];
-type NameAndAge  = [string, number];
+interface KeyValuePair<K, V> {
+  key: K;
+  value: V;
+}
 
-const point: Coordinate = [10, 20];
-const entry: NameAndAge  = ["Alice", 30];
+function createKeyValuePair<K, V>(key: K, value: V): KeyValuePair<K, V> {
+  return { key: key, value: value };
+}
+
+const userScore = createKeyValuePair<string, number>("alice_score", 1500);
+const statusFlag = createKeyValuePair<number, boolean>(404, false);
 ```
 
-1. How is the tuple type `[string, number]` different from the union array type `(string | number)[]`?
-2. What TypeScript error do you get if you write `const bad: NameAndAge = [30, "Alice"]` (wrong order)?
-3. Give a real-world scenario where a tuple is more appropriate than an interface.
+## Conceptual Questions
+
+1. Why is it architecturally necessary to declare two distinct type parameters (`<K, V>`) for a key-value structure rather than using a single type parameter (like `KeyValuePair<T>`)? What would happen if we used only `<T>`?
+2. In the `statusFlag` instantiation above, what exact types are bound to `K` and `V`? Can another developer subsequently instantiate `KeyValuePair<boolean, string[]>` without modifying the original interface blueprint? Why?
+3. In your own words, explain how multiple type variables enable multi-type relationship tracking, and list the standard engineering letter conventions used for primary types, property keys, dictionary values, and array elements.
 
 ## ANSWER HERE
 
-> **Difference between `[string, number]` and `(string | number)[]`:**
+> **1. Why two distinct type parameters `<K, V>` are necessary:**
 
-> **Error when order is wrong:**
+> **2. Type bindings for `statusFlag` and independent instantiation analysis:**
 
-> **Real-world scenario for a tuple:**
+> **3. Multi-type relationship tracking and letter conventions:**
