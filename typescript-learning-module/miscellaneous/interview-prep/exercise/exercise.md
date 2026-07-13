@@ -7,9 +7,9 @@ In real tech company interviews (Google, Meta, Stripe), senior engineering candi
 
 ## What You Will Tackle in This Lab
 
-1. **[Challenge 01: Build a Deep Readonly Utility](./challenge-01.md)**  -  Implement a recursive type transformation that freezes nested object hierarchies at compile time.
-2. **[Challenge 02: Type-Safe Event Emitter](./challenge-02.md)**  -  Build an enterprise event bus where event payloads are strictly type-checked against event names.
-3. **[Challenge 03: Branded Types for Domain Safety](./challenge-03.md)**  -  Prevent accidental mixing of USD and EUR or User IDs and Order IDs using zero-runtime-overhead Branded Types.
+1. **[Challenge 01: The Branded ID Architecture](./challenge-01.md)** - Prevent accidental mixing of user and order identifiers with zero-runtime-overhead branded types.
+2. **[Challenge 02: Discriminated Union State Machine & Exhaustiveness Guard](./challenge-02.md)** - Model request states and prove every state is handled with a `never` exhaustiveness guard.
+3. **[Challenge 03: Async Resilience & The Result Pattern](./challenge-03.md)** - Convert asynchronous failures into an explicit `Result<T, E>` contract.
 
 ---
 

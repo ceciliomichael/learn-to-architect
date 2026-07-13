@@ -5,11 +5,11 @@ Welcome to the conceptual interview masterclass! When hiring senior or principal
 
 ## Topics We Are Testing Today
 
-1. **[Question 01: Type Erasure & Runtime Performance](./question-01.md)**  -  Does TypeScript add runtime overhead or memory consumption to your production server?
-2. **[Question 02: Nominal vs Structural Typing](./question-02.md)**  -  Why did TypeScript choose structural typing over Java/C#-style nominal typing?
-3. **[Question 03: Discriminated Unions vs Class Inheritance](./question-03.md)**  -  When designing domain models, why do modern TypeScript architects prefer discriminated unions over object-oriented class hierarchies?
-4. **[Question 04: The Variance of Function Arguments](./question-04.md)**  -  Why are function parameters contravariant while return types are covariant? Let's dive deep into type theory
-5. **[Question 05: Enterprise Error Modeling](./question-05.md)**  -  Why is throwing exceptions (`throw new Error`) considered dangerous in large systems, and how does the `Result<T, E>` pattern fix it?
+1. **[Question 01: Type Erasure & Boundary Vulnerability](./question-01.md)** - Explain why erased types cannot validate untrusted runtime input.
+2. **[Question 02: Structural Typing & Branded Types](./question-02.md)** - Compare structural compatibility with explicit branded domain identifiers.
+3. **[Question 03: Exhaustiveness Checking & The `never` Bottom Type](./question-03.md)** - Explain how `never` exposes unhandled union variants.
+4. **[Question 04: Generic Variance & Overload Order](./question-04.md)** - Analyze variance and why overload ordering affects inference.
+5. **[Question 05: Architectural Boundaries & The Result Pattern](./question-05.md)** - Explain how explicit result values make failures visible across application layers.
 
 ---
 

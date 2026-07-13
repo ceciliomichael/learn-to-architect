@@ -28,12 +28,14 @@ TypeScript **only exposes the overload signatures** to callers; the implementati
 
 ## Why This Matters
 
-Function overloads are a powerful tool for expressing precise input and output relationships without resorting to loose type assertions or `any`. Understanding *why* the implementation signature is hidden prevents common mistakes when defining and consuming overloaded functions. This concept is thoroughly covered in **Section 4** (Function Overloading) and **Section 8** (Real-World Use Cases and Common Pitfalls) of the README.
+Function overloads are a powerful tool for expressing precise input and output relationships without resorting to loose type assertions or `any`. Understanding *why* the implementation signature is hidden prevents common mistakes when defining and consuming overloaded functions. This concept is thoroughly covered in **Section 4** (Function Overloading) and **Section 10** (Real-World Use Cases and Common Pitfalls) of the README.
 
 ---
 
 ## Your Answer
 
 ```
-ANSWER HERE
+1. The overload signatures are the public call contracts. Each one preserves the relationship between a specific input type and its corresponding return type.
+2. Hiding the broader implementation signature prevents callers from relying on combinations that exist only so the function body can implement every overload. It also gives callers precise return types instead of the wider `string[] | string` union.
+3. `parseInput(true)` is rejected because no exposed overload accepts a boolean. The implementation signature is checked for compatibility with the overloads, but callers cannot use it directly.
 ```

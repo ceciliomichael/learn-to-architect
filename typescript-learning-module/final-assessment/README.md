@@ -32,7 +32,7 @@ Pick the one that scares you just the right amount  -  challenging enough that y
 
 1. You write every line of code yourself. Do not copy solutions from the internet, use AI to generate code for you, or copy-paste from the curriculum exercises.
 
-2. Every file must have exactly one clear responsibility. No mixing of types, business logic, data access, and output in the same file. This was Module 09.
+2. Every file must have exactly one clear responsibility. No mixing of types, business logic, data access, and output in the same file. This is a course-wide engineering practice reinforced in the senior interview review.
 
 3. No file may exceed 300 lines of logic code. Split proactively, not reactively.
 

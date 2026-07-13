@@ -128,7 +128,7 @@ console.log("Total Available Products:", availableProducts.length);
 ```
 
 ### Architectural Trade-Offs
-* **Declarative Pipelines vs. Imperative Loops**: As discussed in Section 7 of the README, `.filter()`, `.map()`, and `.forEach()` provide immutable, highly readable transformation pipelines. Every transformation step produces a clean intermediate array without mutating source data.
+* **Declarative Pipelines vs. Imperative Loops**: As discussed in Section 8 of the README, `.filter()`, `.map()`, and `.forEach()` provide immutable, highly readable transformation pipelines. Every transformation step produces a clean intermediate array without mutating source data.
 * **When to use `for...of`**: If this pipeline needed to abort early upon finding a specific product (using `break`) or execute asynchronous database saves sequentially (`await`), a `for...of` loop would be mandatory.
 
 ---

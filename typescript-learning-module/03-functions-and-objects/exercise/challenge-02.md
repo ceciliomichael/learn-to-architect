@@ -22,4 +22,27 @@ Call each function twice: once passing both arguments, once passing only the nam
 
 ```typescript
 // Write both greet functions and their calls here
+
+function greetOptional(name: string, title? : string): string {
+    if (title !== undefined) {
+        return `Hello, ${title} ${name}`
+    }
+    else {
+        return `Hello, ${name}`
+    }
+}
+
+function greetDefault(name: string, title: string = "Traveler"): string {
+    return `Hello, ${title} ${name}`
+}
+
+const optionalWithTitle: string = greetOptional("Robert", "Doctor")
+const optionalWithoutTitle: string = greetOptional("Robert")
+const defaultWithTitle: string = greetDefault("Robert", "Nurse")
+const defaultWithoutTitle: string = greetDefault("Robert")
+
+console.log(optionalWithTitle) // returns Hello, Doctor Robert
+console.log(optionalWithoutTitle) // returns Hello, Robert
+console.log(defaultWithTitle) // returns Hello, Nurse Robert
+console.log(defaultWithoutTitle) // returns Hello, Traveler Robert
 ```

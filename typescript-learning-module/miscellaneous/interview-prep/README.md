@@ -178,7 +178,7 @@ const age = getProperty(user, "age");       // Inferred strictly as number
 
 ---
 
-## 5. Clean Layer Decomposition & The 300-Line Rule (Module 09)
+## 5. Clean Layer Decomposition & The 300-Line Rule (Course-Wide Engineering Practice)
 
 System architecture rounds focus on codebase longevity and scalability.
 

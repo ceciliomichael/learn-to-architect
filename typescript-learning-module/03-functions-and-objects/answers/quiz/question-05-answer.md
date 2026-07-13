@@ -67,6 +67,6 @@ In enterprise library design (like DOM APIs or formatting utilities), writing a 
 Function overloading is the architectural gold standard whenever an API's return type varies deterministically based on the input argument types.
 
 ### Alignment with Module 03 Concepts
-As detailed in **Section 4** (Function Overloading) and **Section 8** (Real-World Use Cases and Common Pitfalls) of the README, always remember two golden rules when writing overloads:
+As detailed in **Section 4** (Function Overloading) and **Section 10** (Real-World Use Cases and Common Pitfalls) of the README, always remember two golden rules when writing overloads:
 1. Always order your overload signatures from most specific to least specific (top to bottom).
 2. Ensure your implementation signature is wide enough to cover every overload above it, or TypeScript will report an implementation mismatch error!

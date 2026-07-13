@@ -67,9 +67,9 @@ console.log("Total Available Products:", availableProducts.length); // Outputs: 
 ## 3. Architectural Trade-Offs and Best Practices
 
 ### Declarative Transformation Pipelines vs. Imperative Loops
-As highlighted in Section 7 of the README, chaining `.filter()`, `.map()`, and `.forEach()` exemplifies declarative functional programming.
+As highlighted in Section 8 of the README, chaining `.filter()`, `.map()`, and `.forEach()` exemplifies declarative functional programming.
 * **Declarative Advantages**: Each method has a single, immutable responsibility: `.filter()` selects subsets, `.map()` transforms data shapes, and `.forEach()` executes side effects. This separation of concerns eliminates complex nested `if` statements and shared mutable state.
-* **When to Avoid `.forEach()`**: As taught in Section 7, `.forEach()` cannot be paused or aborted. If your business requirements dictate that processing must halt upon encountering a specific condition (using `break`), or if you must execute asynchronous API calls sequentially (using `await`), you must replace `.forEach()` with a modern `for...of` loop.
+* **When to Avoid `.forEach()`**: As taught in Section 8, `.forEach()` cannot be paused or aborted. If your business requirements dictate that processing must halt upon encountering a specific condition (using `break`), or if you must execute asynchronous API calls sequentially (using `await`), you must replace `.forEach()` with a modern `for...of` loop.
 
 ### Memory allocation and Chaining Considerations
 In enterprise backend environments processing millions of records, developers must understand the memory trade-offs of array chaining. Calling `products.filter().map()` creates two distinct intermediate arrays in heap memory: one containing the filtered product objects, and another containing the mapped strings. For standard UI data structures (hundreds or thousands of items), this declarative clarity is vastly superior. For high-frequency trading or massive datasets, senior architects may consolidate filtering and mapping into a single single-pass `for...of` loop or `.reduce()` to minimize Garbage Collection overhead.

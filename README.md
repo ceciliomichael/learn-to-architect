@@ -17,7 +17,11 @@ This repository is a growing collection of **independent language courses**. Eac
 ## Choose Your Path: Start With Any Language
 You are completely in control of your learning journey. You do **not** need to learn multiple languages at once, and there is no required order. Pick whichever language excites you or matches your career goals and jump right in
 ### Currently Available
-- **[`typescript-learning-module/`](./typescript-learning-module/README.md)  -  The TypeScript Academy**
+- **[`git-learning-module/`](./git-learning-module/README.md): The Git & Version Control Academy**
+  - **What it is:** Git is a professional time machine for your code. It allows you to save snapshots of your progress, collaborate securely with global teams, and instantly rewind any mistakes.
+  - **Who it is for:** Essential for absolutely every software engineer, regardless of what programming language you write.
+  - **What you will do:** Master the core mechanics of the working tree and staging area, learn branching workflows, and practice safely merging code.
+- **[`typescript-learning-module/`](./typescript-learning-module/README.md): The TypeScript Academy**
   - **What it is:** TypeScript builds on top of JavaScript (the language of the web) by adding intelligent safety checks that catch typos and bugs before your code even runs.
   - **Who it is for:** Perfect for beginners wanting to build modern websites, full-stack applications, and secure backend tools.
   - **What you will do:** Start from basic variables and loops, master custom data blueprints, learn how to handle internet network requests, and finish by building one of 10 real-world projects (like a Version Control tool or an AI Agent orchestrator).

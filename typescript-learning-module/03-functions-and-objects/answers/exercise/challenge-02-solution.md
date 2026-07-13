@@ -55,7 +55,7 @@ console.log(greetDefault("Bob"));            // Outputs: "Hello, Traveler Bob"
 * **Default Parameters (`=`)**: Use when a system requires a guaranteed fallback value to operate seamlessly. In `greetDefault`, the business logic dictates that every user must be addressed with a title; if none is provided, the system defaults to `"Traveler"`.
 
 ### The Mandatory Parameter Ordering Rule
-As emphasized in Section 2 of the README, optional and default parameters must always sit at the very end of the parameter list. You cannot declare `function badOrder(title?: string, name: string)`. 
+As emphasized in Section 2 of the README, an optional parameter marked with `?` cannot be followed by a required parameter. You cannot declare `function badOrder(title?: string, name: string)`.
 Why? When the JavaScript runtime executes a function call like `badOrder("Alice")`, arguments are bound positionally from left to right. If an optional parameter were positioned first, the engine would bind `"Alice"` to `title`, leaving `name` as `undefined` and violating the required contract of the second parameter.
 
 ### Template Literals vs. String Concatenation

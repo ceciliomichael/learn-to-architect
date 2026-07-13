@@ -64,11 +64,11 @@ typescript-learning-module/
 ├── 03-functions-and-objects/        -  Signatures, Callbacks, Overloads & Iteration
 ├── 04-advanced-types/               -  Narrowing Hierarchy, Discriminated Unions & Exhaustiveness
 ├── 05-generics/                     -  Type Variables, Constraints & Reusable Architecture
-├── 06-type-manipulation/            -  Utility Types, Keyof/Lookup & Custom Mapped Transformations
+├── 06-type-manipulation-and-utility-types/  -  Utility Types, Keyof/Lookup & Custom Mapped Transformations
 ├── 07-classes-and-oop/              -  Encapsulation, Abstract Blueprints & Static Singletons
-├── 08-configuration-and-declarations/  -  Strict Mode, tsconfig.json, Modules & .d.ts Files
-├── 09-project-structure/            -  SRP, Clean Layering, Barrel Files & 300-Line Rule
-├── 10-async-programming/            -  Promise Concurrency, Event Loop Scheduling & Error Isolation
+├── 08-modules-and-namespaces/       -  ES Modules, Exports, Namespaces, Barrels & Path Aliases
+├── 09-compiler-configuration-and-tooling/  -  tsconfig, Strictness, Toolchains & Quality Gates
+├── 10-asynchronous-programming/     -  Promises, Async/Await, Fetch & Concurrency
 ├── 11-error-handling/               -  Domain Errors, Type-Safe Catch Blocks & The Result Pattern
 ├── miscellaneous/                   -  Senior Systems Interview Review & Conceptual Deep Dive
 └── final-assessment/                -  Capstone Laboratory: 10 Production Architecture Projects
@@ -93,20 +93,20 @@ The gateway to advanced type safety. Covers intersection types (`&`), literal ty
 ### [Module 05: Generics](./05-generics/README.md)
 Teaches how to write reusable, type-safe libraries. Explains type variables (`<T>`), generic functions, strictly typed tuples, generic constraints (`extends`), multi-variable generics (`<K, V>`), generic interfaces, and compiler type inference rules.
 
-### [Module 06: Type Manipulation](./06-type-manipulation/README.md)
+### [Module 06: Type Manipulation](./06-type-manipulation-and-utility-types/README.md)
 Mastering type transformations. Explains built-in utility types (`Partial`, `Required`, `Readonly`, `Pick`, `Omit`, `Record`), the `keyof` operator, indexed access types (`T["key"]`), function extraction utilities (`ReturnType`, `Parameters`), and building custom mapped types.
 
 ### [Module 07: Classes & Object-Oriented Programming](./07-classes-and-oop/README.md)
 Enterprise OOP patterns in TypeScript. Covers access modifiers (`public`, `private`, `protected`), `readonly` properties, parameter property shorthand, class inheritance (`extends`), abstract classes, interface implementation (`implements`), method overriding (`override`), and static members (`static`).
 
-### [Module 08: Configuration & Declaration Files](./08-configuration-and-declarations/README.md)
-Explains compilation toolchains and project configuration. Details `tsconfig.json` compiler options, what `"strict": true` enables under the hood, ES modules (`import`/`export`), ambient declaration files (`.d.ts`), `@types` packages, and clean path aliases.
+### [Module 08: Modules & Namespaces](./08-modules-and-namespaces/README.md)
+Explains ES module boundaries, named and default exports, type-only imports, barrel files, namespaces, module resolution, and clean path aliases.
 
-### [Module 09: Project Structure & Separation of Concerns](./09-project-structure/README.md)
-Architectural methodology for scalable codebases. Enforces the Single Responsibility Principle, separating orchestration from domain logic and data access, avoiding circular dependencies, naming conventions, barrel file patterns (`index.ts`), and the strict 300-line ceiling.
+### [Module 09: Compiler Configuration & Tooling](./09-compiler-configuration-and-tooling/README.md)
+Explains the TypeScript compiler, `tsconfig.json`, strictness flags, input/output paths, source maps, execution tools such as `tsx`, and automated quality gates with TypeScript, ESLint, and Prettier.
 
-### [Module 10: Asynchronous Programming](./10-async-programming/README.md)
-High-performance async architecture. Explains Promises, `async`/`await` mechanics, typing async functions, real-world data fetching, parallel execution (`Promise.all`), resilient batching (`Promise.allSettled`), class async patterns, and avoiding sequential blocking loops.
+### [Module 10: Asynchronous Programming](./10-asynchronous-programming/README.md)
+Explains Promises, `async`/`await` mechanics, typing async functions, REST API requests, error handling, parallel execution with `Promise.all`, and resilient batching with `Promise.allSettled`.
 
 ### [Module 11: Enterprise Error Handling](./11-error-handling/README.md)
 Building systems that never crash silently. Covers `try`/`catch`/`finally`, typing `catch (error: unknown)`, building domain hierarchy custom error classes, async error handling, and implementing the **Result Pattern** (`Result<T, E>`) to treat errors as explicit compile-time data.

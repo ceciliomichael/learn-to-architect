@@ -20,8 +20,8 @@ The callback `() => true` returns a `boolean`, but the callback type is `() => v
 
 ## ANSWER HERE
 
-> **Does it error?**
+> **Does it error?** No. TypeScript allows a value-returning function where a context expects a `void`-returning callback.
 
-> **What void means in a callback return type:**
+> **What void means in a callback return type:** The caller promises to ignore the callback's return value. The callback still returns `true` at runtime, but `runOnce` cannot use that value through its `() => void` contract.
 
-> **Why TypeScript was designed this way:**
+> **Why TypeScript was designed this way:** This supports common JavaScript patterns in which callbacks return incidental values that the receiving API ignores, such as passing `item => destination.push(item)` to `.forEach()`.

@@ -8,7 +8,7 @@ Remember: The TypeScript compiler is your mentor. Do not be afraid to experiment
 
 1. **[Challenge 01: Typed Calculator Function](./challenge-01.md)**: Open this challenge and implement your solution directly inside the ANSWER HERE block. Practice strict parameter typing, literal unions, return types, and runtime error handling.
 2. **[Challenge 02: Optional and Default Parameters](./challenge-02.md)**: Open this challenge and implement your solution directly inside the ANSWER HERE block. Master parameter flexibility and the mandatory ordering rules discussed in Section 2 of the README.
-3. **[Challenge 03: Array Transformation Pipeline](./challenge-03.md)**: Open this challenge and implement your solution directly inside the ANSWER HERE block. Chain `.filter()`, `.map()`, and `.forEach()` to process enterprise data structures without interruption, aligning with Section 7 of the README.
+3. **[Challenge 03: Array Transformation Pipeline](./challenge-03.md)**: Open this challenge and implement your solution directly inside the ANSWER HERE block. Chain `.filter()`, `.map()`, and `.forEach()` to process enterprise data structures without interruption, aligning with Section 8 of the README.
 4. **[Challenge 04: Rest Parameters](./challenge-04.md)**: Open this challenge and implement your solution directly inside the ANSWER HERE block. Build open-ended functions using `...rest` syntax and iterate over gathered arrays using modern `for...of` loops as taught in Section 3 and Section 7 of the README.
 
 ## How to Work on These Challenges

@@ -24,8 +24,8 @@ Which is correct and why? What type does `words` have inside the function body?
 
 ## ANSWER HERE
 
-> **My choice:**
+> **My choice:** B.
 
-> **Why:**
+> **Why:** A rest parameter gathers all remaining arguments into an array, so a rest parameter accepting strings must be annotated as `string[]`.
 
-> **Type of `words` inside the function:**
+> **Type of `words` inside the function:** Its type is a string[].

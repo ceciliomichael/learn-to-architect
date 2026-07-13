@@ -24,7 +24,13 @@ const products = [
 ## ANSWER HERE
 
 ```typescript
-const products = [
+interface Product {
+  name: string;
+  price: number;
+  inStock: boolean;
+}
+
+const products: Product[] = [
   { name: "Sword",   price: 150, inStock: true  },
   { name: "Potion",  price: 25,  inStock: false },
   { name: "Shield",  price: 200, inStock: true  },
@@ -33,4 +39,18 @@ const products = [
 ];
 
 // Write your filter, map, and forEach chains here
+
+const availableProducts: Product[] = products.filter((product) => {
+  return product.inStock;
+});
+
+const productLabels: string[] = availableProducts.map((item) => {
+  return `${item.name}: $${item.price}`;
+})
+
+productLabels.forEach((label: string) => {
+  console.log(label);
+})
+
+console.log(`Total available products: ${availableProducts.length}`)
 ```
