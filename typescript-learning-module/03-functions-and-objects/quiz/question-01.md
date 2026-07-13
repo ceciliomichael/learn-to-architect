@@ -11,10 +11,10 @@ const doubled = [1, 2, 3].map((num) => num * 2);
 
 ## ANSWER HERE
 
-> **What is a callback?:** A callback is a function passed to another function so that the receiving function can invoke it. Here, `.map()` invokes the callback once for each array element.
+> **What is a callback?:**
 
-> **The callback in the code above is:** `(num) => num * 2`.
+> **The callback in the code above is:**
 
-> **How TypeScript knows num is a number:** The source array contains numbers, and the type signature of `.map()` contextually types its callback parameter as the array element type. Therefore, `num` is inferred as `number`.
+> **How TypeScript knows num is a number:**
 
-> **What happens if you call num.toUpperCase():** TypeScript reports an error because `toUpperCase()` is a string method and does not exist on `number`.
+> **What happens if you call num.toUpperCase():**

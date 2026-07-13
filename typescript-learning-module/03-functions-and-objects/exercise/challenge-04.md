@@ -21,20 +21,4 @@ Test `calculateTotal` with at least 5 different numbers. Test `joinWords` with a
 ```typescript
 // Write calculateTotal and joinWords here
 
-function calculateTotal(...numbers: number[]): number {
-    let total: number = 0
-
-    for (let number of numbers) {
-        total = number + total
-    }
-    return total
-}
-
-function joinWords(...words: string[]): string {
-    let sentence: string = words.join(" ")
-    return sentence
-}
-
-console.log(`Joined Words: ${joinWords("hello", "from", "the", "academy")}`)
-console.log(`Total Sum is: ${calculateTotal(5,6,7,8,9)}`)
 ```

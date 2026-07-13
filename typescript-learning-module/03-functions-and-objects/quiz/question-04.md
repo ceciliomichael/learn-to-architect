@@ -22,8 +22,8 @@ for (let score of scores) {
 
 ## ANSWER HERE
 
-> **What `i` gives you that `for...of` does not:** `i` is the numeric array index. It lets the loop read or update an element by position and control the starting point, stopping condition, and step size.
+> **What `i` gives you that `for...of` does not:**
 
-> **When to choose Loop A (classic for):** Choose it when you need the index, need to skip positions, iterate backward, or otherwise control the counter precisely.
+> **When to choose Loop A (classic for):**
 
-> **When to choose Loop B (for...of):** Choose it when you only need each value in sequence. It is simpler and avoids manual index bookkeeping.
+> **When to choose Loop B (for...of):**

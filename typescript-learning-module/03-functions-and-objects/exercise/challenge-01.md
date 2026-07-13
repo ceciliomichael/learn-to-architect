@@ -21,35 +21,4 @@ Call the function with all four operations and log each result. Also show what h
 ```typescript
 // Write your calculate function here
 
-function calculate(operation: 'ADD' | 'SUBTRACT' | 'MULTIPLY' | 'DIVIDE', a: number, b: number): number {
-    if (operation === 'ADD') {
-        return a + b
-    }
-    else if (operation === 'SUBTRACT') {
-        return a - b
-    } else if (operation === 'MULTIPLY') {
-        return a * b
-    } else {
-        if (b === 0) {
-            throw new Error('Cannot divide by zero.')
-        }
-        return a / b
-    }
-}
-
-console.log(calculate('ADD', 5, 3)) // 8
-console.log(calculate('SUBTRACT', 5, 6)) // -1
-console.log(calculate('MULTIPLY', 5, 3)) // 15
-console.log(calculate('DIVIDE', 10, 2)) // 5
-
-try {
-    console.log(calculate('DIVIDE', 10, 0))
-}
-catch (error) {
-    if (error instanceof Error) {
-        console.log(error.message)
-    } else {
-        console.log('An unknown error occurred.')
-    }
-}
 ```
