@@ -18,7 +18,9 @@ Type each SQL statement yourself. Predict the result before pressing Enter, then
 
 ## What you need
 
-Install a current SQLite command-line program. Check it with:
+Install a current SQLite command-line program from <https://www.sqlite.org/download.html>.
+
+Open a terminal and check the installation:
 
 ```text
 sqlite3 --version

@@ -2,7 +2,23 @@
 
 This course teaches programming with Python from the beginning. No programming experience is required.
 
-The baseline examples run on Python 3.12 and newer. Type every example, predict its result, run it, and read any traceback from the final line upward.
+Type every example, predict its result, run it, and read any traceback from the final line upward.
+
+## What you need
+
+Install a current Python release from <https://www.python.org>. The baseline examples run on Python 3.12 and newer.
+
+Open a terminal and check the installation:
+
+```text
+python --version
+```
+
+Create a file named `main.py`, then run it with:
+
+```text
+python main.py
+```
 
 ## Module structure
 

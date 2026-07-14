@@ -18,7 +18,13 @@ Type every command yourself. Read Git's output before continuing. When your resu
 
 ## What you need
 
-You need Git 2.23 or newer because this course uses `git switch` and `git restore`. A current Git release is recommended. You also need a terminal and a plain text editor.
+Install a current Git release from <https://git-scm.com>. You need Git 2.23 or newer because this course uses `git switch` and `git restore`. You also need a terminal and a plain text editor.
+
+Open a terminal and check the installation:
+
+```text
+git --version
+```
 
 All commands work in Git Bash. Most also work in PowerShell and macOS or Linux terminals. File creation commands differ between shells, so the exercises tell you when to use your editor.
 
