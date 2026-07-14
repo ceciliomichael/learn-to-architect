@@ -35,15 +35,16 @@ You are completely in control of your learning journey. You do **not** need to l
   - **What it is:** The recommended TypeScript course. It teaches programming from the beginning, then builds carefully toward strict and advanced TypeScript.
   - **Who it is for:** Learners with no prior programming experience, as well as learners who want a more consistent TypeScript foundation.
   - **What you will do:** Follow 34 ordered modules with friendly lessons, exercises, quizzes, and fully explained answers. Every module uses only concepts taught earlier in the course.
+- **[`learn-to-go/`](./learn-to-go/README.md): Learn Go Step by Step**
+  - **What it is:** A beginner-to-advanced Go course that starts in the official Go Playground, then moves into local modules, testing, files, HTTP, databases, concurrency, performance, and release work.
+  - **Who it is for:** Complete beginners and experienced learners who want an accurate Go foundation with no hidden prerequisite jumps.
+  - **What you will do:** Follow 34 ordered modules with lessons, exercises, quizzes, complete exercise solutions, and explained quiz answers. You can use the online compiler for early lessons before installing Go.
+- **[`learn-to-rust/`](./learn-to-rust/README.md): Learn Rust Step by Step**
+  - **What it is:** A beginner-to-advanced Rust course that starts in the official Rust Playground, then carefully introduces Cargo, ownership, borrowing, errors, testing, concurrency, async work, unsafe boundaries, and releases.
+  - **Who it is for:** Complete beginners and experienced learners who want to understand both Rust's guarantees and the responsibilities that remain with the programmer.
+  - **What you will do:** Follow 38 ordered modules with lessons, exercises, quizzes, complete exercise solutions, and explained quiz answers. Early lessons work in the online compiler, while dependency and multi-file lessons clearly move to local Cargo projects.
 
-### Coming Soon
-
-Additional self-contained courses are being designed for other major languages.
-
-- **`go-learning-module/`**  -  For cloud servers, fast networking, and high-performance backend infrastructure.
-- **`rust-learning-module/`**  -  For lightning-fast systems programming and maximum memory safety.
-
-*Remember: Whenever a new language folder is added, it will be 100% self-contained. You can start with Python first, TypeScript first, or Go first - whichever fits your goals!*
+*Remember: Every language folder is self-contained. You can start with Python, TypeScript, Go, Rust, or another available path, whichever fits your goals.*
 
 ---
 
