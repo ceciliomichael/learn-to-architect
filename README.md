@@ -10,15 +10,44 @@ Welcome! If you are new to programming or looking to level up your engineering s
 
 Most coding tutorials teach small syntax tricks in isolation, such as writing a calculation or printing a word to the screen. Real software development also requires programs that are understandable, testable, organized, and able to handle failure clearly.
 
-This repository is a growing collection of **independent language courses**. Each folder is a complete, self-contained course dedicated to a language or tool. You will learn how to write code, reason about its behavior, organize files clearly, test important rules, and recover from mistakes.
+This repository is a growing collection of **independent language courses and guided specialization paths**. Each language folder is a self-contained course. A guided path connects the courses that genuinely depend on one another, such as the web development path. You will learn how to write code, reason about its behavior, organize files clearly, test important rules, and recover from mistakes.
 
 ---
 
-## Choose Your Path: Start With Any Language
-You are completely in control of your learning journey. You do **not** need to learn multiple languages at once, and there is no required order. Pick whichever language excites you or matches your career goals and jump right in.
+## Choose Your Path
+
+You are completely in control of your learning journey. You do **not** need to learn multiple languages at once. Pick a self-contained language course, or follow a guided path when your goal combines several subjects.
+
+### Guided Learning Paths
+
+- **[Web Development Learning Path](./learning-paths/web-development.md)**
+  - Start with Web Foundations, then learn TypeScript and Frontend Development with TypeScript.
+  - Choose React followed by Next.js, or choose Vue as your frontend specialization.
+  - The courses are separated so HTML, CSS, programming, browser APIs, and framework behavior are not mixed into one confusing sequence.
+- **[Backend Engineering Learning Path](./learning-paths/backend-development.md)**
+  - Begin with Git, choose TypeScript, Python, Go, Java, or Rust, and learn SQL before the chosen language's database boundary.
+  - Continue through HTTP, API contracts, persistence, identity, background work, security, testing, observability, deployment, and architecture without being forced to learn every server language.
+- **[Data Engineering Learning Path](./learning-paths/data-engineering.md)**
+  - Begin with Git, Python, and SQL, then progress through data contracts, modeling, pipelines, orchestration, distributed processing, streaming, governance, and platform operations.
+  - The path clearly labels existing courses and planned specializations so learners never follow a link to unfinished material.
+- **[Agentic AI Engineering Learning Path](./learning-paths/agentic-ai-engineering.md)**
+  - Begin with Git, Python, and SQL, then progress through practical AI foundations, language-model applications, retrieval, tools, memory, orchestration, security, evaluation, and durable deployment.
+  - TypeScript and web development remain an optional interface branch rather than a hidden prerequisite.
 
 ### Currently Available
 
+- **[`learn-to-data-engineer/`](./learn-to-data-engineer/README.md): Learn Data Engineering Step by Step**
+  - **What you will do:** Follow 42 ordered modules from local data systems and file contracts through warehouses, pipelines, Airflow, Spark, Kafka, quality, lineage, governance, cloud operations, and recovery.
+- **[`learn-to-agentic-ai/`](./learn-to-agentic-ai/README.md): Learn Agentic AI Engineering Step by Step**
+  - **What you will do:** Follow 52 ordered modules covering AI foundations, language models, model APIs, retrieval, tools, memory, orchestration, MCP, containment, evaluation, tracing, and durable production agents.
+- **[`learn-to-backend-foundations/`](./learn-to-backend-foundations/README.md): Learn Backend Foundations**
+  - **What you will do:** Follow 24 language-neutral modules covering servers, HTTP, routing, API contracts, identity, security, reliability, observability, deployment, and system evolution.
+- **Backend implementation courses:**
+  - [Node.js and TypeScript, 24 modules](./learn-to-nodejs-backend/README.md)
+  - [Python, 24 modules](./learn-to-python-backend/README.md)
+  - [Go, 22 modules](./learn-to-go-backend/README.md)
+  - [Java and Spring, 25 modules](./learn-to-java-spring-backend/README.md)
+  - [Rust, 23 modules](./learn-to-rust-backend/README.md)
 - **[`learn-to-git/`](./learn-to-git/README.md): Learn Git Safely, Step by Step**
   - **What it is:** The recommended Git course. It begins with the terminal and a disposable practice folder, then grows toward collaboration, recovery, history investigation, and advanced repository tools.
   - **Who it is for:** Complete beginners and experienced learners who want a safer, more accurate understanding of Git.
