@@ -1,4 +1,4 @@
-# Git Learning Module V2
+# Git Learning Module
 
 This course teaches Git from the beginning. You do not need programming experience or command-line experience.
 

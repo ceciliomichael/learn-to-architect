@@ -43,8 +43,16 @@ You are completely in control of your learning journey. You do **not** need to l
   - **What it is:** A beginner-to-advanced Rust course that starts in the official Rust Playground, then carefully introduces Cargo, ownership, borrowing, errors, testing, concurrency, async work, unsafe boundaries, and releases.
   - **Who it is for:** Complete beginners and experienced learners who want to understand both Rust's guarantees and the responsibilities that remain with the programmer.
   - **What you will do:** Follow 38 ordered modules with lessons, exercises, quizzes, complete exercise solutions, and explained quiz answers. Early lessons work in the online compiler, while dependency and multi-file lessons clearly move to local Cargo projects.
+- **[`learn-to-java/`](./learn-to-java/README.md): Learn Java Step by Step**
+  - **What it is:** A beginner-to-advanced Java course that starts in the official Java Playground, then moves through object modeling, collections, testing, installed dependencies, databases, concurrency, JVM behavior, and release work.
+  - **Who it is for:** Complete beginners and experienced learners who want a modern Java foundation without depending on preview features or one developer's installed JDK.
+  - **What you will do:** Follow 40 ordered modules with lessons, exercises, quizzes, complete exercise solutions, and explained quiz answers. Required examples target Java 21 and are checked with `javac --release 21`, even when a newer JDK performs the build.
+- **[`learn-to-c/`](./learn-to-c/README.md): Learn C Step by Step**
+  - **What it is:** A beginner-to-advanced C course that builds from compilation and basic values into pointers, memory ownership, files, build tools, installed libraries, concurrency, portability, and release work.
+  - **Who it is for:** Complete beginners and learners who want careful boundaries around memory, undefined behavior, external input, platform APIs, and dependency code.
+  - **What you will do:** Follow 35 ordered modules with lessons, exercises, quizzes, complete exercise solutions, and explained quiz answers. Core examples use strict ISO C17, while C23 and operating-system-specific work are introduced only after the portable foundation.
 
-*Remember: Every language folder is self-contained. You can start with Python, TypeScript, Go, Rust, or another available path, whichever fits your goals.*
+*Remember: Every language folder is self-contained. You can start with Python, TypeScript, Go, Rust, Java, C, or another available path, whichever fits your goals.*
 
 ---
 
