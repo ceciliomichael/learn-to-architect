@@ -16,7 +16,13 @@ Complete the modules in order. Every module contains:
 
 Type each SQL statement yourself. Predict the result before pressing Enter, then compare your prediction with the actual rows.
 
-## What you need
+## Two ways to run the examples
+
+### Option 1: Use an online environment
+
+Online environments like [DB Fiddle](https://www.db-fiddle.com/) or [SQLite Online](https://sqliteonline.com/) run in a web browser and require no setup. This is the simplest choice for the first few modules.
+
+### Option 2: Work on your computer
 
 Install a current SQLite command-line program from <https://www.sqlite.org/download.html>.
 

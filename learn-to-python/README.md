@@ -4,7 +4,13 @@ This course teaches programming with Python from the beginning. No programming e
 
 Type every example, predict its result, run it, and read any traceback from the final line upward.
 
-## What you need
+## Two ways to run the examples
+
+### Option 1: Use an online environment
+
+Online environments like [Programiz Python Compiler](https://www.programiz.com/python-programming/online-compiler/) or [Replit](https://replit.com/languages/python3) run in a web browser and require no setup. This is the simplest choice for the first few modules.
+
+### Option 2: Work on your computer
 
 Install a current Python release from <https://www.python.org>. The baseline examples run on Python 3.12 and newer.
 
