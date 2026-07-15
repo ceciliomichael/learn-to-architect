@@ -32,50 +32,50 @@ All commands work in Git Bash. Most also work in PowerShell and macOS or Linux t
 
 ### Part 1: Build a reliable foundation
 
-- [Module 01: Install Git and Create a Safe Practice Area](module-01-install-git-and-safe-practice/README.md)
-- [Module 02: Repositories and Git's Three Locations](module-02-repositories-and-three-locations/README.md)
-- [Module 03: Create Your First Commits](module-03-first-commits/README.md)
-- [Module 04: Inspect Changes with Diff](module-04-inspect-changes-with-diff/README.md)
-- [Module 05: Stage the Exact Changes You Want](module-05-precise-staging/README.md)
-- [Module 06: Read Project History](module-06-read-project-history/README.md)
-- [Module 07: Ignore Generated and Private Files](module-07-ignore-files/README.md)
+- [Module 01: Install Git and Create a Safe Practice Area](01-install-git-and-safe-practice/README.md)
+- [Module 02: Repositories and Git's Three Locations](02-repositories-and-three-locations/README.md)
+- [Module 03: Create Your First Commits](03-first-commits/README.md)
+- [Module 04: Inspect Changes with Diff](04-inspect-changes-with-diff/README.md)
+- [Module 05: Stage the Exact Changes You Want](05-precise-staging/README.md)
+- [Module 06: Read Project History](06-read-project-history/README.md)
+- [Module 07: Ignore Generated and Private Files](07-ignore-files/README.md)
 
 ### Part 2: Work with branches
 
-- [Module 08: Branches, HEAD, and Switching](module-08-branches-head-and-switching/README.md)
-- [Module 09: Combine Work with Merge](module-09-combine-work-with-merge/README.md)
-- [Module 10: Resolve Merge Conflicts](module-10-resolve-merge-conflicts/README.md)
+- [Module 08: Branches, HEAD, and Switching](08-branches-head-and-switching/README.md)
+- [Module 09: Combine Work with Merge](09-combine-work-with-merge/README.md)
+- [Module 10: Resolve Merge Conflicts](10-resolve-merge-conflicts/README.md)
 
 ### Part 3: Work with remotes and other people
 
-- [Module 11: Clone Repositories and Understand Remotes](module-11-clone-and-remotes/README.md)
-- [Module 12: Fetch and Remote-Tracking Branches](module-12-fetch-and-tracking/README.md)
-- [Module 13: Pull, Push, and Collaborate Safely](module-13-pull-push-and-collaboration/README.md)
+- [Module 11: Clone Repositories and Understand Remotes](11-clone-and-remotes/README.md)
+- [Module 12: Fetch and Remote-Tracking Branches](12-fetch-and-tracking/README.md)
+- [Module 13: Pull, Push, and Collaborate Safely](13-pull-push-and-collaboration/README.md)
 
 ### Part 4: Undo and recover safely
 
-- [Module 14: Restore Uncommitted Work](module-14-restore-uncommitted-work/README.md)
-- [Module 15: Revert Published Commits](module-15-revert-published-commits/README.md)
-- [Module 16: Reset Local History](module-16-reset-local-history/README.md)
-- [Module 17: Reflog, Detached HEAD, and Recovery](module-17-reflog-and-recovery/README.md)
-- [Module 18: Set Work Aside with Stash](module-18-stash/README.md)
+- [Module 14: Restore Uncommitted Work](14-restore-uncommitted-work/README.md)
+- [Module 15: Revert Published Commits](15-revert-published-commits/README.md)
+- [Module 16: Reset Local History](16-reset-local-history/README.md)
+- [Module 17: Reflog, Detached HEAD, and Recovery](17-reflog-and-recovery/README.md)
+- [Module 18: Set Work Aside with Stash](18-stash/README.md)
 
 ### Part 5: Shape and reuse history
 
-- [Module 19: Rebase a Private Branch](module-19-rebase-private-branches/README.md)
-- [Module 20: Amend and Clean Private History](module-20-amend-and-interactive-rebase/README.md)
-- [Module 21: Copy a Commit with Cherry-Pick](module-21-cherry-pick/README.md)
-- [Module 22: Mark Releases with Tags](module-22-tags/README.md)
-- [Module 23: Work in Two Branches with Worktrees](module-23-worktrees/README.md)
+- [Module 19: Rebase a Private Branch](19-rebase-private-branches/README.md)
+- [Module 20: Amend and Clean Private History](20-amend-and-interactive-rebase/README.md)
+- [Module 21: Copy a Commit with Cherry-Pick](21-cherry-pick/README.md)
+- [Module 22: Mark Releases with Tags](22-tags/README.md)
+- [Module 23: Work in Two Branches with Worktrees](23-worktrees/README.md)
 
 ### Part 6: Investigate and understand Git deeply
 
-- [Module 24: Investigate with Log, Blame, and Bisect](module-24-investigation-tools/README.md)
-- [Module 25: Objects, Trees, Commits, and References](module-25-git-internals/README.md)
-- [Module 26: Configuration, Aliases, and Attributes](module-26-configuration-and-attributes/README.md)
-- [Module 27: Automate Local Checks with Hooks](module-27-hooks/README.md)
-- [Module 28: Manage Nested Repositories with Submodules](module-28-submodules/README.md)
-- [Module 29: Maintain Large and Long-Lived Repositories](module-29-repository-maintenance/README.md)
+- [Module 24: Investigate with Log, Blame, and Bisect](24-investigation-tools/README.md)
+- [Module 25: Objects, Trees, Commits, and References](25-git-internals/README.md)
+- [Module 26: Configuration, Aliases, and Attributes](26-configuration-and-attributes/README.md)
+- [Module 27: Automate Local Checks with Hooks](27-hooks/README.md)
+- [Module 28: Manage Nested Repositories with Submodules](28-submodules/README.md)
+- [Module 29: Maintain Large and Long-Lived Repositories](29-repository-maintenance/README.md)
 
 ## A safety habit for the whole course
 

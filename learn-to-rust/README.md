@@ -59,59 +59,59 @@ Type examples yourself. Predict whether they compile and what they print. When t
 
 ### First programs and decisions
 
-- [Module 01: Use the Rust Playground and Install Rust](module-01-playground-install-and-cargo/README.md)
-- [Module 02: Compile and Run Your First Program](module-02-first-program-and-compilation/README.md)
-- [Module 03: Variables, Mutability, Constants, and Scalar Types](module-03-variables-mutability-and-scalars/README.md)
-- [Module 04: Expressions, Conditions, Loops, and Match Basics](module-04-expressions-and-control-flow/README.md)
-- [Module 05: Functions, Scope, and Tuples](module-05-functions-scope-and-tuples/README.md)
+- [Module 01: Use the Rust Playground and Install Rust](01-playground-install-and-cargo/README.md)
+- [Module 02: Compile and Run Your First Program](02-first-program-and-compilation/README.md)
+- [Module 03: Variables, Mutability, Constants, and Scalar Types](03-variables-mutability-and-scalars/README.md)
+- [Module 04: Expressions, Conditions, Loops, and Match Basics](04-expressions-and-control-flow/README.md)
+- [Module 05: Functions, Scope, and Tuples](05-functions-scope-and-tuples/README.md)
 
 ### Ownership and data modeling
 
-- [Module 06: Ownership, Moves, Copy, and Clone](module-06-ownership-moves-copy-clone/README.md)
-- [Module 07: Borrow with References](module-07-borrowing-and-references/README.md)
-- [Module 08: Slices, str, and String](module-08-slices-str-and-string/README.md)
-- [Module 09: Structs and Methods](module-09-structs-and-methods/README.md)
-- [Module 10: Enums, Match, and Patterns](module-10-enums-match-and-patterns/README.md)
-- [Module 11: Optional Values with Option](module-11-option/README.md)
-- [Module 12: Recoverable Errors with Result](module-12-result-and-errors/README.md)
+- [Module 06: Ownership, Moves, Copy, and Clone](06-ownership-moves-copy-clone/README.md)
+- [Module 07: Borrow with References](07-borrowing-and-references/README.md)
+- [Module 08: Slices, str, and String](08-slices-str-and-string/README.md)
+- [Module 09: Structs and Methods](09-structs-and-methods/README.md)
+- [Module 10: Enums, Match, and Patterns](10-enums-match-and-patterns/README.md)
+- [Module 11: Optional Values with Option](11-option/README.md)
+- [Module 12: Recoverable Errors with Result](12-result-and-errors/README.md)
 
 ### Collections, modules, and reusable code
 
-- [Module 13: Vectors and Iteration](module-13-vectors-and-iteration/README.md)
-- [Module 14: Hash Maps and Hash Sets](module-14-hashmaps-and-hashsets/README.md)
-- [Module 15: Modules, Crates, Packages, and Visibility](module-15-modules-crates-and-visibility/README.md)
-- [Module 16: Test Rust Code](module-16-testing/README.md)
-- [Module 17: Generics and Const Generics](module-17-generics-and-const-generics/README.md)
-- [Module 18: Traits and Trait Bounds](module-18-traits-and-trait-bounds/README.md)
-- [Module 19: Lifetimes](module-19-lifetimes/README.md)
-- [Module 20: Closures and Iterators](module-20-closures-and-iterators/README.md)
+- [Module 13: Vectors and Iteration](13-vectors-and-iteration/README.md)
+- [Module 14: Hash Maps and Hash Sets](14-hashmaps-and-hashsets/README.md)
+- [Module 15: Modules, Crates, Packages, and Visibility](15-modules-crates-and-visibility/README.md)
+- [Module 16: Test Rust Code](16-testing/README.md)
+- [Module 17: Generics and Const Generics](17-generics-and-const-generics/README.md)
+- [Module 18: Traits and Trait Bounds](18-traits-and-trait-bounds/README.md)
+- [Module 19: Lifetimes](19-lifetimes/README.md)
+- [Module 20: Closures and Iterators](20-closures-and-iterators/README.md)
 
 ### Managed memory and I/O
 
-- [Module 21: Smart Pointers with Box, Rc, and Arc](module-21-smart-pointers-box-rc-and-arc/README.md)
-- [Module 22: Drop, Deref, Cell, and RefCell](module-22-drop-deref-cell-and-refcell/README.md)
-- [Module 23: Trait Objects and Dynamic Dispatch](module-23-trait-objects-and-dynamic-dispatch/README.md)
-- [Module 24: Files, Paths, and Streamed I/O](module-24-files-paths-and-streamed-io/README.md)
-- [Module 25: Serde and Untrusted Data](module-25-serde-and-untrusted-data/README.md)
+- [Module 21: Smart Pointers with Box, Rc, and Arc](21-smart-pointers-box-rc-and-arc/README.md)
+- [Module 22: Drop, Deref, Cell, and RefCell](22-drop-deref-cell-and-refcell/README.md)
+- [Module 23: Trait Objects and Dynamic Dispatch](23-trait-objects-and-dynamic-dispatch/README.md)
+- [Module 24: Files, Paths, and Streamed I/O](24-files-paths-and-streamed-io/README.md)
+- [Module 25: Serde and Untrusted Data](25-serde-and-untrusted-data/README.md)
 
 ### Concurrent and asynchronous work
 
-- [Module 26: Threads and Scoped Threads](module-26-threads-and-scoped-threads/README.md)
-- [Module 27: Channels, Arc, Mutex, and Shared State](module-27-channels-arc-mutex-and-shared-state/README.md)
-- [Module 28: Async Functions, Futures, and Tokio](module-28-async-futures-and-tokio/README.md)
-- [Module 29: Networking and HTTP Boundaries](module-29-networking-and-http-boundaries/README.md)
+- [Module 26: Threads and Scoped Threads](26-threads-and-scoped-threads/README.md)
+- [Module 27: Channels, Arc, Mutex, and Shared State](27-channels-arc-mutex-and-shared-state/README.md)
+- [Module 28: Async Functions, Futures, and Tokio](28-async-futures-and-tokio/README.md)
+- [Module 29: Networking and HTTP Boundaries](29-networking-and-http-boundaries/README.md)
 
 ### Maintainable tools and advanced language features
 
-- [Module 30: Command-Line Programs, Configuration, and Logging](module-30-command-line-configuration-and-logging/README.md)
-- [Module 31: Declarative Macros](module-31-declarative-macros/README.md)
-- [Module 32: Unsafe Rust and Safety Contracts](module-32-unsafe-rust-and-safety-contracts/README.md)
-- [Module 33: Foreign Function Interfaces](module-33-foreign-function-interfaces/README.md)
-- [Module 34: Cargo Features and Workspaces](module-34-cargo-features-and-workspaces/README.md)
-- [Module 35: Documentation, API Design, and Compatibility](module-35-documentation-api-design-and-compatibility/README.md)
-- [Module 36: Measure and Improve Performance](module-36-measure-and-improve-performance/README.md)
-- [Module 37: Dependency and Supply-Chain Security](module-37-dependency-and-supply-chain-security/README.md)
-- [Module 38: Build, Package, and Release Rust Programs](module-38-build-package-and-release/README.md)
+- [Module 30: Command-Line Programs, Configuration, and Logging](30-command-line-configuration-and-logging/README.md)
+- [Module 31: Declarative Macros](31-declarative-macros/README.md)
+- [Module 32: Unsafe Rust and Safety Contracts](32-unsafe-rust-and-safety-contracts/README.md)
+- [Module 33: Foreign Function Interfaces](33-foreign-function-interfaces/README.md)
+- [Module 34: Cargo Features and Workspaces](34-cargo-features-and-workspaces/README.md)
+- [Module 35: Documentation, API Design, and Compatibility](35-documentation-api-design-and-compatibility/README.md)
+- [Module 36: Measure and Improve Performance](36-measure-and-improve-performance/README.md)
+- [Module 37: Dependency and Supply-Chain Security](37-dependency-and-supply-chain-security/README.md)
+- [Module 38: Build, Package, and Release Rust Programs](38-build-package-and-release/README.md)
 
 ## Safety and study habits
 

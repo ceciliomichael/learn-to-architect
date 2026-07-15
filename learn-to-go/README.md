@@ -55,52 +55,52 @@ Type examples yourself, predict their result, run them, and read the first usefu
 
 ### First programs and decisions
 
-- [Module 01: Use the Go Playground and Install Go](module-01-playground-install-and-run/README.md)
-- [Module 02: Packages, Main, Imports, and Output](module-02-packages-main-and-output/README.md)
-- [Module 03: Variables, Constants, and Basic Types](module-03-variables-constants-and-types/README.md)
-- [Module 04: Numbers, Operators, and Conversions](module-04-numbers-operators-and-conversions/README.md)
-- [Module 05: Strings, Bytes, Runes, and Unicode](module-05-strings-bytes-runes-unicode/README.md)
-- [Module 06: Booleans, Conditions, and Switch](module-06-conditions-and-switch/README.md)
-- [Module 07: Repeat Work with For and Range](module-07-loops-and-range/README.md)
-- [Module 08: Read Input, Parse Text, and Format Output](module-08-input-parsing-and-output/README.md)
+- [Module 01: Use the Go Playground and Install Go](01-playground-install-and-run/README.md)
+- [Module 02: Packages, Main, Imports, and Output](02-packages-main-and-output/README.md)
+- [Module 03: Variables, Constants, and Basic Types](03-variables-constants-and-types/README.md)
+- [Module 04: Numbers, Operators, and Conversions](04-numbers-operators-and-conversions/README.md)
+- [Module 05: Strings, Bytes, Runes, and Unicode](05-strings-bytes-runes-unicode/README.md)
+- [Module 06: Booleans, Conditions, and Switch](06-conditions-and-switch/README.md)
+- [Module 07: Repeat Work with For and Range](07-loops-and-range/README.md)
+- [Module 08: Read Input, Parse Text, and Format Output](08-input-parsing-and-output/README.md)
 
 ### Collections and program structure
 
-- [Module 09: Arrays and Slices](module-09-arrays-and-slices/README.md)
-- [Module 10: Maps](module-10-maps/README.md)
-- [Module 11: Structs and Data Modeling](module-11-structs-and-data-modeling/README.md)
-- [Module 12: Functions and Multiple Results](module-12-functions-and-results/README.md)
-- [Module 13: Errors, Defer, Panic, and Recovery Boundaries](module-13-errors-defer-and-panic/README.md)
-- [Module 14: Pointers, Values, and Mutation](module-14-pointers-values-and-mutation/README.md)
-- [Module 15: Methods, Embedding, and Composition](module-15-methods-and-composition/README.md)
-- [Module 16: Interfaces and Type Switches](module-16-interfaces-and-type-switches/README.md)
-- [Module 17: Generics](module-17-generics/README.md)
-- [Module 18: Packages, Modules, and Visibility](module-18-packages-modules-and-visibility/README.md)
+- [Module 09: Arrays and Slices](09-arrays-and-slices/README.md)
+- [Module 10: Maps](10-maps/README.md)
+- [Module 11: Structs and Data Modeling](11-structs-and-data-modeling/README.md)
+- [Module 12: Functions and Multiple Results](12-functions-and-results/README.md)
+- [Module 13: Errors, Defer, Panic, and Recovery Boundaries](13-errors-defer-and-panic/README.md)
+- [Module 14: Pointers, Values, and Mutation](14-pointers-values-and-mutation/README.md)
+- [Module 15: Methods, Embedding, and Composition](15-methods-and-composition/README.md)
+- [Module 16: Interfaces and Type Switches](16-interfaces-and-type-switches/README.md)
+- [Module 17: Generics](17-generics/README.md)
+- [Module 18: Packages, Modules, and Visibility](18-packages-modules-and-visibility/README.md)
 
 ### Reliable I/O and tests
 
-- [Module 19: Files, Paths, and Streams](module-19-files-paths-and-streams/README.md)
-- [Module 20: JSON and CSV Boundaries](module-20-json-and-csv/README.md)
-- [Module 21: Tests with the Testing Package](module-21-testing/README.md)
-- [Module 22: Benchmarks and Fuzz Tests](module-22-benchmarks-and-fuzzing/README.md)
+- [Module 19: Files, Paths, and Streams](19-files-paths-and-streams/README.md)
+- [Module 20: JSON and CSV Boundaries](20-json-and-csv/README.md)
+- [Module 21: Tests with the Testing Package](21-testing/README.md)
+- [Module 22: Benchmarks and Fuzz Tests](22-benchmarks-and-fuzzing/README.md)
 
 ### Concurrency without guesswork
 
-- [Module 23: Goroutines and Lifetimes](module-23-goroutines-and-lifetimes/README.md)
-- [Module 24: Channels and Select](module-24-channels-and-select/README.md)
-- [Module 25: Context and Cancellation](module-25-context-and-cancellation/README.md)
-- [Module 26: Synchronization and the Race Detector](module-26-synchronization-and-races/README.md)
+- [Module 23: Goroutines and Lifetimes](23-goroutines-and-lifetimes/README.md)
+- [Module 24: Channels and Select](24-channels-and-select/README.md)
+- [Module 25: Context and Cancellation](25-context-and-cancellation/README.md)
+- [Module 26: Synchronization and the Race Detector](26-synchronization-and-races/README.md)
 
 ### Services and production boundaries
 
-- [Module 27: HTTP Clients](module-27-http-clients/README.md)
-- [Module 28: HTTP Servers and Middleware](module-28-http-servers/README.md)
-- [Module 29: SQL from Go](module-29-database-sql/README.md)
-- [Module 30: Command-Line Programs, Configuration, and Logging](module-30-cli-config-and-logging/README.md)
-- [Module 31: Dependencies, API Design, and Supply-Chain Safety](module-31-dependencies-and-api-design/README.md)
-- [Module 32: Reflection](module-32-reflection/README.md)
-- [Module 33: Embedded Files, Build Constraints, and Generation](module-33-embed-build-and-generate/README.md)
-- [Module 34: Profiling, Optimization, and Releasing Go Programs](module-34-performance-and-release/README.md)
+- [Module 27: HTTP Clients](27-http-clients/README.md)
+- [Module 28: HTTP Servers and Middleware](28-http-servers/README.md)
+- [Module 29: SQL from Go](29-database-sql/README.md)
+- [Module 30: Command-Line Programs, Configuration, and Logging](30-cli-config-and-logging/README.md)
+- [Module 31: Dependencies, API Design, and Supply-Chain Safety](31-dependencies-and-api-design/README.md)
+- [Module 32: Reflection](32-reflection/README.md)
+- [Module 33: Embedded Files, Build Constraints, and Generation](33-embed-build-and-generate/README.md)
+- [Module 34: Profiling, Optimization, and Releasing Go Programs](34-performance-and-release/README.md)
 
 ## Safety and study habits
 

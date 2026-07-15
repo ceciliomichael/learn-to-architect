@@ -6,7 +6,7 @@ This plan tracks the completed module sequence for learn-to-nodejs-backend. Its 
 
 ## Roadmap
 
-- [x] 01: Node.js Runtime, Event Loop, and Project Setup
+- [x] 01: Node.js Runtime, Event Loop, and TypeScript Project Setup
 - [x] 02: ES Modules, Package Boundaries, and Dependency Scripts
 - [x] 03: Environment Validation and Application Startup
 - [x] 04: HTTP Servers, Requests, Responses, and Shutdown
