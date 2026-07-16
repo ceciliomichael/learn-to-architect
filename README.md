@@ -56,6 +56,10 @@ You are completely in control of your learning journey. You do **not** need to l
   - **What it is:** A beginner-to-advanced relational database course. It starts with a disposable SQLite file, teaches accurate and portable query habits, then clearly introduces PostgreSQL-specific production concepts.
   - **Who it is for:** Learners with no programming or database experience, as well as developers who want to correct gaps in SQL fundamentals.
   - **What you will do:** Follow 34 ordered modules covering queries, safe data changes, constraints, joins, normalization, transactions, indexes, windows, migrations, concurrency, security, and evidence-based tuning.
+- **[`learn-to-progcon/`](./learn-to-progcon/README.md): Learn Programming Concepts (ProgCon) Step by Step**
+  - **What it is:** A beginner course in programming concepts. It teaches problem solving, algorithms, pseudocode, flowcharts, variables, structured design, selection, loops, and arrays before translating those designs into Python.
+  - **Who it is for:** Learners with no prior programming experience, and anyone who wants a strong design foundation before a full language course.
+  - **What you will do:** Follow 23 ordered modules with lessons, exercises, quizzes, complete exercise solutions, and explained quiz answers. Early modules use paper and text designs. Later modules implement designs in Python 3.12 and newer, ending with a capstone project.
 - **[`learn-to-python/`](./learn-to-python/README.md): Learn Python from Your First Script to Maintainable Packages**
   - **What it is:** A beginner-to-advanced Python course that teaches programming fundamentals before moving into testing, typing, objects, files, databases, concurrency, async I/O, performance, and packaging.
   - **Who it is for:** Complete beginners and experienced learners who want a consistent Python foundation without hidden prerequisite jumps.
@@ -81,7 +85,7 @@ You are completely in control of your learning journey. You do **not** need to l
   - **Who it is for:** Complete beginners and learners who want careful boundaries around memory, undefined behavior, external input, platform APIs, and dependency code.
   - **What you will do:** Follow 35 ordered modules with lessons, exercises, quizzes, complete exercise solutions, and explained quiz answers. Core examples use strict ISO C17, while C23 and operating-system-specific work are introduced only after the portable foundation.
 
-*Remember: Every language folder is self-contained. You can start with Python, TypeScript, Go, Rust, Java, C, or another available path, whichever fits your goals.*
+*Remember: Every course folder is self-contained. You can start with Programming Concepts (ProgCon), Python, TypeScript, Go, Rust, Java, C, or another available path, whichever fits your goals. ProgCon is an excellent first stop if you want design skills before a full language course.*
 
 ---
 
