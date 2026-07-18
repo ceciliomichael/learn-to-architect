@@ -27,4 +27,8 @@ Retries are not automatically safe. A repeated request may perform an action twi
 
 The Playground is unsuitable for reliable network exercises because sandbox network access can be restricted. Use a local Cargo project.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 30](../30-command-line-configuration-and-logging/README.md).

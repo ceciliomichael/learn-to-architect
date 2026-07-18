@@ -29,4 +29,8 @@ Keep lock scopes short and never hold a lock while performing slow I/O. Acquire 
 
 Prefer message passing when one owner can manage the data. Prefer a lock when several threads truly need synchronized access to the same value.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 28](../28-async-futures-and-tokio/README.md).

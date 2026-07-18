@@ -84,3 +84,7 @@ It only names a commit. Commit, stash, or separately copy uncommitted work.
 ## Check your understanding
 
 You are ready when you can predict the branch, index, and working tree state for soft, mixed, and hard reset.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -45,3 +45,6 @@ Reject a class that lacks the annotation instead of assuming getAnnotation is no
 Advanced tools do not replace the earlier rules about validation, cleanup, type safety, and clear ownership.
 Continue to [Module 36](../36-jvm-memory-garbage-collection-and-resources/README.md).
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

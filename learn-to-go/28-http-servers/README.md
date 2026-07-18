@@ -27,3 +27,7 @@ On shutdown, stop accepting new work and call `Shutdown` with a deadline so acti
 ## Check your understanding
 
 You are ready when a request crosses validation, authorization, domain work, response encoding, and bounded shutdown without hidden global state.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

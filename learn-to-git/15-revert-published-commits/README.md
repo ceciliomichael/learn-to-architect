@@ -88,3 +88,7 @@ Pause and inspect both parents. Coordinate before altering a shared branch.
 ## Check your understanding
 
 You are ready when you can explain why revert is suitable for shared history and verify both the original and inverse commits.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

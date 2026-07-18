@@ -43,5 +43,8 @@ Add one duplicate input and explain which collection preserves it and which does
 
 Keep build files and resolved dependency changes under review. Do not weaken a validator or suppress a diagnostic merely to make an example pass.
 
-Continue to [Module 17](../17-generics-and-type-bounds/README.md).
+## Practice and answers
 
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
+Continue to [Module 17](../17-generics-and-type-bounds/README.md).

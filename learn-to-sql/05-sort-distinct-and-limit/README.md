@@ -131,3 +131,7 @@ Add a unique final key so tied rows have a stable relative order.
 ## Check your understanding
 
 You are ready when you can write a deterministic top-N query and explain what counts as a duplicate for a multi-column `DISTINCT`.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

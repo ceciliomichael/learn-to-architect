@@ -95,3 +95,7 @@ It inherits standard exception behavior and adds domain fields. Raise a built-in
 ## Check your understanding
 
 You are ready when you can locate each attribute, explain `self`, keep invalid state out through method checks, and recognize a custom exception as a specialized class.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

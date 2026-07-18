@@ -88,3 +88,7 @@ Define the intended end with `UNBOUNDED FOLLOWING`.
 ## Check your understanding
 
 You are ready when you can describe the exact frame for one current row and predict how peers affect `ROWS` and `RANGE`.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

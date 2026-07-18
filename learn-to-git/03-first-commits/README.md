@@ -107,3 +107,7 @@ A local commit is stored in this local repository. Remote copies are taught late
 ## Check your understanding
 
 You are ready when you can describe where commit content comes from, create a focused commit, and inspect it with `git show`.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -36,3 +36,7 @@ Prefer named fields when the relationship deserves a domain name or when promoti
 ## Check your understanding
 
 You are ready when you can choose a receiver, protect a state rule, and explain embedding without inheritance language.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -29,3 +29,7 @@ String slicing uses byte offsets and panics if a boundary is not valid UTF-8. Pr
 ## Check your understanding
 
 You are ready when you can choose `String`, `&str`, bytes, chars, or a general slice from the needed ownership and meaning.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

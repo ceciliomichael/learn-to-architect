@@ -21,4 +21,8 @@ Keep the unsafe block as small as possible and expose a safe wrapper only when t
 
 Undefined behavior can appear to work and later fail after optimization or platform changes. Test edge cases, use Clippy, and use specialized tools such as Miri where supported. Tests increase confidence, but they cannot prove an unsafe implementation sound.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 33](../33-foreign-function-interfaces/README.md).

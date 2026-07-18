@@ -43,3 +43,7 @@ CSV fields are text. Verify headers, record width, conversions, and row limits. 
 ## Check your understanding
 
 You are ready when you can separate decoding, structural policy, domain validation, and trusted use.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

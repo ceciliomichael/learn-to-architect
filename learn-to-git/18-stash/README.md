@@ -99,3 +99,7 @@ Turn valuable work into a clear branch and commits, then back it up appropriatel
 ## Check your understanding
 
 You are ready when you can create a named stash, prove what it contains, restore it safely, and explain the difference between apply and pop.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -28,4 +28,8 @@ Not every trait can be used as a trait object. Its callable methods must be comp
 
 Use generics when one concrete type is known for each call and performance or static guarantees matter. Use trait objects when values of different types must share one collection or the concrete type must remain hidden. Avoid frequent downcasting because it works against the shared trait contract. If callers constantly ask for concrete types, an enum may describe the closed set more clearly.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 24](../24-files-paths-and-streamed-io/README.md).

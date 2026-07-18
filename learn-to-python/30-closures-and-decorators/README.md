@@ -89,3 +89,7 @@ Preserve return values and exceptions unless changing them is the documented pur
 ## Check your understanding
 
 You are ready when you can draw closure lifetime and expand decorator syntax into ordinary assignment.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -37,6 +37,10 @@ Properties of pseudocode:
 
 There is no single worldwide law for pseudocode spelling. Courses and teams pick a house style. This course uses a clear style you will see again in later modules.
 
+### Scope of this module
+
+This lesson introduces only enough named-value and formula notation to read a straight sequence. You will use supplied formulas and familiar arithmetic, not invent complicated expressions. Module 06 explains variables, constants, and assignment carefully. Module 07 explains operators, precedence, division, units, and formula design. When a line below uses `SET` or a simple calculation, treat it as a first guided look rather than knowledge you were expected to bring into the module.
+
 ### Where pseudocode fits
 
 ```text
@@ -122,18 +126,7 @@ START
 END
 ```
 
-If the input is `Sam`, a desk-check expects the messages `Hello` and `Sam` (as two outputs, or combined if you prefer one line in your style).
-
-A one-line style is also fine when clear:
-
-```text
-START
-  INPUT userName
-  OUTPUT "Hello, " + userName
-END
-```
-
-Either style is acceptable in this course if the meaning is obvious and the desk-check works.
+If the input is `Sam`, a desk-check expects the messages `Hello` and `Sam` as two outputs. Combining text and a stored value is useful, but this module does not require a concatenation operator that has not been defined.
 
 ## 5. SET, ASSIGN, and COMPUTE
 
@@ -475,9 +468,9 @@ Do not switch between `BEGIN` and `START`, or `OUTPUT` and random phrases, witho
 
 Pseudocode still needs a hand-check. Keywords alone do not guarantee a correct formula.
 
-### Adding language features not taught yet
+### Treating the preview as prior knowledge
 
-You do not need advanced syntax here. Sequence, names, and clear calculations are enough.
+This module defines every pseudocode keyword it requires. Use only the supplied simple formulas. Variables and expression rules are taught in depth in Modules 06 and 07.
 
 ## Check your understanding
 

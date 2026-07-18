@@ -27,4 +27,8 @@ Choose the smallest ownership tool that fits:
 
 Smart pointers solve ownership structure. They should not replace a simpler data model that avoids shared ownership.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 22](../22-drop-deref-cell-and-refcell/README.md).

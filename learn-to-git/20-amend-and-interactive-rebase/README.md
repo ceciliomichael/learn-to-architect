@@ -95,3 +95,7 @@ Interactive rebase replaces selected commits. Keep it to private history or coor
 ## Check your understanding
 
 You are ready when you can amend the latest commit, read the oldest-to-newest todo list, and verify the final snapshot after a cleanup.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

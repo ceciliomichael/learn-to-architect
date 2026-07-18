@@ -66,3 +66,7 @@ Limit file size, nesting, row counts, field lengths, and numeric ranges before a
 ## Check your understanding
 
 You are ready when you can round-trip supported data and explain why parsing must be followed by schema validation.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

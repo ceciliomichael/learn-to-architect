@@ -81,3 +81,7 @@ Use `secrets` for authentication tokens, password-reset values, and similar secu
 ## Check your understanding
 
 You are ready when you can distinguish a date from an instant, create Decimal from text, and choose secrets for security-sensitive randomness.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -49,3 +49,6 @@ Test missing, extra, blank, nonnumeric, zero, ten, and eleven arguments.
 Advanced tools do not replace the earlier rules about validation, cleanup, type safety, and clear ownership.
 Continue to [Module 39](../39-documentation-api-compatibility-and-dependency-security/README.md).
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

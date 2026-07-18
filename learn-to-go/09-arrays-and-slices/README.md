@@ -41,3 +41,7 @@ Do not change slice length unpredictably while ranging over it. Build a result s
 ## Check your understanding
 
 You are ready when you can draw a slice's shared array and decide when a copy is required.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

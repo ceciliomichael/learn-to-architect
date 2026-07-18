@@ -37,5 +37,8 @@ Run with and without a label argument, then deliberately guard access to a secon
 
 Type the code instead of pasting it. Predict the result first, then use compiler feedback to check your reasoning.
 
-Continue to [Module 10](../10-console-input-parsing-and-validation/README.md).
+## Practice and answers
 
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
+Continue to [Module 10](../10-console-input-parsing-and-validation/README.md).

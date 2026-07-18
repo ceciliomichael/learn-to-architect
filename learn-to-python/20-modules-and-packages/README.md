@@ -81,3 +81,7 @@ If `prices` imports `reports` while `reports` imports `prices`, one module can b
 ## Check your understanding
 
 You are ready when you can predict import-time execution, use a main guard, and draw a package dependency direction without a cycle.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

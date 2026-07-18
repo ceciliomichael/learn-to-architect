@@ -436,4 +436,4 @@ Complete the [module exercises](./exercise/exercise.md), then take the [module q
 
 ## Next step
 
-Module 07 covers arithmetic operations and expressions. You will write formulas for totals, averages, discounts, and tax with clear order of operations.
+In [Module 07](../07-arithmetic-operations-and-expressions/README.md), you will write formulas for totals, averages, discounts, and tax with clear order of operations.

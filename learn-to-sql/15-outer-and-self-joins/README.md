@@ -94,3 +94,7 @@ Use role names such as `e` and `m` so every column source is clear.
 ## Check your understanding
 
 You are ready when you can predict unmatched rows and explain why moving a predicate between `ON` and `WHERE` can change the result.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

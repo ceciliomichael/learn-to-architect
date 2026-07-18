@@ -32,5 +32,8 @@ Compile into an out directory with javac --release 21 -d out Main.java and run w
 
 Type the code instead of pasting it. Predict the result first, then use compiler feedback to check your reasoning.
 
-Continue to [Module 03](../03-variables-primitive-types-and-constants/README.md).
+## Practice and answers
 
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
+Continue to [Module 03](../03-variables-primitive-types-and-constants/README.md).

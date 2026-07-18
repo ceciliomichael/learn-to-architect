@@ -33,3 +33,7 @@ Functions are values. They can be passed as callbacks or returned as closures. A
 ## Check your understanding
 
 You are ready when you can distinguish parameters, arguments, results, and side effects and keep one function focused.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

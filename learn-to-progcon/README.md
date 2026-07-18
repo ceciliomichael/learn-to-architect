@@ -54,7 +54,7 @@ Online environments such as [Programiz Python Compiler](https://www.programiz.co
 
 #### Option 2: Work on your computer
 
-Install a current Python release from <https://www.python.org>. Course examples target Python 3.12 and newer.
+Install a current stable Python release from <https://www.python.org>. As of July 2026, that is the Python 3.14 feature series. The course examples also work with supported Python 3.12 and 3.13 releases. Do not choose a preview or beta release for ordinary course work.
 
 Open a terminal and check the installation:
 
@@ -122,7 +122,7 @@ Do not rewrite everything at once. A small change makes its effect easier to und
 
 ### Part 6: Arrays
 
-17. [Arrays and How They Occupy Memory](./17-arrays-and-how-they-occupy-memory/README.md)
+17. [Arrays, Indexes, and the Storage Model](./17-arrays-indexes-and-the-storage-model/README.md)
 18. [Searching Arrays and Parallel Arrays](./18-searching-arrays-and-parallel-arrays/README.md)
 19. [Processing Arrays with Loops](./19-processing-arrays-with-loops/README.md)
 

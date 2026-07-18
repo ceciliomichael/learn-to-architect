@@ -17,4 +17,8 @@ Never let a Rust panic unwind across an FFI boundary. Catch panics when calling 
 
 Build scripts and native libraries are platform-specific executable dependencies. Review them, isolate binding code, and test every supported target. Prefer a mature binding crate when it already maintains the difficult boundary.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 34](../34-cargo-features-and-workspaces/README.md).

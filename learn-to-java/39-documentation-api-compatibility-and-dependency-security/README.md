@@ -47,3 +47,6 @@ Run javadoc with doclint and write a dependency review for one library used earl
 Advanced tools do not replace the earlier rules about validation, cleanup, type safety, and clear ownership.
 Continue to [Module 40](../40-build-package-and-release/README.md).
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

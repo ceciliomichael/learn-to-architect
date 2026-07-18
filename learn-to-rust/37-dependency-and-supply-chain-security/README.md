@@ -20,4 +20,8 @@ Commit and review lock-file changes for applications. Update in small groups, re
 
 Security is ongoing maintenance. An approved dependency can later change ownership, become unmaintained, or receive an advisory.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 38](../38-build-package-and-release/README.md).

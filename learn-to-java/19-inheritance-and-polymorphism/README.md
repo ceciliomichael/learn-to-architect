@@ -46,5 +46,8 @@ Add a Circle subtype and confirm one Shape method can use either implementation.
 
 Keep build files and resolved dependency changes under review. Do not weaken a validator or suppress a diagnostic merely to make an example pass.
 
-Continue to [Module 20](../20-equality-hashing-and-ordering/README.md).
+## Practice and answers
 
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
+Continue to [Module 20](../20-equality-hashing-and-ordering/README.md).

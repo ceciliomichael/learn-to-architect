@@ -113,3 +113,7 @@ Indexes, triggers, and views can disappear or break. Inventory and recreate them
 ## Check your understanding
 
 You are ready when you can explain an expand-backfill-contract sequence and list every object affected by a table rebuild.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

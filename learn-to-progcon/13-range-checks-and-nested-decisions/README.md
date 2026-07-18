@@ -499,4 +499,4 @@ Then take the quiz in [quiz/quiz.md](./quiz/quiz.md).
 
 ## Next step
 
-Module 14 introduces loop structure and WHILE loops so a design can repeat work until a condition becomes false.
+[Module 14](../14-loop-structure-and-while-loops/README.md) introduces loop structure and WHILE loops so a design can repeat work until a condition becomes false.

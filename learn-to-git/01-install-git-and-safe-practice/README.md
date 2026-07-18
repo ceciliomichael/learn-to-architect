@@ -112,4 +112,8 @@ Replace the sample name and email with your intended identity.
 
 You are ready when you can explain why Git works without GitHub, show your current terminal folder, and display your installed Git version.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Next, you will create a repository and see the three places where Git-managed work can exist.

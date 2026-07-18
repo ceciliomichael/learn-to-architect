@@ -112,3 +112,7 @@ Use `pwd` before `git init`. Use `git rev-parse --show-toplevel` afterward.
 ## Check your understanding
 
 You are ready when you can explain which command moves content into the staging area and why one file can have both staged and unstaged changes.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -95,3 +95,7 @@ Read both changes and test the combined result. A syntactically clean file can s
 ## Check your understanding
 
 You are ready when you can explain the marker sections, produce a deliberate final file, and distinguish finishing from aborting.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

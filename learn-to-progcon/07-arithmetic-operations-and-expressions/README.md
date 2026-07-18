@@ -42,7 +42,7 @@ SET lineTotal = unitPrice * quantity
 SET average = sum / count
 ```
 
-Use `*` for multiplication in designs and code-style pseudocode. Do not write `x` or `·` unless your teacher or team has an agreed paper style. This course uses `*`.
+Use `*` for multiplication in designs and code-style pseudocode. Do not write `x` or a centered dot unless your teacher or team has an agreed paper style. This course uses `*`.
 
 ## 2. Expressions versus complete instructions
 
@@ -518,4 +518,4 @@ Complete the [module exercises](./exercise/exercise.md), then take the [module q
 
 ## Next step
 
-Module 08 teaches trace tables and desk checking. You will track every variable step by step and catch wrong formulas before coding.
+In [Module 08](../08-trace-tables-and-desk-checking/README.md), you will track every variable step by step and catch wrong formulas before coding.

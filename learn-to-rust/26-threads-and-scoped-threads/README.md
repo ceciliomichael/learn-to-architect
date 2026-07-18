@@ -22,4 +22,8 @@ Divide work only when the added coordination is worth it. Too many threads can i
 
 Thread panics do not automatically become normal application errors. `join` returns an error containing the panic payload. Convert it into an intentional report or recovery policy at the boundary.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 27](../27-channels-arc-mutex-and-shared-state/README.md).

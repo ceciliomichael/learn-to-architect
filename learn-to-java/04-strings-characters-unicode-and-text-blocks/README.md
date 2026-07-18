@@ -38,5 +38,8 @@ Add a supplementary Unicode symbol and compare String length with codePointCount
 
 Type the code instead of pasting it. Predict the result first, then use compiler feedback to check your reasoning.
 
-Continue to [Module 05](../05-operators-conversions-overflow-and-math/README.md).
+## Practice and answers
 
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
+Continue to [Module 05](../05-operators-conversions-overflow-and-math/README.md).

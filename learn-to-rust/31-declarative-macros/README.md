@@ -22,4 +22,8 @@ Rust macros are hygienic: names created inside a macro do not normally collide w
 
 Keep macros small, give invalid uses clear compile errors when possible, and test several valid call forms. Procedural macros are separate compiler plugins and add a larger dependency and review boundary; they are outside this course's implementation scope.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 32](../32-unsafe-rust-and-safety-contracts/README.md).

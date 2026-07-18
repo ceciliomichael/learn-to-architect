@@ -34,3 +34,7 @@ Slices and maps already contain descriptors that reach shared storage. A pointer
 ## Check your understanding
 
 You are ready when you can trace a copy, an address, and the exact value a function may mutate.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

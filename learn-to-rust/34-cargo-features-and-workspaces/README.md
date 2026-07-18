@@ -27,4 +27,8 @@ Commit `Cargo.lock` for applications and command-line tools so builds select rev
 
 Profiles tune compilation. Release settings should be based on measurements and deployment needs, not copied blindly. Keep the workspace dependency graph understandable and avoid circular design between crates.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 35](../35-documentation-api-design-and-compatibility/README.md).

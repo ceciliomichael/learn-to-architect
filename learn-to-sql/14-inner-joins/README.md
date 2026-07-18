@@ -89,3 +89,7 @@ Uniqueness must be enforced or proven. Otherwise one row can match several.
 ## Check your understanding
 
 You are ready when you can predict the result grain and explain every `ON` equality through a key relationship.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

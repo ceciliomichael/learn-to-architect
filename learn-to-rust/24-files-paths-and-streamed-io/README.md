@@ -25,4 +25,8 @@ Text reading validates UTF-8. Use byte-oriented `Read` methods for arbitrary bin
 
 For important writes, write to a temporary file in the same directory, flush and synchronize as required, then replace the target using a strategy tested on each supported platform. Simple rename behavior and durability differ across operating systems and filesystems.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 25](../25-serde-and-untrusted-data/README.md).

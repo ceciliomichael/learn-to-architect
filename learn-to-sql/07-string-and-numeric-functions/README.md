@@ -114,3 +114,7 @@ Most scalar functions return `NULL` for a `NULL` input. Test and use a meaningfu
 ## Check your understanding
 
 You are ready when you can compose two functions, explain the result from inside outward, and identify which behavior must be checked for another database product.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

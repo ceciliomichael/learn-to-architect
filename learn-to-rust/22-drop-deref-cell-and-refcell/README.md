@@ -23,4 +23,8 @@ Breaking a `RefCell` borrowing rule causes a panic, not a compile error. Keep `b
 
 Interior mutability is valuable for focused state hidden behind a clear contract. If it spreads through the design, reconsider who should own the mutable value.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 23](../23-trait-objects-and-dynamic-dispatch/README.md).

@@ -36,3 +36,7 @@ Do not use `time.After` repeatedly in a long loop when a reusable timer with exp
 ## Check your understanding
 
 You are ready when you can name the sender, receiver, closer, buffer bound, and shutdown event for a channel.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -123,3 +123,7 @@ Restores take time and can lose later work. Prevent the mistake first.
 ## Check your understanding
 
 You are ready when you can make one precise update inside a transaction and choose commit or rollback from evidence.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

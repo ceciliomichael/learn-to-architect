@@ -96,3 +96,7 @@ Push the intended tag by name.
 ## Check your understanding
 
 You are ready when you can create and verify an annotated release tag and explain why publishing it is a separate action.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

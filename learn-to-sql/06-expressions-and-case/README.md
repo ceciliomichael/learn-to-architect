@@ -108,3 +108,7 @@ Use a real operand when you need a fractional SQLite result and test portability
 ## Check your understanding
 
 You are ready when you can calculate a result column, explain first-true `CASE` behavior, and distinguish displayed values from stored values.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

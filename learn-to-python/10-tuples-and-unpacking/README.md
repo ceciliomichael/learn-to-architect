@@ -78,3 +78,7 @@ The tuple still refers to the same list, but that list is mutable. A tuple preve
 ## Check your understanding
 
 You are ready when you can create a one-item tuple, unpack fixed and starred targets, and explain shallow immutability.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

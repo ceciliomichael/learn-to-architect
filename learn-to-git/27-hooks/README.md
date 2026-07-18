@@ -93,3 +93,7 @@ Enforce protected actions on the server.
 ## Check your understanding
 
 You are ready when you can explain when a hook runs, what its exit status means, and where required policy must be enforced.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

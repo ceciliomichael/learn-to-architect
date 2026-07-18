@@ -46,3 +46,7 @@ Write normal results to standard output and diagnostics to standard error. Do no
 ## Check your understanding
 
 You are ready when you can describe input as untrusted text and separate reading, trimming, parsing, validating, and reporting.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

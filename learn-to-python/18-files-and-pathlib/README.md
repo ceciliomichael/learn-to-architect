@@ -81,3 +81,7 @@ Do not join a user-supplied path and assume it remains inside an allowed directo
 ## Check your understanding
 
 You are ready when you can explain working-directory-relative paths, encoding, context cleanup, and overwrite risk.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

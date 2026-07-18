@@ -6,7 +6,7 @@ A small scope is finishable and still exercises real design skills. Huge project
 
 ## Answer 2
 
-Algorithm, pseudocode, hierarchy chart, and flowchart. (A trace table is also required for testing evidence.)
+Algorithm, pseudocode, hierarchy chart, flowchart, and trace table.
 
 ## Answer 3
 

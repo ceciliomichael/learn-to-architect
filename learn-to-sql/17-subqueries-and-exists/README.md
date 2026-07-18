@@ -101,3 +101,7 @@ Choose the form that makes grain and purpose clearest, then verify its plan when
 ## Check your understanding
 
 You are ready when you can identify the shape required from an inner query and choose `EXISTS` for a yes-or-no relationship question.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

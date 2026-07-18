@@ -25,4 +25,8 @@ Semantic versioning communicates compatibility intent: breaking public changes r
 
 Run `cargo doc --no-deps` and read the result as a new user would.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 36](../36-measure-and-improve-performance/README.md).

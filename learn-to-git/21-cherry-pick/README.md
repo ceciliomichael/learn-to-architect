@@ -88,3 +88,7 @@ Inspect and test dependencies. One patch may not make sense alone.
 ## Check your understanding
 
 You are ready when you can select a source commit, apply it to the intended destination, and explain why the result is a new commit.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

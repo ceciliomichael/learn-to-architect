@@ -29,3 +29,7 @@ Use a vector when order and duplicates matter, a hash set when uniqueness and me
 ## Check your understanding
 
 You are ready when ownership, lookup, update, and output ordering are deliberate.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -8,7 +8,7 @@ Why should a capstone project stay small in scope?
 
 ## Question 2
 
-Name the four design artifacts this module asks you to produce before relying on code alone.
+Name the five design and checking artifacts this module asks you to produce before relying on code alone.
 
 ## Question 3
 

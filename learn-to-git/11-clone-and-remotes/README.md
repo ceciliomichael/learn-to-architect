@@ -106,3 +106,7 @@ Print the path and repository root before each collaboration step.
 ## Check your understanding
 
 You are ready when you can explain what clone creates, what `origin` stores, and why the course uses a bare local remote.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -26,4 +26,8 @@ Always limit request or file size before deserializing untrusted data. Avoid dee
 
 The Rust Playground does not support adding arbitrary dependencies through a `Cargo.toml`, so use a local Cargo project for this module.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 26](../26-threads-and-scoped-threads/README.md).

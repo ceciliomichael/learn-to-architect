@@ -85,3 +85,7 @@ If a function only reads animals, a covariant read-only abstraction can safely a
 ## Check your understanding
 
 You are ready when you can connect a generic input to its output and separate static shapes from runtime validation.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

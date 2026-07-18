@@ -71,3 +71,7 @@ Async context managers use `async with` and `__aenter__` or `__aexit__`, taught 
 ## Check your understanding
 
 You are ready when you can explain entry, block, exit, propagation, and why ExitStack helps partial acquisition.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

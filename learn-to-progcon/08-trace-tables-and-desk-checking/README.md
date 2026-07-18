@@ -392,4 +392,4 @@ Complete the [module exercises](./exercise/exercise.md), then take the [module q
 
 ## Next step
 
-Module 09 introduces modules and hierarchy charts. You will split larger solutions into smaller named parts and show how those parts relate.
+In [Module 09](../09-modules-and-hierarchy-charts/README.md), you will split larger solutions into smaller named parts and show how those parts relate.

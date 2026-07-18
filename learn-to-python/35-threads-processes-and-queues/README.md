@@ -77,3 +77,7 @@ Cancelling a future usually cannot stop work already running. Define timeouts, s
 ## Check your understanding
 
 You are ready when you can choose threads for waiting, processes for substantial CPU work, and avoid shared state where result collection is simpler.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

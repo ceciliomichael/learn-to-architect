@@ -99,3 +99,7 @@ Inspect the graph and final files first. Use `-d`, not `-D`, for normal cleanup.
 ## Check your understanding
 
 You are ready when you can choose the destination branch and explain why a merge did or did not create a new commit.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

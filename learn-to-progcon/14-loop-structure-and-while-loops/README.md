@@ -466,4 +466,4 @@ Then take the quiz in [quiz/quiz.md](./quiz/quiz.md).
 
 ## Next step
 
-Module 15 covers FOR loops, definite loops, and indefinite loops so you can choose the right loop form for counted work and open-ended work.
+[Module 15](../15-for-loops-definite-and-indefinite-loops/README.md) covers FOR loops, definite loops, and indefinite loops so you can choose the right loop form for counted work and open-ended work.

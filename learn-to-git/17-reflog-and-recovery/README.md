@@ -84,3 +84,7 @@ It is local and temporary by design.
 ## Check your understanding
 
 You are ready when you can find a recent former position, verify it, and give it a branch name without moving existing branches.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

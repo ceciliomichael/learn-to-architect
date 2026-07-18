@@ -88,3 +88,7 @@ SQLite generated expressions are row-local. Use a query, trigger, or deliberate 
 ## Check your understanding
 
 You are ready when you can explain `excluded`, predict insert versus update, and choose a generated or query-time value from its meaning.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

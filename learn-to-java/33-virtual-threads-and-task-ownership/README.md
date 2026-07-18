@@ -38,3 +38,6 @@ Start several short blocking simulations, keep every Future, and show how one fa
 Advanced tools do not replace the earlier rules about validation, cleanup, type safety, and clear ownership.
 Continue to [Module 34](../34-synchronization-and-concurrent-collections/README.md).
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

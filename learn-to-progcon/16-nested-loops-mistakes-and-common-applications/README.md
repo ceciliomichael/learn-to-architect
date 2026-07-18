@@ -506,4 +506,4 @@ Then take the quiz in [quiz/quiz.md](./quiz/quiz.md).
 
 ## Next step
 
-Module 17 introduces arrays: named lists of related values stored in order, with indexes for reading and writing individual elements.
+[Module 17](../17-arrays-indexes-and-the-storage-model/README.md) introduces arrays, indexes, and the abstract storage model used to reason about ordered values.

@@ -97,3 +97,7 @@ Every code path should finish with commit or rollback.
 ## Check your understanding
 
 You are ready when you can group related changes, verify them before commit, and roll back only the work after a savepoint.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

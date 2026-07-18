@@ -25,4 +25,8 @@ An iterator produces one item at a time. Adaptors such as `map`, `filter`, and `
 
 Choose ownership deliberately: `iter()` borrows items, `iter_mut()` mutably borrows them, and `into_iter()` consumes the collection. Iterator chains can be concise, but a loop is better when the chain becomes difficult to explain or needs complex error handling.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 21](../21-smart-pointers-box-rc-and-arc/README.md).

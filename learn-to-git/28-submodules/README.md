@@ -104,3 +104,7 @@ It is a separate repository with its own branches, remotes, status, and history.
 ## Check your understanding
 
 You are ready when you can explain the gitlink, initialize a cloned submodule, and perform both child and parent steps of an update.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

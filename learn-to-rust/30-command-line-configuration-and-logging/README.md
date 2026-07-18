@@ -16,4 +16,8 @@ Structured logging libraries can attach fields and levels to events. Keep field 
 
 Small parsing functions are easy to unit test because they can accept an iterator or slice instead of reading global process state directly.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 31](../31-declarative-macros/README.md).

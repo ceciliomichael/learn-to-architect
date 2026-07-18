@@ -46,3 +46,6 @@ Explain why this timer is educational but not a replacement for a JMH benchmark 
 Advanced tools do not replace the earlier rules about validation, cleanup, type safety, and clear ownership.
 Continue to [Module 38](../38-command-line-configuration-and-logging/README.md).
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

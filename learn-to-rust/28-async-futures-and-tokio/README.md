@@ -24,4 +24,8 @@ Cancellation happens at `.await` points. A future that is abandoned may have com
 
 Async helps programs wait for many I/O operations efficiently. It does not automatically make CPU-heavy work faster.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 29](../29-networking-and-http-boundaries/README.md).

@@ -429,4 +429,4 @@ Then take the quiz in [quiz/quiz.md](./quiz/quiz.md).
 
 ## Next step
 
-Module 16 covers nested loops, common loop mistakes, counters, accumulators, sentinels, and everyday applications such as totals, retries, and simple tables.
+[Module 16](../16-nested-loops-mistakes-and-common-applications/README.md) covers nested loops, common loop mistakes, counters, accumulators, sentinels, and everyday applications such as totals, retries, and simple tables.

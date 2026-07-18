@@ -105,3 +105,7 @@ Use it to find context, then read the patch, surrounding history, and discussion
 ## Check your understanding
 
 You are ready when you can choose between `-S` and `-G`, interpret blame responsibly, and run a complete manual bisect.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

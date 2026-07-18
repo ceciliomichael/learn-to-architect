@@ -86,3 +86,7 @@ Stable searchable relationships still deserve typed relational columns.
 ## Check your understanding
 
 You are ready when you can choose exact or approximate numeric types, explain identity gaps, and qualify a table by schema.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

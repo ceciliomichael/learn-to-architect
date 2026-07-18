@@ -1,4 +1,4 @@
-# Module 17: Arrays and How They Occupy Memory
+# Module 17: Arrays, Indexes, and the Storage Model
 
 ## Before you start
 
@@ -13,7 +13,7 @@ By the end of this module, you will be able to:
 - explain what an array is and why programs use arrays
 - state an array size and identify a valid index
 - read and write one element with `array[index]` notation
-- describe how related values can sit in neighboring storage slots
+- use a row-of-slots model to trace related values without making claims about a language's physical memory layout
 - redesign a problem that would otherwise need many separate variables
 
 ## Why this matters
@@ -22,7 +22,7 @@ A teacher may store twenty quiz scores. A shop may store seven daily totals. Wri
 
 ## 1. What an array is
 
-An **array** is a named collection of values of the same kind, stored in order.
+An **array** is a named, indexed collection of values stored in order. Many languages require every element to have the same type. Some collections, including Python lists, can technically mix types. This course keeps elements the same kind because loops, comparisons, totals, and searches are clearer and safer that way.
 
 Examples:
 
@@ -66,9 +66,9 @@ Why start at 0? Many programming languages, including Python, use 0-based indexe
 
 Some textbooks use 1-based indexes. If you read a design that starts at 1, adjust carefully. In this course, assume 0-based unless a lesson says otherwise.
 
-## 3. How arrays occupy memory (simple picture)
+## 3. The storage model used in this course
 
-Think of an array as a row of labeled boxes side by side.
+For design and tracing, draw an array as a row of labeled slots:
 
 ```text
 scores:
@@ -78,9 +78,9 @@ scores:
        +-----+-----+-----+-----+-----+
 ```
 
-Each box holds one element. Neighboring indexes mean neighboring positions in the collection.
+Each drawn slot represents one element. Neighboring indexes mean neighboring positions in the collection's logical order.
 
-You do not need hardware details. The useful idea is this: once you know the array name and an index, you can find one element without inventing a new variable name for every value.
+This is an abstract model, not a promise that every value object sits beside the next value in physical memory. Languages implement collections differently. A low-level fixed-type array may place element data in one contiguous region. A Python list maintains an ordered collection of references, and the referenced objects can live elsewhere. The useful idea for this course is independent of those details: an array name plus a valid index selects one element.
 
 ## 4. Reading an element
 

@@ -34,5 +34,8 @@ Remove the double cast to observe integer division, then test Math.addExact with
 
 Type the code instead of pasting it. Predict the result first, then use compiler feedback to check your reasoning.
 
-Continue to [Module 06](../06-conditions-and-switch-expressions/README.md).
+## Practice and answers
 
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
+Continue to [Module 06](../06-conditions-and-switch-expressions/README.md).

@@ -31,3 +31,6 @@ Create a runnable JAR locally, inspect it with jar --list, calculate SHA-256, te
 Advanced tools do not replace the earlier rules about validation, cleanup, type safety, and clear ownership.
 This completes the planned Java path. There is intentionally no miscellaneous module or final assessment.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

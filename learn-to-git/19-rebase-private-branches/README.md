@@ -104,3 +104,7 @@ Skip drops that commit from the replay. Inspect its intended change first.
 ## Check your understanding
 
 You are ready when you can draw the before and after graphs, explain the new hashes, and choose abort or continue during a conflict.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

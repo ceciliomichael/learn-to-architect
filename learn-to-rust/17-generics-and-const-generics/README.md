@@ -41,4 +41,8 @@ Rust creates suitable machine code for the concrete types used by the program. T
 - Const parameters represent compile-time values such as array lengths.
 - Prefer meaningful names such as `Item` when several type parameters are present.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 18](../18-traits-and-trait-bounds/README.md).

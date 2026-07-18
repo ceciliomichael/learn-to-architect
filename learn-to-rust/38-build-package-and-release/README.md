@@ -21,4 +21,8 @@ Libraries should run `cargo package` and inspect the generated package before pu
 
 Monitor the rollout, retain the previous known-good artifact, and write the rollback steps before deployment begins.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 You have now completed the planned Rust learning path. There is intentionally no miscellaneous module or final assessment.

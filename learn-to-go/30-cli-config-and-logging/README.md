@@ -23,3 +23,7 @@ Document exit codes for automation. Commonly, zero means success, two means usag
 ## Check your understanding
 
 You are ready when you can separate parsing, validation, domain work, user output, logs, and process exit.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

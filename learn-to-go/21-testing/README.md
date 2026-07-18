@@ -41,3 +41,7 @@ Run `go test ./...`. Coverage reports which statements ran, not whether the asse
 ## Check your understanding
 
 You are ready when one test can fail without depending on another and its message identifies expected and actual behavior.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

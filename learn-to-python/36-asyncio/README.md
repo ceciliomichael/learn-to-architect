@@ -82,3 +82,7 @@ Use `async with` for sessions, connections, locks, and other async managers. Use
 ## Check your understanding
 
 You are ready when you can identify every yield point, contain task lifetimes, and explain how cancellation reaches cleanup.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

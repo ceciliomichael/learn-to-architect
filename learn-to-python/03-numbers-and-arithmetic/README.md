@@ -74,3 +74,7 @@ Dividing by zero raises `ZeroDivisionError`. Do not hide it with an arbitrary re
 ## Check your understanding
 
 You are ready when you can choose `/`, `//`, or `%`, predict operator order, and explain why float display can be surprising.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

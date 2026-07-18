@@ -428,4 +428,4 @@ Complete the [module exercises](./exercise/exercise.md), then take the [module q
 
 ## Next step
 
-Module 06 introduces variables, constants, and assignment. You will give names to stored values and write designs that set and update those names with care.
+In [Module 06](../06-variables-constants-and-assignment/README.md), you will give names to stored values and write designs that set and update those names with care.

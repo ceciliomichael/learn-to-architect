@@ -104,3 +104,7 @@ Line normalization can affect many paths. Test it in a clean branch and inspect 
 ## Check your understanding
 
 You are ready when you can find where a setting came from, choose local or global scope, and explain the separate purpose of `.gitattributes`.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

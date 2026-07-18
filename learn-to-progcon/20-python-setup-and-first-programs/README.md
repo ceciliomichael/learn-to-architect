@@ -44,7 +44,7 @@ On some Windows systems:
 py --version
 ```
 
-You want Python 3.12 or newer for this course. If the command is not found, install Python from <https://www.python.org> or use an online environment for now.
+Install a current stable Python 3 release from <https://www.python.org>. As of July 2026, the current stable feature series is Python 3.14. The course examples also work with supported Python 3.12 and 3.13 releases. Avoid preview or beta releases while learning unless you intentionally want to test an upcoming version.
 
 ## 3. Your first program
 

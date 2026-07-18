@@ -218,9 +218,9 @@ The course lives in `learn-to-progcon/`. The root contains:
 
 ### Part 6: Arrays
 
-- [x] **Module 17: Arrays and How They Occupy Memory**
+- [x] **Module 17: Arrays, Indexes, and the Storage Model**
   - Prerequisites: Modules 01 to 16
-  - Teaches: array purpose, size, indexes, contiguous storage idea, and reading or writing elements
+  - Teaches: array purpose, size, indexes, an abstract ordered-storage model, implementation caveats, and reading or writing elements
   - Outcome: the learner can design solutions that store related values in arrays
 
 - [x] **Module 18: Searching Arrays and Parallel Arrays**

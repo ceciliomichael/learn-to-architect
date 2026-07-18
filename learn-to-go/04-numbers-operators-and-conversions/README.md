@@ -38,3 +38,7 @@ Integer overflow can wrap according to the integer type. Validate before securit
 ## Check your understanding
 
 You are ready when you can predict integer division, remainder, and why mixed numeric operations need explicit conversion.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

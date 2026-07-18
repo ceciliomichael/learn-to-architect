@@ -88,3 +88,7 @@ Use business rules and possible future valid states, not coincidences in six row
 ## Check your understanding
 
 You are ready when you can state one row's meaning, identify which key determines each fact, and explain a justified table split.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

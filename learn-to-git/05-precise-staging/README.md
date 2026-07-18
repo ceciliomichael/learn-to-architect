@@ -96,3 +96,7 @@ Git stores before and after snapshots. Rename detection happens when Git compare
 ## Check your understanding
 
 You are ready when you can stage one path, stage one hunk, and unstage without losing the working edit.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

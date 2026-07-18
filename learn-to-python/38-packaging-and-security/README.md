@@ -123,3 +123,7 @@ Add a boundary when it protects a real responsibility or improves testing. Do no
 ## Check your understanding
 
 You are ready when you can explain the source layout, validate boundaries before domain logic, and test the exact artifact that users install.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

@@ -41,5 +41,8 @@ Write a copy method using a source with extends and a destination with super.
 
 Keep build files and resolved dependency changes under review. Do not weaken a validator or suppress a diagnostic merely to make an example pass.
 
-Continue to [Module 18](../18-interfaces-and-composition/README.md).
+## Practice and answers
 
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
+Continue to [Module 18](../18-interfaces-and-composition/README.md).

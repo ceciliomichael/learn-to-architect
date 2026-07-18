@@ -102,3 +102,7 @@ On duplicate keys, the right mapping wins. The `|` operator requires Python 3.9 
 ## Check your understanding
 
 You are ready when you can choose bracket access or `get`, iterate through pairs, and explain key hashability.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

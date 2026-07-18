@@ -82,3 +82,7 @@ The lengths and names must match the function contract.
 ## Check your understanding
 
 You are ready when you can design keyword-only options and explain why `None` prevents a mutable default leak.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

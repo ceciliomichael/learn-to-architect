@@ -31,3 +31,7 @@ A failing test should help locate the broken rule. Keep assertions focused and i
 ## Check your understanding
 
 You are ready when every failure names a rule and tests remain independent of order.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

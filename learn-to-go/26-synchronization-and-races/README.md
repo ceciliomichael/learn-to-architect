@@ -45,3 +45,7 @@ Prefer one owner or message passing when it makes mutation simpler. Use `go test
 ## Check your understanding
 
 You are ready when you can name the invariant protected by every lock and demonstrate the relevant path under the race detector.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

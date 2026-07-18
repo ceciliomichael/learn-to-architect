@@ -36,5 +36,8 @@ Test 69, 70, 89, 90, and 100 and explain the selected case.
 
 Type the code instead of pasting it. Predict the result first, then use compiler feedback to check your reasoning.
 
-Continue to [Module 07](../07-loops-and-repetition/README.md).
+## Practice and answers
 
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
+Continue to [Module 07](../07-loops-and-repetition/README.md).

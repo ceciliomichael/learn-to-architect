@@ -47,4 +47,8 @@ Traits can contain default methods, associated functions, and associated types. 
 - Use default methods when the default is correct for most implementors.
 - Prefer concrete types when callers do not benefit from substitution.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 19](../19-lifetimes/README.md).

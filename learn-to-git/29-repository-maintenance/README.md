@@ -110,3 +110,7 @@ The old commit still contains it. Rotate the credential first, then coordinate a
 ## Check your understanding
 
 You are ready when you can inspect storage and integrity, explain what normal maintenance does, and identify when repository cleanup becomes a coordinated migration.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

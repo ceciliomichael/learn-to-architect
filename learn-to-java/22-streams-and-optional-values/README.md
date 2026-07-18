@@ -40,5 +40,8 @@ Return none for an empty input and handle it without get or orElseThrow.
 
 Keep build files and resolved dependency changes under review. Do not weaken a validator or suppress a diagnostic merely to make an example pass.
 
-Continue to [Module 23](../23-packages-access-classpaths-modules-and-jars/README.md).
+## Practice and answers
 
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
+Continue to [Module 23](../23-packages-access-classpaths-modules-and-jars/README.md).

@@ -79,3 +79,7 @@ Module 16 introduces the compact comprehension form after this ordinary loop is 
 ## Check your understanding
 
 You are ready when you can predict aliasing, choose mutation or a new list, explain shallow copies, and split text into a list.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

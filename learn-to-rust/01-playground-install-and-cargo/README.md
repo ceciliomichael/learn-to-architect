@@ -29,3 +29,7 @@ Delete the semicolon after `println!` only after changing the line into invalid 
 ## Check your understanding
 
 You are ready when you can run, format, break, repair, and rerun the first program online or locally.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

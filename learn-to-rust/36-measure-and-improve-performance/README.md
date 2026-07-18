@@ -17,4 +17,8 @@ Do not trade correctness or a clear API for a tiny result that users cannot noti
 
 Binary size, memory use, startup time, latency, and throughput are different goals. State which one matters and set an acceptable limit before tuning.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 37](../37-dependency-and-supply-chain-security/README.md).

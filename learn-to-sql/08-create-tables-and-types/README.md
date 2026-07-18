@@ -116,3 +116,7 @@ It removes data. Practice only in `design.db` and use migrations and backups for
 ## Check your understanding
 
 You are ready when you can name SQLite's storage classes, explain affinity, and state what `STRICT` adds.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

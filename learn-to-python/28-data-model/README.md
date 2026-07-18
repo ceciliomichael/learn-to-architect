@@ -82,3 +82,7 @@ Adding two Money values can be clear if currencies match. Adding a Money value t
 ## Check your understanding
 
 You are ready when you can state the equality-hash rule and implement only syntax with an unsurprising domain meaning.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

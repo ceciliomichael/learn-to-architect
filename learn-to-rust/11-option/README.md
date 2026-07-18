@@ -28,3 +28,7 @@ Use `Option` when absence is normal. The next module introduces a different retu
 ## Check your understanding
 
 You are ready when you can handle both variants without inventing a sentinel.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

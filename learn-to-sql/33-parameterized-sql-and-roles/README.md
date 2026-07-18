@@ -102,3 +102,7 @@ Raw fragments, dynamic order clauses, and unsafe APIs can still construct code.
 ## Check your understanding
 
 You are ready when you can explain code-data separation and design a role that can do required work but cannot change the schema.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

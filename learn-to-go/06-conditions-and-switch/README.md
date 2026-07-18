@@ -55,3 +55,7 @@ Go cases do not fall through by default. A switch without an expression can repl
 ## Check your understanding
 
 You are ready when you can order branches correctly and choose a readable `if` or `switch`.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

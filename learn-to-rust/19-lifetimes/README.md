@@ -32,4 +32,8 @@ Avoid returning a reference to a local value. Return the owned value instead. Ow
 
 When a lifetime error appears, ask three questions: who owns the value, who borrows it, and how long does the returned reference need to remain usable? Shortening a borrow or returning ownership often reveals the cleanest solution.
 
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+
 Continue to [Module 20](../20-closures-and-iterators/README.md).

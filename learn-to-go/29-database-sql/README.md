@@ -26,3 +26,7 @@ Begin a transaction, defer rollback as a safe no-op after commit, perform all op
 ## Check your understanding
 
 You are ready when you can trace a bound value, row cleanup, transaction ownership, and context through one database operation.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

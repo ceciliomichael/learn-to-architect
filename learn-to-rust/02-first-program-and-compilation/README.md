@@ -23,3 +23,7 @@ Comments start with `//`. Explain constraints and reasons, not obvious syntax. C
 ## Check your understanding
 
 You are ready when you can point to the entry point, macro, format string, arguments, statements, and artifact profiles.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

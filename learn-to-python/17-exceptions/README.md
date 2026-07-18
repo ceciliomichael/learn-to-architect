@@ -82,3 +82,7 @@ Recover, add context and reraise, or let the failure reach a boundary that can r
 ## Check your understanding
 
 You are ready when you can minimize a try block, choose a specific exception, and explain else, finally, and chaining.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).

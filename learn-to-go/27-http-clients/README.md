@@ -27,3 +27,7 @@ Transport errors, timeout errors, status failures, and invalid bodies mean diffe
 ## Check your understanding
 
 You are ready when every request has a context, timeout, destination policy, body limit, close, status check, and validation step.
+
+## Practice and answers
+
+Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
