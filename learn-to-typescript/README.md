@@ -130,8 +130,6 @@ Do not change many unrelated lines at once. A small change makes its effect easi
 33. [Precise Type Design](./33-precise-type-design/README.md)
 34. [Testing and Maintaining TypeScript](./34-testing-and-maintaining-typescript/README.md)
 
-There is no final assessment in V2 yet. The priority is making every learning step accurate, useful, and comfortable first.
-
 ## Suggested pace
 
 For Modules 01 to 10, one module every two or three days is a comfortable pace. Later modules may need a week each. A useful study session is 30 to 60 minutes followed by a break.
