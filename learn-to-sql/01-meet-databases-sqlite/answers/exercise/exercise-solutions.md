@@ -32,6 +32,11 @@ Run the exact `CREATE TABLE` and `INSERT` statements from the lesson. Between th
 
 `books` should appear. The schema output should contain six column definitions.
 
+### Schema Explanation:
+- `book_id INTEGER PRIMARY KEY`: Unique numeric identifier for each row.
+- `title TEXT NOT NULL`: Title string; cannot be missing/empty.
+- `published_year INTEGER`: Year published; can be `NULL` (missing/unknown).
+
 ## Exercise 3
 
 ```sql
@@ -45,4 +50,16 @@ The result should contain book identifiers 1 through 6. Then:
 sqlite3 library.db
 ```
 
-Turn headers and box mode on again because these are CLI session settings, then repeat the query. The rows remain because they were stored in the database file.
+Turn headers and box mode on again because these are CLI session settings:
+
+```text
+.headers on
+.mode box
+SELECT * FROM books;
+```
+
+The rows remain because they were saved permanently in `library.db`.
+
+### Engine Behavior Explanation:
+ANSI SQL standard queries like `SELECT * FROM books;` use standard SQL syntax understood by SQLite, MySQL, and PostgreSQL alike. Learning SQL query logic in SQLite directly applies when querying MySQL or PostgreSQL tables in production.
+

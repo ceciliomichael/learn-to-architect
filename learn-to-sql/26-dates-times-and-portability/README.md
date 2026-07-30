@@ -2,7 +2,9 @@
 
 ## What you will learn
 
-You will represent time consistently in SQLite and recognize where PostgreSQL uses dedicated temporal types.
+You will represent time consistently in SQLite, compare temporal types and date functions across MySQL and PostgreSQL, and write portable date logic.
+
+---
 
 ## SQLite has no dedicated date storage class
 
@@ -12,9 +14,9 @@ SQLite commonly stores time values as:
 - Unix timestamps as integer or real seconds from 1970-01-01 UTC
 - Julian day numbers as real values
 
-Choose one documented representation per column. Mixed representations make sorting and comparison unreliable.
+Choose one documented representation per column. Mixed representations make sorting and comparison unreliable. ISO text in a consistent most-significant-to-least-significant format sorts chronologically as text.
 
-ISO text in a consistent most-significant-to-least-significant format sorts chronologically as text.
+---
 
 ## Use SQLite date functions
 
@@ -28,6 +30,8 @@ SELECT julianday('2026-07-15') - julianday('2026-07-14') AS day_difference;
 
 SQLite date functions accept documented time-value formats and modifiers. Unsupported or invalid inputs often return `NULL`, so validate data at boundaries.
 
+---
+
 ## Current time and UTC
 
 ```sql
@@ -36,7 +40,31 @@ SELECT datetime('now') AS current_utc;
 
 SQLite's `now` uses UTC. A `localtime` modifier uses the operating environment and has platform and historical limits. Store event instants in UTC when appropriate and keep the original time-zone identifier when future local scheduling or legal display rules need it.
 
-An offset alone, such as `+08:00`, does not preserve a region's daylight-saving rules.
+---
+
+## Engine Temporal Comparison: SQLite vs. MySQL vs. PostgreSQL
+
+When transitioning to production client-server engines like MySQL or PostgreSQL, you will work with dedicated native date and time data types instead of SQLite text strings:
+
+| Engine | Types Available | Current UTC Timestamp Function | Date Arithmetic | Format Function |
+| :--- | :--- | :--- | :--- | :--- |
+| **SQLite** | Stored as `TEXT`, `INTEGER`, or `REAL` | `datetime('now')` | `datetime(col, '+1 day')` | `strftime('%Y-%m-%d', col)` |
+| **MySQL** | `DATE`, `TIME`, `DATETIME`, `TIMESTAMP` | `NOW()` or `UTC_TIMESTAMP()` | `DATE_ADD(col, INTERVAL 1 DAY)` | `DATE_FORMAT(col, '%Y-%m-%d')` |
+| **PostgreSQL** | `date`, `time`, `timestamp`, `timestamptz`, `interval` | `NOW()` or `CURRENT_TIMESTAMP` | `col + INTERVAL '1 day'` | `to_char(col, 'YYYY-MM-DD')` |
+
+### Key Differences Between MySQL and PostgreSQL Temporal Types
+
+1. **MySQL `DATETIME` vs `TIMESTAMP`**:
+   - MySQL `DATETIME` stores a fixed calendar date and wall time (1000-01-01 to 9999-12-31) without timezone conversion.
+   - MySQL `TIMESTAMP` converts inserted values from the session time zone to UTC for storage, and back to session time zone for retrieval (range: 1970 to 2038).
+2. **PostgreSQL `timestamptz` (`timestamp with time zone`)**:
+   - Converts input to a UTC instant internally, and renders it in the session time zone upon display.
+3. **Date Arithmetic & String Format Dialects**:
+   - SQLite uses `strftime()` and `datetime()`.
+   - MySQL uses `DATE_FORMAT()`, `DATE_ADD()`, and `DATEDIFF()`.
+   - PostgreSQL uses `to_char()`, standard SQL `INTERVAL '1 day'`, and `AGE()`.
+
+---
 
 ## Date-only and instant are different meanings
 
@@ -46,11 +74,7 @@ An offset alone, such as `+08:00`, does not preserve a region's daylight-saving 
 
 Choose storage from meaning before choosing a function.
 
-## PostgreSQL uses temporal types
-
-PostgreSQL has `date`, `time`, `timestamp without time zone`, `timestamp with time zone`, and `interval`. Its `timestamp with time zone` represents an instant and displays it using the session time zone; it does not preserve the originally written zone name.
-
-SQL products differ in parsing, precision, interval arithmetic, and time-zone data. Keep product-specific operations labeled and tested.
+---
 
 ## Common mistakes
 
@@ -66,10 +90,15 @@ That changes the meaning of date-only facts across zones.
 
 Regions can change offsets through seasonal and legal rules.
 
+---
+
 ## Check your understanding
 
-You are ready when you can choose between a date-only value and an instant and explain SQLite's three common representations.
+You are ready when you can choose between a date-only value and an instant, explain SQLite's three common representations, and contrast SQLite date functions with MySQL's `DATE_FORMAT()` and PostgreSQL's `timestamptz`.
+
+---
 
 ## Practice and answers
 
 Complete the [exercise](./exercise/exercise.md), then take the [quiz](./quiz/quiz.md). Try both before reading the [exercise solution](./answers/exercise/exercise-solutions.md) or [quiz answers](./answers/quiz/quiz-answers.md).
+

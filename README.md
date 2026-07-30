@@ -56,6 +56,10 @@ You are completely in control of your learning journey. You do **not** need to l
   - **What it is:** A beginner-to-advanced relational database course. It starts with a disposable SQLite file, teaches accurate and portable query habits, then clearly introduces PostgreSQL-specific production concepts.
   - **Who it is for:** Learners with no programming or database experience, as well as developers who want to correct gaps in SQL fundamentals.
   - **What you will do:** Follow 34 ordered modules covering queries, safe data changes, constraints, joins, normalization, transactions, indexes, windows, migrations, concurrency, security, and evidence-based tuning.
+- **[`learn-to-sqlite/`](./learn-to-sqlite/README.md): Master SQLite and Embedded Databases**
+  - **What it is:** A dedicated, 15-module course focused 100% on SQLite. Covers zero-server embedded database architecture, dynamic typing vs `STRICT` tables, PRAGMAs, foreign keys, transactions, WAL mode, indexing, triggers, views, FTS5 full-text search, JSON, and application embedding in Python/Node.js.
+- **[`learn-to-mysql/`](./learn-to-mysql/README.md): Master MySQL and Client-Server Databases**
+  - **What it is:** A dedicated, 15-module course focused 100% on MySQL. Covers client-server daemon architecture (`mysqld`), port 3306, user security grants, InnoDB storage engine, `AUTO_INCREMENT`, strict SQL modes, transactions & isolation levels, stored procedures, window functions, native JSON, and `mysqldump` backups.
 - **[`learn-to-progcon/`](./learn-to-progcon/README.md): Learn Programming Concepts (ProgCon) Step by Step**
   - **What it is:** A beginner course in programming concepts. It teaches problem solving, algorithms, pseudocode, flowcharts, variables, structured design, selection, loops, and arrays before translating those designs into Python.
   - **Who it is for:** Learners with no prior programming experience, and anyone who wants a strong design foundation before a full language course.

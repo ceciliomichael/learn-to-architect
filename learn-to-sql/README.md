@@ -2,7 +2,50 @@
 
 This course teaches SQL from the beginning. You do not need programming experience or database experience.
 
-You will begin with SQLite, a database that stores everything in a local file and needs no server account. Most early query skills transfer to other relational databases. When SQLite and PostgreSQL behave differently, the lesson says so clearly.
+You will begin with **SQLite**, a lightweight database that stores everything in a local file and requires no server background process. Most early query skills transfer directly to other relational databases like **MySQL** and **PostgreSQL**. When engines behave differently, lessons state so clearly.
+
+---
+
+## Database Engines & Dialects: SQLite, MySQL, and PostgreSQL
+
+Relational databases use SQL, but they differ in architecture, type systems, and features. Beginners often wonder when to use SQLite versus client-server engines like MySQL or PostgreSQL, and how to transition between them.
+
+### Embedded vs. Client-Server Architectures
+
+- **Embedded Database (SQLite)**: The database engine is a library integrated directly into your application or CLI tool. It reads and writes directly to a single file on disk (e.g., `library.db`). There is no background process or server daemon, zero setup, and zero network configuration.
+- **Client-Server Databases (MySQL, PostgreSQL)**: The database runs as a separate background server daemon (`mysqld` or `postgres`). Applications connect over a network socket (typically port `3306` for MySQL or `5432` for PostgreSQL) using credentials (username/password). They handle multiple concurrent network clients and multi-user permissions.
+
+### Engine Comparison Matrix
+
+| Feature / Aspect | SQLite | MySQL / MariaDB | PostgreSQL |
+| :--- | :--- | :--- | :--- |
+| **Architecture** | Embedded (file-based) | Client-Server (daemon) | Client-Server (daemon) |
+| **Primary Use Cases** | Mobile apps, local dev, embedded systems, desktop software | Web applications (LAMP/LEMP stacks, WordPress, Node/PHP/Python) | Enterprise apps, complex analytics, geospatial, financial systems |
+| **Setup Overhead** | Zero setup (single file) | Server install, user grants, network config | Server install, user grants, network config |
+| **Concurrency** | One writer at a time per database file | High concurrent write throughput | High concurrent write throughput |
+| **Type Enforcement** | Dynamic typing (type affinity per value) | Strict column typing | Strict column typing |
+| **Auto Increment Syntax** | `INTEGER PRIMARY KEY AUTOINCREMENT` | `INT AUTO_INCREMENT PRIMARY KEY` | `INT GENERATED ALWAYS AS IDENTITY` |
+| **String Concatenation** | `||` operator | `CONCAT(a, b)` function | `||` operator or `CONCAT(a, b)` |
+| **Identifier Quoting** | Double quotes `"col"` or backticks `` `col` `` | Backticks `` `col` `` (default) or `"col"` (ANSI mode) | Double quotes `"col"` |
+
+### Dedicated Database Engine Courses
+
+If you want to specialize in a specific database engine, we recommend taking our dedicated courses:
+
+- **[`learn-to-sqlite/`](../learn-to-sqlite/README.md)**: Master embedded file-based database architecture, dynamic typing vs `STRICT` tables, PRAGMAs, FTS5 full-text search, WAL mode, and application integration.
+- **[`learn-to-mysql/`](../learn-to-mysql/README.md)**: Master client-server production databases, `mysqld` daemon management, TCP port 3306, user security grants, InnoDB storage engine, `AUTO_INCREMENT`, stored procedures, and `mysqldump` backups.
+
+### Course Engine Transition Roadmap
+
+1. **Modules 01–25: Universal SQL Core Foundations (SQLite)**
+   - Focus on ANSI standard SQL logic: `SELECT`, `WHERE`, `JOIN`, `GROUP BY`, `HAVING`, subqueries, CTEs, views, and indexes.
+   - Using SQLite eliminates setup friction so you can focus 100% on query semantics.
+2. **Modules 26–30: Portability & Dialect Boundaries**
+   - Learn how date/time handling, schema migrations, upserts, and triggers differ between SQLite and MySQL.
+3. **Modules 31–34: Production Client-Server Thinking (PostgreSQL & MySQL)**
+   - Transition to multi-user concurrency, isolation levels, strict typing, role-based authorization, security policies, and production query tuning.
+
+---
 
 ## How to use this course
 
@@ -32,7 +75,9 @@ Open a terminal and check the installation:
 sqlite3 --version
 ```
 
-The examples use SQLite 3.35 or newer. A current version is recommended. Advanced PostgreSQL modules explain when a PostgreSQL installation is useful, but you do not need it for the beginner path.
+The examples use SQLite 3.35 or newer. A current version is recommended. Advanced PostgreSQL and MySQL modules explain when a client-server installation is useful, but you do not need it for the beginner path.
+
+---
 
 ## Course path
 
@@ -97,3 +142,4 @@ The examples use SQLite 3.35 or newer. A current version is recommended. Advance
 ## Safety rule for the whole course
 
 Only practice in disposable course database files. Before an `UPDATE` or `DELETE`, run a `SELECT` with the same condition. Use a transaction when a mistake could affect several rows. Never practice on a workplace, school, or production database without explicit permission and a reviewed plan.
+
