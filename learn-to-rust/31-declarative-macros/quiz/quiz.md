@@ -1,7 +1,11 @@
-# Quiz
+# Quiz: Module 31
 
-1. When is a declarative macro expanded?
-2. What does the `expr` fragment specifier match?
-3. What does macro hygiene protect against?
-4. Why is evaluating an input expression twice risky?
-5. When should a function be preferred?
+## 1. At what broad stage do declarative macros act?
+
+## 2. What does an expr fragment match?
+
+## 3. Why are macros harder to reason about than functions?
+
+## 4. Do expanded macros bypass type checking?
+
+## 5. When should a function be preferred?

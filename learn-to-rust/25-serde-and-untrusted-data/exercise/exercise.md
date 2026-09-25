@@ -1,9 +1,21 @@
-# Exercise: Validate imported settings
+# Exercises: Module 25
 
-Create a Cargo project and add `serde` with `derive` plus `serde_json`.
+Work locally and explain your choices.
 
-1. Define `RawSettings { username: String, refresh_seconds: u64 }` with `Deserialize` and `deny_unknown_fields`.
-2. Define `Settings` with the same fields kept private.
-3. Implement `TryFrom<RawSettings>` for `Settings`.
-4. Reject a blank username and refresh values outside 5 through 3600.
-5. Parse one valid JSON string, validate it, and print its fields through accessor methods.
+## 1. Trace
+
+If serde_json successfully parses refresh_seconds = 999999, is the Settings value automatically valid for the domain?
+
+## 2. Repair
+
+Replace unwrap around from_str with explicit Result propagation or handling.
+
+## 3. Modify
+
+Add a theme enum with two allowed variants and derive Serde for it.
+
+## 4. Build
+
+Define a SavedProject format with version, name, and entries. Parse JSON, validate non-empty name and bounded entry count, and reject unsupported format versions.
+
+Finish with cargo fmt, cargo clippy, cargo test when tests exist, and cargo check.

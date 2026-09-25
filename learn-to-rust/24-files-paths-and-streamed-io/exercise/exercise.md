@@ -1,9 +1,21 @@
-# Exercise: Read a bounded text file
+# Exercises: Module 24
 
-Write `read_preview(path: &Path, limit: u64) -> io::Result<String>`.
+Work locally and explain your choices.
 
-1. Open the file without changing it.
-2. Use `Read::take` so no more than `limit` bytes are read.
-3. Read into a string and return it.
-4. In `main`, write a small practice file, read at most 40 bytes, and print the preview.
-5. Remove the practice file and handle every error with `Result`.
+## 1. Trace
+
+Why can reader.lines() be preferable to read_to_string for a multi-gigabyte log?
+
+## 2. Repair
+
+Replace unwrap on File::open with a Result-returning function and one reporting boundary.
+
+## 3. Modify
+
+Change the example to count non-empty lines instead of printing them.
+
+## 4. Build
+
+Build a log_summary tool that accepts a Path, streams lines, counts total/empty/error-tagged lines, and returns a summary struct. Keep the counting logic testable without a real file.
+
+Finish with cargo fmt, cargo clippy, cargo test when tests exist, and cargo check.

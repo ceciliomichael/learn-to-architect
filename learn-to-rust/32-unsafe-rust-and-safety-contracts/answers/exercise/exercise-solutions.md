@@ -1,22 +1,21 @@
-# Exercise solution
+# Exercise Solutions: Module 32
 
-```rust
-fn get_checked(values: &[i32], index: usize) -> Option<i32> {
-    if index >= values.len() {
-        return None;
-    }
+Attempt the exercises before reading.
 
-    // SAFETY: The check above proves index is smaller than values.len().
-    Some(unsafe { *values.get_unchecked(index) })
-}
+## 1. Trace
 
-fn main() {
-    assert_eq!(get_checked(&[], 0), None);
-    assert_eq!(get_checked(&[10, 20, 30], 0), Some(10));
-    assert_eq!(get_checked(&[10, 20, 30], 2), Some(30));
-    assert_eq!(get_checked(&[10, 20, 30], 3), None);
-    println!("all checks passed");
-}
-```
+No. unsafe only permits specific otherwise-restricted operations. Ordinary Rust checks still apply broadly.
 
-Production code should use `values.get(index).copied()`. It already expresses this operation safely and clearly, with no manual invariant to maintain.
+## 2. Repair
+
+State what pointer values are valid, for how long, with what alignment and initialization, and whether aliasing/mutation is allowed. The implementation's unsafe block should cite those established obligations.
+
+## 3. Modify
+
+values.first().copied().unwrap_or(0) is a safe equivalent and is preferable for this task.
+
+## 4. Build
+
+Validate what can be validated before entering unsafe, make uncheckable obligations part of an unsafe caller contract if necessary, perform the minimum raw operation, and return to safe types immediately.
+
+Equivalent implementations can be correct when they satisfy the same behavior and constraints.

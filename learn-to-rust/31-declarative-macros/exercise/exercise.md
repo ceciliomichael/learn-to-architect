@@ -1,9 +1,21 @@
-# Exercise: Build a small number vector
+# Exercises: Module 31
 
-Create `numbers!` with two call forms:
+Work locally and explain your choices.
 
-1. `numbers![1, 2, 3]` returns `vec![1, 2, 3]`.
-2. `numbers![5; 3]` returns `vec![5, 5, 5]`.
-3. Each expression must be evaluated according to ordinary `vec!` behavior.
-4. Demonstrate both forms in `main`.
-5. Explain why a macro is justified here instead of a function.
+## 1. Trace
+
+Why can a macro accept a variable number of comma-separated expressions in a way a normal Rust function signature cannot?
+
+## 2. Repair
+
+Make a macro pattern accept only literal, pass an identifier, then change the pattern to the narrowest appropriate fragment.
+
+## 3. Modify
+
+Change strings! so zero arguments produce an empty Vec<String> without type-inference ambiguity at the call site you choose.
+
+## 4. Build
+
+Create a simple ensure! macro taking a Boolean expression and error expression, returning early with Err(error) when the condition is false. Compare it with an ordinary helper function and state when the macro is justified.
+
+Finish with cargo fmt, cargo clippy, cargo test when tests exist, and cargo check.

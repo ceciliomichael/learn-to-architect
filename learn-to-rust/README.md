@@ -1,118 +1,219 @@
-# Learn Rust Step by Step
+# Learn Rust: From Zero to Real Software
 
-This course teaches programming with Rust from the beginning. You do not need prior programming or command-line experience.
+A local-first Rust course for people who have never programmed before and for programmers who want a deeper systems foundation.
 
-Rust is a statically typed, compiled language. Its compiler checks types, ownership, and borrowing before a program runs. Rust can prevent many memory and concurrency mistakes, but it cannot prove that business rules, permissions, or external data are correct. This course teaches both its guarantees and its boundaries.
+This course uses **Rust to teach programming itself**. You will learn Rust, but the larger goal is to understand the ideas that appear across languages: values, types, control flow, functions, data modeling, errors, testing, dependencies, I/O, concurrency, networking, architecture, performance, security, and software delivery.
 
-Complete the modules in order. Ownership ideas are introduced slowly and reused consistently.
+By the end, learning another language should feel less like starting over and more like mapping familiar concepts onto a new syntax, runtime, and ecosystem.
 
-## Two ways to run the examples
+## Who this course is for
 
-### Option 1: Use the official Rust Playground
+You do not need prior experience with:
 
-Open the [Rust Playground](https://play.rust-lang.org/), keep **Stable** selected, replace the example, and select **Run**. Use **Tools**, then **Rustfmt**, to format code. Use **Clippy** when the lesson asks for extra feedback.
+- programming;
+- terminals;
+- compilers;
+- Git;
+- systems programming;
+- C or C++;
+- another programming language.
 
-The Playground is the simplest option for early modules. It runs in a browser and can compile either a small program or a test. It has no network access and limits execution time, memory, and disk use. It offers only selected third-party crates. Lessons clearly say when a local Cargo project is required.
+The course defines concepts before relying on them.
 
-### Option 2: Work on your computer
+## How you will learn
 
-Install Rust through <https://rustup.rs/>. This installs the compiler, Cargo, formatting tools, and documentation management.
+This is not a browser-playground course. You will work on your own computer from the beginning.
 
-Check the stable toolchain:
+You will use:
 
-```text
-rustc --version
-cargo --version
-rustup show
-```
+- a terminal;
+- a code editor of your choice;
+- `rustup`;
+- stable Rust;
+- Cargo;
+- rustfmt;
+- Clippy;
+- rustdoc;
+- external crates when they solve a real problem;
+- Git after the basic development loop is understood.
 
-Create and run a Rust 2024 edition project:
+Every runnable lesson uses a real Cargo project.
 
-```text
-cargo new rust-practice --edition 2024
-cd rust-practice
-cargo run
-```
+The course was rewritten in 2026 against stable Rust and the Rust 2024 edition. The development machine used while authoring the rewrite reports Rust 1.97.1 and Cargo 1.97.1. The lessons target stable Rust rather than depending on that exact patch version.
 
-Format and check it with:
+## The learning method
 
-```text
-cargo fmt --check
-cargo clippy --all-targets --all-features
-```
+Each module follows the same pattern:
 
-Core examples target stable Rust 1.90 and newer. Local Cargo is required for multi-file crates, dependencies, tests, files, networks, async work, workspaces, and release artifacts.
+1. **Outcome**: what you should be able to do.
+2. **Why this matters**: the problem the concept solves.
+3. **Programming concept**: the idea independent of Rust.
+4. **Rust model**: how Rust represents or enforces the idea.
+5. **Runnable example**: code in a local Cargo project.
+6. **Walkthrough**: why the code works.
+7. **Deliberate mistake**: code that fails for an educational reason.
+8. **Mental model**: a compact set of rules to remember.
+9. **Common mistakes**: predictable beginner traps.
+10. **Transfer note**: how the concept carries to other languages.
+11. **Guided practice**: small focused tasks.
+12. **Independent exercise**: write code without a complete solution in front of you.
+13. **Quiz**: reasoning, not trivia.
+14. **Readiness check**: what you should now be able to explain.
+15. **Next module**: why the sequence continues where it does.
 
-## How every module is organized
+Exercises use four levels:
 
-Each module contains:
+- **Trace** existing code.
+- **Repair** broken code.
+- **Modify** working code.
+- **Build** a small program from requirements.
 
-1. A lesson in `README.md`
-2. Guided work in `exercise/exercise.md`
-3. A short quiz in `quiz/quiz.md`
-4. Complete exercise solutions in `answers/exercise/exercise-solutions.md`
-5. Explained quiz answers in `answers/quiz/quiz-answers.md`
+Do the work before opening the answers.
 
-Type examples yourself. Predict whether they compile and what they print. When the compiler rejects code, read the primary message and the suggested source location before editing.
+## Working rules
+
+For each lesson:
+
+1. Open a terminal in a practice directory.
+2. Create or reuse the Cargo project named by the lesson.
+3. Type the code yourself. Do not only copy and paste.
+4. Predict what will happen before running it.
+5. Run `cargo check`.
+6. Run `cargo run` when the project is executable.
+7. Use `cargo fmt`.
+8. Use `cargo clippy` when the lesson introduces or requests it.
+9. Read compiler diagnostics from the first relevant error.
+10. Change one cause at a time when debugging.
+
+A compiler error is information. It means the compiler has found a contradiction between the program you wrote and Rust's rules. Learning to interpret that feedback is part of learning Rust.
 
 ## Course path
 
-### First programs and decisions
+### Phase 1: Learn how programs work
 
-- [Module 01: Use the Rust Playground and Install Rust](01-playground-install-and-cargo/README.md)
-- [Module 02: Compile and Run Your First Program](02-first-program-and-compilation/README.md)
-- [Module 03: Variables, Mutability, Constants, and Scalar Types](03-variables-mutability-and-scalars/README.md)
-- [Module 04: Expressions, Conditions, Loops, and Match Basics](04-expressions-and-control-flow/README.md)
-- [Module 05: Functions, Scope, and Tuples](05-functions-scope-and-tuples/README.md)
+- [01: Set Up a Real Rust Development Environment](01-real-rust-development-environment/README.md)
+- [02: Your First Program and the Compile-Run Cycle](02-first-program-and-compile-run-cycle/README.md)
+- [03: Values, Variables, Mutability, and Basic Types](03-values-variables-mutability-and-types/README.md)
+- [04: Operators, Conversion, and Basic Input/Output](04-operators-conversion-and-basic-io/README.md)
+- [05: Expressions, Decisions, and Loops](05-expressions-decisions-and-loops/README.md)
+- [06: Functions, Scope, and Decomposition](06-functions-scope-and-decomposition/README.md)
+- [Checkpoint A: Command-Line Utility](projects/project-a-command-line-utility/README.md)
 
-### Ownership and data modeling
+### Phase 2: Data and Rust's ownership model
 
-- [Module 06: Ownership, Moves, Copy, and Clone](06-ownership-moves-copy-clone/README.md)
-- [Module 07: Borrow with References](07-borrowing-and-references/README.md)
-- [Module 08: Slices, str, and String](08-slices-str-and-string/README.md)
-- [Module 09: Structs and Methods](09-structs-and-methods/README.md)
-- [Module 10: Enums, Match, and Patterns](10-enums-match-and-patterns/README.md)
-- [Module 11: Optional Values with Option](11-option/README.md)
-- [Module 12: Recoverable Errors with Result](12-result-and-errors/README.md)
+- [07: Compound Values with Tuples and Arrays](07-tuples-arrays-and-compound-values/README.md)
+- [08: Ownership, Moves, Copy, Clone, and Drop](08-ownership-moves-copy-clone-and-drop/README.md)
+- [09: Borrowing and References](09-borrowing-and-references/README.md)
+- [10: Strings, str, and Slices](10-strings-str-and-slices/README.md)
+- [11: Structs and Methods](11-structs-and-methods/README.md)
+- [12: Enums, Match, and Pattern Matching](12-enums-match-and-patterns/README.md)
+- [13: Optional Values with Option](13-option-and-optional-values/README.md)
+- [14: Recoverable Errors with Result](14-result-and-recoverable-errors/README.md)
+- [Checkpoint B: Text and Data Processor](projects/project-b-text-data-processor/README.md)
 
-### Collections, modules, and reusable code
+### Phase 3: Collections, reuse, and program structure
 
-- [Module 13: Vectors and Iteration](13-vectors-and-iteration/README.md)
-- [Module 14: Hash Maps and Hash Sets](14-hashmaps-and-hashsets/README.md)
-- [Module 15: Modules, Crates, Packages, and Visibility](15-modules-crates-and-visibility/README.md)
-- [Module 16: Test Rust Code](16-testing/README.md)
-- [Module 17: Generics and Const Generics](17-generics-and-const-generics/README.md)
-- [Module 18: Traits and Trait Bounds](18-traits-and-trait-bounds/README.md)
-- [Module 19: Lifetimes](19-lifetimes/README.md)
-- [Module 20: Closures and Iterators](20-closures-and-iterators/README.md)
+- [15: Vectors and Dynamic Collections](15-vectors-and-dynamic-collections/README.md)
+- [16: Hash Maps and Hash Sets](16-hashmaps-and-hashsets/README.md)
+- [17: Modules, Crates, Packages, and Visibility](17-modules-crates-packages-and-visibility/README.md)
+- [18: Testing and Testable Design](18-testing-and-testable-design/README.md)
+- [19: Generics and Reusable Algorithms](19-generics-and-reusable-algorithms/README.md)
+- [20: Traits and Trait Bounds](20-traits-and-trait-bounds/README.md)
+- [21: Lifetimes](21-lifetimes/README.md)
+- [22: Closures and Iterators](22-closures-and-iterators/README.md)
+- [23: Cargo Dependencies and the Crate Ecosystem](23-cargo-dependencies-and-crates/README.md)
+- [Checkpoint C: Multi-Module CLI Application](projects/project-c-multi-module-cli/README.md)
 
-### Managed memory and I/O
+### Phase 4: Files, data formats, and application boundaries
 
-- [Module 21: Smart Pointers with Box, Rc, and Arc](21-smart-pointers-box-rc-and-arc/README.md)
-- [Module 22: Drop, Deref, Cell, and RefCell](22-drop-deref-cell-and-refcell/README.md)
-- [Module 23: Trait Objects and Dynamic Dispatch](23-trait-objects-and-dynamic-dispatch/README.md)
-- [Module 24: Files, Paths, and Streamed I/O](24-files-paths-and-streamed-io/README.md)
-- [Module 25: Serde and Untrusted Data](25-serde-and-untrusted-data/README.md)
+- [24: Files, Paths, and Streamed I/O](24-files-paths-and-streamed-io/README.md)
+- [25: Serialization with Serde and Untrusted Data](25-serde-and-untrusted-data/README.md)
+- [26: Command-Line Interfaces, Environment, and Configuration](26-cli-environment-and-configuration/README.md)
+- [27: Logging, Diagnostics, and Debugging](27-logging-diagnostics-and-debugging/README.md)
+- [Checkpoint D: Persistent CLI Tool](projects/project-d-persistent-cli/README.md)
 
-### Concurrent and asynchronous work
+### Phase 5: Advanced ownership and abstraction
 
-- [Module 26: Threads and Scoped Threads](26-threads-and-scoped-threads/README.md)
-- [Module 27: Channels, Arc, Mutex, and Shared State](27-channels-arc-mutex-and-shared-state/README.md)
-- [Module 28: Async Functions, Futures, and Tokio](28-async-futures-and-tokio/README.md)
-- [Module 29: Networking and HTTP Boundaries](29-networking-and-http-boundaries/README.md)
+- [28: Smart Pointers with Box, Rc, and Arc](28-smart-pointers-box-rc-arc/README.md)
+- [29: Drop, Deref, Cell, and RefCell](29-drop-deref-cell-refcell/README.md)
+- [30: Trait Objects and Dynamic Dispatch](30-trait-objects-and-dynamic-dispatch/README.md)
+- [31: Declarative Macros](31-declarative-macros/README.md)
+- [32: Unsafe Rust and Safety Contracts](32-unsafe-rust-and-safety-contracts/README.md)
+- [33: Foreign Function Interfaces](33-foreign-function-interfaces/README.md)
 
-### Maintainable tools and advanced language features
+### Phase 6: Concurrency and asynchronous systems
 
-- [Module 30: Command-Line Programs, Configuration, and Logging](30-command-line-configuration-and-logging/README.md)
-- [Module 31: Declarative Macros](31-declarative-macros/README.md)
-- [Module 32: Unsafe Rust and Safety Contracts](32-unsafe-rust-and-safety-contracts/README.md)
-- [Module 33: Foreign Function Interfaces](33-foreign-function-interfaces/README.md)
-- [Module 34: Cargo Features and Workspaces](34-cargo-features-and-workspaces/README.md)
-- [Module 35: Documentation, API Design, and Compatibility](35-documentation-api-design-and-compatibility/README.md)
-- [Module 36: Measure and Improve Performance](36-measure-and-improve-performance/README.md)
-- [Module 37: Dependency and Supply-Chain Security](37-dependency-and-supply-chain-security/README.md)
-- [Module 38: Build, Package, and Release Rust Programs](38-build-package-and-release/README.md)
+- [34: Threads and Scoped Threads](34-threads-and-scoped-threads/README.md)
+- [35: Channels and Message Passing](35-channels-and-message-passing/README.md)
+- [36: Shared State with Arc, Mutex, RwLock, and Atomics](36-shared-state-and-synchronization/README.md)
+- [37: Async Functions, Futures, and Tokio](37-async-futures-and-tokio/README.md)
+- [38: Networking and HTTP Boundaries](38-networking-and-http-boundaries/README.md)
+- [Checkpoint E: Concurrent Networked Application](projects/project-e-concurrent-networked-app/README.md)
 
-## Safety and study habits
+### Phase 7: Architecture, quality, performance, and delivery
 
-Use disposable projects and non-sensitive data. Do not paste unfamiliar dependencies into `Cargo.toml` without checking their source and maintenance. Keep `unsafe` code isolated and documented. Use release builds only after debug behavior and tests are correct.
+- [39: Cargo Features and Workspaces](39-cargo-features-and-workspaces/README.md)
+- [40: API Design, Documentation, and Compatibility](40-api-design-documentation-and-compatibility/README.md)
+- [41: Architecture and Dependency Boundaries](41-architecture-and-dependency-boundaries/README.md)
+- [42: Measure and Improve Performance](42-measure-and-improve-performance/README.md)
+- [43: Dependency and Supply-Chain Security](43-dependency-and-supply-chain-security/README.md)
+- [44: Build, Package, Cross-Compile, and Release](44-build-package-cross-compile-and-release/README.md)
+- [45: Reading Real Rust and Learning the Next Language](45-reading-real-rust-and-learning-next-language/README.md)
+- [Final Capstone: Production-Style Rust Application](projects/final-capstone/README.md)
+
+## Standard commands
+
+You will use these often:
+
+```text
+cargo new project_name --edition 2024
+cd project_name
+cargo check
+cargo run
+cargo test
+cargo fmt
+cargo clippy
+```
+
+Later modules add commands such as `cargo add`, `cargo tree`, `cargo doc`, release builds, workspace commands, and security tooling.
+
+## External crates
+
+Real Rust development uses both the standard library and crates from the ecosystem.
+
+This course does not hide dependencies behind copy-paste instructions. Module 23 teaches:
+
+- what a crate is;
+- how `Cargo.toml` and `Cargo.lock` work;
+- `cargo add`;
+- semantic versions;
+- feature flags;
+- direct and transitive dependencies;
+- reading docs.rs and crate documentation;
+- deciding whether a dependency is justified;
+- basic maintenance, license, and security checks.
+
+Only after that do later modules deliberately depend on crates such as Serde, Clap, tracing, Tokio, and an HTTP client.
+
+## What completion means
+
+Finishing the course does not mean memorizing every Rust API.
+
+It means you can:
+
+- reason about code;
+- use documentation;
+- understand ownership and data flow;
+- model valid and invalid states;
+- handle failures;
+- test behavior;
+- choose dependencies deliberately;
+- separate business logic from external systems;
+- debug with evidence;
+- use concurrency without guessing;
+- measure before optimizing;
+- review dependencies and releases;
+- read an unfamiliar Rust codebase;
+- learn another language by comparing its model with what you already understand.
+
+Start with [Module 01](01-real-rust-development-environment/README.md).

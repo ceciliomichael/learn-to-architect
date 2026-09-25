@@ -1,7 +1,21 @@
-# Quiz answers
+# Quiz Answers: Module 31
 
-1. It is expanded before ordinary type checking.
-2. It matches a Rust expression.
-3. It helps names inside the expansion avoid accidental collisions with call-site names.
-4. Side effects in that expression would also happen twice.
-5. Prefer a function when ordinary typed inputs and a return value express the operation.
+## 1
+
+They match and expand syntax before normal compilation of the expanded program proceeds.
+
+## 2
+
+A Rust expression syntax fragment.
+
+## 3
+
+Readers may need to understand generated syntax, expansion context, hygiene, and less direct diagnostics.
+
+## 4
+
+No. Generated Rust still undergoes normal compiler checks.
+
+## 5
+
+When the abstraction can be expressed cleanly through ordinary typed inputs/outputs without needing syntax transformation.

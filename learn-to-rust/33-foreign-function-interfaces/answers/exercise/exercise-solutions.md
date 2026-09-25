@@ -1,31 +1,21 @@
-# Exercise solution
+# Exercise Solutions: Module 33
 
-```rust
-/// Sums `len` signed 32-bit integers and writes the result to `output`.
-///
-/// # Safety
-///
-/// When `len` is nonzero, `values` must point to `len` initialized `i32`
-/// values that remain readable for this call. `output` must point to writable,
-/// properly aligned `i64` storage. The regions must satisfy Rust's aliasing rules.
-#[unsafe(no_mangle)]
-pub unsafe extern "C" fn sum_i32(values: *const i32, len: usize, output: *mut i64) -> i32 {
-    if output.is_null() {
-        return 1;
-    }
-    if values.is_null() && len != 0 {
-        return 2;
-    }
+Attempt the exercises before reading.
 
-    // SAFETY: The documented caller contract makes this pointer and length a
-    // readable slice. A zero-length slice accepts a non-dereferenced pointer.
-    let values = unsafe { std::slice::from_raw_parts(values, len) };
-    let total = values.iter().map(|value| i64::from(*value)).sum();
+## 1. Trace
 
-    // SAFETY: The documented caller contract guarantees writable i64 storage.
-    unsafe { output.write(total) };
-    0
-}
-```
+A Rust slice is a Rust language abstraction whose ABI is not the portable C pointer type contract. Pointer plus length expresses the required representation explicitly for C-style interfaces.
 
-The error codes handle detectable null-pointer cases. The other pointer requirements cannot be checked fully by the function, so C callers must follow the documented contract.
+## 2. Repair
+
+The raw-pointer function must be unsafe because callers provide the validity proof. A safe wrapper can accept &[T], derive pointer/length from it, and contain the unsafe call.
+
+## 3. Modify
+
+Map None to a contract such as null pointer plus zero length only if the FFI API explicitly permits that combination. Some raw slice constructors require special non-null rules even at zero length, so keep the representation contract precise.
+
+## 4. Build
+
+Write the ABI contract first. A robust design makes ownership direction and errors explicit, avoids exceptions/panics crossing the boundary, and converts raw inputs into validated internal data as early as possible.
+
+Equivalent implementations can be correct when they satisfy the same behavior and constraints.

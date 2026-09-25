@@ -1,7 +1,21 @@
-# Quiz answers
+# Quiz Answers: Module 32
 
-1. No. It permits only specific operations and leaves other checks in place.
-2. The programmer writing and calling the unsafe boundary must uphold it.
-3. It should state the exact facts that make the operation valid.
-4. Small blocks reduce the code that must be reviewed under manual safety assumptions.
-5. No. Tests cover examples, while undefined behavior may depend on inputs, optimization, or platform details.
+## 1
+
+It permits a limited set of operations whose safety the compiler cannot fully verify; it does not turn off Rust's rules globally.
+
+## 2
+
+A condition that must hold to avoid invalid memory behavior or other undefined behavior.
+
+## 3
+
+It minimizes the manually audited proof boundary and keeps more code under compiler guarantees.
+
+## 4
+
+No. Tests sample executions and cannot establish every undefined-behavior condition across all inputs and optimizations.
+
+## 5
+
+Guarantee or validate every safety obligation so safe callers cannot trigger undefined behavior through the wrapper.

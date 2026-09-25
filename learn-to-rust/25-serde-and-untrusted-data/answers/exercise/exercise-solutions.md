@@ -1,76 +1,21 @@
-# Exercise solution
+# Exercise Solutions: Module 25
 
-Add the dependencies:
+Attempt the exercises before reading.
 
-```text
-cargo add serde --features derive
-cargo add serde_json
-```
+## 1. Trace
 
-Use this `src/main.rs`:
+No. The type accepts u64, but domain validation defines the acceptable operational range.
 
-```rust
-use serde::Deserialize;
+## 2. Repair
 
-#[derive(Deserialize)]
-#[serde(deny_unknown_fields)]
-struct RawSettings {
-    username: String,
-    refresh_seconds: u64,
-}
+Return or match the serde_json::Error at the boundary rather than converting malformed external data into panic.
 
-struct Settings {
-    username: String,
-    refresh_seconds: u64,
-}
+## 3. Modify
 
-impl Settings {
-    fn username(&self) -> &str {
-        &self.username
-    }
+Derive Serialize and Deserialize on the enum and choose a documented external naming representation if persistence compatibility matters.
 
-    fn refresh_seconds(&self) -> u64 {
-        self.refresh_seconds
-    }
-}
+## 4. Build
 
-impl TryFrom<RawSettings> for Settings {
-    type Error = String;
+Treat format version as part of the compatibility contract. Parse first, then reject unsupported versions and excessive or invalid domain data.
 
-    fn try_from(raw: RawSettings) -> Result<Self, Self::Error> {
-        let username = raw.username.trim();
-        if username.is_empty() {
-            return Err(String::from("username must not be blank"));
-        }
-        if !(5..=3600).contains(&raw.refresh_seconds) {
-            return Err(String::from("refresh_seconds must be from 5 through 3600"));
-        }
-        Ok(Self {
-            username: username.to_owned(),
-            refresh_seconds: raw.refresh_seconds,
-        })
-    }
-}
-
-fn run() -> Result<(), String> {
-    let json = r#"{"username":"Mira","refresh_seconds":30}"#;
-    let raw: RawSettings =
-        serde_json::from_str(json).map_err(|error| format!("invalid JSON: {error}"))?;
-    let settings = Settings::try_from(raw)?;
-    println!(
-        "{}: {} seconds",
-        settings.username(),
-        settings.refresh_seconds()
-    );
-    Ok(())
-}
-
-fn main() {
-    if let Err(error) = run() {
-        eprintln!("settings error: {error}");
-        std::process::exit(1);
-    }
-}
-```
-
-Parsing and domain validation are separate. The rest of the program receives only a valid `Settings` value.
+Equivalent implementations can be correct when they satisfy the same behavior and constraints.

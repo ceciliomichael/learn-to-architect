@@ -1,37 +1,21 @@
-# Exercise solution
+# Exercise Solutions: Module 24
 
-```rust
-use std::fs::{self, File};
-use std::io::{self, Read};
-use std::path::Path;
+Attempt the exercises before reading.
 
-fn read_preview(path: &Path, limit: u64) -> io::Result<String> {
-    let file = File::open(path)?;
-    let mut bounded = file.take(limit);
-    let mut text = String::new();
-    bounded.read_to_string(&mut text)?;
-    Ok(text)
-}
+## 1. Trace
 
-fn run() -> io::Result<()> {
-    let path = Path::new("rust-course-preview.txt");
-    fs::write(path, "one line\ntwo lines\nthree lines\n")?;
+Streaming can process each line and release its temporary memory rather than allocating space for the entire file.
 
-    let preview_result = read_preview(path, 40);
-    let remove_result = fs::remove_file(path);
-    let preview = preview_result?;
-    remove_result?;
+## 2. Repair
 
-    println!("{preview}");
-    Ok(())
-}
+Return io::Result from the lower-level function and decide how to present the error in main.
 
-fn main() {
-    if let Err(error) = run() {
-        eprintln!("file operation failed: {error}");
-        std::process::exit(1);
-    }
-}
-```
+## 3. Modify
 
-Cleanup is attempted even if reading fails. A production application may use a temporary-file library to provide stronger cleanup behavior.
+Keep a counter and inspect each line after propagating per-line read errors. No full-file allocation is needed.
+
+## 4. Build
+
+Separate a function that classifies/counts an iterator of text from the function that opens the file. This isolates domain logic from filesystem failure.
+
+Equivalent implementations can be correct when they satisfy the same behavior and constraints.
